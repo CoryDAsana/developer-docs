@@ -9,11 +9,26 @@ An important step in maintaining flow at work is having all the information you 
 projects, to provide clarity on *who* is doing *what* by *when*, and to automate repetitive processes. Now, it's easier than ever to 
 see key work information from other tools on the surface of tasks, and automate cross-tool processes.
 
-Apps can use App Components to display customized widgets, forms, and rules within Asana's user interface. Requests go from
+Apps can use App Components to display customized widgets, forms, and rules within Asana's user interface. Under the hood, requests go from
 Asana directly to an [App Server](/docs/app-server). The App Server controls the information within these customized widgets and the App Server
 controls what happens when a user takes actions within these components.
 
-<img src="../images/UI_Components.gif" />
+With App Components, you can build customizable in-product experiences for apps within Asana by leveraging capabilities such as:
+
+* [Widget](/docs/widget)
+* [Modal Form](/docs/modal-form)
+* [Lookup](/docs/lookup)
+* [Rule Action](/docs/rule-action)
+* [Entry Point](/docs/entry-point)
+
+For a visual tour on getting started with App Components, feel free to review the following video. Then, when you're ready, visit our [Getting Started](/docs/getting-started) guide to begin building right away.
+
+<div style="padding:35% 0 0 0;position:relative;width:52%">
+  <iframe src="https://player.vimeo.com/video/701444042?h=5d8cdb532f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="App Components: Getting Started">
+  </iframe>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 **App Components are currently in open beta**. For the latest updates and announcements,
 [subscribe to our developer forum](https://forum.asana.com/c/developersapi/app-components-beta/150).
