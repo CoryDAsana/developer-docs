@@ -40,11 +40,17 @@ activate :relative_assets
 set :relative_links, true
 
 # Development Configuration
+# https://middlemanapp.com/advanced/configuration#environment-specific-settings
 configure :development do
   require 'rack/rewrite'
   use ::Rack::Rewrite do
     rewrite %r{^\/docs(.*)}, '/docs'
   end
+
+  # https://middlemanapp.com/basics/redirects/
+  # redirect the index to the docs page because that's what we're most
+  # interested in testing
+  redirect "index.html", to: "docs/index.html.md"
 end
 
 # Build Configuration
