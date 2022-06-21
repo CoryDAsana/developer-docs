@@ -51,6 +51,8 @@ docs_gen_all:
 	node pull_forum_updates.js
 
 serve:
+	@echo '*** add the suffix "/docs" to the URL shown below ***'
+	@echo ""
 	exec bundle exec middleman serve --watcher-force-polling
 
 build:
