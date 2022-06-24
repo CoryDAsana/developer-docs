@@ -24,7 +24,7 @@ Additional resources:
 <h1 id="attachments">Attachments</h1>
 
 <pre class="highlight http tab-http">
-<code><a href="/docs/get-an-attachment"><span class="get-verb">GET</span> <span class=""nn>/attachments/{attachment_gid}</span></a><br><a href="/docs/delete-an-attachment"><span class="delete-verb">DELETE</span> <span class=""nn>/attachments/{attachment_gid}</span></a><br><a href="/docs/get-attachments-for-a-task"><span class="get-verb">GET</span> <span class=""nn>/tasks/{task_gid}/attachments</span></a><br><a href="/docs/upload-an-attachment"><span class="post-verb">POST</span> <span class=""nn>/tasks/{task_gid}/attachments</span></a></code>
+<code><a href="/docs/get-an-attachment"><span class="get-verb">GET</span> <span class=""nn>/attachments/{attachment_gid}</span></a><br><a href="/docs/delete-an-attachment"><span class="delete-verb">DELETE</span> <span class=""nn>/attachments/{attachment_gid}</span></a><br><a href="/docs/get-attachments-from-an-object"><span class="get-verb">GET</span> <span class=""nn>/attachments</span></a><br><a href="/docs/upload-an-attachment"><span class="post-verb">POST</span> <span class=""nn>/attachments</span></a></code>
 </pre>
 
 <span class="description">
@@ -266,14 +266,14 @@ Status Code **200**
 
 </section><hr class="half-line">
 <section>
-## Get attachments for a task
+## Get attachments from an object
 
-<a id="opIdgetAttachmentsForTask"></a>
+<a id="opIdgetAttachmentsForObject"></a>
 
 > Code samples
 
 ```shell
-curl -X GET https://app.asana.com/api/1.0/tasks/{task_gid}/attachments \
+curl -X GET https://app.asana.com/api/1.0/attachments?parent=159874 \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}'
 
@@ -284,7 +284,7 @@ const asana = require('asana');
 
 const client = asana.Client.create().useAccessToken('PERSONAL_ACCESS_TOKEN');
 
-client.attachments.getAttachmentsForTask(taskGid, {param: "value", param: "value", opt_pretty: true})
+client.attachments.getAttachmentsForObject({param: "value", param: "value", opt_pretty: true})
     .then((result) => {
         console.log(result);
     });
@@ -295,7 +295,7 @@ import asana
 
 client = asana.Client.access_token('PERSONAL_ACCESS_TOKEN')
 
-result = client.attachments.get_attachments_for_task(task_gid, {'param': 'value', 'param': 'value'}, opt_pretty=True)
+result = client.attachments.get_attachments_for_object({'param': 'value', 'param': 'value'}, opt_pretty=True)
 ```
 
 ```ruby
@@ -305,7 +305,7 @@ client = Asana::Client.new do |c|
     c.authentication :access_token, 'PERSONAL_ACCESS_TOKEN'
 end
 
-result = client.attachments.get_attachments_for_task(task_gid: 'task_gid', param: "value", param: "value", options: {pretty: true})
+result = client.attachments.get_attachments_for_object(parent: '&#x27;parent_example&#x27;', param: "value", param: "value", options: {pretty: true})
 ```
 
 ```java
@@ -313,7 +313,7 @@ import com.asana.Client;
 
 Client client = Client.accessToken("PERSONAL_ACCESS_TOKEN");
 
-List<Attachment> result = client.attachments.getAttachmentsForTask(taskGid)
+List<Attachment> result = client.attachments.getAttachmentsForObject(parent)
     .option("pretty", true)
     .execute();
 ```
@@ -324,7 +324,7 @@ require 'php-asana/vendor/autoload.php';
 
 $client = Asana\Client::accessToken('PERSONAL_ACCESS_TOKEN');
 
-$result = $client->attachments->getAttachmentsForTask($task_gid, array('param' => 'value', 'param' => 'value'), array('opt_pretty' => 'true'))
+$result = $client->attachments->getAttachmentsForObject(array('param' => 'value', 'param' => 'value'), array('opt_pretty' => 'true'))
 ```
 
 > 200 Response
@@ -345,28 +345,28 @@ $result = $client->attachments->getAttachmentsForTask($task_gid, array('param' =
 > See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
 
 <p>
-<code> <span class="get-verb">GET</span> /tasks/{task_gid}/attachments</code>
+<code> <span class="get-verb">GET</span> /attachments</code>
 </p>
 
 <span class="description">
-Returns the compact records for all attachments on the task.
+Returns the compact records for all attachments on the object.
 </span>
 
-<h3 id="get-attachments-for-a-task-parameters">Parameters</h3>
+<h3 id="get-attachments-from-an-object-parameters">Parameters</h3>
 
 |Name|Description|
 |---|---|
-|/task_gid<span class="param-type"> string</span><div class="param-required">required</div>|The task to operate on.|
-|?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
-|?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|
 |?limit<span class="param-type"> integer</span>|Results per page.|
 |?offset<span class="param-type"> string</span>|Offset token.|
+|?parent<span class="param-type"> string</span><div class="param-required">required</div>|Globally unique identifier for object to fetch statuses from. Must be a GID for a task or project_brief.|
+|?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
+|?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|
 
-<h3 id="get-attachments-for-a-task-responses">Responses</h3>
+<h3 id="get-attachments-from-an-object-responses">Responses</h3>
 
 |Status|Description|
 |---|---|
-|200<span class="param-type"> [AttachmentCompact](#schemaattachmentcompact)</span>|Successfully retrieved the compact records for all attachments on the task.|
+|200<span class="param-type"> [AttachmentCompact](#schemaattachmentcompact)</span>|Successfully retrieved the specified object's attachments.|
 |400<span class="param-type"> [Error](#schemaerror)</span>|This usually occurs because of a missing or malformed parameter. Check the documentation and the syntax of your request and try again.|
 |401<span class="param-type"> [Error](#schemaerror)</span>|A valid authentication token was not provided with the request, so the API could not associate a user with the request.|
 |403<span class="param-type"> [Error](#schemaerror)</span>|The authentication and request syntax was valid but the server is refusing to complete the request. This can happen if you try to read or write to objects or properties that the user does not have access to.|
@@ -382,7 +382,7 @@ Returns the compact records for all attachments on the task.
 > Code samples
 
 ```shell
-curl -X POST https://app.asana.com/api/1.0/tasks/{task_gid}/attachments \
+curl -X POST https://app.asana.com/api/1.0/attachments \
   -H 'Content-Type: multipart/form-data' \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer {access-token}' \
@@ -395,7 +395,7 @@ const asana = require('asana');
 
 const client = asana.Client.create().useAccessToken('PERSONAL_ACCESS_TOKEN');
 
-client.attachments.createAttachmentForTask(taskGid, {field: "value", field: "value", pretty: true})
+client.attachments.createAttachmentForTask({field: "value", field: "value", pretty: true})
     .then((result) => {
         console.log(result);
     });
@@ -406,7 +406,7 @@ import asana
 
 client = asana.Client.access_token('PERSONAL_ACCESS_TOKEN')
 
-result = client.attachments.create_attachment_for_task(task_gid, {'field': 'value', 'field': 'value'}, opt_pretty=True)
+result = client.attachments.create_attachment_for_task({'field': 'value', 'field': 'value'}, opt_pretty=True)
 ```
 
 ```ruby
@@ -416,7 +416,7 @@ client = Asana::Client.new do |c|
     c.authentication :access_token, 'PERSONAL_ACCESS_TOKEN'
 end
 
-result = client.attachments.create_attachment_for_task(task_gid: 'task_gid', field: "value", field: "value", options: {pretty: true})
+result = client.attachments.create_attachment_for_task(field: "value", field: "value", options: {pretty: true})
 ```
 
 ```java
@@ -424,7 +424,7 @@ import com.asana.Client;
 
 Client client = Client.accessToken("PERSONAL_ACCESS_TOKEN");
 
-Attachment result = client.attachments.createAttachmentForTask(taskGid, file, parent, url, name)
+Attachment result = client.attachments.createAttachmentForTask(file, parent, url, name)
     .data("field", "value")
     .data("field", "value")
     .option("pretty", true)
@@ -437,7 +437,7 @@ require 'php-asana/vendor/autoload.php';
 
 $client = Asana\Client::accessToken('PERSONAL_ACCESS_TOKEN');
 
-$result = $client->attachments->createAttachmentForTask($task_gid, array('field' => 'value', 'field' => 'value'), array('opt_pretty' => 'true'))
+$result = $client->attachments->createAttachmentForTask(array('field' => 'value', 'field' => 'value'), array('opt_pretty' => 'true'))
 ```
 
 > Body parameter
@@ -479,13 +479,13 @@ url: string
 > See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
 
 <p>
-<code> <span class="post-verb">POST</span> /tasks/{task_gid}/attachments</code>
+<code> <span class="post-verb">POST</span> /attachments</code>
 </p>
 
 <span class="description">
 Upload an attachment.
 
-This method uploads an attachment to a task and returns the compact
+This method uploads an attachment on an object and returns the compact
 record for the created attachment object. This is possible by either:
 
 - Providing the URL of the external resource being attached, or
@@ -508,16 +508,13 @@ in order for the server to reliably and properly handle the request.
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|The file you want to upload.|
-|» file<span class="param-type"> string(binary)</span>|Required for file attachments.|
+|» file<span class="param-type"> string(binary)</span>|Required for `asana` attachments.|
 |» name<span class="param-type"> string</span>|The name of the external resource being attached. Required for attachments of type `external`.|
-|» parent<span class="param-type"> string</span>|Globally unique identifier of the parent task, as a string. Required for attachments of type `external`.|
-|» resource_subtype<span class="param-type"> string</span>|The type of the attachment. Must be one of the [given values](/docs/attachment). If not specified, a file attachment of type `asana_file_attachments` will be assumed. Note that if the value of `resource_subtype` is `external`, a `parent`, `name`, and `url` must also be provided.|
+|» parent<span class="param-type"> string</span>|Required identifier of the parent task or project_brief, as a string.|
+|» resource_subtype<span class="param-type"> string</span>|The type of the attachment. Must be one of the [given values](/docs/attachment). If not specified, a file attachment of type `asana` will be assumed. Note that if the value of `resource_subtype` is `external`, a `parent`, `name`, and `url` must also be provided.|
 |» url<span class="param-type"> string</span>|The URL of the external resource being attached. Required for attachments of type `external`.|
-|/task_gid<span class="param-type"> string</span><div class="param-required">required</div>|The task to operate on.|
 |?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
 |?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|
-|?limit<span class="param-type"> integer</span>|Results per page.|
-|?offset<span class="param-type"> string</span>|Offset token.|
 
 #### Detailed descriptions
 
@@ -543,7 +540,7 @@ appending the content type to the file path: `--form
 
 |Status|Description|
 |---|---|
-|200<span class="param-type"> [Attachment](#schemaattachment)</span>|Successfully uploaded the attachment to the task.|
+|200<span class="param-type"> [Attachment](#schemaattachment)</span>|Successfully uploaded the attachment to the parent object.|
 |400<span class="param-type"> [Error](#schemaerror)</span>|This usually occurs because of a missing or malformed parameter. Check the documentation and the syntax of your request and try again.|
 |401<span class="param-type"> [Error](#schemaerror)</span>|A valid authentication token was not provided with the request, so the API could not associate a user with the request.|
 |403<span class="param-type"> [Error](#schemaerror)</span>|The authentication and request syntax was valid but the server is refusing to complete the request. This can happen if you try to read or write to objects or properties that the user does not have access to.|
@@ -18824,7 +18821,7 @@ import com.asana.Client;
 
 Client client = Client.accessToken("PERSONAL_ACCESS_TOKEN");
 
-List<Task> result = client.tasks.getTasksForProject(projectGid)
+List<Task> result = client.tasks.getTasksForProject(projectGid, completedSince)
     .option("pretty", true)
     .execute();
 ```
@@ -18866,11 +18863,16 @@ Returns the compact task records for all tasks within the given project, ordered
 
 |Name|Description|
 |---|---|
+|?completed_since<span class="param-type"> string</span>|Only return tasks that are either incomplete or that have been completed since this time. Accepts a date-time string or the keyword *now*.|
 |/project_gid<span class="param-type"> string</span><div class="param-required">required</div>|Globally unique identifier for the project.|
 |?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
 |?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|
 |?limit<span class="param-type"> integer</span>|Results per page.|
 |?offset<span class="param-type"> string</span>|Offset token.|
+
+#### Detailed descriptions
+
+**completed_since**: Only return tasks that are either incomplete or that have been completed since this time. Accepts a date-time string or the keyword *now*.
 
 <h3 id="get-tasks-from-a-project-responses">Responses</h3>
 
