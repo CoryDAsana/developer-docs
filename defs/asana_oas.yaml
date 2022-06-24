@@ -1387,6 +1387,17 @@ components:
       required: false
       schema:
         type: string
+    completed_since:
+      name: completed_since
+      in: query
+      required: false
+      description: >
+        Only return tasks that are either incomplete or that have
+        been completed since this time. Accepts a date-time string or
+        the keyword *now*.
+      schema:
+        type: string
+      example: '2012-02-22T02:06:58.158Z'
   responses:
     GenericErrorResponse:
       description: >-
@@ -1598,7 +1609,7 @@ components:
         resource_subtype:
           description: >
             The type of the attachment. Must be one of the [given values](/docs/attachment).
-            If not specified, a file attachment of type `asana_file_attachments`
+            If not specified, a file attachment of type `asana`
             will be assumed. Note that if the value of `resource_subtype` is `external`,
             a
             `parent`, `name`, and `url` must also be provided.
@@ -1609,13 +1620,12 @@ components:
             - external
         file:
           description: >
-            Required for file attachments.
+            Required for `asana` attachments.
           type: string
           format: binary
         parent:
           description: >
-            Globally unique identifier of the parent task, as a string. Required for
-            attachments of type `external`.
+            Required identifier of the parent task or project_brief, as a string.
           type: string
         url:
           description: >
@@ -5964,24 +5974,33 @@ paths:
           $ref: '#/components/responses/NotFound'
         500:
           $ref: '#/components/responses/InternalServerError'
-  /tasks/{task_gid}/attachments:
+  /attachments:
     parameters:
-      - $ref: '#/components/parameters/task_path_gid'
       - $ref: '#/components/parameters/pretty'
       - $ref: '#/components/parameters/fields'
-      - $ref: '#/components/parameters/limit'
-      - $ref: '#/components/parameters/offset'
     get:
-      summary: Get attachments for a task
-      description: Returns the compact records for all attachments on the task.
+      summary: Get attachments from an object
+      description: Returns the compact records for all attachments on the object.
       tags:
         - Attachments
-      operationId: getAttachmentsForTask
+      operationId: getAttachmentsForObject
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - name: parent
+          required: true
+          in: query
+          description: >-
+            Globally unique identifier for object to fetch statuses from. Must be
+            a GID
+            for a task or project_brief.
+          schema:
+            type: string
+          example: '159874'
       responses:
         200:
           description: >-
-            Successfully retrieved the compact records for all attachments on the
-            task.
+            Successfully retrieved the specified object's attachments.
           content:
             application/json:
               schema:
@@ -6006,7 +6025,7 @@ paths:
       description: |-
         Upload an attachment.
 
-        This method uploads an attachment to a task and returns the compact
+        This method uploads an attachment on an object and returns the compact
         record for the created attachment object. This is possible by either:
 
         - Providing the URL of the external resource being attached, or
@@ -6044,7 +6063,7 @@ paths:
               $ref: '#/components/schemas/AttachmentRequest'
       responses:
         200:
-          description: Successfully uploaded the attachment to the task.
+          description: Successfully uploaded the attachment to the parent object.
           content:
             application/json:
               schema:
@@ -10692,6 +10711,7 @@ paths:
           $ref: '#/components/responses/InternalServerError'
   /projects/{project_gid}/tasks:
     parameters:
+      - $ref: '#/components/parameters/completed_since'
       - $ref: '#/components/parameters/project_path_gid'
       - $ref: '#/components/parameters/pretty'
       - $ref: '#/components/parameters/fields'
@@ -10806,16 +10826,7 @@ paths:
           $ref: '#/components/responses/InternalServerError'
   /user_task_lists/{user_task_list_gid}/tasks:
     parameters:
-      - name: completed_since
-        in: query
-        required: false
-        description: >
-          Only return tasks that are either incomplete or that have
-          been completed since this time. Accepts a date-time string or
-          the keyword *now*.
-        schema:
-          type: string
-        example: '2012-02-22T02:06:58.158Z'
+      - $ref: '#/components/parameters/completed_since'
       - $ref: '#/components/parameters/user_task_list_path_gid'
       - $ref: '#/components/parameters/pretty'
       - $ref: '#/components/parameters/fields'

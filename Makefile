@@ -2,16 +2,16 @@ java_version_bump:
 	node increment_version.js java
 
 node_version_bump:
-	node increment_version.js node
+# node increment_version.js node
 
 php_version_bump:
 	node increment_version.js php
 
 ruby_version_bump:
-	node increment_version.js ruby
+# node increment_version.js ruby
 
 python_version_bump:
-	node increment_version.js python
+# node increment_version.js python
 
 java_gen:
 	cd ../client_libraries/java-asana && java -jar ../../swagger-codegen/modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate -i ../../developer-docs/defs/asana_oas.yaml -l asana-java -c swagger_templates/java-config.json -Dapis
@@ -38,9 +38,9 @@ app_components_docs_gen:
 
 # Only bring over spec from codez
 build_spec:
-	ifndef OPENAPI_DIR
+ifndef OPENAPI_DIR
 	$(error OPENAPI_DIR is not set. Please see https://app.asana.com/0/0/1200652548580470/f before running)
-	endif
+endif
 	python $$OPENAPI_DIR/build.py && cp $$OPENAPI_DIR/dist/public_asana_oas.yaml ./defs/asana_oas.yaml && cp $$OPENAPI_DIR/app_components_oas.yaml ./defs/app_components_oas.yaml
 
 docs_gen: build_spec docs_gen_all
