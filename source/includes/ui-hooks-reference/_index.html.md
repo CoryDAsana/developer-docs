@@ -101,7 +101,9 @@ getFormMetadata
 </p>
 
 <span class="description">
-Get the metadata from the App Server to render a form.
+Get the metadata from the App Server to render a form. <br> <br> <a href="../images/ac-form-metadata.png">
+  <img src="../images/ac-form-metadata.png" alt="App components form metadata request flow"/>
+</a>
 </span>
 
 <h3 id="get-form-metadata-parameters">Parameters</h3>
@@ -203,7 +205,9 @@ getModalFormTypeaheadResults
 <span class="description">
 If a Modal Form form field is of type `typehead`, this operation gets typeahead results to render as a dropdown list.
 
-When the user types into a Modal Form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
+When the user types into a Modal Form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="../images/ac-form-typeahead.png">
+  <img src="../images/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
+</a>
 </span>
 
 <h3 id="get-modal-form-typeahead-results-parameters">Parameters</h3>
@@ -305,7 +309,9 @@ onFormChange
 </p>
 
 <span class="description">
-The callback request made to an App Server when a watched field's value changes within a form.
+The callback request made to an App Server when a watched field's value changes within a form. <br> <br> <a href="../images/ac-form-on-change.png">
+  <img src="../images/ac-form-on-change.png" alt="App components form on change request flow"/>
+</a>
 </span>
 
 <h3 id="on-change-callback-parameters">Parameters</h3>
@@ -411,7 +417,9 @@ onFormSubmit
 </p>
 
 <span class="description">
-The callback request made to an App Server when a form is submitted.
+The callback request made to an App Server when a form is submitted. <br> <br> <a href="../images/ac-form-on-submit.png">
+  <img src="../images/ac-form-on-submit.png" alt="App components form on submit request flow"/>
+</a>
 </span>
 
 <h3 id="on-submit-callback-parameters">Parameters</h3>
@@ -539,7 +547,9 @@ getRuleActionTypeaheadResults
 <span class="description">
 In a Rule Action typeahead form field, this operation gets typeahead results to render as a dropdown list.
 
-When the user types into a Rule Action form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
+When the user types into a Rule Action form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="../images/ac-rule-typeahead.png">
+  <img src="../images/ac-rule-typeahead.png" alt="App components rule typeahead request flow"/>
+</a>
 </span>
 
 <h3 id="get-rule-action-typeahead-results-parameters">Parameters</h3>
@@ -644,7 +654,9 @@ runAction
 </p>
 
 <span class="description">
-The request made when an action is triggered.
+The request made when an action is triggered. <br> <br> <a href="../images/ac-rule-run-action.png">
+  <img src="../images/ac-rule-run-action.png" alt="App components rule run action request flow"/>
+</a>
 </span>
 
 <h3 id="run-action-parameters">Parameters</h3>
@@ -735,7 +747,9 @@ getActionMetadata
 </p>
 
 <span class="description">
-When a user has navigated to the [Custom Rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule) UI and selected a Rule Action (either through the sidebar or via a Rule Preset), Asana will make a request to the app to get the configuration form definition for the chosen Rule Action. This will initiate the flow to configure a new Rule Action or edit the configuration of an existing Rule Action. This is the endpoint and schema for updating Rule Actions; app triggers (V2) will be analogous.
+When a user has navigated to the [Custom Rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule) UI and selected a Rule Action (either through the sidebar or via a Rule Preset), Asana will make a request to the app to get the configuration form definition for the chosen Rule Action. This will initiate the flow to configure a new Rule Action or edit the configuration of an existing Rule Action. This is the endpoint and schema for updating Rule Actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-metadata.png">
+  <img src="../images/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
+</a>
 </span>
 
 <h3 id="get-action-metadata-parameters">Parameters</h3>
@@ -839,7 +853,9 @@ onActionFormChange
 </p>
 
 <span class="description">
-The callback request made to an App Server when a watched field's value changes within an action form.
+The callback request made to an App Server when a watched field's value changes within an action form. <br> <br> <a href="../images/ac-rule-on-change.png">
+  <img src="../images/ac-rule-on-change.png" alt="App components rule on change request flow"/>
+</a>
 </span>
 
 <h3 id="on-action-change-callback-parameters">Parameters</h3>
@@ -956,7 +972,9 @@ onActionFormSubmit
 </p>
 
 <span class="description">
-The form is submitted when the user chooses to create their Rule. Asana will create the Rule Action data model object and make a signed request to the on_submit_callback specified in the form metadata returned from the fetch/update Rule Action form endpoints. Information about the created Rule Action should be included in the response if it was successfully created. This is the endpoint and schema for updating Rule Actions; app triggers (V2) will be analogous.
+The form is submitted when the user chooses to create their Rule. Asana will create the Rule Action data model object and make a signed request to the on_submit_callback specified in the form metadata returned from the fetch/update Rule Action form endpoints. Information about the created Rule Action should be included in the response if it was successfully created. This is the endpoint and schema for updating Rule Actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-on-submit.png">
+  <img src="../images/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
+</a>
 </span>
 
 <h3 id="on-action-submit-callback-parameters">Parameters</h3>
@@ -1293,7 +1311,9 @@ getWidgetMetadata
 </p>
 
 <span class="description">
-Get the metadata from the App Server to render a widget.
+Get the metadata from the App Server to render a widget. <br> <br> <a href="../images/ac-widget-metadata.png">
+  <img src="../images/ac-widget-metadata.png" alt="App components widget metadata request flow"/>
+</a>
 </span>
 
 <h3 id="get-widget-metadata-parameters">Parameters</h3>
