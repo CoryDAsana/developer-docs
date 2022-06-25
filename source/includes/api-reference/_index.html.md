@@ -280,51 +280,28 @@ curl -X GET https://app.asana.com/api/1.0/attachments?parent=159874 \
 ```
 
 ```javascript--nodejs
-const asana = require('asana');
+getAttachmentsForObject
 
-const client = asana.Client.create().useAccessToken('PERSONAL_ACCESS_TOKEN');
-
-client.attachments.getAttachmentsForObject({param: "value", param: "value", opt_pretty: true})
-    .then((result) => {
-        console.log(result);
-    });
 ```
 
 ```python
-import asana
+getAttachmentsForObject
 
-client = asana.Client.access_token('PERSONAL_ACCESS_TOKEN')
-
-result = client.attachments.get_attachments_for_object({'param': 'value', 'param': 'value'}, opt_pretty=True)
 ```
 
 ```ruby
-require 'asana'
+getAttachmentsForObject
 
-client = Asana::Client.new do |c|
-    c.authentication :access_token, 'PERSONAL_ACCESS_TOKEN'
-end
-
-result = client.attachments.get_attachments_for_object(parent: '&#x27;parent_example&#x27;', param: "value", param: "value", options: {pretty: true})
 ```
 
 ```java
-import com.asana.Client;
+getAttachmentsForObject
 
-Client client = Client.accessToken("PERSONAL_ACCESS_TOKEN");
-
-List<Attachment> result = client.attachments.getAttachmentsForObject(parent)
-    .option("pretty", true)
-    .execute();
 ```
 
 ```php
-<?php
-require 'php-asana/vendor/autoload.php';
+getAttachmentsForObject
 
-$client = Asana\Client::accessToken('PERSONAL_ACCESS_TOKEN');
-
-$result = $client->attachments->getAttachmentsForObject(array('param' => 'value', 'param' => 'value'), array('opt_pretty' => 'true'))
 ```
 
 > 200 Response
@@ -395,7 +372,7 @@ const asana = require('asana');
 
 const client = asana.Client.create().useAccessToken('PERSONAL_ACCESS_TOKEN');
 
-client.attachments.createAttachmentForTask({field: "value", field: "value", pretty: true})
+client.attachments.createAttachmentForTask(taskGid, {field: "value", field: "value", pretty: true})
     .then((result) => {
         console.log(result);
     });
@@ -406,7 +383,7 @@ import asana
 
 client = asana.Client.access_token('PERSONAL_ACCESS_TOKEN')
 
-result = client.attachments.create_attachment_for_task({'field': 'value', 'field': 'value'}, opt_pretty=True)
+result = client.attachments.create_attachment_for_task(task_gid, {'field': 'value', 'field': 'value'}, opt_pretty=True)
 ```
 
 ```ruby
@@ -416,7 +393,7 @@ client = Asana::Client.new do |c|
     c.authentication :access_token, 'PERSONAL_ACCESS_TOKEN'
 end
 
-result = client.attachments.create_attachment_for_task(field: "value", field: "value", options: {pretty: true})
+result = client.attachments.create_attachment_for_task(task_gid: 'task_gid', field: "value", field: "value", options: {pretty: true})
 ```
 
 ```java
@@ -424,7 +401,7 @@ import com.asana.Client;
 
 Client client = Client.accessToken("PERSONAL_ACCESS_TOKEN");
 
-Attachment result = client.attachments.createAttachmentForTask(file, parent, url, name)
+Attachment result = client.attachments.createAttachmentForTask(taskGid, file, parent, url, name)
     .data("field", "value")
     .data("field", "value")
     .option("pretty", true)
@@ -437,7 +414,7 @@ require 'php-asana/vendor/autoload.php';
 
 $client = Asana\Client::accessToken('PERSONAL_ACCESS_TOKEN');
 
-$result = $client->attachments->createAttachmentForTask(array('field' => 'value', 'field' => 'value'), array('opt_pretty' => 'true'))
+$result = $client->attachments->createAttachmentForTask($task_gid, array('field' => 'value', 'field' => 'value'), array('opt_pretty' => 'true'))
 ```
 
 > Body parameter
@@ -18821,7 +18798,7 @@ import com.asana.Client;
 
 Client client = Client.accessToken("PERSONAL_ACCESS_TOKEN");
 
-List<Task> result = client.tasks.getTasksForProject(projectGid, completedSince)
+List<Task> result = client.tasks.getTasksForProject(projectGid)
     .option("pretty", true)
     .execute();
 ```

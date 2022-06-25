@@ -1442,6 +1442,11 @@ paths:
       summary: Get widget metadata
       description: >-
         Get the metadata from the App Server to render a widget.
+        <br>
+        <br>
+        <a href="../images/ac-widget-metadata.png">
+          <img src="../images/ac-widget-metadata.png" alt="App components widget metadata request flow"/>
+        </a>
       tags:
         - Widgets
       operationId: getWidgetMetadata
@@ -1545,6 +1550,11 @@ paths:
       summary: Get form metadata
       description: >-
         Get the metadata from the App Server to render a form.
+        <br>
+        <br>
+        <a href="../images/ac-form-metadata.png">
+          <img src="../images/ac-form-metadata.png" alt="App components form metadata request flow"/>
+        </a>
       tags:
         - Modal Forms
       operationId: getFormMetadata
@@ -1573,6 +1583,11 @@ paths:
 
 
         When the user types into a Modal Form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
+        <br>
+        <br>
+        <a href="../images/ac-form-typeahead.png">
+          <img src="../images/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
+        </a>
       tags:
         - Modal Forms
       operationId: getModalFormTypeaheadResults
@@ -1609,6 +1624,11 @@ paths:
 
 
         When the user types into a Rule Action form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
+        <br>
+        <br>
+        <a href="../images/ac-rule-typeahead.png">
+          <img src="../images/ac-rule-typeahead.png" alt="App components rule typeahead request flow"/>
+        </a>
       tags:
         - Rule Actions
       operationId: getRuleActionTypeaheadResults
@@ -1643,6 +1663,11 @@ paths:
       summary: On change callback
       description: >-
         The callback request made to an App Server when a watched field's value changes within a form.
+        <br>
+        <br>
+        <a href="../images/ac-form-on-change.png">
+          <img src="../images/ac-form-on-change.png" alt="App components form on change request flow"/>
+        </a>
       tags:
         - Modal Forms
       operationId: onFormChange
@@ -1680,6 +1705,11 @@ paths:
       summary: On submit callback
       description: >-
         The callback request made to an App Server when a form is submitted.
+        <br>
+        <br>
+        <a href="../images/ac-form-on-submit.png">
+          <img src="../images/ac-form-on-submit.png" alt="App components form on submit request flow"/>
+        </a>
       tags:
         - Modal Forms
       operationId: onFormSubmit
@@ -1717,6 +1747,11 @@ paths:
       summary: Run action
       description: >-
         The request made when an action is triggered.
+        <br>
+        <br>
+        <a href="../images/ac-rule-run-action.png">
+          <img src="../images/ac-rule-run-action.png" alt="App components rule run action request flow"/>
+        </a>
       tags:
         - Rule Actions
       operationId: runAction
@@ -1763,6 +1798,11 @@ paths:
         app to get the configuration form definition for the chosen Rule Action. This will initiate the flow to configure
         a new Rule Action or edit the configuration of an existing Rule Action. This is the endpoint and schema for
         updating Rule Actions; app triggers (V2) will be analogous.
+        <br>
+        <br>
+        <a href="../images/ac-rule-metadata.png">
+          <img src="../images/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
+        </a>
       tags:
         - Rule Actions
       operationId: getActionMetadata
@@ -1788,6 +1828,11 @@ paths:
       summary: On action change callback
       description: >-
         The callback request made to an App Server when a watched field's value changes within an action form.
+        <br>
+        <br>
+        <a href="../images/ac-rule-on-change.png">
+          <img src="../images/ac-rule-on-change.png" alt="App components rule on change request flow"/>
+        </a>
       tags:
         - Rule Actions
       operationId: onActionFormChange
@@ -1829,6 +1874,11 @@ paths:
         fetch/update Rule Action form endpoints. Information about the created Rule Action should be included in the
         response if it was successfully created. This is the endpoint and schema for updating Rule Actions; app triggers
         (V2) will be analogous.
+        <br>
+        <br>
+        <a href="../images/ac-rule-on-submit.png">
+          <img src="../images/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
+        </a>
       tags:
         - Rule Actions
       operationId: onActionFormSubmit
