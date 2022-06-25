@@ -296,7 +296,7 @@ If you do not have access to the referenced object when you try to create a link
 
 **Inline images**
 
-> Writing an inline image (after [uploading the attachment](https://developers.asana.com/docs/upload-an-attachment))
+> Writing an inline image (after [uploading the attachment](/docs/upload-an-attachment))
 
 
 ```html
@@ -305,7 +305,7 @@ If you do not have access to the referenced object when you try to create a link
 
 When writing an inline image, you don't need most of the attributes; all you need is the `data-asana-gid`. To write HTML that includes a new inline image:
 
-1. Upload the image as an attachment with a call to [`POST /tasks/{task_gid}/attachments`](https://developers.asana.com/docs/upload-an-attachment).
+1. Upload the image as an attachment with a call to [`POST /attachments`](/docs/upload-an-attachment).
 2. Make a second API call to write the rich text, using the returned GID as the `data-asana-gid` field of the `<img>` tag.
 
 **External media embeds**
@@ -321,7 +321,7 @@ When writing an inline image, you don't need most of the attributes; all you nee
 
 To write rich text that contains a new external media embed:
 
-1. Create URL attachment with a call to [`POST /tasks/{task_gid}/attachments`](https://developers.asana.com/docs/upload-an-attachment), with `{ ..., "resource_subtype": "external", "url": "<your_url>" }`. **Important:** Use the URL that would appear in the browser address bar (e.g. `https://youtube.com/watch?v=...`), NOT the embeddable URL (e.g. `https://youtube.com/embed/...`).
+1. Create URL attachment with a call to [`POST /attachments`](/docs/upload-an-attachment), with `{ ..., "resource_subtype": "external", "url": "<your_url>" }`. **Important:** Use the URL that would appear in the browser address bar (e.g. `https://youtube.com/watch?v=...`), NOT the embeddable URL (e.g. `https://youtube.com/embed/...`).
 2. Make a second API call to write the rich text, using the returned GID as the `data-asana-gid` field of the `<object>` tag. You don't need the inner HTML and you only need a couple of the `<object>` tag attributes: All that is needed is `<object type="application/vnd.asana.external_media" data-asana-gid="..."></object>`
 
 ## Writing defensively
