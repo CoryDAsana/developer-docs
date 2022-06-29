@@ -139,7 +139,7 @@ Remember to [securely store your PAT](https://www.freecodecamp.org/news/how-to-s
 #### Maintenance 
 Make certain that the email address associated with your custom app is being actively monitored. We only email developers for critical issues such as API bans and [upcoming deprecations](/docs/communicating-about-breaking-changes) that our logs show will break your app. If you’re using a PAT to authenticate, you should confirm that the email address associated with the Asana account that generated the PAT is being actively monitored by one or more people. 
 
-We also recommend all developers join the [Asana developer community](https://forum.asana.com/c/developersAPI/24). This is where we will communicate new API features as well as announce upcoming breaking changes. To ensure you don’t miss these announcements, we encourage you to turn on notifications for the [Platform News](https://forum.asana.com/c/developersAPI/platform-news/97) section of the community. 
+We also recommend all developers join the [Asana developer community](https://forum.asana.com/c/developersAPI/24). This is where we will communicate new API features as well as announce upcoming breaking changes. To ensure you don’t miss these announcements, we encourage you to turn on notifications for the [Platform News](https://forum.asana.com/c/forum-en/api/news) section of the community.
 
 If your app is having issues, here are some steps to help you troubleshoot the issue:
 
