@@ -24255,11 +24255,28 @@ To reduce the volume of data to transfer, webhooks created on teams, portfolios,
 
 #### Error Handling and Retry
 
-If we attempt to send a webhook payload and we receive an error status code, or the request times out, we will retry delivery with exponential backoff. In general, if your servers are not available for an hour, you can expect it to take no longer than approximately an hour after they come back before the paused delivery resumes. However, if we are unable to deliver a message for 24 hours the webhook will be deactivated.
+If we attempt to send a webhook payload and we receive an error status code, or the request times out, we will retry delivery with exponential backoff. In general, if your servers are not available for an hour, you can expect it to take no longer than approximately an hour after they come back before the paused delivery resumes. However, if we are unable to deliver a message for 24 hours the webhook will be deleted.
 #### Webhook Heartbeat Events
-Webhooks keep track of the last time that delivery succeeded, and this time is updated with each success. To help facilitate this, webhooks have a “heartbeat” that will deliver an empty payload at the initial handshake, and then every eight hours. This way, even if there is no activity on the resource, the last success time (i.e `last_success_at`) will still be updated continuously.
+Webhooks keep track of the last time that delivery succeeded, and this time is updated with each success (i.e `last_success_at`). A delivery succeeds when your webhook server responds to a webhook event with a `200 OK` or `204 No Content` response code. To help facilitate this delivery succeeded tracking, webhooks have a “heartbeat” that will deliver an empty payload to your webhook server at the initial handshake, and then at every eight hours. This way, even if there is no activity on the resource, the last success time (i.e `last_success_at`) will still be updated continuously.
+
+Note that if we do not receive a response to a "heartbeat" after 24 hours we will delete that webhook connection. This means that specific webhook route will not receive future events from Asana. Additionally, if you make a request for that specific webhook ([GET /webhooks/{webhook_gid}](/docs/get-a-webhook)), that webhook will no longer be available.
+##### Scenario 1: Successful heartbeat (after intial handshake) <a href="../images/webhook-heartbeat-success.png">
+  <img src="../images/webhook-heartbeat-success.png" alt="Successful webhook
+heartbeat (After initial handshake)"/> </a>
+##### Scenario 2: Failed heartbeat (after intial handshake) <a href="../images/webhook-heartbeat-failed.png">
+  <img src="../images/webhook-heartbeat-failed.png" alt="Failed webhook heartbeat
+(After initial handshake)"/> </a>
+#### Actions
+Actions define the type of action that was taken on the resource to trigger an event for your webhook. When you receive a webhook event, there will be an associated `action` in the [event](/docs/event) response that indicates the action that triggered the event. Additionally, actions are used in [webhook filters](/docs/webhook-filter). You can specify an `action` and a `resource_type` in the `filters` parameter when [establishing a webhook](/docs/establish-a-webhook) so that you will only receive events matching the action specified for the resource in your filter. The following are a list of actions that we support.
+
+ * Added - a new resource was created
+ * Changed - there was a modification made on the resource
+ * Deleted - the resource itself was deleted
+ * Removed - the resource was removed from a parent
+ * Undeleted - the deletion of the resource was undone
+
 #### Resources and Actions
-This is not an exhaustive list, but should cover the most common use cases.
+Below is a list of resources and actions that can trigger an event for those resources. This is not an exhaustive list, but should cover the most common use cases.
 
  * Attachment - deleted, undeleted
  * Portfolio - added, deleted, removed
@@ -24275,6 +24292,8 @@ This is not an exhaustive list, but should cover the most common use cases.
  * Team Membership - added, removed
  * Workspace - added, removed, changed
  * Workspace Memberships - added, removed
+
+For example, let's say you [establish a webhook](/docs/establish-a-webhook) for an attachement by providing the GID of an attacment in your `resource` parameter. This means that based on the resource and action definition for attachment above, a deleted or a undeleted action will trigger your attachement webhook.
 
 #### Webhook Limits
 
