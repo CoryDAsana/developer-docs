@@ -1929,7 +1929,12 @@ A Modal Form "field" that displays static text. Fields of this type do not colle
   "name": "Statuses",
   "type": "typeahead",
   "typeahead_url": "https://www.app-server.com/app/typeahead",
-  "value": "typeahead_1",
+  "value": {
+    "icon_url": "https://example-icon.png",
+    "subtitle": "OTP",
+    "title": "OTP Team PF",
+    "value": "OTP"
+  },
   "width": "full"
 }
 
@@ -1951,7 +1956,11 @@ A Modal Form field that accepts typeahead input.
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
 |typeahead_url<span class="param-type"> string</span><div class="param-required">required</div>|The URL that Asana uses to request typehead results from the application server.|
-|value<span class="param-type"> string</span>|*Optional*. The value for the form field, which is the ID of the chosen TypeaheadListItem object.|
+|value<span class="param-type"> object</span>|*Optional*. The value for the form field, which is the chosen [TypeaheadItem](/docs/typeahead-item) object.|
+|» icon_url<span class="param-type"> string</span>|The URL of the icon to display next to the title|
+|» subtitle<span class="param-type"> string</span>|The subtitle of the typeahead item|
+|» title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the typeahead item|
+|» value<span class="param-type"> string</span><div class="param-required">required</div>|The value of the typeahead item|
 |width<span class="param-type"> string</span>|*Optional*. The width of the form field. If not provided, the default value will be `"full"`.|
 
 #### Enumerated Values
