@@ -831,6 +831,17 @@ tags:
       webhooks that have an invalid signature.
 
 
+      <a href="../images/webhook-handshake.png">
+        <img src="../images/webhook-handshake.png" alt="Webhook handshake"/>
+      </a>
+
+
+      For an example of how this might be implemented in code, see our sample implementation
+      in
+      [Node.js](https://github.com/Asana/devrel-examples/blob/master/javascript/webhooks-nodejs/index.js#L16-L21)
+      and [Python](https://github.com/Asana/devrel-examples/blob/master/python/webhooks/webhook_inspector.py#L137-L147)
+
+
       #### Receiving Events
 
 
@@ -857,6 +868,11 @@ tags:
       Note that events are "skinny" and contain only some basic details of the
       change, not the whole resource. We expect integrations to make additional
       calls to the API to retrieve the latest state from Asana.
+
+
+      <a href="../images/webhook-receiving-events.png">
+        <img src="../images/webhook-receiving-events.png" alt="Webhook receiving events"/>
+      </a>
 
 
       #### Filtering
