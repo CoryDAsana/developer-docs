@@ -2469,7 +2469,7 @@ components:
 
         * When an assignee is set on the task, `Event.parent` will be
         `null`, `Event.action` will be `changed`,
-        `Event.change.action` will be `changed`, and `changed_value` will
+        `Event.change.action` will be `changed`, and `new_value` will
         be an object with the user's `id` and `type`.
 
 
@@ -2542,36 +2542,36 @@ components:
             new_value:
               description: >-
                 *Conditional.* This property is only present when the
-                **field's** `action` is `changed` and the `new_value` is an
+                **field's** `action` is `changed` _and_ the `new_value` is an
                 Asana resource. This will be only the `gid` and `resource_type`
                 of the resource when the events come from webhooks; this will
                 be the compact representation (and can have fields expanded
                 with [opt_fields](/docs/input-output-options)) when using the
-                [Events](/docs/asana-events) resource.
+                [Events](/docs/asana-events) endpoint.
               example:
                 gid: '12345'
                 resource_type: user
             added_value:
               description: >-
                 *Conditional.* This property is only present when the
-                **field's** `action` is `added` and the `added_value` is an
+                **field's** `action` is `added` _and_ the `added_value` is an
                 Asana resource. This will be only the `gid` and `resource_type`
                 of the resource when the events come from webhooks; this will
                 be the compact representation (and can have fields expanded
                 with [opt_fields](/docs/input-output-options)) when using the
-                [Events](/docs/asana-events) resource.
+                [Events](/docs/asana-events) endpoint.
               example:
                 gid: '12345'
                 resource_type: user
             removed_value:
               description: >-
                 *Conditional.* This property is only present when the
-                **field's** `action` is `removed` and the `removed_value` is an
+                **field's** `action` is `removed` _and_ the `removed_value` is an
                 Asana resource. This will be only the `gid` and `resource_type`
                 of the resource when the events come from webhooks; this will
                 be the compact representation (and can have fields expanded
                 with [opt_fields](/docs/input-output-options)) when using the
-                [Events](/docs/asana-events) resource.
+                [Events](/docs/asana-events) endpoint.
               example:
                 gid: '12345'
                 resource_type: user

@@ -26954,7 +26954,7 @@ For instance, consider these scenarios:
 
 * When an assignee is set on the task, `Event.parent` will be
 `null`, `Event.action` will be `changed`,
-`Event.change.action` will be `changed`, and `changed_value` will
+`Event.change.action` will be `changed`, and `new_value` will
 be an object with the user's `id` and `type`.
 
 * When a collaborator is added to the task, `Event.parent` will
@@ -26971,10 +26971,10 @@ an object with the user's `id` and `type`.
 |action<span class="param-type"> string</span>|The type of action taken on the **resource** that triggered the event.  This can be one of `changed`, `added`, `removed`, `deleted`, or `undeleted` depending on the nature of the event.|
 |change<span class="param-type"> object</span>|Information about the type of change that has occurred. This field is only present when the value of the property `action`, describing the action taken on the **resource**, is `changed`.|
 |» action<span class="param-type"> string</span>|The type of action taken on the **field** which has been changed.  This can be one of `changed`, `added`, or `removed` depending on the nature of the change.|
-|» added_value<span class="param-type"> any</span>|*Conditional.* This property is only present when the **field's** `action` is `added` and the `added_value` is an Asana resource. This will be only the `gid` and `resource_type` of the resource when the events come from webhooks; this will be the compact representation (and can have fields expanded with [opt_fields](/docs/input-output-options)) when using the [Events](/docs/asana-events) resource.|
+|» added_value<span class="param-type"> any</span>|*Conditional.* This property is only present when the **field's** `action` is `added` _and_ the `added_value` is an Asana resource. This will be only the `gid` and `resource_type` of the resource when the events come from webhooks; this will be the compact representation (and can have fields expanded with [opt_fields](/docs/input-output-options)) when using the [Events](/docs/asana-events) endpoint.|
 |» field<span class="param-type"> string</span>|The name of the field that has changed in the resource.|
-|» new_value<span class="param-type"> any</span>|*Conditional.* This property is only present when the **field's** `action` is `changed` and the `new_value` is an Asana resource. This will be only the `gid` and `resource_type` of the resource when the events come from webhooks; this will be the compact representation (and can have fields expanded with [opt_fields](/docs/input-output-options)) when using the [Events](/docs/asana-events) resource.|
-|» removed_value<span class="param-type"> any</span>|*Conditional.* This property is only present when the **field's** `action` is `removed` and the `removed_value` is an Asana resource. This will be only the `gid` and `resource_type` of the resource when the events come from webhooks; this will be the compact representation (and can have fields expanded with [opt_fields](/docs/input-output-options)) when using the [Events](/docs/asana-events) resource.|
+|» new_value<span class="param-type"> any</span>|*Conditional.* This property is only present when the **field's** `action` is `changed` _and_ the `new_value` is an Asana resource. This will be only the `gid` and `resource_type` of the resource when the events come from webhooks; this will be the compact representation (and can have fields expanded with [opt_fields](/docs/input-output-options)) when using the [Events](/docs/asana-events) endpoint.|
+|» removed_value<span class="param-type"> any</span>|*Conditional.* This property is only present when the **field's** `action` is `removed` _and_ the `removed_value` is an Asana resource. This will be only the `gid` and `resource_type` of the resource when the events come from webhooks; this will be the compact representation (and can have fields expanded with [opt_fields](/docs/input-output-options)) when using the [Events](/docs/asana-events) endpoint.|
 |created_at<span class="param-type"> string(date-time)</span>|The timestamp when the event occurred.|
 |parent<span class="param-type"> object</span>|For added/removed events, the parent object that resource was added to or removed from. The parent will be `null` for other event types.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
