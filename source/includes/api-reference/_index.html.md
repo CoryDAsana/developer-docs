@@ -24213,9 +24213,15 @@ In order to ensure that the receiving server is available to receive incoming ev
 
 *Note: this means that your server must be able to handle being blocked on the outgoing create request while still being able to receive and handle an incoming request. A common reason that webhook handshakes fail is that servers are not able to asynchronously handle the handshake request.*
 
-Included in the webhook handshake is a HTTP header called `X-Hook-Secret`.  To successfully complete the handshake the receiving server should echo back the same header with the same value and a `200 OK` or `204 No Content` response code.
+Included in the webhook handshake is a HTTP header called `X-Hook-Secret`. To successfully complete the handshake the receiving server should echo back the same header with the same value and a `200 OK` or `204 No Content` response code.
 
 The purpose of this header is to provide a shared secret that both Asana and the receiving server both store--this is the only time it will be transmitted. In future webhook events Asana will use this key to compute a signature over the webhook callback request's body which can be used to verify that the incoming request was genuine (details below). We strongly recommend that you take advantage of this security feature and reject webhooks that have an invalid signature.
+
+<a href="../images/webhook-handshake.png">
+  <img src="../images/webhook-handshake.png" alt="Webhook handshake"/>
+</a>
+
+For an example of how this might be implemented in code, see our sample implementation in [Node.js](https://github.com/Asana/devrel-examples/blob/master/javascript/webhooks-nodejs/index.js#L16-L21) and [Python](https://github.com/Asana/devrel-examples/blob/master/python/webhooks/webhook_inspector.py#L137-L147)
 
 #### Receiving Events
 
@@ -24235,6 +24241,10 @@ The HTTP POST that the target receives contains:
  verify that the endpoint is still available.)
 
 Note that events are "skinny" and contain only some basic details of the change, not the whole resource. We expect integrations to make additional calls to the API to retrieve the latest state from Asana.
+
+<a href="../images/webhook-receiving-events.png">
+  <img src="../images/webhook-receiving-events.png" alt="Webhook receiving events"/>
+</a>
 
 #### Filtering
 Webhook events will "propagate up" from contained objects through to parent objects--for instance, changes to comments will be sent to webhooks on the parent task and to ones on the task's projects. In this way a webhook on a project will be notified of all changes that occur in all of its tasks, subtasks of those tasks, and comments on those tasks and subtasks.
