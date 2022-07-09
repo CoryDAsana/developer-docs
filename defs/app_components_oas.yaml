@@ -1333,7 +1333,7 @@ components:
             - hot-pink
             - pink
             - cool-gray
-          example: 'gray'
+          example: 'cool-gray'
     WidgetField-TextWithIcon:
       description: >-
         A Widget field that displays custom text with an optional icon.

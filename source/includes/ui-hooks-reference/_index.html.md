@@ -2295,7 +2295,7 @@ A Widget field that displays a timestamp and an optional icon.
 
 ```json
 {
-  "color": "gray",
+  "color": "cool-gray",
   "name": "Status",
   "text": "In Progress",
   "type": "pill"
