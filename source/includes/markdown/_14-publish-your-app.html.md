@@ -101,6 +101,30 @@ We expect existing apps to maintain the same level of user experience that they 
 
 <hr>
 <section>
+# Managing your App
+
+### Duplicating an app
+
+You can quickly create a brand new app with the same configurations of an existing one by selecting **Duplicate app**
+in the [developer console](https://app.asana.com/0/my-apps).
+
+<img src="../images/duplicate-app.png" />
+
+This feature can help streamline the creation and management of different versions (e.g., staging, beta, production, etc.)
+of your application. As a result of this operation, the newly-generated app will retain the configurations of the original app,
+including:
+
+* Basic information (e.g., app name, descriptions, authentication URL, etc.)
+* Configurations of App Components
+
+Because the newly-generated app is its own unique app, the following _will not_ be carried over from the original app:
+
+* App credentials (i.e., a new Client ID and Client Secret will be generated)
+* Users who have completed OAuth
+* Organizations in which the app is available
+* Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installing-an-app)
+
+<hr>
 # Custom Apps
 
 #### What to consider when building a custom app. 
