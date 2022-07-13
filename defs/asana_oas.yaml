@@ -12694,8 +12694,7 @@ paths:
         in: query
         description: >-
           The string that will be used to search for relevant objects. If an
-          empty string is passed in, the API will currently return an empty
-          result set.
+          empty string is passed in, the API will return results.
         schema:
           type: string
         example: Greg
