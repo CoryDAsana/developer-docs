@@ -1,0 +1,34 @@
+#! /bin/bash -e
+
+confirm_or_exit() (
+  while true; do
+    # shellcheck disable=SC2162
+    read -p "Do you want to continue? " yn
+    case $yn in
+    [Yy]*)
+      break
+      ;;
+    *) exit 1 ;;
+    esac
+  done
+)
+
+# if ! command -v brew; then
+# fi
+
+# if ! command -v bundle; then
+# fi
+
+# if ! command -v make; then
+# fi
+
+if ! command -v fswatch >/dev/null; then
+  confirm_or_exit
+  brew install fswatch
+fi
+
+if [[ -z "$OPENAPI_DIR" ]]; then
+  echo "Missing \$OPENAPI_DIR env variable. Please set this to point to the
+    OAS directory in \$CODEZ" >&2
+  exit 1
+fi

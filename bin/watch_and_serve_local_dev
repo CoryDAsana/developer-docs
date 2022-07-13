@@ -1,0 +1,38 @@
+#! /bin/bash -e
+
+./bin/check_deps
+
+log_file_dir=build-local_dev
+mkdir -p "$log_file_dir"
+log_file="$log_file_dir/log-$(date +%Y-%m-%dT%H:%M:%S%Z)"
+
+run_middleman() (
+  bundle exec middleman serve --watcher-force-polling
+)
+
+{
+  echo "logging to $log_file"
+
+  to_make=(
+    vendor
+    source/includes/ui-hooks-reference/_index.html.md
+    source/includes/api-reference/_index.html.md
+  )
+
+  make "${to_make[@]}"
+
+  echo
+  echo "***"
+  echo
+  echo "  Watching \$OPENAPI_DIR for changes."
+  echo "  Editing OAS (e.g., asana_oas.yaml) will automatically regenerate the docs site."
+  echo "  Refresh the localhost browser window to see the new changes."
+  echo
+  echo "***"
+  echo
+
+  ./bin/watch_and_make "${to_make[@]}" &
+  run_middleman
+} 2>&1 | ts >"$log_file" &
+
+tail -F "$log_file"
