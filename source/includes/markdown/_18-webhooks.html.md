@@ -237,7 +237,7 @@ that webhook will no longer be available.
 
 # Webhook Security
 
-In order to receive webhook events, your webhook endpoint needs to be accessible over the internet. Because your webhook endpoint is publicly accessible over the internet, it is vulnerable to receiving events that are not from Asana. To ensure that your webhook endpoint receives events from Asana, it is important to verify each request.
+In order to receive webhook events, your webhook endpoint needs to be accessible over the internet. As such, because your webhook endpoint is publicly accessible over the internet, it is vulnerable to receiving events that are not from Asana. To ensure that your webhook endpoint receives events from Asana, it is important to verify each request.
 
 Request verification can be done by comparing an HMAC signature generated from the `X-Hook-Secret` and request body to the `X-Hook-Signature`. When you first [establish a webhook](/docs/establish-a-webhook) with Asana, we send your webhook endpoint an `X-Hook-Secret`. Once received, this `X-Hook-Secret` should be stored by your webhook server.
 
