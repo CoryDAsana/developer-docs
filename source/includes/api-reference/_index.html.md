@@ -24192,7 +24192,7 @@ Returns the full record for a user's task list.
 </pre>
 
 <span class="description">
-Webhooks allow you to subscribe to and receive events that occur on Asana resources such as tasks, projects, stories etc...
+Webhooks allow you to subscribe to notifications about events that occur on Asana resources (e.g., tasks, projects, stories, etc.)
 
 For a more detailed explanation of webhooks see [Overview of Webhooks](/docs/overview-of-webhooks)
 </span>
