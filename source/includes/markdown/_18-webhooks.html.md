@@ -235,6 +235,16 @@ that webhook will no longer be available.
   <img src="../images/webhook-heartbeat-failed.png" alt="Failed webhook heartbeat (After initial handshake)"/>
 </a>
 
+# Webhook Security
+
+In order to receive webhook events, your webhook endpoint needs to be accessible over the internet. Because your webhook endpoint is publicly accessible over the internet, it is vulnerable to receiving events that are not from Asana. To ensure that your webhook endpoint receives events from Asana, it is important to verify each request.
+
+Request verification can be done by comparing an HMAC signature generated from the `X-Hook-Secret` and request body to the `X-Hook-Signature`. When you first [establish a webhook](/docs/establish-a-webhook) with Asana, we send your webhook endpoint an `X-Hook-Secret`. Once received, this `X-Hook-Secret` should be stored by your webhook server.
+
+When a webhook event is triggered, Asana sends along a `X-Hook-Signature` in the request header. At this point, your webhook server should extract the body from the request and use it along with the stored `X-Hook-Secret` to generate an HMAC signature. HMAC signatures can be generated using a HMAC library in your language of development and passing in the `X-Hook-Secret` as the secret and the request body as the message. The generated HMAC signature should match the `X-Hook-Signature` sent in the request header. If these signatures differ, it can indicate that the event received was not from Asana.
+
+To read more about our `X-Hook-Signature` see [Receiving Events](/docs/receiving-events)
+
 # Webhook Limits
 
 Webhooks have two different limits
