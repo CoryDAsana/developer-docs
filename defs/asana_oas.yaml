@@ -752,8 +752,8 @@ tags:
       A user task list represents the tasks assigned to a particular user.
   - name: Webhooks
     description: >-
-      Webhooks allow you to subscribe to and receive events that occur on Asana resources
-      such as tasks, projects, stories etc...
+      Webhooks allow you to subscribe to notifications about events that occur on
+      Asana resources (e.g., tasks, projects, stories, etc.)
 
 
       For a more detailed explanation of webhooks see [Overview of Webhooks](/docs/overview-of-webhooks)
