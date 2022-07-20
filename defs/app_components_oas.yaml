@@ -743,6 +743,13 @@ components:
             The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.
           type: string
           example: '2022-02-01'
+        value:
+          description: >-
+            The value of the field. This takes a date with format YYYY-MM-DD.
+          type: string
+          format: date
+          example: '2022-02-01'
+          nullable: true
     FormField-Datetime:
       description: >-
         A Modal Form field that accepts datetime input.
@@ -789,6 +796,13 @@ components:
             The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.
           type: string
           example: '2022-02-01T14:48:00.000Z'
+        value:
+          description: >-
+            The value of the field. This takes an ISO 8601 date string in UTC
+          type: string
+          format: date-time
+          example: '2022-02-01T14:48:00.000Z'
+          nullable: true
     FormField-Typeahead:
       description: >-
         A Modal Form field that accepts typeahead input.

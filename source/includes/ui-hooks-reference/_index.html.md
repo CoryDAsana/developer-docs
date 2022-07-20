@@ -1524,7 +1524,8 @@ A Modal Form field that accepts checkbox input. Limit 10 options.
   "is_watched": true,
   "name": "Date",
   "placeholder": "2022-02-01",
-  "type": "date"
+  "type": "date",
+  "value": "2022-02-01"
 }
 
 ```
@@ -1545,6 +1546,7 @@ A Modal Form field that accepts date input.
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |placeholder<span class="param-type"> string</span>|The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.|
 |type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|value<span class="param-type"> string(date)¦null</span>|The value of the field. This takes a date with format YYYY-MM-DD.|
 
 #### Enumerated Values
 
@@ -1571,7 +1573,8 @@ A Modal Form field that accepts date input.
   "is_watched": true,
   "name": "Datetime",
   "placeholder": "2022-02-01T14:48:00.000Z",
-  "type": "datetime"
+  "type": "datetime",
+  "value": "2022-02-01T14:48:00.000Z"
 }
 
 ```
@@ -1592,6 +1595,7 @@ A Modal Form field that accepts datetime input.
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |placeholder<span class="param-type"> string</span>|The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.|
 |type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|value<span class="param-type"> string(date-time)¦null</span>|The value of the field. This takes an ISO 8601 date string in UTC|
 
 #### Enumerated Values
 
