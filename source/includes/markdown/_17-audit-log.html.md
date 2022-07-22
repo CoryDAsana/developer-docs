@@ -70,6 +70,8 @@ All admin settings events operate on the _Workspace_ resource type except for `w
 | workspace_require_app_approvals_of_type_changed      | The workspace's global app approval setting was changed. |
 | workspace_form_is_embeddable_forms_enabled           | Embeddable forms is enabled in admin |
 | workspace_form_is_embeddable_forms_disabled          | Embeddable forms is disabled in admin |
+| workspace_logged_out_view_authentication_required_enabled | For this workspace, logged out view link authentication was set as required, so all viewers need to authenticate with Asana in order to open logged out view links. |
+| workspace_logged_out_view_authentication_required_disabled | For this workspace, logged out view link authentication was set as not required, however authentication may still be required for individual links. Some viewers may not need to authenticate with Asana in order to open logged out view links. |
 ### Roles
  
 All role events operate on the _User_ resource type.
