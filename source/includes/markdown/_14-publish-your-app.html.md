@@ -68,28 +68,10 @@ The explorer is not meant to be an exhaustive tool with every endpoint in the AP
 <section>
 # Submit your App
 
-<span class="description">
-Have you built a web application that you want to share with the Asana community? Submit [this form](https://www.asana.com/apps/submit) to get your app listed in the [Asana apps directory](https://www.asana.com/apps).
-</span>
+If you've built an application that you wish to [share with the Asana community](https://asana.com/apps), you can visit the
+[developer console](https://app.asana.com/0/my-apps) to begin the app submission process.
 
-### Recommendations and resources for app developers:
-
-* We strongly recommend that you use [OAuth 2.0](/docs/oauth) for your app. Apps that don’t use Auth 2.0 will likely not be approved for listing in our directory.
-
-* Be aware of the [OWASP Top 10 Web App Security Risks](https://owasp.org/www-project-top-ten/) when developing your app. 
-
-* If you are new to app security, we recommend reading [The Web Application Hacker's Handbook](https://www.amazon.com/The-Web-Application-Hackers-Handbook/dp/1118026470).
-
-* Use end-to-end encryption. Use a trusted site to test your TLS security (such as: https://www.ssllabs.com/ssltest/).
-
-* Join the [Asana developer community](https://forum.asana.com/c/developersAPI). This is the best resource to get technical questions answered as well as get notified about new API features, deprecations, and other breaking changes. 
-
-* Once your app is listed, you can answer Asana user questions in the [integrations section of the Asana community](https://forum.asana.com/c/integrations).
-
-### Updating your existing app listing
-If you wish to update your existing listing, send an email to api-support at asana.com with the specific changes. 
-
-We expect existing apps to maintain the same level of user experience that they had when accepted to the apps directory.  
+<img src="../images/submit-my-test-app.png" />
 
 
 <div>
@@ -125,9 +107,30 @@ Because the newly-generated app is its own unique app, the following _will not_ 
 * Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installing-an-app)
 
 <hr>
+
+### Editing a published app
+
+Developers have the ability to submit edits to a published app.
+
+To begin the process, first [duplicate your app](/docs/duplicating-an-app):
+
+<img src="../images/duplicate-app-modal.png" />
+
+After duplicating the original app, provide any edits to any configurations as needed. 
+
+When you are ready to [submit your app for review](/docs/submit-your-app), navigate to **Submit for review** in the
+sidebar when managing your app. On the app submission page, select **I'm submitting changes to a published app** in
+the **Submission type** dropdown:
+
+<img src="../images/edit-published-app.png" />
+
+Upon submission, your app will follow the standard review process. If the edits are accepted,
+_the original (i.e., previous) app will reflect the new updates_, while the duplicate app can be used again for testing.
+
+<hr>
 # Custom Apps
 
-#### What to consider when building a custom app. 
+#### What to consider when building a custom app
 
 
 <span class="description">
