@@ -635,7 +635,7 @@ After you have finished building both your app and App Server, you are now ready
 
 After [creating and configuring your app](/docs/getting-started) to function alongside your [App Server](/docs/building-the-app-server), you may begin the app review process.
 
-Apps built on App Components are manually reviewed before they are accessible within Asana. To ensure a smooth review process and user experience, here are some guidelines you can follow before [submitting the app for review](/docs/submit-for-review).
+Apps built on App Components are manually reviewed before they are accessible within Asana. To ensure a smooth review process and user experience, here are some guidelines you can follow before [submitting the app for review](/docs/submit-your-app).
 
 <hr>
 
@@ -659,6 +659,9 @@ When testing your application, you should:
 * Test the auth flow from both the web browser and [desktop app](https://asana.com/download)
   * You can enter the installation flow manually by navigating to `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`
 * Test [Rule Actions](/docs/rule-actions) with a variety of trigger combinations
+
+For additional details, an interactive checklist can be found on the **Submit for review** page when managing your app
+through the [developer console](https://app.asana.com/0/my-apps).
 
 <hr>
 
@@ -742,7 +745,7 @@ From here, the user may choose to add the app to one or more projects, or even s
 
 <hr>
 
-## Submit for Review
+## App Submission
 
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
