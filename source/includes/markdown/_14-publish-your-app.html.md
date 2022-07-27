@@ -80,7 +80,7 @@ for apps with [App Components](/docs/overview-of-app-components)).
 When managing your app in the [developer console](https://app.asana.com/0/my-apps), select **Submit for review**
 in the sidebar to access the app submission form:
 
-<img src="../images/submit-my-test-app.png" />
+<img src="../images/submit-my-test-app.png" alt="submit My Test App" />
 
 From there, you'll review an interactive "pre-flight" checklist of app features before submitting an app. This includes:
 
@@ -99,7 +99,7 @@ such as setup instructions, a screencast video link, and other listing details.
 ### App review process
 
 Once your app has been submitted through the [developer console](https://app.asana.com/0/my-apps), the review process will
-begin. At this point, the the app will no longer be open for further edits. Note that if your app uses
+begin. At this point, the app will no longer be open for further edits. Note that if your app uses
 [App Components](/docs/overview-of-app-components), your submission will go through a security review and QA process
 before it’s listed in the in-product [app gallery](/docs/installation-flow).
 
@@ -107,9 +107,9 @@ You can track the status of your app submission on the same **Submit for review*
 you'll receive an email notification that your app is ready to publish. At this point, you can select the **Publish app** button in 
 the developer console to share your app:
 
-<img src="../images/approved-app.png" />
+<img src="../images/approved-app.png" alt="approved application screen" />
 
-If your app submission doesn't meet requirements, you will receive communications regarding the next steps (i.e., any changes required)
+If your app submission doesn't meet requirements, you will receive an email regarding the next steps (i.e., any changes required)
 to get your app ready for re-review.
 
 
@@ -129,7 +129,7 @@ to get your app ready for re-review.
 You can quickly create a brand new app with the same configurations of an existing one by selecting **Duplicate app**
 in the [developer console](https://app.asana.com/0/my-apps).
 
-<img src="../images/duplicate-app.png" />
+<img src="../images/duplicate-app.png" alt="duplicate app" />
 
 This feature can help streamline the creation and management of different versions (e.g., staging, beta, production, etc.)
 of your application. As a result of this operation, the newly-generated app will retain the configurations of the original app,
@@ -153,7 +153,7 @@ Developers have the ability to submit edits to a published app.
 
 To begin the process, first [duplicate your app](/docs/duplicating-an-app):
 
-<img src="../images/duplicate-app-modal.png" />
+<img src="../images/duplicate-app-modal.png" alt="duplicate app modal" />
 
 After duplicating the original app, provide any edits to any configurations as needed. 
 
@@ -161,7 +161,7 @@ When you are ready to [submit your app for review](/docs/submit-your-app), navig
 sidebar when managing your app. On the app submission page, select **I'm submitting changes to a published app** in
 the **Submission type** dropdown:
 
-<img src="../images/edit-published-app.png" />
+<img src="../images/edit-published-app.png" alt="editing a published app" />
 
 Upon submission, your app will follow the standard review process. If the edits are accepted,
 _the original (i.e., previous) app will reflect the new updates_, while the duplicate app can be used again for testing.
