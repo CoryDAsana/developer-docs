@@ -72,7 +72,7 @@ If you've built an application that you wish to share with the Asana community, 
 [developer console](https://app.asana.com/0/my-apps) to begin the app submission process. 
 
 By submitting an app for review, you'll have the opportunity to distribute your app publicly by listing
-it in the [app directory](https://asana.com/apps) (as well as in the in-product [app gallery](/docs/installing-an-app)
+it in the [app directory](https://asana.com/apps) (as well as in the in-product [app gallery](/docs/installation-flow)
 for apps with [App Components](/docs/overview-of-app-components)).
 
 ### Submit for review
@@ -101,7 +101,7 @@ such as setup instructions, a screencast video link, and other listing details.
 Once your app has been submitted through the [developer console](https://app.asana.com/0/my-apps), the review process will
 begin. At this point, the the app will no longer be open for further edits. Note that if your app uses
 [App Components](/docs/overview-of-app-components), your submission will go through a security review and QA process
-before it’s listed in the in-product [app gallery](/docs/installing-an-app).
+before it’s listed in the in-product [app gallery](/docs/installation-flow).
 
 You can track the status of your app submission on the same **Submit for review** page. If your app submission passes requirements,
 you'll receive an email notification that your app is ready to publish. At this point, you can select the **Publish app** button in 
@@ -143,7 +143,7 @@ Because the newly-generated app is its own unique app, the following _will not_ 
 * App credentials (i.e., a new Client ID and Client Secret will be generated)
 * Users who have completed OAuth
 * Organizations in which the app is available
-* Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installing-an-app)
+* Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installation-flow)
 
 <hr>
 
