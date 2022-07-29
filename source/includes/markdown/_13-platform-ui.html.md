@@ -31,6 +31,8 @@ For a visual tour on getting started with App Components, feel free to review th
 </div>
 
 <script src="https://player.vimeo.com/api/player.js"></script>
+  
+You can find the [tutorial source code here](https://github.com/Asana/app-components-example-app).
 
 **App Components are currently in open beta**. For the latest updates and announcements,
 [subscribe to our developer forum](https://forum.asana.com/c/api/app-components-beta/150).
