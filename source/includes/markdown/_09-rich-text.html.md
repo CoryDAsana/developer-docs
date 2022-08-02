@@ -210,6 +210,27 @@ Rich text can contain:
 When reading, the inner HTML of the `<object>` tag will contain a list of the first five milestones/goals, followed by "..." if there are more than five in total. When writing, the inner HTML
 is ignored and can be empty.
 
+**Blocks and Whitespace**
+
+On the Asana Web App UI, task descriptions will be structured into independently-draggable “blocks”.
+
+The UI “blocks” are divided between:
+- Each header (`<h1>`/`<h2>` tag)
+- Each horizontal rule (`<hr>` tag)
+- Each list item (`<li>` tag)
+- Each inline image (`<img>` tag)
+- Each media embed (`<object>` tag)
+- Each sequence of content that includes none of these tags (implicitly a “paragraph block”)
+
+Multiple paragraph blocks can exist in sequence. When this happens, a double-newline `\n\n` will indicate a division between two blocks. This contrasts with a line break `\n`, which indicates a new line within the same block.
+
+To represent multiple sequential line breaks within the same block, you can use the unicode zero-width-space (`\u200b`) as an empty line’s content. Otherwise, each double-newline `\n\n` will be recognized as a division between two blocks.
+
+Example:
+```html
+Line one\n\u200b\nLine three\n\nA separate block
+```
+
 ## Reading defensively
 
 > Custom handling external media `<object>`
