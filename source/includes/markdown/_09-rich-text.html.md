@@ -92,19 +92,19 @@ attribute values will be quoted. The following is a list of all the tags that ar
 | `<li>`     | List item          |
 | `<a>`      | Link               |
 
-In addition, the following tags are supported in the rich text of [Project Briefs](/docs/project-briefs):
+In addition, the following tags are supported in the rich text of only some objects:
 
-| Tag                                                        | Meaning in Asana              |
-|------------------------------------------------------------|-------------------------------|
-| `<h1>`, `<h2>`                                             | Header                        |
-| `<hr>`                                                     | Horizontal rule               |
-| `<table>`, `<tr>`, `<td>`                                  | Table                         |
-| `<img>`                                                    | Inline image                  |
-| `<object type="application/vnd.asana.external_media">`     | External media embed (iframe) |
-| `<object type="application/vnd.asana.project_milestones">` | List of milestones            |
-| `<object type="application/vnd.asana.project_goals">`      | List of goals                 |
+| Tag                                                        | Meaning in Asana              | Objects Supported     |
+|------------------------------------------------------------|-------------------------------|-----------------------|
+| `<h1>`, `<h2>`                                             | Header                        | Project Briefs, Tasks |
+| `<hr>`                                                     | Horizontal rule               | Project Briefs, Tasks |
+| `<img>`                                                    | Inline image                  | Project Briefs        |
+| `<table>`, `<tr>`, `<td>`                                  | Table                         | Project Briefs        |
+| `<object type="application/vnd.asana.external_media">`     | External media embed (iframe) | Project Briefs        |
+| `<object type="application/vnd.asana.project_milestones">` | List of milestones            | Project Briefs        |
+| `<object type="application/vnd.asana.project_goals">`      | List of goals                 | Project Briefs        |
 
-**Note:** Please note that the [Project Brief](/docs/project-briefs) API and enhanced rich text features are in _preview_, and are expected to change. The above lists can expand as new features are introduced to the Asana web product. Treat rich text as you would treat arbitrary HTML, and ensure that your code doesn't break when it encounters a tag not on this list. 
+**Note:** Please note that these enhanced rich text features are in _preview_, and are expected to change. The above lists will expand as new features are introduced to the Asana web product. Treat rich text as you would treat arbitrary HTML, and ensure that your code doesn't break when it encounters a tag not on this list. 
 
 **Links**
 
