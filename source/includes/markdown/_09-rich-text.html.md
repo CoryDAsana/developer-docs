@@ -212,7 +212,7 @@ is ignored and can be empty.
 
 **Blocks and Whitespace**
 
-On the Asana Web App UI, task descriptions will be structured into independently-draggable “blocks”.
+On the Asana Web App UI, task descriptions will be displayed as independently-draggable “blocks”.
 
 The UI “blocks” are divided between:
 - Each header (`<h1>`/`<h2>` tag)
@@ -224,7 +224,7 @@ The UI “blocks” are divided between:
 
 Multiple paragraph blocks can exist in sequence. When this happens, a double-newline `\n\n` will indicate a division between two blocks. This contrasts with a line break `\n`, which indicates a new line within the same block.
 
-To represent multiple sequential line breaks within the same block, you can use the unicode zero-width-space (`\u200b`) as an empty line’s content. Otherwise, each double-newline `\n\n` will be recognized as a division between two blocks.
+When multiple sequential line breaks exist within the same block, the unicode zero-width-space (`\u200b`) will be used as an empty line’s content. This nuance is present to distinguish a double line break `\n\u200b\n` from a block division `\n\n`.
 
 Example:
 ```html
@@ -344,6 +344,27 @@ To write rich text that contains a new external media embed:
 
 1. Create URL attachment with a call to [`POST /attachments`](/docs/upload-an-attachment), with `{ ..., "resource_subtype": "external", "url": "<your_url>" }`. **Important:** Use the URL that would appear in the browser address bar (e.g. `https://youtube.com/watch?v=...`), NOT the embeddable URL (e.g. `https://youtube.com/embed/...`).
 2. Make a second API call to write the rich text, using the returned GID as the `data-asana-gid` field of the `<object>` tag. You don't need the inner HTML and you only need a couple of the `<object>` tag attributes: All that is needed is `<object type="application/vnd.asana.external_media" data-asana-gid="..."></object>`
+
+**Blocks and Whitespace**
+
+On the Asana Web App UI, task descriptions will be displayed as independently-draggable “blocks”.
+
+The UI “blocks” are divided between:
+- Each header (`<h1>`/`<h2>` tag)
+- Each horizontal rule (`<hr>` tag)
+- Each list item (`<li>` tag)
+- Each inline image (`<img>` tag)
+- Each media embed (`<object>` tag)
+- Each sequence of content that includes none of these tags (implicitly a “paragraph block”)
+
+Multiple paragraph blocks can exist in sequence. When this happens, use a double-newline `\n\n` to indicate a division between two blocks. This contrasts with a line break `\n`, which indicates a new line within the same block.
+
+When multiple sequential line breaks exist within the same block, use the unicode zero-width-space (`\u200b`) as an empty line’s content. This nuance is present to distinguish a double line break `\n\u200b\n` from a block division `\n\n`.
+
+Example:
+```html
+Line one\n\u200b\nLine three\n\nA separate block
+```
 
 ## Writing defensively
 
