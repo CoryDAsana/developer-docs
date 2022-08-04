@@ -46,39 +46,6 @@ The Modal Form is displayed when the user starts the flow to create a resource. 
 
 <a id="opIdgetFormMetadata"></a>
 
-> Code samples
-
-```shell
-curl -X GET {siteUrl}/{form_metadata_url}?workspace=string&task=string&user=string&expires_at=string \
-  -H 'Accept: application/json'
-
-```
-
-```javascript--nodejs
-getFormMetadata
-
-```
-
-```python
-getFormMetadata
-
-```
-
-```ruby
-getFormMetadata
-
-```
-
-```java
-getFormMetadata
-
-```
-
-```php
-getFormMetadata
-
-```
-
 > 200 Response
 
 ```json
@@ -133,40 +100,6 @@ Get the metadata from the App Server to render a form. <br> <br> <a href="../ima
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
 <a id="opIdgetModalFormTypeaheadResults"></a>
-
-> Code samples
-
-```shell
-curl -X GET {siteUrl}/{modal_form_typeahead_url} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
-
-```
-
-```javascript--nodejs
-getModalFormTypeaheadResults
-
-```
-
-```python
-getModalFormTypeaheadResults
-
-```
-
-```ruby
-getModalFormTypeaheadResults
-
-```
-
-```java
-getModalFormTypeaheadResults
-
-```
-
-```php
-getModalFormTypeaheadResults
-
-```
 
 > Body parameter
 
@@ -240,41 +173,6 @@ When the user types into a Modal Form form field, Asana will send a request cont
 
 <a id="opIdonFormChange"></a>
 
-> Code samples
-
-```shell
-curl -X POST {siteUrl}/{on_change_callback} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -d '{"data": {"field":"value","field":"value"} }'
-
-```
-
-```javascript--nodejs
-onFormChange
-
-```
-
-```python
-onFormChange
-
-```
-
-```ruby
-onFormChange
-
-```
-
-```java
-onFormChange
-
-```
-
-```php
-onFormChange
-
-```
-
 > Body parameter
 
 ```json
@@ -343,41 +241,6 @@ The callback request made to an App Server when a watched field's value changes 
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
 <a id="opIdonFormSubmit"></a>
-
-> Code samples
-
-```shell
-curl -X POST {siteUrl}/{on_submit_callback} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -d '{"data": {"field":"value","field":"value"} }'
-
-```
-
-```javascript--nodejs
-onFormSubmit
-
-```
-
-```python
-onFormSubmit
-
-```
-
-```ruby
-onFormSubmit
-
-```
-
-```java
-onFormSubmit
-
-```
-
-```php
-onFormSubmit
-
-```
 
 > Body parameter
 
@@ -476,40 +339,6 @@ When a rule containing a Rule Action is triggered, the Rules Engine will make a 
 
 <a id="opIdgetRuleActionTypeaheadResults"></a>
 
-> Code samples
-
-```shell
-curl -X GET {siteUrl}/{rule_action_typeahead_url} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
-
-```
-
-```javascript--nodejs
-getRuleActionTypeaheadResults
-
-```
-
-```python
-getRuleActionTypeaheadResults
-
-```
-
-```ruby
-getRuleActionTypeaheadResults
-
-```
-
-```java
-getRuleActionTypeaheadResults
-
-```
-
-```php
-getRuleActionTypeaheadResults
-
-```
-
 > Body parameter
 
 ```json
@@ -581,41 +410,6 @@ When the user types into a Rule Action form field, Asana will send a request con
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
 <a id="opIdrunAction"></a>
-
-> Code samples
-
-```shell
-curl -X POST {siteUrl}/{run_action_url} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -d '{"data": {"field":"value","field":"value"} }'
-
-```
-
-```javascript--nodejs
-runAction
-
-```
-
-```python
-runAction
-
-```
-
-```ruby
-runAction
-
-```
-
-```java
-runAction
-
-```
-
-```php
-runAction
-
-```
 
 > Body parameter
 
@@ -692,39 +486,6 @@ The request made when an action is triggered. <br> <br> <a href="../images/ac-ru
 
 <a id="opIdgetActionMetadata"></a>
 
-> Code samples
-
-```shell
-curl -X GET {siteUrl}/{action.metadata_url}?action_type=string&project=string&workspace=string&user=string&expires_at=string \
-  -H 'Accept: application/json'
-
-```
-
-```javascript--nodejs
-getActionMetadata
-
-```
-
-```python
-getActionMetadata
-
-```
-
-```ruby
-getActionMetadata
-
-```
-
-```java
-getActionMetadata
-
-```
-
-```php
-getActionMetadata
-
-```
-
 > 200 Response
 
 ```json
@@ -781,41 +542,6 @@ When a user has navigated to the [Custom Rule builder](https://asana.com/guide/h
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
 <a id="opIdonActionFormChange"></a>
-
-> Code samples
-
-```shell
-curl -X POST {siteUrl}/{action.on_change_callback} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -d '{"data": {"field":"value","field":"value"} }'
-
-```
-
-```javascript--nodejs
-onActionFormChange
-
-```
-
-```python
-onActionFormChange
-
-```
-
-```ruby
-onActionFormChange
-
-```
-
-```java
-onActionFormChange
-
-```
-
-```php
-onActionFormChange
-
-```
 
 > Body parameter
 
@@ -889,41 +615,6 @@ The callback request made to an App Server when a watched field's value changes 
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
 <a id="opIdonActionFormSubmit"></a>
-
-> Code samples
-
-```shell
-curl -X POST {siteUrl}/{action.on_submit_callback} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -d '{"data": {"field":"value","field":"value"} }'
-
-```
-
-```javascript--nodejs
-onActionFormSubmit
-
-```
-
-```python
-onActionFormSubmit
-
-```
-
-```ruby
-onActionFormSubmit
-
-```
-
-```java
-onActionFormSubmit
-
-```
-
-```php
-onActionFormSubmit
-
-```
 
 > Body parameter
 
@@ -1035,41 +726,6 @@ If the app defined a resource attach URL, tasks without a Widget offer the Looku
 
 <a id="opIdattachResource"></a>
 
-> Code samples
-
-```shell
-curl -X POST {siteUrl}/{resource_attach_url} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -d '{"data": {"field":"value","field":"value"} }'
-
-```
-
-```javascript--nodejs
-attachResource
-
-```
-
-```python
-attachResource
-
-```
-
-```ruby
-attachResource
-
-```
-
-```java
-attachResource
-
-```
-
-```php
-attachResource
-
-```
-
 > Body parameter
 
 ```json
@@ -1133,40 +789,6 @@ When the user attaches a resource URL to a task, Asana will make a signed reques
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
 <a id="opIdgetTypeaheadResults"></a>
-
-> Code samples
-
-```shell
-curl -X GET {siteUrl}/{resource_typeahead_url} \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
-
-```
-
-```javascript--nodejs
-getTypeaheadResults
-
-```
-
-```python
-getTypeaheadResults
-
-```
-
-```ruby
-getTypeaheadResults
-
-```
-
-```java
-getTypeaheadResults
-
-```
-
-```php
-getTypeaheadResults
-
-```
 
 > Body parameter
 
@@ -1253,39 +875,6 @@ The Widget is displayed when the user views a task with an attachment with a res
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
 <a id="opIdgetWidgetMetadata"></a>
-
-> Code samples
-
-```shell
-curl -X GET {siteUrl}/{widget_metadata_url}?resource_url=string&workspace=string&task=string&user=string&attachment=string&expires_at=string \
-  -H 'Accept: application/json'
-
-```
-
-```javascript--nodejs
-getWidgetMetadata
-
-```
-
-```python
-getWidgetMetadata
-
-```
-
-```ruby
-getWidgetMetadata
-
-```
-
-```java
-getWidgetMetadata
-
-```
-
-```php
-getWidgetMetadata
-
-```
 
 > 200 Response
 
