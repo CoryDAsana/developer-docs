@@ -667,7 +667,7 @@ var Explorer = /** @class */ (function (_super) {
 })(Explorer || (Explorer = {}));
 module.exports = Explorer;
 
-},{"../constants":10,"../credentials":11,"../resources":15,"../resources/helpers":49,"./extra_parameter_entry":3,"./json_response":4,"./paginate_entry":5,"./parameter_entry":6,"./property_entry":7,"./resource_entry":8,"./route_entry":9,"asana":72,"immutability-helper":155,"lodash":160,"react":181,"url":199}],3:[function(require,module,exports){
+},{"../constants":10,"../credentials":11,"../resources":15,"../resources/helpers":41,"./extra_parameter_entry":3,"./json_response":4,"./paginate_entry":5,"./parameter_entry":6,"./property_entry":7,"./resource_entry":8,"./route_entry":9,"asana":60,"immutability-helper":143,"lodash":148,"react":169,"url":187}],3:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -781,7 +781,7 @@ var ExtraParameterEntry = /** @class */ (function (_super) {
 }(React.Component));
 module.exports = ExtraParameterEntry;
 
-},{"immutability-helper":155,"lodash":160,"react":181}],4:[function(require,module,exports){
+},{"immutability-helper":143,"lodash":148,"react":169}],4:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -847,7 +847,7 @@ var JsonResponse = /** @class */ (function (_super) {
 }(React.Component));
 module.exports = JsonResponse;
 
-},{"../class_names":1,"react":181}],5:[function(require,module,exports){
+},{"../class_names":1,"react":169}],5:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -910,7 +910,7 @@ var PaginateEntry = /** @class */ (function (_super) {
 }(React.Component));
 module.exports = PaginateEntry;
 
-},{"react":181}],6:[function(require,module,exports){
+},{"react":169}],6:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -991,7 +991,7 @@ var ParameterEntry = /** @class */ (function (_super) {
 }(React.Component));
 module.exports = ParameterEntry;
 
-},{"../class_names":1,"react":181}],7:[function(require,module,exports){
+},{"../class_names":1,"react":169}],7:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -1047,7 +1047,7 @@ var PropertyEntry = /** @class */ (function (_super) {
 }(React.Component));
 module.exports = PropertyEntry;
 
-},{"react":181}],8:[function(require,module,exports){
+},{"react":169}],8:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -1103,7 +1103,7 @@ var ResourceEntry = /** @class */ (function (_super) {
 }(React.Component));
 module.exports = ResourceEntry;
 
-},{"../resources/helpers":49,"marked":161,"react":181}],9:[function(require,module,exports){
+},{"../resources/helpers":41,"marked":149,"react":169}],9:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -1166,7 +1166,7 @@ var RouteEntry = /** @class */ (function (_super) {
 }(React.Component));
 module.exports = RouteEntry;
 
-},{"../resources/helpers":49,"marked":161,"react":181}],10:[function(require,module,exports){
+},{"../resources/helpers":41,"marked":149,"react":169}],10:[function(require,module,exports){
 "use strict";
 var ghPagesConstants = {
     LOCALSTORAGE_KEY: "api_explorer_credentials",
@@ -1186,7 +1186,7 @@ var production = {
     LOCALSTORAGE_KEY: "api_explorer_credentials",
     CLIENT_ID: "38682966449842",
     REDIRECT_URI: "https://asana.github.io/developer-docs/explorer/popup_receiver.html",
-    TOKEN_URL: "https://jikyuaso9e.execute-api.us-east-1.amazonaws.com/default/api_explorer_oauth_beta",
+    TOKEN_URL: "https://8fuawabj9d.execute-api.us-east-1.amazonaws.com/default/\api_explorer_oauth_beta",
     INITIAL_PAGINATION_LIMIT: 10
 };
 var constant;
@@ -1324,7 +1324,7 @@ function run(initialResource, initialRoute) {
 }
 exports.run = run;
 
-},{"./components/explorer":2,"./constants":10,"@bity/oauth2-auth-code-pkce":71,"react-dom":172}],13:[function(require,module,exports){
+},{"./components/explorer":2,"./constants":10,"@bity/oauth2-auth-code-pkce":59,"react-dom":160}],13:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Receiver = require("./receiver");
@@ -1345,38 +1345,32 @@ function run() {
 }
 exports.run = run;
 
-},{"asana":72}],15:[function(require,module,exports){
+},{"asana":60}],15:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Attachments = require("./resources/attachments");
-exports.AuditLogApi = require("./resources/audit_log_api");
 exports.CustomFieldSettings = require("./resources/custom_field_settings");
 exports.CustomFields = require("./resources/custom_fields");
 exports.Events = require("./resources/events");
-exports.Goals = require("./resources/goals");
 exports.Jobs = require("./resources/jobs");
 exports.OrganizationExports = require("./resources/organization_exports");
 exports.Portfolios = require("./resources/portfolios");
 exports.PortfolioMemberships = require("./resources/portfolio_memberships");
 exports.Projects = require("./resources/projects");
-exports.ProjectBriefs = require("./resources/project_briefs");
 exports.ProjectMemberships = require("./resources/project_memberships");
 exports.ProjectStatuses = require("./resources/project_statuses");
-exports.ProjectTemplates = require("./resources/project_templates");
 exports.Sections = require("./resources/sections");
-exports.StatusUpdates = require("./resources/status_updates");
 exports.Stories = require("./resources/stories");
 exports.Tags = require("./resources/tags");
 exports.Tasks = require("./resources/tasks");
 exports.Teams = require("./resources/teams");
-exports.TimePeriods = require("./resources/time_periods");
 exports.Users = require("./resources/users");
 exports.UserTaskLists = require("./resources/user_task_lists");
 exports.Webhooks = require("./resources/webhooks");
 exports.Workspaces = require("./resources/workspaces");
 exports.WorkspaceMemberships = require("./resources/workspace_memberships");
 
-},{"./resources/attachments":16,"./resources/audit_log_api":17,"./resources/custom_field_settings":18,"./resources/custom_fields":19,"./resources/events":20,"./resources/goals":48,"./resources/jobs":50,"./resources/organization_exports":51,"./resources/portfolio_memberships":52,"./resources/portfolios":53,"./resources/project_briefs":54,"./resources/project_memberships":55,"./resources/project_statuses":56,"./resources/project_templates":57,"./resources/projects":58,"./resources/sections":59,"./resources/status_updates":60,"./resources/stories":61,"./resources/tags":62,"./resources/tasks":63,"./resources/teams":64,"./resources/time_periods":65,"./resources/user_task_lists":66,"./resources/users":67,"./resources/webhooks":68,"./resources/workspace_memberships":69,"./resources/workspaces":70}],16:[function(require,module,exports){
+},{"./resources/attachments":16,"./resources/custom_field_settings":17,"./resources/custom_fields":18,"./resources/events":19,"./resources/jobs":42,"./resources/organization_exports":43,"./resources/portfolio_memberships":44,"./resources/portfolios":45,"./resources/project_memberships":46,"./resources/project_statuses":47,"./resources/projects":48,"./resources/sections":49,"./resources/stories":50,"./resources/tags":51,"./resources/tasks":52,"./resources/teams":53,"./resources/user_task_lists":54,"./resources/users":55,"./resources/webhooks":56,"./resources/workspace_memberships":57,"./resources/workspaces":58}],16:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/attachments_base");
 resourceBase.comment = "An _attachment_ object represents any file attached to a task in Asana,\nwhether it's an uploaded file or one associated via a third-party service\nsuch as Dropbox or Google Drive.\n";
@@ -1456,63 +1450,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/attachments_base":21}],17:[function(require,module,exports){
-"use strict";
-var resourceBase = require("./gen/audit_log_api_base");
-resourceBase.comment = "Asana's Audit Log is an immutable log of [important events](/docs/supported-auditlogevents) in your organization's Asana instance.\n\nThe Audit Log API allows you to monitor and act upon important security and compliance-related changes. Organizations might use this API endpoint to:\n\n* Set up proactive alerting with a Security Information and Event Management (SIEM) tool like [Splunk](https://asana.com/guide/help/api/splunk)\n* Conduct reactive investigations when a security incident takes place\n* Visualize key domain data in aggregate to identify security trends\n\nNote that since the API provides insight into what is happening in an Asana instance, the data is [read-only](/docs/get-audit-log-events). That is, there are no \"write\" or \"update\" endpoints for audit log events.\n\nOnly [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in [Enterprise Domains](https://asana.com/enterprise) can access Audit Log API endpoints. Authentication with a Service Account's [Personal Access Token](/docs/personal-access-token) is required.\n\nFor a full list of supported events, see [Supported AuditLogEvents](/docs/supported-auditlogevents).\n";
-resourceBase.properties = [
-    {
-        "name": "gid",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "actor",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "context",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "created_at",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "details",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "event_category",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "event_type",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "resource",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-];
-module.exports = resourceBase;
-
-},{"./gen/audit_log_api_base":22}],18:[function(require,module,exports){
+},{"./gen/attachments_base":20}],17:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/custom_field_settings_base");
 resourceBase.comment = "\nCustom fields are applied to a particular project or portfolio with the\nCustom Field Settings resource. This resource both represents the\nmany-to-many join of the Custom Field and Project or Portfolio as well as\nstores information that is relevant to that particular pairing; for instance,\nthe `is_important` property determines some possible application-specific\nhandling of that custom field and parent.\n";
@@ -1575,7 +1513,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/custom_field_settings_base":23}],19:[function(require,module,exports){
+},{"./gen/custom_field_settings_base":21}],18:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/custom_fields_base");
 resourceBase.comment = "\nCustom Fields store the metadata that is used in order to add user-specified\ninformation to tasks in Asana. Be sure to reference the [Custom\nFields](/developers/documentation/getting-started/custom-fields) developer\ndocumentation for more information about how custom fields relate to various\nresources in Asana.\n\nUsers in Asana can [lock custom\nfields](/guide/help/premium/custom-fields#gl-lock-fields), which will make\nthem read-only when accessed by other users. Attempting to edit a locked\ncustom field will return HTTP error code `403 Forbidden`.\n";
@@ -1661,7 +1599,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/custom_fields_base":24}],20:[function(require,module,exports){
+},{"./gen/custom_fields_base":22}],19:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/events_base");
 resourceBase.comment = "An _event_ is an object representing a change to a resource that was observed\nby an event subscription.\n\nIn general, requesting events on a resource is faster and subject to higher\nrate limits than requesting the resource itself. Additionally, change events\nbubble up - listening to events on a project would include when stories are\nadded to tasks in the project, even on subtasks.\n\nEstablish an initial sync token by making a request with no sync token.\nThe response will be a `412` error - the same as if the sync token had\nexpired.\n\nSubsequent requests should always provide the sync token from the immediately\npreceding call.\n\nSync tokens may not be valid if you attempt to go 'backward' in the history\nby requesting previous tokens, though re-requesting the current sync token\nis generally safe, and will always return the same results.\n\nWhen you receive a `412 Precondition Failed` error, it means that the\nsync token is either invalid or expired. If you are attempting to keep a set\nof data in sync, this signals you may need to re-crawl the data.\n\nSync tokens always expire after 24 hours, but may expire sooner, depending on\nload on the service.\n";
@@ -1732,7 +1670,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/events_base":25}],21:[function(require,module,exports){
+},{"./gen/events_base":23}],20:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -1775,98 +1713,26 @@ var resourceBase = {
             "comment": "Get an attachment"
         },
         {
-            "name": "getAttachmentsForObject",
+            "name": "getAttachmentsForTask",
             "method": "GET",
             "collection": true || false,
-            "path": "/attachments",
+            "path": "/tasks/%s/attachments",
             "params": [
                 {
-                    "name": "parent",
+                    "name": "task_gid",
                     "type": "string",
-                    "example_values": ["159874"],
-                    "comment": "Globally unique identifier for object to fetch statuses from. Must be a GID for a task or project_brief.",
+                    "example_values": ["321654"],
+                    "comment": "The task to operate on.",
                     "required": true
                 },
             ],
-            "comment": "Get attachments from an object"
+            "comment": "Get attachments for a task"
         },
     ]
 };
 module.exports = resourceBase;
 
-},{}],22:[function(require,module,exports){
-"use strict";
-/// <reference path="../interfaces.ts" />
-/* tslint:disable:max-line-length */
-/* tslint:disable:eofline */
-var resourceBase = {
-    "name": "audit_log_api",
-    "comment": "",
-    "properties": [],
-    "actions": [
-        {
-            "name": "getAuditLogEvents",
-            "method": "GET",
-            "collection": true || false,
-            "path": "/workspaces/%s/audit_log_events",
-            "params": [
-                {
-                    "name": "workspace_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the workspace or organization.",
-                    "required": true
-                },
-                {
-                    "name": "resource_gid",
-                    "type": "string",
-                    "example_values": [],
-                    "comment": "Filter to events with this resource ID.",
-                    "required": false
-                },
-                {
-                    "name": "actor_gid",
-                    "type": "string",
-                    "example_values": [],
-                    "comment": "Filter to events triggered by the actor with this ID.",
-                    "required": false
-                },
-                {
-                    "name": "actor_type",
-                    "type": "string",
-                    "example_values": [],
-                    "comment": "Filter to events with an actor of this type. This only needs to be included if querying for actor types without an ID. If &#x60;actor_gid&#x60; is included, this should be excluded.",
-                    "required": false
-                },
-                {
-                    "name": "event_type",
-                    "type": "string",
-                    "example_values": [],
-                    "comment": "Filter to events of this type. Refer to the [Supported AuditLogEvents](/docs/supported-auditlogevents) for a full list of values.",
-                    "required": false
-                },
-                {
-                    "name": "end_at",
-                    "type": "Date",
-                    "example_values": [],
-                    "comment": "Filter to events created before this time (exclusive).",
-                    "required": false
-                },
-                {
-                    "name": "start_at",
-                    "type": "Date",
-                    "example_values": [],
-                    "comment": "Filter to events created after this time (inclusive).",
-                    "required": false
-                },
-            ],
-            "comment": "Get audit log events"
-        },
-    ]
-};
-module.exports = resourceBase;
-
-},{}],23:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -1912,7 +1778,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],24:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2046,7 +1912,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],25:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2083,304 +1949,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],26:[function(require,module,exports){
-"use strict";
-/// <reference path="../interfaces.ts" />
-/* tslint:disable:max-line-length */
-/* tslint:disable:eofline */
-var resourceBase = {
-    "name": "goals",
-    "comment": "",
-    "properties": [],
-    "actions": [
-        {
-            "name": "addFollowers",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/addFollowers",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Add a collaborator to a goal"
-        },
-        {
-            "name": "addSubgoal",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/addSubgoal",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Add a subgoal to a parent goal"
-        },
-        {
-            "name": "addSupportingWorkForGoal",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/addSupportingWork",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Add a project/portfolio as supporting work for a goal."
-        },
-        {
-            "name": "createGoal",
-            "method": "POST",
-            "collection": true || false,
-            "path": "/goals",
-            "params": [],
-            "comment": "Create a goal"
-        },
-        {
-            "name": "createGoalMetric",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/setMetric",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Create a goal metric"
-        },
-        {
-            "name": "deleteGoal",
-            "method": "DELETE",
-            "collection": false,
-            "path": "/goals/%s",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Delete a goal"
-        },
-        {
-            "name": "getGoal",
-            "method": "GET",
-            "collection": false,
-            "path": "/goals/%s",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Get a goal"
-        },
-        {
-            "name": "getGoals",
-            "method": "GET",
-            "collection": true || false,
-            "path": "/goals",
-            "params": [
-                {
-                    "name": "time_periods",
-                    "type": "Array&lt;string&gt;",
-                    "example_values": ["221693,506165"],
-                    "comment": "Globally unique identifiers for the time periods.",
-                    "required": false
-                },
-                {
-                    "name": "workspace",
-                    "type": "string",
-                    "example_values": ["31326"],
-                    "comment": "Globally unique identifier for the workspace.",
-                    "required": false
-                },
-                {
-                    "name": "team",
-                    "type": "string",
-                    "example_values": ["31326"],
-                    "comment": "Globally unique identifier for the team.",
-                    "required": false
-                },
-                {
-                    "name": "is_workspace_level",
-                    "type": "boolean",
-                    "example_values": [false],
-                    "comment": "Filter to goals with is_workspace_level set to query value. Must be used with the workspace parameter.",
-                    "required": false
-                },
-                {
-                    "name": "project",
-                    "type": "string",
-                    "example_values": ["512241"],
-                    "comment": "Globally unique identifier for supporting project.",
-                    "required": false
-                },
-                {
-                    "name": "portfolio",
-                    "type": "string",
-                    "example_values": ["159874"],
-                    "comment": "Globally unique identifier for supporting portfolio.",
-                    "required": false
-                },
-            ],
-            "comment": "Get goals"
-        },
-        {
-            "name": "getParentGoalsForGoal",
-            "method": "GET",
-            "collection": false,
-            "path": "/goals/%s/parentGoals",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Get parent goals from a goal"
-        },
-        {
-            "name": "getSubgoalsForGoal",
-            "method": "GET",
-            "collection": false,
-            "path": "/goals/%s/subgoals",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Get subgoals from a goal"
-        },
-        {
-            "name": "removeFollowers",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/removeFollowers",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Remove a collaborator from a goal"
-        },
-        {
-            "name": "removeSubgoal",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/removeSubgoal",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Remove a subgoal from a goal"
-        },
-        {
-            "name": "removeSupportingWorkForGoal",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/removeSupportingWork",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Remove a project/portfolio as supporting work for a goal."
-        },
-        {
-            "name": "supportingWork",
-            "method": "GET",
-            "collection": false,
-            "path": "/goals/%s/supportingWork",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Get supporting work from a goal"
-        },
-        {
-            "name": "updateGoal",
-            "method": "PUT",
-            "collection": false,
-            "path": "/goals/%s",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Update a goal"
-        },
-        {
-            "name": "updateGoalMetric",
-            "method": "POST",
-            "collection": false,
-            "path": "/goals/%s/setMetricCurrentValue",
-            "params": [
-                {
-                    "name": "goal_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Update a goal metric"
-        },
-    ]
-};
-module.exports = resourceBase;
-
-},{}],27:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2410,7 +1979,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],28:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2448,7 +2017,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],29:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2531,7 +2100,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],30:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2663,7 +2232,7 @@ var resourceBase = {
                     "type": "string",
                     "example_values": ["1331"],
                     "comment": "The workspace or organization to filter portfolios on.",
-                    "required": true
+                    "required": false
                 },
             ],
             "comment": "Get multiple portfolios"
@@ -2736,85 +2305,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],31:[function(require,module,exports){
-"use strict";
-/// <reference path="../interfaces.ts" />
-/* tslint:disable:max-line-length */
-/* tslint:disable:eofline */
-var resourceBase = {
-    "name": "project_briefs",
-    "comment": "",
-    "properties": [],
-    "actions": [
-        {
-            "name": "createProjectBrief",
-            "method": "POST",
-            "collection": false,
-            "path": "/projects/%s/project_briefs",
-            "params": [
-                {
-                    "name": "project_gid",
-                    "type": "string",
-                    "example_values": ["1331"],
-                    "comment": "Globally unique identifier for the project.",
-                    "required": true
-                },
-            ],
-            "comment": "Create a project brief"
-        },
-        {
-            "name": "deleteProjectBrief",
-            "method": "DELETE",
-            "collection": false,
-            "path": "/project_briefs/%s",
-            "params": [
-                {
-                    "name": "project_brief_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the project brief.",
-                    "required": true
-                },
-            ],
-            "comment": "Delete a project brief"
-        },
-        {
-            "name": "getProjectBrief",
-            "method": "GET",
-            "collection": false,
-            "path": "/project_briefs/%s",
-            "params": [
-                {
-                    "name": "project_brief_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the project brief.",
-                    "required": true
-                },
-            ],
-            "comment": "Get a project brief"
-        },
-        {
-            "name": "updateProjectBrief",
-            "method": "PUT",
-            "collection": false,
-            "path": "/project_briefs/%s",
-            "params": [
-                {
-                    "name": "project_brief_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the project brief.",
-                    "required": true
-                },
-            ],
-            "comment": "Update a project brief"
-        },
-    ]
-};
-module.exports = resourceBase;
-
-},{}],32:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2867,7 +2358,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],33:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -2945,92 +2436,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],34:[function(require,module,exports){
-"use strict";
-/// <reference path="../interfaces.ts" />
-/* tslint:disable:max-line-length */
-/* tslint:disable:eofline */
-var resourceBase = {
-    "name": "project_templates",
-    "comment": "",
-    "properties": [],
-    "actions": [
-        {
-            "name": "getProjectTemplate",
-            "method": "GET",
-            "collection": false,
-            "path": "/project_templates/%s",
-            "params": [
-                {
-                    "name": "project_template_gid",
-                    "type": "string",
-                    "example_values": ["1331"],
-                    "comment": "Globally unique identifier for the project template.",
-                    "required": true
-                },
-            ],
-            "comment": "Get a project template"
-        },
-        {
-            "name": "getProjectTemplates",
-            "method": "GET",
-            "collection": true || false,
-            "path": "/project_templates",
-            "params": [
-                {
-                    "name": "team",
-                    "type": "string",
-                    "example_values": ["14916"],
-                    "comment": "The team to filter projects on.",
-                    "required": false
-                },
-                {
-                    "name": "workspace",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "The workspace to filter results on.",
-                    "required": false
-                },
-            ],
-            "comment": "Get multiple project templates"
-        },
-        {
-            "name": "getProjectTemplatesForTeam",
-            "method": "GET",
-            "collection": true || false,
-            "path": "/teams/%s/project_templates",
-            "params": [
-                {
-                    "name": "team_gid",
-                    "type": "string",
-                    "example_values": ["159874"],
-                    "comment": "Globally unique identifier for the team.",
-                    "required": true
-                },
-            ],
-            "comment": "Get a team&#x27;s project templates"
-        },
-        {
-            "name": "instantiateProject",
-            "method": "POST",
-            "collection": false,
-            "path": "/project_templates/%s/instantiateProject",
-            "params": [
-                {
-                    "name": "project_template_gid",
-                    "type": "string",
-                    "example_values": ["1331"],
-                    "comment": "Globally unique identifier for the project template.",
-                    "required": true
-                },
-            ],
-            "comment": "Instantiate a project from a project template"
-        },
-    ]
-};
-module.exports = resourceBase;
-
-},{}],35:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -3285,22 +2691,6 @@ var resourceBase = {
             "comment": "Get task count of a project"
         },
         {
-            "name": "projectSaveAsTemplate",
-            "method": "POST",
-            "collection": false,
-            "path": "/projects/%s/saveAsTemplate",
-            "params": [
-                {
-                    "name": "project_gid",
-                    "type": "string",
-                    "example_values": ["1331"],
-                    "comment": "Globally unique identifier for the project.",
-                    "required": true
-                },
-            ],
-            "comment": "Create a project template from a project"
-        },
-        {
             "name": "removeCustomFieldSettingForProject",
             "method": "POST",
             "collection": false,
@@ -3368,7 +2758,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],36:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -3494,84 +2884,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],37:[function(require,module,exports){
-"use strict";
-/// <reference path="../interfaces.ts" />
-/* tslint:disable:max-line-length */
-/* tslint:disable:eofline */
-var resourceBase = {
-    "name": "status_updates",
-    "comment": "",
-    "properties": [],
-    "actions": [
-        {
-            "name": "createStatusForObject",
-            "method": "POST",
-            "collection": true || false,
-            "path": "/status_updates",
-            "params": [],
-            "comment": "Create a status update"
-        },
-        {
-            "name": "deleteStatus",
-            "method": "DELETE",
-            "collection": false,
-            "path": "/status_updates/%s",
-            "params": [
-                {
-                    "name": "status_gid",
-                    "type": "string",
-                    "example_values": ["321654"],
-                    "comment": "The status update to get.",
-                    "required": true
-                },
-            ],
-            "comment": "Delete a status update"
-        },
-        {
-            "name": "getStatus",
-            "method": "GET",
-            "collection": false,
-            "path": "/status_updates/%s",
-            "params": [
-                {
-                    "name": "status_gid",
-                    "type": "string",
-                    "example_values": ["321654"],
-                    "comment": "The status update to get.",
-                    "required": true
-                },
-            ],
-            "comment": "Get a status update"
-        },
-        {
-            "name": "getStatusesForObject",
-            "method": "GET",
-            "collection": true || false,
-            "path": "/status_updates",
-            "params": [
-                {
-                    "name": "created_since",
-                    "type": "Date",
-                    "example_values": ["2012-02-22T02:06:58.158Z"],
-                    "comment": "Only return statuses that have been created since the given time.",
-                    "required": false
-                },
-                {
-                    "name": "parent",
-                    "type": "string",
-                    "example_values": ["159874"],
-                    "comment": "Globally unique identifier for object to fetch statuses from. Must be a GID for a project, portfolio, or goal.",
-                    "required": true
-                },
-            ],
-            "comment": "Get status updates from an object"
-        },
-    ]
-};
-module.exports = resourceBase;
-
-},{}],38:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -3665,7 +2978,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],39:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -3799,7 +3112,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],40:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -4054,7 +3367,7 @@ var resourceBase = {
                     "name": "assignee",
                     "type": "string",
                     "example_values": ["14641"],
-                    "comment": "The assignee to filter tasks on. If searching for unassigned tasks, assignee.any &#x3D; null can be specified. *Note: If you specify &#x60;assignee&#x60;, you must also specify the &#x60;workspace&#x60; to filter on.*",
+                    "comment": "The assignee to filter tasks on. *Note: If you specify &#x60;assignee&#x60;, you must also specify the &#x60;workspace&#x60; to filter on.*",
                     "required": false
                 },
             ],
@@ -4072,13 +3385,6 @@ var resourceBase = {
                     "example_values": ["1331"],
                     "comment": "Globally unique identifier for the project.",
                     "required": true
-                },
-                {
-                    "name": "completed_since",
-                    "type": "string",
-                    "example_values": ["2012-02-22T02:06:58.158Z"],
-                    "comment": "Only return tasks that are either incomplete or that have been completed since this time. Accepts a date-time string or the keyword *now*. ",
-                    "required": false
                 },
             ],
             "comment": "Get tasks from a project"
@@ -4449,7 +3755,21 @@ var resourceBase = {
                     "required": false
                 },
                 {
+                    "name": "commented_on_by.any",
+                    "type": "string",
+                    "example_values": ["12345,23456,34567"],
+                    "comment": "Comma-separated list of user identifiers",
+                    "required": false
+                },
+                {
                     "name": "liked_by.not",
+                    "type": "string",
+                    "example_values": ["12345,23456,34567"],
+                    "comment": "Comma-separated list of user identifiers",
+                    "required": false
+                },
+                {
+                    "name": "liked_by.any",
                     "type": "string",
                     "example_values": ["12345,23456,34567"],
                     "comment": "Comma-separated list of user identifiers",
@@ -4485,6 +3805,13 @@ var resourceBase = {
                 },
                 {
                     "name": "followers.not",
+                    "type": "string",
+                    "example_values": ["12345,23456,34567"],
+                    "comment": "Comma-separated list of user identifiers",
+                    "required": false
+                },
+                {
+                    "name": "followers.any",
                     "type": "string",
                     "example_values": ["12345,23456,34567"],
                     "comment": "Comma-separated list of user identifiers",
@@ -4568,6 +3895,13 @@ var resourceBase = {
                     "required": false
                 },
                 {
+                    "name": "assignee_status",
+                    "type": "string",
+                    "example_values": ["later"],
+                    "comment": "One of &#x60;inbox&#x60;, &#x60;today&#x60;, &#x60;upcoming&#x60;, or &#x60;later&#x60;",
+                    "required": false
+                },
+                {
                     "name": "assignee.not",
                     "type": "string",
                     "example_values": ["12345,23456,34567"],
@@ -4634,7 +3968,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],41:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -4661,14 +3995,6 @@ var resourceBase = {
             "comment": "Add a user to a team"
         },
         {
-            "name": "createTeam",
-            "method": "POST",
-            "collection": true || false,
-            "path": "/teams",
-            "params": [],
-            "comment": "Create a team"
-        },
-        {
             "name": "getTeam",
             "method": "GET",
             "collection": true || false,
@@ -4683,6 +4009,22 @@ var resourceBase = {
                 },
             ],
             "comment": "Get a team"
+        },
+        {
+            "name": "getTeamsForOrganization",
+            "method": "GET",
+            "collection": true || false,
+            "path": "/organizations/%s/teams",
+            "params": [
+                {
+                    "name": "workspace_gid",
+                    "type": "string",
+                    "example_values": ["12345"],
+                    "comment": "Globally unique identifier for the workspace or organization.",
+                    "required": true
+                },
+            ],
+            "comment": "Get teams in an organization"
         },
         {
             "name": "getTeamsForUser",
@@ -4708,22 +4050,6 @@ var resourceBase = {
             "comment": "Get teams for a user"
         },
         {
-            "name": "getTeamsForWorkspace",
-            "method": "GET",
-            "collection": true || false,
-            "path": "/workspaces/%s/teams",
-            "params": [
-                {
-                    "name": "workspace_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the workspace or organization.",
-                    "required": true
-                },
-            ],
-            "comment": "Get teams in a workspace"
-        },
-        {
             "name": "removeUserForTeam",
             "method": "POST",
             "collection": false,
@@ -4743,67 +4069,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],42:[function(require,module,exports){
-"use strict";
-/// <reference path="../interfaces.ts" />
-/* tslint:disable:max-line-length */
-/* tslint:disable:eofline */
-var resourceBase = {
-    "name": "time_periods",
-    "comment": "",
-    "properties": [],
-    "actions": [
-        {
-            "name": "getTimePeriod",
-            "method": "GET",
-            "collection": false,
-            "path": "/time_periods/%s",
-            "params": [
-                {
-                    "name": "time_period_gid",
-                    "type": "string",
-                    "example_values": ["917392"],
-                    "comment": "Globally unique identifier for the time period.",
-                    "required": true
-                },
-            ],
-            "comment": "Get a time period"
-        },
-        {
-            "name": "getTimePeriods",
-            "method": "GET",
-            "collection": true || false,
-            "path": "/time_periods",
-            "params": [
-                {
-                    "name": "workspace",
-                    "type": "string",
-                    "example_values": ["31326"],
-                    "comment": "Globally unique identifier for the workspace.",
-                    "required": true
-                },
-                {
-                    "name": "end_on",
-                    "type": "string",
-                    "example_values": ["2019-09-15"],
-                    "comment": "ISO 8601 date string",
-                    "required": false
-                },
-                {
-                    "name": "start_on",
-                    "type": "string",
-                    "example_values": ["2019-09-15"],
-                    "comment": "ISO 8601 date string",
-                    "required": false
-                },
-            ],
-            "comment": "Get time periods"
-        },
-    ]
-};
-module.exports = resourceBase;
-
-},{}],43:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -4856,7 +4122,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],44:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -4919,13 +4185,6 @@ var resourceBase = {
             "path": "/users",
             "params": [
                 {
-                    "name": "team",
-                    "type": "string",
-                    "example_values": ["15627"],
-                    "comment": "The team ID to filter users on.",
-                    "required": false
-                },
-                {
                     "name": "workspace",
                     "type": "string",
                     "example_values": ["1331"],
@@ -4938,7 +4197,7 @@ var resourceBase = {
         {
             "name": "getUsersForTeam",
             "method": "GET",
-            "collection": false,
+            "collection": true || false,
             "path": "/teams/%s/users",
             "params": [
                 {
@@ -4954,7 +4213,7 @@ var resourceBase = {
         {
             "name": "getUsersForWorkspace",
             "method": "GET",
-            "collection": false,
+            "collection": true || false,
             "path": "/workspaces/%s/users",
             "params": [
                 {
@@ -4971,7 +4230,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],45:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -5044,27 +4303,11 @@ var resourceBase = {
             ],
             "comment": "Get multiple webhooks"
         },
-        {
-            "name": "updateWebhook",
-            "method": "PUT",
-            "collection": false,
-            "path": "/webhooks/%s",
-            "params": [
-                {
-                    "name": "webhook_gid",
-                    "type": "string",
-                    "example_values": ["12345"],
-                    "comment": "Globally unique identifier for the webhook.",
-                    "required": true
-                },
-            ],
-            "comment": "Update a webhook"
-        },
     ]
 };
 module.exports = resourceBase;
 
-},{}],46:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -5133,7 +4376,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],47:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 "use strict";
 /// <reference path="../interfaces.ts" />
 /* tslint:disable:max-line-length */
@@ -5219,129 +4462,7 @@ var resourceBase = {
 };
 module.exports = resourceBase;
 
-},{}],48:[function(require,module,exports){
-"use strict";
-var resourceBase = require("./gen/goals_base");
-resourceBase.comment = "A _goal_ is an object in the goal-tracking system that helps your organization drive measurable results.\n";
-resourceBase.properties = [
-    {
-        "name": "gid",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "resource_type",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "due_on",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "html_notes",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "is_workspace_level",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "liked",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "name",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "notes",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "start_on",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "status",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "current_status_update",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "followers",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "likes",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "metric",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "num_likes",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "owner",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "team",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "time_period",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "workspace",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-];
-module.exports = resourceBase;
-
-},{"./gen/goals_base":26}],49:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // <reference path="./interfaces.ts" />
@@ -5445,7 +4566,7 @@ function pathForActionContainsRequiredParam(action) {
 }
 exports.pathForActionContainsRequiredParam = pathForActionContainsRequiredParam;
 
-},{"../resources":15,"lodash":160,"util":204}],50:[function(require,module,exports){
+},{"../resources":15,"lodash":148,"util":192}],42:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/jobs_base");
 resourceBase.comment = "A _job_ represents a process that handles asynchronous work.\n\nJobs are created when an endpoint requests an action that will be handled asynchronously.\nSuch as project or task duplication.\n";
@@ -5539,7 +4660,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/jobs_base":27}],51:[function(require,module,exports){
+},{"./gen/jobs_base":24}],43:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/organization_exports_base");
 resourceBase.comment = "An _organization_export_ object represents a request to export the complete data of an Organization\nin JSON format.\n\nTo export an Organization using this API:\n\n* Create an `organization_export` [request](#create) and store the id that is returned.\\\n* Request the `organization_export` every few minutes, until the `state` field contains 'finished'.\\\n* Download the file located at the URL in the `download_url` field.\n\nExports can take a long time, from several minutes to a few hours for large Organizations.\n\n**Note:** These endpoints are only available to [Service Accounts](/guide/help/premium/service-accounts)\nof an [Enterprise](/enterprise) Organization.\n";
@@ -5590,7 +4711,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/organization_exports_base":28}],52:[function(require,module,exports){
+},{"./gen/organization_exports_base":25}],44:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/portfolio_memberships_base");
 resourceBase.comment = "This object determines if a user is a member of a portfolio.\n";
@@ -5636,7 +4757,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/portfolio_memberships_base":29}],53:[function(require,module,exports){
+},{"./gen/portfolio_memberships_base":26}],45:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/portfolios_base");
 resourceBase.comment = "A _portfolio_ gives a high-level overview of the status of multiple\ninitiatives in Asana.  Portfolios provide a dashboard overview of the state\nof multiple items, including a progress report and the most recent\n[project status](/developers/api-reference/project_statuses) update.\n\nPortfolios have some restrictions on size. Each portfolio has a maximum of 250\nitems and, like projects, a maximum of 20 custom fields.\n";
@@ -5733,57 +4854,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/portfolios_base":30}],54:[function(require,module,exports){
-"use strict";
-var resourceBase = require("./gen/project_briefs_base");
-resourceBase.comment = "A _project brief_ object represents a rich text document that describes a project.\n\nPlease note that this API is in _preview_, and is expected to change. This API is to be used for development and testing only as an advance view into the upcoming rich text format experience in the task description. For more information, see [this post](https://forum.asana.com/t/project-brief-api-now-available-as-a-preview/150885) in the developer forum.\n";
-resourceBase.properties = [
-    {
-        "name": "gid",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "resource_type",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "html_text",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "title",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "permalink_url",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "project",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "text",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-];
-module.exports = resourceBase;
-
-},{"./gen/project_briefs_base":31}],55:[function(require,module,exports){
+},{"./gen/portfolios_base":27}],46:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/project_memberships_base");
 resourceBase.comment = "With the introduction of \"comment-only\" projects in Asana, a user's membership\nin a project comes with associated permissions. These permissions (whether a\nuser has full access to the project or comment-only access) are accessible\nthrough the project memberships endpoints described here.\n";
@@ -5838,7 +4909,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/project_memberships_base":32}],56:[function(require,module,exports){
+},{"./gen/project_memberships_base":28}],47:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/project_statuses_base");
 resourceBase.comment = "A _project status_ is an update on the progress of a particular project, and is sent out to all project\nfollowers when created. These updates include both text describing the update and a color code intended to\nrepresent the overall state of the project: \"green\" for projects that are on track, \"yellow\" for projects\nat risk, and \"red\" for projects that are behind.\n\nProject statuses can be created and deleted, but not modified.\n";
@@ -5910,75 +4981,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/project_statuses_base":33}],57:[function(require,module,exports){
-"use strict";
-var resourceBase = require("./gen/project_templates_base");
-resourceBase.comment = "A _project template_ is an object that allows new projects to be created with a predefined setup, which may include tasks, sections, Rules, etc. It simplifies the process of running a workflow that involves a similar set of work every time.\n\nProject templates in organizations are shared with a single team. You cannot currently change the team of a project template via the API.\n";
-resourceBase.properties = [
-    {
-        "name": "gid",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "resource_type",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "color",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "description",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "html_description",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "name",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "owner",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "public",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "requested_dates",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "team",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-];
-module.exports = resourceBase;
-
-},{"./gen/project_templates_base":34}],58:[function(require,module,exports){
+},{"./gen/project_statuses_base":29}],48:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/projects_base");
 resourceBase.comment = "A _project_ represents a prioritized list of tasks in Asana or a board with\ncolumns of tasks represented as cards. It exists in a single workspace or\norganization and is accessible to a subset of users in that workspace or\norganization, depending on its permissions.\n\nProjects in organizations are shared with a single team. You cannot currently\nchange the team of a project via the API. Non-organization workspaces do not\nhave teams and so you should not specify the team of project in a regular\nworkspace.\n";
@@ -6162,7 +5165,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/projects_base":35}],59:[function(require,module,exports){
+},{"./gen/projects_base":30}],49:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/sections_base");
 resourceBase.comment = "A _section_ is a subdivision of a project that groups tasks together. It can\neither be a header above a list of tasks in a list view or a column in a\nboard view of a project.\n";
@@ -6216,123 +5219,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/sections_base":36}],60:[function(require,module,exports){
-"use strict";
-var resourceBase = require("./gen/status_updates_base");
-resourceBase.comment = "A _status update_ is an update on the progress of a particular object, and is sent out to all followers when created. These updates include both text describing the update and a status_type intended to represent the overall state of the project. These include: on_track for projects that are on track, at_risk for projects at risk, off_track for projects that are behind, and on_hold for projects on hold.\n\nStatus updates can be created and deleted, but not modified.\n";
-resourceBase.properties = [
-    {
-        "name": "gid",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "resource_type",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "html_text",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "resource_subtype",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "status_type",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "text",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "title",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "author",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "created_at",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "created_by",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "hearted",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "hearts",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "liked",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "likes",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "modified_at",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "num_hearts",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "num_likes",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "parent",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-];
-module.exports = resourceBase;
-
-},{"./gen/status_updates_base":37}],61:[function(require,module,exports){
+},{"./gen/sections_base":31}],50:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/stories_base");
 resourceBase.comment = "A _story_ represents an activity associated with an object in the Asana\nsystem. Stories are generated by the system whenever users take actions such\nas creating or assigning tasks, or moving tasks between projects. _Comments_\nare also a form of user-generated story.\n";
@@ -6484,7 +5371,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/stories_base":38}],62:[function(require,module,exports){
+},{"./gen/stories_base":32}],51:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/tags_base");
 resourceBase.comment = "A _tag_ is a label that can be attached to any task in Asana. It exists in a\nsingle workspace or organization.\n\nTags have some metadata associated with them, but it is possible that we will\nsimplify them in the future so it is not encouraged to rely too heavily on it.\nUnlike projects, tags do not provide any ordering on the tasks they\nare associated with.\n";
@@ -6554,7 +5441,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/tags_base":39}],63:[function(require,module,exports){
+},{"./gen/tags_base":33}],52:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/tasks_base");
 resourceBase.comment = "The _task_ is the basic object around which many operations in Asana are\ncentered. In the Asana application, multiple tasks populate the middle pane\naccording to some view parameters, and the set of selected tasks determines\nthe more detailed information presented in the details pane.\n";
@@ -6846,7 +5733,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/tasks_base":40}],64:[function(require,module,exports){
+},{"./gen/tasks_base":34}],53:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/teams_base");
 resourceBase.comment = "A _team_ is used to group related projects and people together within an\norganization. Each project in an organization is associated with a team.\n";
@@ -6908,57 +5795,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/teams_base":41}],65:[function(require,module,exports){
-"use strict";
-var resourceBase = require("./gen/time_periods_base");
-resourceBase.comment = "A time_period is an object that represents a domain-scoped date range that can be set on _Goals_.\n";
-resourceBase.properties = [
-    {
-        "name": "gid",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "resource_type",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "display_name",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "end_on",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "parent",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "period",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-    {
-        "name": "start_on",
-        "type": "",
-        "example_values": [],
-        "comment": "",
-    },
-];
-module.exports = resourceBase;
-
-},{"./gen/time_periods_base":42}],66:[function(require,module,exports){
+},{"./gen/teams_base":35}],54:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/user_task_lists_base");
 resourceBase.comment = "A _user task list_ represents the tasks assigned to a particular user. It provides API access to a user's \"My Tasks\" view in Asana.\n\nA user's \"My Tasks\" represent all of the tasks assigned to that user. It is\nvisually divided into regions based on the task's\n[`assignee_status`](/developers/api-reference/tasks#field-assignee_status)\nfor Asana users to triage their tasks based on when they can address them.\nWhen building an integration it's worth noting that tasks with due dates will\nautomatically move through `assignee_status` states as their due dates\napproach; read up on [task\nauto-promotion](/guide/help/fundamentals/my-tasks#gl-auto-promote) for more\ninfomation.\n";
@@ -7013,7 +5850,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/user_task_lists_base":43}],67:[function(require,module,exports){
+},{"./gen/user_task_lists_base":36}],55:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/users_base");
 resourceBase.comment = "A _user_ object represents an account in Asana that can be given access to\nvarious workspaces, projects, and tasks.\n\nLike other objects in the system, users are referred to by numerical IDs.\nHowever, the special string identifier `me` can be used anywhere\na user ID is accepted, to refer to the current authenticated user.\n";
@@ -7075,7 +5912,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/users_base":44}],68:[function(require,module,exports){
+},{"./gen/users_base":37}],56:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/webhooks_base");
 resourceBase.comment = "Webhooks allow an application to be notified of changes. This is in addition\nto the ability to fetch those changes directly as\n[Events](/developers/api-reference/events) - in fact, Webhooks are just a way\nto receive Events via HTTP POST at the time they occur instead of polling for\nthem. For services accessible via HTTP this is often vastly more convenient,\nand if events are not too frequent can be significantly more efficient.\n\nIn both cases, however, changes are represented as Event objects - refer to\nthe [Events documentation](/developers/api-reference/events) for more\ninformation on what data these events contain.\n\n**NOTE:** While Webhooks send arrays of Event objects to their target, the\nEvent objects themselves contain *only IDs*, rather than the actual resource\nthey are referencing. So while a normal event you receive via GET /events\nwould look like this:\n\n    {\\\n      \"resource\": {\\\n        \"id\": 1337,\\\n        \"resource_type\": \"task\",\\\n        \"name\": \"My Task\"\\\n      },\\\n      \"parent\": null,\\\n      \"created_at\": \"2013-08-21T18:20:37.972Z\",\\\n      \"user\": {\\\n        \"id\": 1123,\\\n        \"resource_type\": \"user\",\\\n        \"name\": \"Tom Bizarro\"\\\n      },\\\n      \"action\": \"changed\",\\\n      \"type\": \"task\"\\\n    }\n\nIn a Webhook payload you would instead receive this:\n\n    {\\\n      \"resource\": 1337,\\\n      \"parent\": null,\\\n      \"created_at\": \"2013-08-21T18:20:37.972Z\",\\\n      \"user\": 1123,\\\n      \"action\": \"changed\",\\\n      \"type\": \"task\"\\\n    }\n\nWebhooks themselves contain only the information necessary to deliver the\nevents to the desired target as they are generated.\n";
@@ -7161,7 +5998,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/webhooks_base":45}],69:[function(require,module,exports){
+},{"./gen/webhooks_base":38}],57:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/workspace_memberships_base");
 resourceBase.comment = "This object determines if a user is a member of a workspace.\n";
@@ -7239,7 +6076,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/workspace_memberships_base":46}],70:[function(require,module,exports){
+},{"./gen/workspace_memberships_base":39}],58:[function(require,module,exports){
 "use strict";
 var resourceBase = require("./gen/workspaces_base");
 resourceBase.comment = "A _workspace_ is the highest-level organizational unit in Asana. All projects\nand tasks have an associated workspace.\n\nAn _organization_ is a special kind of workspace that represents a company.\nIn an organization, you can group your projects into teams. You can read\nmore about how organizations work on the Asana Guide.\nTo tell if your workspace is an organization or not, check its\n`is_organization` property.\n\nOver time, we intend to migrate most workspaces into organizations and to\nrelease more organization-specific functionality. We may eventually deprecate\nusing workspace-based APIs for organizations. Currently, and until after\nsome reasonable grace period following any further announcements, you can\nstill reference organizations in any `workspace` parameter.\n";
@@ -7285,7 +6122,7 @@ resourceBase.properties = [
 ];
 module.exports = resourceBase;
 
-},{"./gen/workspaces_base":47}],71:[function(require,module,exports){
+},{"./gen/workspaces_base":40}],59:[function(require,module,exports){
 "use strict";
 /**
  * An implementation of rfc6749#section-4.1 and rfc7636.
@@ -7998,7 +6835,7 @@ var OAuth2AuthCodePKCE = /** @class */ (function () {
 }());
 exports.OAuth2AuthCodePKCE = OAuth2AuthCodePKCE;
 
-},{}],72:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 exports.Client = require('./lib/client');
 exports.Dispatcher = require('./lib/dispatcher');
 exports.auth = require('./lib/auth');
@@ -8006,7 +6843,7 @@ exports.errors = require('./lib/errors');
 exports.resources = require('./lib/resources');
 
 exports.VERSION = require('./package.json').version;
-},{"./lib/auth":79,"./lib/client":86,"./lib/dispatcher":88,"./lib/errors":91,"./lib/resources":122,"./package.json":144}],73:[function(require,module,exports){
+},{"./lib/auth":67,"./lib/client":74,"./lib/dispatcher":76,"./lib/errors":79,"./lib/resources":110,"./package.json":132}],61:[function(require,module,exports){
 var url = require('url');
 var request = require('request');
 var Bluebird = require('bluebird');
@@ -8142,7 +6979,7 @@ App.prototype.accessTokenFromRefreshToken = function(refreshToken, options) {
 
 
 module.exports = App;
-},{"./oauth_error":82,"bluebird":146,"request":147,"url":199}],74:[function(require,module,exports){
+},{"./oauth_error":70,"bluebird":134,"request":135,"url":187}],62:[function(require,module,exports){
 /**
  * A layer to abstract the differences between using different types of
  * authentication (Oauth vs. Basic). The Authenticator is responsible for
@@ -8185,7 +7022,7 @@ Authenticator.prototype.refreshCredentials = function() {
 
 module.exports = Authenticator;
 
-},{}],75:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 /* jshint browser: true */
 var NativeFlow = require('./native_flow');
 var RedirectFlow = require('./redirect_flow');
@@ -8223,7 +7060,7 @@ function autoDetect(env) {
 
 module.exports = autoDetect;
 
-},{"../default_environment":87,"./chrome_extension_flow":78,"./native_flow":80,"./redirect_flow":85}],76:[function(require,module,exports){
+},{"../default_environment":75,"./chrome_extension_flow":66,"./native_flow":68,"./redirect_flow":73}],64:[function(require,module,exports){
 /* jshint browser:true */
 var url = require('url');
 var oauthUtil = require('./oauth_util');
@@ -8321,7 +7158,7 @@ BaseBrowserFlow.prototype.run = function() {
 };
 
 module.exports = BaseBrowserFlow;
-},{"./oauth_util":83,"url":199}],77:[function(require,module,exports){
+},{"./oauth_util":71,"url":187}],65:[function(require,module,exports){
 var util = require('util');
 var Bluebird = require('bluebird');
 var Authenticator = require('./authenticator');
@@ -8355,7 +7192,7 @@ BasicAuthenticator.prototype.refreshCredentials = function() {
 };
 
 module.exports = BasicAuthenticator;
-},{"./authenticator":74,"bluebird":146,"util":204}],78:[function(require,module,exports){
+},{"./authenticator":62,"bluebird":134,"util":192}],66:[function(require,module,exports){
 /* jshint browser: true */
 /* global chrome */
 var util = require('util');
@@ -8451,7 +7288,7 @@ ChromeExtensionFlow.runReceiver = function() {
 
 module.exports = ChromeExtensionFlow;
 
-},{"./base_browser_flow":76,"./oauth_error":82,"./oauth_util":83,"bluebird":146,"util":204}],79:[function(require,module,exports){
+},{"./base_browser_flow":64,"./oauth_error":70,"./oauth_util":71,"bluebird":134,"util":192}],67:[function(require,module,exports){
 exports.BaseBrowserFlow = require('./base_browser_flow');
 exports.ChromeExtensionFlow = require('./chrome_extension_flow');
 exports.NativeFlow = require('./native_flow');
@@ -8462,7 +7299,7 @@ exports.autoDetect = require('./auto_detect');
 exports.OauthError = require('./oauth_error');
 exports.App = require('./app');
 
-},{"./app":73,"./auto_detect":75,"./base_browser_flow":76,"./chrome_extension_flow":78,"./native_flow":80,"./oauth_error":82,"./popup_flow":84,"./redirect_flow":85}],80:[function(require,module,exports){
+},{"./app":61,"./auto_detect":63,"./base_browser_flow":64,"./chrome_extension_flow":66,"./native_flow":68,"./oauth_error":70,"./popup_flow":72,"./redirect_flow":73}],68:[function(require,module,exports){
 (function (process){
 var readline = require('readline');
 var Bluebird = require('bluebird');
@@ -8572,7 +7409,7 @@ NativeFlow.prototype.promptForCode = function(url) {
 module.exports = NativeFlow;
 
 }).call(this,require('_process'))
-},{"./oauth_util":83,"_process":164,"bluebird":146,"readline":149}],81:[function(require,module,exports){
+},{"./oauth_util":71,"_process":152,"bluebird":134,"readline":137}],69:[function(require,module,exports){
 var util = require('util');
 var Bluebird = require('bluebird');
 var Authenticator = require('./authenticator');
@@ -8691,7 +7528,7 @@ OauthAuthenticator.prototype.refreshCredentials = function() {
 };
 
 module.exports = OauthAuthenticator;
-},{"./authenticator":74,"bluebird":146,"util":204}],82:[function(require,module,exports){
+},{"./authenticator":62,"bluebird":134,"util":192}],70:[function(require,module,exports){
 var util = require('util');
 
 /**
@@ -8716,7 +7553,7 @@ function OauthError(options) {
 util.inherits(OauthError, Error);
 
 module.exports = OauthError;
-},{"util":204}],83:[function(require,module,exports){
+},{"util":192}],71:[function(require,module,exports){
 /* jshint browser:true */
 var querystring = require('querystring');
 var url = require('url');
@@ -8769,7 +7606,7 @@ module.exports = {
   parseOauthResultFromUrl: parseOauthResultFromUrl,
   removeOauthResultFromCurrentUrl: removeOauthResultFromCurrentUrl
 };
-},{"querystring":169,"url":199}],84:[function(require,module,exports){
+},{"querystring":157,"url":187}],72:[function(require,module,exports){
 /* jshint browser:true */
 var util = require('util');
 var oauthUtil = require('./oauth_util');
@@ -8905,7 +7742,7 @@ PopupFlow.runReceiver = function() {
 };
 
 module.exports = PopupFlow;
-},{"./base_browser_flow":76,"./oauth_error":82,"./oauth_util":83,"bluebird":146,"util":204}],85:[function(require,module,exports){
+},{"./base_browser_flow":64,"./oauth_error":70,"./oauth_util":71,"bluebird":134,"util":192}],73:[function(require,module,exports){
 /* jshint browser:true */
 var util = require('util');
 var oauthUtil = require('./oauth_util');
@@ -8961,7 +7798,7 @@ RedirectFlow.prototype.finishAuthorization = function() {
 
 module.exports = RedirectFlow;
 
-},{"./base_browser_flow":76,"./oauth_error":82,"./oauth_util":83,"bluebird":146,"util":204}],86:[function(require,module,exports){
+},{"./base_browser_flow":64,"./oauth_error":70,"./oauth_util":71,"bluebird":134,"util":192}],74:[function(require,module,exports){
 var Dispatcher = require('./dispatcher');
 var resources = require('./resources');
 var BasicAuthenticator = require('./auth/basic_authenticator');
@@ -9190,7 +8027,7 @@ Client.create = function(options) {
 
 module.exports = Client;
 
-},{"./auth/app":73,"./auth/auto_detect":75,"./auth/basic_authenticator":77,"./auth/oauth_authenticator":81,"./dispatcher":88,"./resources":122}],87:[function(require,module,exports){
+},{"./auth/app":61,"./auth/auto_detect":63,"./auth/basic_authenticator":65,"./auth/oauth_authenticator":69,"./dispatcher":76,"./resources":110}],75:[function(require,module,exports){
 (function (process){
 /* jshint browser: true */
 /* global chrome */
@@ -9215,7 +8052,7 @@ function defaultEnvironment() {
 module.exports = defaultEnvironment;
 
 }).call(this,require('_process'))
-},{"_process":164}],88:[function(require,module,exports){
+},{"_process":152}],76:[function(require,module,exports){
 (function (process){
 var errors = require('./errors');
 var Bluebird = require('bluebird');
@@ -9650,7 +8487,7 @@ Dispatcher.prototype._parseApiOptions = function(params) {
 module.exports = Dispatcher;
 
 }).call(this,require('_process'))
-},{"../package.json":144,"./errors":91,"_process":164,"bluebird":146,"lodash":160,"querystring":169,"request":147}],89:[function(require,module,exports){
+},{"../package.json":132,"./errors":79,"_process":152,"bluebird":134,"lodash":148,"querystring":157,"request":135}],77:[function(require,module,exports){
 function AsanaError(message) {
   this.message = message;
   try {
@@ -9663,7 +8500,7 @@ function AsanaError(message) {
 AsanaError.prototype = Object.create(Error.prototype);
 
 module.exports = AsanaError;
-},{}],90:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 var util = require('util');
 var AsanaError = require('./error');
 
@@ -9676,7 +8513,7 @@ function Forbidden(value) {
 util.inherits(Forbidden, Error);
 
 module.exports = Forbidden;
-},{"./error":89,"util":204}],91:[function(require,module,exports){
+},{"./error":77,"util":192}],79:[function(require,module,exports){
 exports.Forbidden = require('./forbidden');
 exports.InvalidRequest = require('./invalid_request');
 exports.NoAuthorization = require('./no_authorization');
@@ -9685,7 +8522,7 @@ exports.PremiumOnly = require('./premium_only');
 exports.RateLimitEnforced = require('./rate_limit_enforced');
 exports.ServerError = require('./server_error');
 
-},{"./forbidden":90,"./invalid_request":92,"./no_authorization":93,"./not_found":94,"./premium_only":95,"./rate_limit_enforced":96,"./server_error":97}],92:[function(require,module,exports){
+},{"./forbidden":78,"./invalid_request":80,"./no_authorization":81,"./not_found":82,"./premium_only":83,"./rate_limit_enforced":84,"./server_error":85}],80:[function(require,module,exports){
 var util = require('util');
 var AsanaError = require('./error');
 
@@ -9698,7 +8535,7 @@ function InvalidRequest(value) {
 util.inherits(InvalidRequest, Error);
 
 module.exports = InvalidRequest;
-},{"./error":89,"util":204}],93:[function(require,module,exports){
+},{"./error":77,"util":192}],81:[function(require,module,exports){
 var util = require('util');
 var AsanaError = require('./error');
 
@@ -9711,7 +8548,7 @@ function NoAuthorization(value) {
 util.inherits(NoAuthorization, Error);
 
 module.exports = NoAuthorization;
-},{"./error":89,"util":204}],94:[function(require,module,exports){
+},{"./error":77,"util":192}],82:[function(require,module,exports){
 var util = require('util');
 var AsanaError = require('./error');
 
@@ -9724,7 +8561,7 @@ function NotFound(value) {
 util.inherits(NotFound, Error);
 
 module.exports = NotFound;
-},{"./error":89,"util":204}],95:[function(require,module,exports){
+},{"./error":77,"util":192}],83:[function(require,module,exports){
 var util = require('util');
 var AsanaError = require('./error');
 
@@ -9738,7 +8575,7 @@ util.inherits(PremiumOnly, Error);
 
 module.exports = PremiumOnly;
 
-},{"./error":89,"util":204}],96:[function(require,module,exports){
+},{"./error":77,"util":192}],84:[function(require,module,exports){
 var util = require('util');
 var AsanaError = require('./error');
 
@@ -9753,7 +8590,7 @@ function RateLimitEnforced(value) {
 util.inherits(RateLimitEnforced, Error);
 
 module.exports = RateLimitEnforced;
-},{"./error":89,"util":204}],97:[function(require,module,exports){
+},{"./error":77,"util":192}],85:[function(require,module,exports){
 var util = require('util');
 var AsanaError = require('./error');
 
@@ -9766,17 +8603,17 @@ function ServerError(value) {
 util.inherits(ServerError, Error);
 
 module.exports = ServerError;
-},{"./error":89,"util":204}],98:[function(require,module,exports){
+},{"./error":77,"util":192}],86:[function(require,module,exports){
 var Attachments = require('./gen/attachments');
 
 module.exports = Attachments;
 
-},{"./gen/attachments":102}],99:[function(require,module,exports){
+},{"./gen/attachments":90}],87:[function(require,module,exports){
 var CustomFieldSettings = require('./gen/custom_field_settings');
 
 module.exports = CustomFieldSettings;
 
-},{"./gen/custom_field_settings":103}],100:[function(require,module,exports){
+},{"./gen/custom_field_settings":91}],88:[function(require,module,exports){
 var CustomFields = require('./gen/custom_fields');
 
 /**
@@ -9792,7 +8629,7 @@ CustomFields.prototype.reorderEnumOption =
 
 module.exports = CustomFields;
 
-},{"./gen/custom_fields":104}],101:[function(require,module,exports){
+},{"./gen/custom_fields":92}],89:[function(require,module,exports){
 var EventStream = require('../util/event_stream');
 var Events = require('./gen/events');
 
@@ -9832,7 +8669,7 @@ Events.prototype.stream = function(resourceId, options) {
 Events.EventStream = EventStream;
 module.exports = Events;
 
-},{"../util/event_stream":142,"./gen/events":105}],102:[function(require,module,exports){
+},{"../util/event_stream":130,"./gen/events":93}],90:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -9897,7 +8734,7 @@ Attachments.prototype.findByTask = function(
 module.exports = Attachments;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],103:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],91:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -9965,7 +8802,7 @@ CustomFieldSettings.prototype.findByPortfolio = function(
 module.exports = CustomFieldSettings;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],104:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],92:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10180,7 +9017,7 @@ CustomFields.prototype.insertEnumOption = function(
 module.exports = CustomFields;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],105:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],93:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10233,7 +9070,7 @@ util.inherits(Events, Resource);
 module.exports = Events;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],106:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],94:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10282,7 +9119,7 @@ Jobs.prototype.findById = function(
 module.exports = Jobs;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],107:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],95:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10357,7 +9194,7 @@ OrganizationExports.prototype.create = function(
 module.exports = OrganizationExports;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],108:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],96:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10440,7 +9277,7 @@ PortfolioMemberships.prototype.findById = function(
 module.exports = PortfolioMemberships;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],109:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],97:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10731,7 +9568,7 @@ Portfolios.prototype.removeCustomFieldSetting = function(
 module.exports = Portfolios;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],110:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],98:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10798,7 +9635,7 @@ ProjectMemberships.prototype.findById = function(
 module.exports = ProjectMemberships;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],111:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],99:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -10904,7 +9741,7 @@ ProjectStatuses.prototype.delete = function(
 module.exports = ProjectStatuses;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],112:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],100:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -11294,7 +10131,7 @@ Projects.prototype.removeCustomFieldSetting = function(
 module.exports = Projects;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],113:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],101:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -11477,7 +10314,7 @@ Sections.prototype.insertInProject = function(
 module.exports = Sections;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],114:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],102:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -11602,7 +10439,7 @@ Stories.prototype.delete = function(
 module.exports = Stories;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],115:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],103:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -11798,7 +10635,7 @@ Tags.prototype.getTasksWithTag = function(
 module.exports = Tags;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],116:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],104:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -12487,7 +11324,7 @@ Tasks.prototype.insertInUserTaskList = function(
 module.exports = Tasks;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],117:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],105:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -12633,7 +11470,7 @@ Teams.prototype.removeUser = function(
 module.exports = Teams;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],118:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],106:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -12744,7 +11581,7 @@ UserTaskLists.prototype.tasks = function(
 module.exports = UserTaskLists;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],119:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],107:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -12870,7 +11707,7 @@ Users.prototype.findAll = function(
 module.exports = Users;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],120:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],108:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -13037,7 +11874,7 @@ Webhooks.prototype.deleteById = function(
 module.exports = Webhooks;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],121:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],109:[function(require,module,exports){
 
 /**
  * This file is auto-generated by the `asana-api-meta` NodeJS package.
@@ -13208,7 +12045,7 @@ Workspaces.prototype.removeUser = function(
 module.exports = Workspaces;
 /* jshint ignore:end */
 
-},{"../resource":130,"lodash":160,"util":204}],122:[function(require,module,exports){
+},{"../resource":118,"lodash":148,"util":192}],110:[function(require,module,exports){
 exports.Resource = require('./resource');
 
 exports.Attachments = require('./attachments');
@@ -13232,27 +12069,27 @@ exports.UserTaskLists = require('./user_task_lists');
 exports.Workspaces = require('./workspaces');
 exports.Webhooks = require('./webhooks');
 
-},{"./attachments":98,"./custom_field_settings":99,"./custom_fields":100,"./events":101,"./jobs":123,"./organization_exports":124,"./portfolio_memberships":125,"./portfolios":126,"./project_memberships":127,"./project_statuses":128,"./projects":129,"./resource":130,"./sections":131,"./stories":132,"./tags":133,"./tasks":134,"./teams":135,"./user_task_lists":136,"./users":137,"./webhooks":138,"./workspaces":139}],123:[function(require,module,exports){
+},{"./attachments":86,"./custom_field_settings":87,"./custom_fields":88,"./events":89,"./jobs":111,"./organization_exports":112,"./portfolio_memberships":113,"./portfolios":114,"./project_memberships":115,"./project_statuses":116,"./projects":117,"./resource":118,"./sections":119,"./stories":120,"./tags":121,"./tasks":122,"./teams":123,"./user_task_lists":124,"./users":125,"./webhooks":126,"./workspaces":127}],111:[function(require,module,exports){
 var Jobs = require('./gen/jobs');
 
 module.exports = Jobs;
 
-},{"./gen/jobs":106}],124:[function(require,module,exports){
+},{"./gen/jobs":94}],112:[function(require,module,exports){
 var OrganizationExports = require('./gen/organization_exports');
 
 module.exports = OrganizationExports;
 
-},{"./gen/organization_exports":107}],125:[function(require,module,exports){
+},{"./gen/organization_exports":95}],113:[function(require,module,exports){
 var PortfolioMemberships = require('./gen/portfolio_memberships');
 
 module.exports = PortfolioMemberships;
 
-},{"./gen/portfolio_memberships":108}],126:[function(require,module,exports){
+},{"./gen/portfolio_memberships":96}],114:[function(require,module,exports){
 var Portfolios = require('./gen/portfolios');
 
 module.exports = Portfolios;
 
-},{"./gen/portfolios":109}],127:[function(require,module,exports){
+},{"./gen/portfolios":97}],115:[function(require,module,exports){
 var ProjectMemberships = require('./gen/project_memberships');
 
 /**
@@ -13267,7 +12104,7 @@ ProjectMemberships.prototype.getSingle = ProjectMemberships.prototype.findById;
 
 module.exports = ProjectMemberships;
 
-},{"./gen/project_memberships":110}],128:[function(require,module,exports){
+},{"./gen/project_memberships":98}],116:[function(require,module,exports){
 var ProjectStatuses = require('./gen/project_statuses');
 
 /**
@@ -13277,11 +12114,11 @@ ProjectStatuses.prototype.create = ProjectStatuses.prototype.createInProject;
 
 module.exports = ProjectStatuses;
 
-},{"./gen/project_statuses":111}],129:[function(require,module,exports){
+},{"./gen/project_statuses":99}],117:[function(require,module,exports){
 var Projects = require('./gen/projects');
 
 module.exports = Projects;
-},{"./gen/projects":112}],130:[function(require,module,exports){
+},{"./gen/projects":100}],118:[function(require,module,exports){
 var Collection = require('../util/collection');
 
 /**
@@ -13401,22 +12238,22 @@ Resource.prototype.dispatchDelete = function(path, dispatchOptions) {
 
 module.exports = Resource;
 
-},{"../util/collection":141}],131:[function(require,module,exports){
+},{"../util/collection":129}],119:[function(require,module,exports){
 var Sections = require('./gen/sections');
 
 module.exports = Sections;
 
-},{"./gen/sections":113}],132:[function(require,module,exports){
+},{"./gen/sections":101}],120:[function(require,module,exports){
 var Stories = require('./gen/stories');
 
 module.exports = Stories;
 
-},{"./gen/stories":114}],133:[function(require,module,exports){
+},{"./gen/stories":102}],121:[function(require,module,exports){
 var Tags = require('./gen/tags');
 
 module.exports = Tags;
 
-},{"./gen/tags":115}],134:[function(require,module,exports){
+},{"./gen/tags":103}],122:[function(require,module,exports){
 var util = require('util');
 var Tasks = require('./gen/tasks');
 var _ = require('lodash');
@@ -13461,29 +12298,29 @@ Tasks.prototype.search = Tasks.prototype.searchInWorkspace;
 
 module.exports = Tasks;
 
-},{"./gen/tasks":116,"lodash":160,"util":204}],135:[function(require,module,exports){
+},{"./gen/tasks":104,"lodash":148,"util":192}],123:[function(require,module,exports){
 var Teams = require('./gen/teams');
 
 module.exports = Teams;
-},{"./gen/teams":117}],136:[function(require,module,exports){
+},{"./gen/teams":105}],124:[function(require,module,exports){
 var UserTaskLists = require('./gen/user_task_lists');
 
 module.exports = UserTaskLists;
 
-},{"./gen/user_task_lists":118}],137:[function(require,module,exports){
+},{"./gen/user_task_lists":106}],125:[function(require,module,exports){
 var Users = require('./gen/users');
 
 module.exports = Users;
-},{"./gen/users":119}],138:[function(require,module,exports){
+},{"./gen/users":107}],126:[function(require,module,exports){
 var Webhooks = require('./gen/webhooks');
 
 module.exports = Webhooks;
 
-},{"./gen/webhooks":120}],139:[function(require,module,exports){
+},{"./gen/webhooks":108}],127:[function(require,module,exports){
 var Workspaces = require('./gen/workspaces');
 
 module.exports = Workspaces;
-},{"./gen/workspaces":121}],140:[function(require,module,exports){
+},{"./gen/workspaces":109}],128:[function(require,module,exports){
 var Readable = require('stream').Readable;
 var util = require('util');
 
@@ -13544,7 +12381,7 @@ BufferedReadable.prototype._readUnbuffered = function() {
 
 module.exports = BufferedReadable;
 
-},{"stream":197,"util":204}],141:[function(require,module,exports){
+},{"stream":185,"util":192}],129:[function(require,module,exports){
 var Bluebird = require('bluebird');
 var ResourceStream = require('./resource_stream');
 
@@ -13679,7 +12516,7 @@ Collection.prototype.fetch = function(maxItems) {
 
 module.exports = Collection;
 
-},{"./resource_stream":143,"bluebird":146}],142:[function(require,module,exports){
+},{"./resource_stream":131,"bluebird":134}],130:[function(require,module,exports){
 var BufferedReadable = require('./buffered_readable');
 var util = require('util');
 
@@ -13751,7 +12588,7 @@ EventStream.prototype._poll = function() {
 };
 
 module.exports = EventStream;
-},{"./buffered_readable":140,"util":204}],143:[function(require,module,exports){
+},{"./buffered_readable":128,"util":192}],131:[function(require,module,exports){
 var BufferedReadable = require('./buffered_readable');
 var util = require('util');
 
@@ -13832,30 +12669,45 @@ ResourceStream.prototype._readUnbuffered = function() {
 };
 
 module.exports = ResourceStream;
-},{"./buffered_readable":140,"util":204}],144:[function(require,module,exports){
+},{"./buffered_readable":128,"util":192}],132:[function(require,module,exports){
 module.exports={
-  "name": "asana",
-  "version": "0.17.3",
-  "description": "Official NodeJS and BrowserJS client for the Asana API",
-  "main": "index.js",
-  "scripts": {
-    "test": "node_modules/.bin/gulp test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Asana/node-asana.git"
-  },
-  "keywords": [
-    "asana",
-    "api",
-    "oauth"
+  "_args": [
+    [
+      "asana@0.17.3",
+      "/Users/rossgrambo/sandbox/client_libraries/api-explorer"
+    ]
   ],
-  "author": "Phips Peter",
-  "license": "MIT",
+  "_from": "asana@0.17.3",
+  "_id": "asana@0.17.3",
+  "_inBundle": false,
+  "_integrity": "sha512-P1zD40F+VedaY19GDeyB+KIjVg1vnVvC4uD3bO+d7FtLNKNuHN6Q/HVM2dw4cXrfa7UQlVLO10GBthhotdkkaA==",
+  "_location": "/asana",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "asana@0.17.3",
+    "name": "asana",
+    "escapedName": "asana",
+    "rawSpec": "0.17.3",
+    "saveSpec": null,
+    "fetchSpec": "0.17.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/asana/-/asana-0.17.3.tgz",
+  "_spec": "0.17.3",
+  "_where": "/Users/rossgrambo/sandbox/client_libraries/api-explorer",
+  "author": {
+    "name": "Phips Peter"
+  },
+  "browser": {
+    "request": "browser-request"
+  },
   "bugs": {
     "url": "https://github.com/Asana/node-asana/issues"
   },
-  "homepage": "https://github.com/Asana/node-asana",
   "dependencies": {
     "bluebird": "^2.3.0",
     "browser-request": "^0.3.2",
@@ -13863,6 +12715,7 @@ module.exports={
     "readline": "^1.3.0",
     "request": "^2.88.0"
   },
+  "description": "Official NodeJS and BrowserJS client for the Asana API",
   "devDependencies": {
     "browserify": "^16.2.3",
     "gulp": "^4.0.2",
@@ -13883,12 +12736,26 @@ module.exports={
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^2.0.0"
   },
-  "browser": {
-    "request": "browser-request"
-  }
+  "homepage": "https://github.com/Asana/node-asana",
+  "keywords": [
+    "asana",
+    "api",
+    "oauth"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "asana",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Asana/node-asana.git"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "version": "0.17.3"
 }
 
-},{}],145:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -14042,7 +12909,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],146:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 (function (process,global,setImmediate){
 /* @preserve
  * The MIT License (MIT)
@@ -18937,7 +17804,7 @@ module.exports = ret;
 },{"./es5.js":14}]},{},[4])(4)
 });                    ;if (typeof window !== 'undefined' && window !== null) {                               window.P = window.Promise;                                                     } else if (typeof self !== 'undefined' && self !== null) {                             self.P = self.Promise;                                                         }
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("timers").setImmediate)
-},{"_process":164,"timers":198}],147:[function(require,module,exports){
+},{"_process":152,"timers":186}],135:[function(require,module,exports){
 // Browser Request
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -19433,11 +18300,11 @@ function b64_enc (data) {
 }));
 //UMD FOOTER END
 
-},{}],148:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 
-},{}],149:[function(require,module,exports){
-arguments[4][148][0].apply(exports,arguments)
-},{"dup":148}],150:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
+arguments[4][136][0].apply(exports,arguments)
+},{"dup":136}],138:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.1 by @mathias */
 ;(function(root) {
@@ -19974,7 +18841,7 @@ arguments[4][148][0].apply(exports,arguments)
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],151:[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 (function (Buffer){
 /*!
  * The buffer module from node.js, for the browser.
@@ -21768,7 +20635,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"base64-js":145,"buffer":151,"ieee754":154}],152:[function(require,module,exports){
+},{"base64-js":133,"buffer":139,"ieee754":142}],140:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -21879,7 +20746,7 @@ function objectToString(o) {
 }
 
 }).call(this,{"isBuffer":require("../../is-buffer/index.js")})
-},{"../../is-buffer/index.js":158}],153:[function(require,module,exports){
+},{"../../is-buffer/index.js":146}],141:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -22404,7 +21271,7 @@ function functionBindPolyfill(context) {
   };
 }
 
-},{}],154:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -22490,7 +21357,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],155:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var invariant = require("invariant");
@@ -22725,7 +21592,7 @@ function invariantMapOrSet(target, command) {
     invariant(typeOfTarget === 'Map' || typeOfTarget === 'Set', 'update(): %s expects a target of type Set or Map; got %s', command, typeOfTarget);
 }
 
-},{"invariant":157}],156:[function(require,module,exports){
+},{"invariant":145}],144:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -22754,7 +21621,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],157:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -22807,7 +21674,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":164}],158:[function(require,module,exports){
+},{"_process":152}],146:[function(require,module,exports){
 /*!
  * Determine if an object is a Buffer
  *
@@ -22830,14 +21697,14 @@ function isSlowBuffer (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
 }
 
-},{}],159:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],160:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -40002,7 +38869,7 @@ module.exports = Array.isArray || function (arr) {
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],161:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 (function (global){
 /**
  * marked - a markdown parser
@@ -41710,7 +40577,7 @@ if (typeof module !== 'undefined' && typeof exports === 'object') {
 })(this || (typeof window !== 'undefined' ? window : global));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],162:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -41802,7 +40669,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],163:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -41851,7 +40718,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 
 
 }).call(this,require('_process'))
-},{"_process":164}],164:[function(require,module,exports){
+},{"_process":152}],152:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -42037,7 +40904,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],165:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -42143,7 +41010,7 @@ checkPropTypes.resetWarningCache = function() {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":166,"_process":164}],166:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":154,"_process":152}],154:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -42157,7 +41024,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],167:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -42243,7 +41110,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],168:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -42330,13 +41197,13 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],169:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":167,"./encode":168}],170:[function(require,module,exports){
+},{"./decode":155,"./encode":156}],158:[function(require,module,exports){
 (function (process){
 /** @license React v16.13.1
  * react-dom.development.js
@@ -67352,7 +66219,7 @@ exports.version = ReactVersion;
 }
 
 }).call(this,require('_process'))
-},{"_process":164,"object-assign":162,"prop-types/checkPropTypes":165,"react":181,"scheduler":177,"scheduler/tracing":178}],171:[function(require,module,exports){
+},{"_process":152,"object-assign":150,"prop-types/checkPropTypes":153,"react":169,"scheduler":165,"scheduler/tracing":166}],159:[function(require,module,exports){
 /** @license React v16.13.1
  * react-dom.production.min.js
  *
@@ -67646,7 +66513,7 @@ exports.flushSync=function(a,b){if((W&(fj|gj))!==V)throw Error(u(187));var c=W;W
 exports.unmountComponentAtNode=function(a){if(!gk(a))throw Error(u(40));return a._reactRootContainer?(Nj(function(){ik(null,null,a,!1,function(){a._reactRootContainer=null;a[Od]=null})}),!0):!1};exports.unstable_batchedUpdates=Mj;exports.unstable_createPortal=function(a,b){return kk(a,b,2<arguments.length&&void 0!==arguments[2]?arguments[2]:null)};
 exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!gk(c))throw Error(u(200));if(null==a||void 0===a._reactInternalFiber)throw Error(u(38));return ik(a,b,c,!1,d)};exports.version="16.13.1";
 
-},{"object-assign":162,"react":181,"scheduler":177}],172:[function(require,module,exports){
+},{"object-assign":150,"react":169,"scheduler":165}],160:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -67688,7 +66555,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-dom.development.js":170,"./cjs/react-dom.production.min.js":171,"_process":164}],173:[function(require,module,exports){
+},{"./cjs/react-dom.development.js":158,"./cjs/react-dom.production.min.js":159,"_process":152}],161:[function(require,module,exports){
 (function (process){
 /** @license React v0.19.1
  * scheduler-tracing.development.js
@@ -68041,7 +66908,7 @@ exports.unstable_wrap = unstable_wrap;
 }
 
 }).call(this,require('_process'))
-},{"_process":164}],174:[function(require,module,exports){
+},{"_process":152}],162:[function(require,module,exports){
 /** @license React v0.19.1
  * scheduler-tracing.production.min.js
  *
@@ -68053,7 +66920,7 @@ exports.unstable_wrap = unstable_wrap;
 
 'use strict';var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unstable_clear=function(a){return a()};exports.unstable_getCurrent=function(){return null};exports.unstable_getThreadID=function(){return++b};exports.unstable_subscribe=function(){};exports.unstable_trace=function(a,d,c){return c()};exports.unstable_unsubscribe=function(){};exports.unstable_wrap=function(a){return a};
 
-},{}],175:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 (function (process){
 /** @license React v0.19.1
  * scheduler.development.js
@@ -68915,7 +67782,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 }
 
 }).call(this,require('_process'))
-},{"_process":164}],176:[function(require,module,exports){
+},{"_process":152}],164:[function(require,module,exports){
 /** @license React v0.19.1
  * scheduler.production.min.js
  *
@@ -68938,7 +67805,7 @@ exports.unstable_getCurrentPriorityLevel=function(){return R};exports.unstable_g
 exports.unstable_scheduleCallback=function(a,b,c){var d=exports.unstable_now();if("object"===typeof c&&null!==c){var e=c.delay;e="number"===typeof e&&0<e?d+e:d;c="number"===typeof c.timeout?c.timeout:Y(a)}else c=Y(a),e=d;c=e+c;a={id:P++,callback:b,priorityLevel:a,startTime:e,expirationTime:c,sortIndex:-1};e>d?(a.sortIndex=e,J(O,a),null===L(N)&&a===L(O)&&(U?h():U=!0,g(W,e-d))):(a.sortIndex=c,J(N,a),T||S||(T=!0,f(X)));return a};
 exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=L(N);return b!==Q&&null!==Q&&null!==b&&null!==b.callback&&b.startTime<=a&&b.expirationTime<Q.expirationTime||k()};exports.unstable_wrapCallback=function(a){var b=R;return function(){var c=R;R=b;try{return a.apply(this,arguments)}finally{R=c}}};
 
-},{}],177:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -68949,7 +67816,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/scheduler.development.js":175,"./cjs/scheduler.production.min.js":176,"_process":164}],178:[function(require,module,exports){
+},{"./cjs/scheduler.development.js":163,"./cjs/scheduler.production.min.js":164,"_process":152}],166:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -68960,7 +67827,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/scheduler-tracing.development.js":173,"./cjs/scheduler-tracing.production.min.js":174,"_process":164}],179:[function(require,module,exports){
+},{"./cjs/scheduler-tracing.development.js":161,"./cjs/scheduler-tracing.production.min.js":162,"_process":152}],167:[function(require,module,exports){
 (function (process){
 /** @license React v16.13.1
  * react.development.js
@@ -70876,7 +69743,7 @@ exports.version = ReactVersion;
 }
 
 }).call(this,require('_process'))
-},{"_process":164,"object-assign":162,"prop-types/checkPropTypes":165}],180:[function(require,module,exports){
+},{"_process":152,"object-assign":150,"prop-types/checkPropTypes":153}],168:[function(require,module,exports){
 /** @license React v16.13.1
  * react.production.min.js
  *
@@ -70903,7 +69770,7 @@ key:d,ref:g,props:e,_owner:k}};exports.createContext=function(a,b){void 0===b&&(
 exports.lazy=function(a){return{$$typeof:A,_ctor:a,_status:-1,_result:null}};exports.memo=function(a,b){return{$$typeof:z,type:a,compare:void 0===b?null:b}};exports.useCallback=function(a,b){return Z().useCallback(a,b)};exports.useContext=function(a,b){return Z().useContext(a,b)};exports.useDebugValue=function(){};exports.useEffect=function(a,b){return Z().useEffect(a,b)};exports.useImperativeHandle=function(a,b,c){return Z().useImperativeHandle(a,b,c)};
 exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.useMemo=function(a,b){return Z().useMemo(a,b)};exports.useReducer=function(a,b,c){return Z().useReducer(a,b,c)};exports.useRef=function(a){return Z().useRef(a)};exports.useState=function(a){return Z().useState(a)};exports.version="16.13.1";
 
-},{"object-assign":162}],181:[function(require,module,exports){
+},{"object-assign":150}],169:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -70914,10 +69781,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":179,"./cjs/react.production.min.js":180,"_process":164}],182:[function(require,module,exports){
+},{"./cjs/react.development.js":167,"./cjs/react.production.min.js":168,"_process":152}],170:[function(require,module,exports){
 module.exports = require('./lib/_stream_duplex.js');
 
-},{"./lib/_stream_duplex.js":183}],183:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":171}],171:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -71049,7 +69916,7 @@ Duplex.prototype._destroy = function (err, cb) {
 
   pna.nextTick(cb, err);
 };
-},{"./_stream_readable":185,"./_stream_writable":187,"core-util-is":152,"inherits":156,"process-nextick-args":163}],184:[function(require,module,exports){
+},{"./_stream_readable":173,"./_stream_writable":175,"core-util-is":140,"inherits":144,"process-nextick-args":151}],172:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -71097,7 +69964,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":186,"core-util-is":152,"inherits":156}],185:[function(require,module,exports){
+},{"./_stream_transform":174,"core-util-is":140,"inherits":144}],173:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -72119,7 +70986,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./_stream_duplex":183,"./internal/streams/BufferList":188,"./internal/streams/destroy":189,"./internal/streams/stream":190,"_process":164,"core-util-is":152,"events":153,"inherits":156,"isarray":159,"process-nextick-args":163,"safe-buffer":191,"string_decoder/":192,"util":148}],186:[function(require,module,exports){
+},{"./_stream_duplex":171,"./internal/streams/BufferList":176,"./internal/streams/destroy":177,"./internal/streams/stream":178,"_process":152,"core-util-is":140,"events":141,"inherits":144,"isarray":147,"process-nextick-args":151,"safe-buffer":179,"string_decoder/":180,"util":136}],174:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -72334,7 +71201,7 @@ function done(stream, er, data) {
 
   return stream.push(null);
 }
-},{"./_stream_duplex":183,"core-util-is":152,"inherits":156}],187:[function(require,module,exports){
+},{"./_stream_duplex":171,"core-util-is":140,"inherits":144}],175:[function(require,module,exports){
 (function (process,global,setImmediate){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -73024,7 +71891,7 @@ Writable.prototype._destroy = function (err, cb) {
   cb(err);
 };
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("timers").setImmediate)
-},{"./_stream_duplex":183,"./internal/streams/destroy":189,"./internal/streams/stream":190,"_process":164,"core-util-is":152,"inherits":156,"process-nextick-args":163,"safe-buffer":191,"timers":198,"util-deprecate":201}],188:[function(require,module,exports){
+},{"./_stream_duplex":171,"./internal/streams/destroy":177,"./internal/streams/stream":178,"_process":152,"core-util-is":140,"inherits":144,"process-nextick-args":151,"safe-buffer":179,"timers":186,"util-deprecate":189}],176:[function(require,module,exports){
 'use strict';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -73104,7 +71971,7 @@ if (util && util.inspect && util.inspect.custom) {
     return this.constructor.name + ' ' + obj;
   };
 }
-},{"safe-buffer":191,"util":148}],189:[function(require,module,exports){
+},{"safe-buffer":179,"util":136}],177:[function(require,module,exports){
 'use strict';
 
 /*<replacement>*/
@@ -73179,10 +72046,10 @@ module.exports = {
   destroy: destroy,
   undestroy: undestroy
 };
-},{"process-nextick-args":163}],190:[function(require,module,exports){
+},{"process-nextick-args":151}],178:[function(require,module,exports){
 module.exports = require('events').EventEmitter;
 
-},{"events":153}],191:[function(require,module,exports){
+},{"events":141}],179:[function(require,module,exports){
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
 var Buffer = buffer.Buffer
@@ -73246,7 +72113,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-},{"buffer":151}],192:[function(require,module,exports){
+},{"buffer":139}],180:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -73543,10 +72410,10 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":191}],193:[function(require,module,exports){
+},{"safe-buffer":179}],181:[function(require,module,exports){
 module.exports = require('./readable').PassThrough
 
-},{"./readable":194}],194:[function(require,module,exports){
+},{"./readable":182}],182:[function(require,module,exports){
 exports = module.exports = require('./lib/_stream_readable.js');
 exports.Stream = exports;
 exports.Readable = exports;
@@ -73555,13 +72422,13 @@ exports.Duplex = require('./lib/_stream_duplex.js');
 exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
-},{"./lib/_stream_duplex.js":183,"./lib/_stream_passthrough.js":184,"./lib/_stream_readable.js":185,"./lib/_stream_transform.js":186,"./lib/_stream_writable.js":187}],195:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":171,"./lib/_stream_passthrough.js":172,"./lib/_stream_readable.js":173,"./lib/_stream_transform.js":174,"./lib/_stream_writable.js":175}],183:[function(require,module,exports){
 module.exports = require('./readable').Transform
 
-},{"./readable":194}],196:[function(require,module,exports){
+},{"./readable":182}],184:[function(require,module,exports){
 module.exports = require('./lib/_stream_writable.js');
 
-},{"./lib/_stream_writable.js":187}],197:[function(require,module,exports){
+},{"./lib/_stream_writable.js":175}],185:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -73690,7 +72557,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":153,"inherits":156,"readable-stream/duplex.js":182,"readable-stream/passthrough.js":193,"readable-stream/readable.js":194,"readable-stream/transform.js":195,"readable-stream/writable.js":196}],198:[function(require,module,exports){
+},{"events":141,"inherits":144,"readable-stream/duplex.js":170,"readable-stream/passthrough.js":181,"readable-stream/readable.js":182,"readable-stream/transform.js":183,"readable-stream/writable.js":184}],186:[function(require,module,exports){
 (function (setImmediate,clearImmediate){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
@@ -73769,7 +72636,7 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
   delete immediateIds[id];
 };
 }).call(this,require("timers").setImmediate,require("timers").clearImmediate)
-},{"process/browser.js":164,"timers":198}],199:[function(require,module,exports){
+},{"process/browser.js":152,"timers":186}],187:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -74503,7 +73370,7 @@ Url.prototype.parseHost = function() {
   if (host) this.hostname = host;
 };
 
-},{"./util":200,"punycode":150,"querystring":169}],200:[function(require,module,exports){
+},{"./util":188,"punycode":138,"querystring":157}],188:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -74521,7 +73388,7 @@ module.exports = {
   }
 };
 
-},{}],201:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 (function (global){
 
 /**
@@ -74592,7 +73459,7 @@ function config (name) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],202:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -74617,14 +73484,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],203:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],204:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -75214,5 +74081,5 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":203,"_process":164,"inherits":202}]},{},[13])(13)
+},{"./support/isBuffer":191,"_process":152,"inherits":190}]},{},[13])(13)
 });
