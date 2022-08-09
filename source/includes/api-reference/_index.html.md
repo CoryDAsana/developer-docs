@@ -22940,7 +22940,7 @@ You may receive a `429 Too Many Requests` response if you hit any of our [rate l
 
 For example, if the gid of the custom field is 12345, these query parameter to find tasks where it is set would be `custom_fields.12345.is_set=true`. To match an exact value for an enum custom field, use the gid of the desired enum option and not the name of the enum option: `custom_fields.12345.value=67890`.
 
-Searching for multiple exact matches of a custom field is not supported.
+**Not Supported**: searching for multiple exact matches of a custom field, searching for multi-enum custom field
 
 *Note: If you specify `projects.any` and `sections.any`, you will receive tasks for the project **and** tasks for the section. If you're looking for only tasks in a section, omit the `projects.any` from the request.*
 </span>

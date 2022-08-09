@@ -11931,7 +11931,8 @@ paths:
         and not the name of the enum option: `custom_fields.12345.value=67890`.
 
 
-        Searching for multiple exact matches of a custom field is not supported.
+        **Not Supported**: searching for multiple exact matches of a custom field,
+        searching for multi-enum custom field
 
 
         *Note: If you specify `projects.any` and `sections.any`, you will receive
