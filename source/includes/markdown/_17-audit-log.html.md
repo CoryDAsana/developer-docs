@@ -43,6 +43,7 @@ All admin settings events operate on the _Workspace_ resource type except for `w
 
 | Event Type | Description |
 |------------|---------------|
+| workspace_security_contact_email_changed             | The workspace's security contact e-mail was changed. |
 | workspace_google_sso_settings_changed                | The workspace's Google SSO settings were changed. |
 | workspace_saml_settings_changed                      | The workspace's SAML settings were changed. |
 | workspace_saml_url_changed                           | The workspace's SAML url was changed. |
