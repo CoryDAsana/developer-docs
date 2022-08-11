@@ -68,28 +68,49 @@ The explorer is not meant to be an exhaustive tool with every endpoint in the AP
 <section>
 # Submit your App
 
-<span class="description">
-Have you built a web application that you want to share with the Asana community? Submit [this form](https://www.asana.com/apps/submit) to get your app listed in the [Asana apps directory](https://www.asana.com/apps).
-</span>
+If you've built an application that you wish to share with the Asana community, you can visit the
+[developer console](https://app.asana.com/0/my-apps) to begin the app submission process. 
 
-### Recommendations and resources for app developers:
+By submitting an app for review, you'll have the opportunity to distribute your app publicly by listing
+it in the [app directory](https://asana.com/apps) (as well as in the in-product [app gallery](/docs/installation-flow)
+for apps with [App Components](/docs/overview-of-app-components)).
 
-* We strongly recommend that you use [OAuth 2.0](/docs/oauth) for your app. Apps that don’t use Auth 2.0 will likely not be approved for listing in our directory.
+### Submit for review
 
-* Be aware of the [OWASP Top 10 Web App Security Risks](https://owasp.org/www-project-top-ten/) when developing your app. 
+When managing your app in the [developer console](https://app.asana.com/0/my-apps), select **Submit for review**
+in the sidebar to access the app submission form:
 
-* If you are new to app security, we recommend reading [The Web Application Hacker's Handbook](https://www.amazon.com/The-Web-Application-Hackers-Handbook/dp/1118026470).
+<img src="../images/submit-my-test-app.png" alt="submit My Test App" />
 
-* Use end-to-end encryption. Use a trusted site to test your TLS security (such as: https://www.ssllabs.com/ssltest/).
+From there, you'll review an interactive "pre-flight" checklist of app features before submitting an app. This includes:
 
-* Join the [Asana developer community](https://forum.asana.com/c/developersAPI). This is the best resource to get technical questions answered as well as get notified about new API features, deprecations, and other breaking changes. 
+- Adding an app icon that uniquely represents your app
+- Setting up [OAuth](/docs/oauth) by adding a redirect URL
+- Adding app images that show what your app can do
+- Adding a short description to summarize what your app can do at a glance
+- Adding a longer description (at least 250 characters) to tell users about the features of your app
+- Adding information about your company to build trust with users
+- Adding a support page URL so that users can seek help
+- Adding your app’s privacy policy URL
 
-* Once your app is listed, you can answer Asana user questions in the [integrations section of the Asana community](https://forum.asana.com/c/integrations).
+Along with building or providing the above features, you'll be able to submit additional app details through the submit form,
+such as setup instructions, a screencast video link, and other listing details.
 
-### Updating your existing app listing
-If you wish to update your existing listing, send an email to api-support at asana.com with the specific changes. 
+### App review process
 
-We expect existing apps to maintain the same level of user experience that they had when accepted to the apps directory.  
+Once your app has been submitted through the [developer console](https://app.asana.com/0/my-apps), the review process will
+begin. At this point, the app will no longer be open for further edits. Note that if your app uses
+[App Components](/docs/overview-of-app-components), your submission will go through a security review and QA process
+before it’s listed in the in-product [app gallery](/docs/installation-flow).
+
+You can track the status of your app submission on the same **Submit for review** page. If your app submission passes requirements,
+you'll receive an email notification that your app is ready to publish. At this point, you can select the **Publish app** button in 
+the developer console to share your app:
+
+<img src="../images/approved-app.png" alt="approved application screen" />
+
+If your app submission doesn't meet requirements, you will receive an email regarding the next steps (i.e., any changes required)
+to get your app ready for re-review.
 
 
 <div>
@@ -108,7 +129,7 @@ We expect existing apps to maintain the same level of user experience that they 
 You can quickly create a brand new app with the same configurations of an existing one by selecting **Duplicate app**
 in the [developer console](https://app.asana.com/0/my-apps).
 
-<img src="../images/duplicate-app.png" />
+<img src="../images/duplicate-app.png" alt="duplicate app" />
 
 This feature can help streamline the creation and management of different versions (e.g., staging, beta, production, etc.)
 of your application. As a result of this operation, the newly-generated app will retain the configurations of the original app,
@@ -122,12 +143,33 @@ Because the newly-generated app is its own unique app, the following _will not_ 
 * App credentials (i.e., a new Client ID and Client Secret will be generated)
 * Users who have completed OAuth
 * Organizations in which the app is available
-* Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installing-an-app)
+* Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installation-flow)
+
+<hr>
+
+### Editing a published app
+
+Developers have the ability to submit edits to a published app.
+
+To begin the process, first [duplicate your app](/docs/duplicating-an-app):
+
+<img src="../images/duplicate-app-modal.png" alt="duplicate app modal" />
+
+After duplicating the original app, provide any edits to any configurations as needed. 
+
+When you are ready to [submit your app for review](/docs/submit-your-app), navigate to **Submit for review** in the
+sidebar when managing your app. On the app submission page, select **I'm submitting changes to a published app** in
+the **Submission type** dropdown:
+
+<img src="../images/edit-published-app.png" alt="editing a published app" />
+
+Upon submission, your app will follow the standard review process. If the edits are accepted,
+_the original (i.e., previous) app will reflect the new updates_, while the duplicate app can be used again for testing.
 
 <hr>
 # Custom Apps
 
-#### What to consider when building a custom app. 
+#### What to consider when building a custom app
 
 
 <span class="description">
