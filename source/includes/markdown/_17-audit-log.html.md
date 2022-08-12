@@ -109,6 +109,8 @@ All role events operate on the _User_ resource type.
 | project_member_added          | Project | A user was added to a project. |
 | project_member_removed        | Project | A user was removed from a project. |
 | project_privacy_settings_changed | Project | A project’s privacy settings were changed. |
+| portfolio_member_added          | Portfolio | A user was added to a portfolio. |
+| portfolio_member_removed        | Portfolio | A user was removed from a portfolio. |
  
  
 ### Apps
