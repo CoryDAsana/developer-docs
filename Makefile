@@ -1,4 +1,12 @@
 
+# preamable as per https://tech.davis-hansson.com/p/make/, minus RECIPEPREFIX
+SHELL := bash
+.ONESHELL:
+.SHELLFLAGS := -eu -o pipefail -c
+.DELETE_ON_ERROR:
+MAKEFLAGS += --warn-undefined-variables
+MAKEFLAGS += --no-builtin-rules
+
 VERSION_ROSSGRAMBO := 1.0.15
 VERSION_SWAGGER_CODEGEN := v3.0.15
 
@@ -55,7 +63,8 @@ ALL_YAML_DEPS := $(shell find '$(OPENAPI_DIR)')
 
 $(ALL_OAS_YAML): $(ALL_YAML_DEPS)
 	cd '$(OPENAPI_DIR)' && \
-		bash -l -c 'python build.py'
+		bash -l -c 'python3.9 build.py'
+
 	cp '$(FILE_CODEZ_API_OAS)' defs/asana_oas.yaml
 	cp '$(FILE_CODEZ_APP_COMPONENTS_OAS)' defs/app_components_oas.yaml
 
