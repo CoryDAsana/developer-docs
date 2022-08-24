@@ -13,6 +13,13 @@ to_make=(
   source/includes/api-reference/_index.html.md
 )
 
+run_middleman() {
+  if ! bundle exec middleman serve --watcher-force-polling; then
+    echo "failed to run middleman" >&2
+    exit 1
+  fi
+}
+
 acquire_lock() {
   file_lock="$log_file_dir/LOCK"
   if [[ -f "$file_lock" ]]; then
@@ -69,4 +76,4 @@ on_child_died() {
   kill -- "-$child" "-$parent"
 }
 
-./bin/serve_local_dev
+run_middleman

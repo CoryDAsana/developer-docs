@@ -50,9 +50,6 @@ install_asdf_plugins() (
 update_asdf_ruby_gems() (
   asdf exec gem pristine --all
   asdf exec gem install bundler
-
-  asdf exec bundle config set --local path 'vendor/bundle'
-  asdf exec bundle install
 )
 
 install_codez_python_deps() (
