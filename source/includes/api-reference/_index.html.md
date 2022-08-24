@@ -976,12 +976,13 @@ In the Asana application, Tasks, Projects, and Portfolios can hold user-specifie
 
 #### Types of Custom Fields
 
-Integrations using Custom Fields need to be aware of the four basic types that a Custom Field can adopt. These types are:
+Integrations using Custom Fields need to be aware of the five basic types that a Custom Field can adopt. These types are:
 
 * `text` - an arbitrary, relatively short string of text
 * `number` - a number with a defined level of precision
 * `enum` - a selection of a single option from a defined list of options (i.e., mutually exclusive selections)
 * `multi_enum` - a selection of one or more options from a defined list of options (i.e., mutually inclusive selections)
+* `date` - a reference date with an optional time value
 
 #### Example use-case
 
@@ -1133,6 +1134,10 @@ $result = $client->customfields->createCustomField(array('field' => 'value', 'fi
     "currency_code": "EUR",
     "custom_label": "gold pieces",
     "custom_label_position": "suffix",
+    "date_value": {
+      "date": "2024-08-23",
+      "date_time": "2024-08-23T22:00:00.000Z"
+    },
     "description": "Development team priority",
     "enabled": true,
     "enum_options": [
@@ -1181,6 +1186,10 @@ $result = $client->customfields->createCustomField(array('field' => 'value', 'fi
     "currency_code": "EUR",
     "custom_label": "gold pieces",
     "custom_label_position": "suffix",
+    "date_value": {
+      "date": "2024-08-23",
+      "date_time": "2024-08-23T22:00:00.000Z"
+    },
     "description": "Development team priority",
     "display_value": "blue",
     "enabled": true,
@@ -1235,7 +1244,7 @@ changed once set.
 
 A custom field’s name must be unique within a workspace and not conflict
 with names of existing task properties such as `Due Date` or `Assignee`.
-A custom field’s type must be one of `text`, `enum`, `multi_enum` or `number`.
+A custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`, or `date`.
 
 Returns the full record of the newly created custom field.
 </span>
@@ -1249,6 +1258,9 @@ Returns the full record of the newly created custom field.
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
 |»» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |»» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
@@ -1297,6 +1309,7 @@ The identifier format will always have a precision of 0.
 | resource_subtype|enum|
 | resource_subtype|multi_enum|
 | resource_subtype|number|
+| resource_subtype|date|
 
 <h3 id="create-a-custom-field-responses">Responses</h3>
 
@@ -1387,6 +1400,10 @@ $result = $client->customfields->getCustomField($custom_field_gid, array('param'
     "currency_code": "EUR",
     "custom_label": "gold pieces",
     "custom_label_position": "suffix",
+    "date_value": {
+      "date": "2024-08-23",
+      "date_time": "2024-08-23T22:00:00.000Z"
+    },
     "description": "Development team priority",
     "display_value": "blue",
     "enabled": true,
@@ -1539,6 +1556,10 @@ $result = $client->customfields->updateCustomField($custom_field_gid, array('fie
     "currency_code": "EUR",
     "custom_label": "gold pieces",
     "custom_label_position": "suffix",
+    "date_value": {
+      "date": "2024-08-23",
+      "date_time": "2024-08-23T22:00:00.000Z"
+    },
     "description": "Development team priority",
     "enabled": true,
     "enum_options": [
@@ -1587,6 +1608,10 @@ $result = $client->customfields->updateCustomField($custom_field_gid, array('fie
     "currency_code": "EUR",
     "custom_label": "gold pieces",
     "custom_label_position": "suffix",
+    "date_value": {
+      "date": "2024-08-23",
+      "date_time": "2024-08-23T22:00:00.000Z"
+    },
     "description": "Development team priority",
     "display_value": "blue",
     "enabled": true,
@@ -1652,6 +1677,9 @@ Returns the complete updated custom field record.
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
 |»» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |»» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
@@ -1699,6 +1727,7 @@ The identifier format will always have a precision of 0.
 | resource_subtype|enum|
 | resource_subtype|multi_enum|
 | resource_subtype|number|
+| resource_subtype|date|
 
 <h3 id="update-a-custom-field-responses">Responses</h3>
 
@@ -1900,6 +1929,10 @@ $result = $client->customfields->getCustomFieldsForWorkspace($workspace_gid, arr
       "currency_code": "EUR",
       "custom_label": "gold pieces",
       "custom_label_position": "suffix",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "description": "Development team priority",
       "display_value": "blue",
       "enabled": true,
@@ -2465,6 +2498,10 @@ $result = $client->customfieldsettings->getCustomFieldSettingsForProject($projec
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -2632,6 +2669,10 @@ $result = $client->customfieldsettings->getCustomFieldSettingsForPortfolio($port
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -5980,6 +6021,10 @@ $result = $client->portfolios->createPortfolio(array('field' => 'value', 'field'
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -6219,6 +6264,10 @@ $result = $client->portfolios->getPortfolio($portfolio_gid, array('param' => 'va
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -6444,6 +6493,10 @@ $result = $client->portfolios->updatePortfolio($portfolio_gid, array('field' => 
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -7156,6 +7209,10 @@ $result = $client->portfolios->addCustomFieldSettingForPortfolio($portfolio_gid,
       "currency_code": "EUR",
       "custom_label": "gold pieces",
       "custom_label_position": "suffix",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "description": "Development team priority",
       "display_value": "blue",
       "enabled": true,
@@ -7480,6 +7537,10 @@ $result = $client->portfolios->addMembersForPortfolio($portfolio_gid, array('fie
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -7702,6 +7763,10 @@ $result = $client->portfolios->removeMembersForPortfolio($portfolio_gid, array('
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -8464,6 +8529,10 @@ $result = $client->projects->createProject(array('field' => 'value', 'field' => 
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -8553,6 +8622,10 @@ $result = $client->projects->createProject(array('field' => 'value', 'field' => 
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -8653,7 +8726,7 @@ Returns the full record of the newly created project.
 |»»» title<span class="param-type"> string</span>|The title of the project status update.|
 |»» current_status_update<span class="param-type"> object</span>|A *status update* is an update on the progress of a particular project, portfolio, or goal, and is sent out to all of its parent's followers when created. These updates include both text describing the update and a `status_type` intended to represent the overall state of the project.|
 |»»» title<span class="param-type"> string</span>|The title of the status update.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field gid and each value is an enum gid, string, or number.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
 |»» default_view<span class="param-type"> string</span>|The default view (list, board, calendar, or timeline) of a project.|
 |»» due_date<span class="param-type"> string(date-time)¦null</span>|*Deprecated: new integrations should prefer the `due_on` field.*|
 |»» due_on<span class="param-type"> string(date-time)¦null</span>|The day on which this project is due. This takes a date with format YYYY-MM-DD.|
@@ -8830,6 +8903,10 @@ $result = $client->projects->getProject($project_gid, array('param' => 'value', 
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -8919,6 +8996,10 @@ $result = $client->projects->getProject($project_gid, array('param' => 'value', 
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -9169,6 +9250,10 @@ $result = $client->projects->updateProject($project_gid, array('field' => 'value
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -9258,6 +9343,10 @@ $result = $client->projects->updateProject($project_gid, array('field' => 'value
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -9356,7 +9445,7 @@ Returns the complete updated project record.
 |»»» title<span class="param-type"> string</span>|The title of the project status update.|
 |»» current_status_update<span class="param-type"> object</span>|A *status update* is an update on the progress of a particular project, portfolio, or goal, and is sent out to all of its parent's followers when created. These updates include both text describing the update and a `status_type` intended to represent the overall state of the project.|
 |»»» title<span class="param-type"> string</span>|The title of the status update.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field gid and each value is an enum gid, string, or number.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
 |»» default_view<span class="param-type"> string</span>|The default view (list, board, calendar, or timeline) of a project.|
 |»» due_date<span class="param-type"> string(date-time)¦null</span>|*Deprecated: new integrations should prefer the `due_on` field.*|
 |»» due_on<span class="param-type"> string(date-time)¦null</span>|The day on which this project is due. This takes a date with format YYYY-MM-DD.|
@@ -10079,6 +10168,10 @@ $result = $client->projects->createProjectForTeam($team_gid, array('field' => 'v
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -10168,6 +10261,10 @@ $result = $client->projects->createProjectForTeam($team_gid, array('field' => 'v
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -10260,7 +10357,7 @@ Returns the full record of the newly created project.
 |»»» title<span class="param-type"> string</span>|The title of the project status update.|
 |»» current_status_update<span class="param-type"> object</span>|A *status update* is an update on the progress of a particular project, portfolio, or goal, and is sent out to all of its parent's followers when created. These updates include both text describing the update and a `status_type` intended to represent the overall state of the project.|
 |»»» title<span class="param-type"> string</span>|The title of the status update.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field gid and each value is an enum gid, string, or number.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
 |»» default_view<span class="param-type"> string</span>|The default view (list, board, calendar, or timeline) of a project.|
 |»» due_date<span class="param-type"> string(date-time)¦null</span>|*Deprecated: new integrations should prefer the `due_on` field.*|
 |»» due_on<span class="param-type"> string(date-time)¦null</span>|The day on which this project is due. This takes a date with format YYYY-MM-DD.|
@@ -10594,6 +10691,10 @@ $result = $client->projects->createProjectForWorkspace($workspace_gid, array('fi
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -10683,6 +10784,10 @@ $result = $client->projects->createProjectForWorkspace($workspace_gid, array('fi
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -10778,7 +10883,7 @@ Returns the full record of the newly created project.
 |»»» title<span class="param-type"> string</span>|The title of the project status update.|
 |»» current_status_update<span class="param-type"> object</span>|A *status update* is an update on the progress of a particular project, portfolio, or goal, and is sent out to all of its parent's followers when created. These updates include both text describing the update and a `status_type` intended to represent the overall state of the project.|
 |»»» title<span class="param-type"> string</span>|The title of the status update.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field gid and each value is an enum gid, string, or number.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
 |»» default_view<span class="param-type"> string</span>|The default view (list, board, calendar, or timeline) of a project.|
 |»» due_date<span class="param-type"> string(date-time)¦null</span>|*Deprecated: new integrations should prefer the `due_on` field.*|
 |»» due_on<span class="param-type"> string(date-time)¦null</span>|The day on which this project is due. This takes a date with format YYYY-MM-DD.|
@@ -10940,6 +11045,10 @@ $result = $client->projects->addCustomFieldSettingForProject($project_gid, array
       "currency_code": "EUR",
       "custom_label": "gold pieces",
       "custom_label_position": "suffix",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "description": "Development team priority",
       "display_value": "blue",
       "enabled": true,
@@ -11392,6 +11501,10 @@ $result = $client->projects->addMembersForProject($project_gid, array('field' =>
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -11481,6 +11594,10 @@ $result = $client->projects->addMembersForProject($project_gid, array('field' =>
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -11703,6 +11820,10 @@ $result = $client->projects->removeMembersForProject($project_gid, array('field'
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -11792,6 +11913,10 @@ $result = $client->projects->removeMembersForProject($project_gid, array('field'
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -12014,6 +12139,10 @@ $result = $client->projects->addFollowersForProject($project_gid, array('field' 
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -12103,6 +12232,10 @@ $result = $client->projects->addFollowersForProject($project_gid, array('field' 
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -12325,6 +12458,10 @@ $result = $client->projects->removeFollowersForProject($project_gid, array('fiel
           "currency_code": "EUR",
           "custom_label": "gold pieces",
           "custom_label_position": "suffix",
+          "date_value": {
+            "date": "2024-08-23",
+            "date_time": "2024-08-23T22:00:00.000Z"
+          },
           "description": "Development team priority",
           "display_value": "blue",
           "enabled": true,
@@ -12414,6 +12551,10 @@ $result = $client->projects->removeFollowersForProject($project_gid, array('fiel
       {
         "gid": "12345",
         "resource_type": "custom_field",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "display_value": "blue",
         "enabled": true,
         "enum_options": [
@@ -16057,6 +16198,10 @@ $result = $client->stories->getStory($story_gid, array('param' => 'value', 'para
     "custom_field": {
       "gid": "12345",
       "resource_type": "custom_field",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "display_value": "blue",
       "enabled": true,
       "enum_options": [
@@ -16390,6 +16535,10 @@ $result = $client->stories->updateStory($story_gid, array('field' => 'value', 'f
     "custom_field": {
       "gid": "12345",
       "resource_type": "custom_field",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "display_value": "blue",
       "enabled": true,
       "enum_options": [
@@ -16969,6 +17118,10 @@ $result = $client->stories->createStoryForTask($task_gid, array('field' => 'valu
     "custom_field": {
       "gid": "12345",
       "resource_type": "custom_field",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "display_value": "blue",
       "enabled": true,
       "enum_options": [
@@ -18651,6 +18804,10 @@ $result = $client->tasks->createTask(array('field' => 'value', 'field' => 'value
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -18755,7 +18912,7 @@ explicitly if you specify `projects` or a `parent` task instead.
 |»» completed<span class="param-type"> boolean</span>|True if the task is currently marked complete, false if not.|
 |»» completed_by<span class="param-type"> object</span>|A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.|
 |»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field gid and each value is an enum gid, string, or number.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
 |»» due_at<span class="param-type"> string(date)¦null</span>|The UTC date and time on which this task is due, or null if the task has no due time. This takes an ISO 8601 date string in UTC and should not be used together with `due_on`.|
 |»» due_on<span class="param-type"> string(date)¦null</span>|The localized date on which this task is due, or null if the task has no due date. This takes a date with `YYYY-MM-DD` format and should not be used together with `due_at`.|
 |»» external<span class="param-type"> object</span>|*OAuth Required*. *Conditional*. This field is returned only if external values are set or included by using [Opt In] (/docs/input-output-options).|
@@ -18989,6 +19146,10 @@ $result = $client->tasks->getTask($task_gid, array('param' => 'value', 'param' =
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -19309,6 +19470,10 @@ $result = $client->tasks->updateTask($task_gid, array('field' => 'value', 'field
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -19415,7 +19580,7 @@ Returns the complete updated task record.
 |»» completed<span class="param-type"> boolean</span>|True if the task is currently marked complete, false if not.|
 |»» completed_by<span class="param-type"> object</span>|A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.|
 |»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field gid and each value is an enum gid, string, or number.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
 |»» due_at<span class="param-type"> string(date)¦null</span>|The UTC date and time on which this task is due, or null if the task has no due time. This takes an ISO 8601 date string in UTC and should not be used together with `due_on`.|
 |»» due_on<span class="param-type"> string(date)¦null</span>|The localized date on which this task is due, or null if the task has no due date. This takes a date with `YYYY-MM-DD` format and should not be used together with `due_at`.|
 |»» external<span class="param-type"> object</span>|*OAuth Required*. *Conditional*. This field is returned only if external values are set or included by using [Opt In] (/docs/input-output-options).|
@@ -20527,6 +20692,10 @@ $result = $client->tasks->createSubtaskForTask($task_gid, array('field' => 'valu
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -20625,7 +20794,7 @@ Creates a new subtask and adds it to the parent task. Returns the full record fo
 |»» completed<span class="param-type"> boolean</span>|True if the task is currently marked complete, false if not.|
 |»» completed_by<span class="param-type"> object</span>|A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.|
 |»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field gid and each value is an enum gid, string, or number.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
 |»» due_at<span class="param-type"> string(date)¦null</span>|The UTC date and time on which this task is due, or null if the task has no due time. This takes an ISO 8601 date string in UTC and should not be used together with `due_on`.|
 |»» due_on<span class="param-type"> string(date)¦null</span>|The localized date on which this task is due, or null if the task has no due date. This takes a date with `YYYY-MM-DD` format and should not be used together with `due_at`.|
 |»» external<span class="param-type"> object</span>|*OAuth Required*. *Conditional*. This field is returned only if external values are set or included by using [Opt In] (/docs/input-output-options).|
@@ -20876,6 +21045,10 @@ $result = $client->tasks->setParentForTask($task_gid, array('field' => 'value', 
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -22427,6 +22600,10 @@ $result = $client->tasks->addFollowersForTask($task_gid, array('field' => 'value
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -22720,6 +22897,10 @@ $result = $client->tasks->removeFollowerForTask($task_gid, array('field' => 'val
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -27738,6 +27919,10 @@ A response object returned from a batch request.
 {
   "gid": "12345",
   "resource_type": "custom_field",
+  "date_value": {
+    "date": "2024-08-23",
+    "date_time": "2024-08-23T22:00:00.000Z"
+  },
   "display_value": "blue",
   "enabled": true,
   "enum_options": [
@@ -27785,6 +27970,9 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
 |---|---|
 |gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
@@ -27819,6 +28007,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -27845,6 +28034,10 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
   "currency_code": "EUR",
   "custom_label": "gold pieces",
   "custom_label_position": "suffix",
+  "date_value": {
+    "date": "2024-08-23",
+    "date_time": "2024-08-23T22:00:00.000Z"
+  },
   "description": "Development team priority",
   "display_value": "blue",
   "enabled": true,
@@ -27906,6 +28099,9 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 |currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
+|date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
 |display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
@@ -27952,6 +28148,7 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -28010,6 +28207,10 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
     "currency_code": "EUR",
     "custom_label": "gold pieces",
     "custom_label_position": "suffix",
+    "date_value": {
+      "date": "2024-08-23",
+      "date_time": "2024-08-23T22:00:00.000Z"
+    },
     "description": "Development team priority",
     "display_value": "blue",
     "enabled": true,
@@ -28084,6 +28285,9 @@ Custom Fields Settings objects represent the many-to-many join of the Custom Fie
 |» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
 |» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
@@ -28139,6 +28343,7 @@ Custom Fields Settings objects represent the many-to-many join of the Custom Fie
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -29104,6 +29309,10 @@ This object determines if a user is a member of a portfolio.
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -29217,6 +29426,9 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
 |»» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |»» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
@@ -29309,6 +29521,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -29571,6 +29784,10 @@ With the introduction of “comment-only” projects in Asana, a user’s member
         "currency_code": "EUR",
         "custom_label": "gold pieces",
         "custom_label_position": "suffix",
+        "date_value": {
+          "date": "2024-08-23",
+          "date_time": "2024-08-23T22:00:00.000Z"
+        },
         "description": "Development team priority",
         "display_value": "blue",
         "enabled": true,
@@ -29660,6 +29877,10 @@ With the introduction of “comment-only” projects in Asana, a user’s member
     {
       "gid": "12345",
       "resource_type": "custom_field",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "display_value": "blue",
       "enabled": true,
       "enum_options": [
@@ -29770,6 +29991,9 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
 |»» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |»» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
@@ -29840,6 +30064,9 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |custom_fields<span class="param-type"> [object]</span>|Array of Custom Fields.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
@@ -29923,6 +30150,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -29935,6 +30163,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -30522,6 +30751,10 @@ A `Compact` object is the same as the [full response object](/docs/tocS_Story), 
   "custom_field": {
     "gid": "12345",
     "resource_type": "custom_field",
+    "date_value": {
+      "date": "2024-08-23",
+      "date_time": "2024-08-23T22:00:00.000Z"
+    },
     "display_value": "blue",
     "enabled": true,
     "enum_options": [
@@ -30746,6 +30979,9 @@ A story represents an activity associated with an object in the Asana system.
 |custom_field<span class="param-type"> object</span>|Custom Fields store the metadata that is used in order to add user-specified information to tasks in Asana. Be sure to reference the [Custom Fields](/docs/asana-custom-fields) developer documentation for more information about how custom fields relate to various resources in Asana.<br><br>Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/custom-fields#gl-lock-fields), which will make them read-only when accessed by other users. Attempting to edit a locked custom field will return HTTP error code `403 Forbidden`.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
@@ -30918,6 +31154,7 @@ A story represents an activity associated with an object in the Asana system.
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -31252,6 +31489,10 @@ A response object returned from the task count endpoint.
       "currency_code": "EUR",
       "custom_label": "gold pieces",
       "custom_label_position": "suffix",
+      "date_value": {
+        "date": "2024-08-23",
+        "date_time": "2024-08-23T22:00:00.000Z"
+      },
       "description": "Development team priority",
       "display_value": "blue",
       "enabled": true,
@@ -31410,6 +31651,9 @@ The *task* is the basic object around which many operations in Asana are centere
 |» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
+|»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
 |» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
@@ -31491,6 +31735,7 @@ The *task* is the basic object around which many operations in Asana are centere
 |resource_subtype|enum|
 |resource_subtype|multi_enum|
 |resource_subtype|number|
+|resource_subtype|date|
 |type|text|
 |type|enum|
 |type|multi_enum|

@@ -269,7 +269,7 @@ tags:
       #### Types of Custom Fields
 
 
-      Integrations using Custom Fields need to be aware of the four basic types that
+      Integrations using Custom Fields need to be aware of the five basic types that
       a Custom Field can adopt. These types are:
 
 
@@ -282,6 +282,8 @@ tags:
 
       * `multi_enum` - a selection of one or more options from a defined list of options
       (i.e., mutually inclusive selections)
+
+      * `date` - a reference date with an optional time value
 
 
       #### Example use-case
@@ -1891,6 +1893,7 @@ components:
                 - enum
                 - multi_enum
                 - number
+                - date
             type:
               description: >
                 *Deprecated: new integrations should prefer the resource_subtype
@@ -1918,6 +1921,26 @@ components:
                 *Conditional*. Determines if the custom field is enabled or not.
               type: boolean
               example: true
+            date_value:
+              description: >-
+                *Conditional*. Only relevant for custom fields of type `date`.
+                This object reflects the chosen date (and optionally, time) value
+                of a date custom field. If no date is selected, the value of
+                `date_value` will be `null`.
+              type: object
+              properties:
+                date:
+                  type: string
+                  description: >-
+                    A string representing the date in YYYY-MM-DD format.
+                  example: '2024-08-23'
+                date_time:
+                  type: string
+                  description: >-
+                    A string representing the date in ISO 8601 format. If no time
+                    value
+                    is selected, the value of `date-time` will be `null`.
+                  example: '2024-08-23T22:00:00.000Z'
             enum_value:
               allOf:
                 - $ref: '#/components/schemas/EnumOption'
@@ -3445,8 +3468,8 @@ components:
           properties:
             custom_fields:
               description: >-
-                An object where each key is a Custom Field gid and each value is
-                an enum gid, string, or number.
+                An object where each key is a Custom Field GID and each value is
+                an enum GID, string, number, or object.
               type: object
               additionalProperties:
                 type: string
@@ -5085,8 +5108,8 @@ components:
               example: '12345'
             custom_fields:
               description: >-
-                An object where each key is a Custom Field gid and each value is
-                an enum gid, string, or number.
+                An object where each key is a Custom Field GID and each value is
+                an enum GID, string, number, or object.
               type: object
               additionalProperties:
                 type: string
@@ -6257,7 +6280,7 @@ paths:
 
         A custom field’s name must be unique within a workspace and not conflict
         with names of existing task properties such as `Due Date` or `Assignee`.
-        A custom field’s type must be one of `text`, `enum`, `multi_enum` or `number`.
+        A custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`, or `date`.
 
         Returns the full record of the newly created custom field.
       tags:
