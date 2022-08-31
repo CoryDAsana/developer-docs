@@ -26,7 +26,7 @@ Using App Components, you can build customizable in-product experiences for apps
 For a visual tour on getting started with App Components, feel free to review the following video. Then, when you're ready, visit our [Getting Started](/docs/getting-started) guide to begin building right away.
 
 <div style="padding:35% 0 0 0;position:relative;width:52%">
-  <iframe src="https://player.vimeo.com/video/708387216?h=3f025d1b75&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="App Components: Getting Started">
+  <iframe src="https://player.vimeo.com/video/708387216?h=3f025d1b75&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="App Components: Getting Started">
   </iframe>
 </div>
 
