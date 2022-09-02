@@ -3,6 +3,34 @@
 
 # Deprecations
 
+## What is a breaking change?
+<a name="breaking-changes" class="jump-anchor"></a>
+
+In general, a breaking change refers to a change in an API that may require you to update your application or integration in order to avoid disruption. These changes may include:
+
+**Expanding the space of types or values that clients must handle**, e.g.,
+
+- Adding a new value to a built-in enum field
+- Allowing a reference to be `null`, where it could not before
+
+**Changing the structure or meaning behind existing information**, e.g.,
+
+- Migrating a property to have a new type (such as `boolean` to `enum`)
+
+**Adding new restrictions to perform an existing operation in the system**, e.g.,
+
+- Only allowing a method to be called if some new condition is met, where this was not true before
+
+**Removing the space of types or values that clients can provide**, e.g.,
+
+- No longer allowing a value to be null where it could before
+- Newly enforcing that a numeric value is nonzero
+- Removing a property
+
+**Removing a capability of the system**, e.g.,
+
+- Removing a mutation or some of its behavior
+
 ## Communicating about breaking changes
 <a name="communication" class="jump-anchor"></a>
 
@@ -16,7 +44,7 @@ Whenever possible, the Asana API aims to preserve backwards compatibility for it
 
 If a breaking change is required, the API team will provide a number of resources to help our developers get through the change:
 
-- We will communicate early, and through a variety of channels. We recommend that you join the [developers community forum](https://community.asana.com/c/developersAPI) to learn about changes to the API.
+- We will communicate early, and through a variety of channels. We recommend that you join the [developers community forum](https://forum.asana.com/c/api/24) to learn about changes to the API.
 - We will provide a clear description of the change, how it affects your requests, and a migration plan to follow to transition through the deprecation.
 - We will designate a deprecation period during which you will be able to choose between both old and new behavior from the API, allowing you to test out the change without having to put your entire app at risk.
 

@@ -23334,7 +23334,7 @@ Creates a team within the current workspace.
 |»» description<span class="param-type"> string</span>|The description of the team.|
 |»» html_description<span class="param-type"> string</span>|The description of the team with formatting as HTML.|
 |»» name<span class="param-type"> string</span>|The name of the team.|
-|»» organization<span class="param-type"> string</span>|The organization/workspace the team belongs to.|
+|»» organization<span class="param-type"> string</span>|The organization/workspace the team belongs to. This must be the same organization you are in and cannot be changed once set.|
 |»» visibility<span class="param-type"> string</span>|The visibility of the team to users in the same organization|
 |?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
 |?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|
@@ -23481,7 +23481,7 @@ Updates a team within the current workspace.
 |»» description<span class="param-type"> string</span>|The description of the team.|
 |»» html_description<span class="param-type"> string</span>|The description of the team with formatting as HTML.|
 |»» name<span class="param-type"> string</span>|The name of the team.|
-|»» organization<span class="param-type"> string</span>|The organization/workspace the team belongs to.|
+|»» organization<span class="param-type"> string</span>|The organization/workspace the team belongs to. This must be the same organization you are in and cannot be changed once set.|
 |»» visibility<span class="param-type"> string</span>|The visibility of the team to users in the same organization|
 |?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
 |?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|

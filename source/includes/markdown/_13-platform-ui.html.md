@@ -926,6 +926,6 @@ of designing and building your apps with App Components.
 <span class="beta-indicator">BETA</span>
 
 For the latest news on App Components, as well as opportunity to engage with other developers in the community,
-feel free to visit our [App Components forum](https://forum.asana.com/c/developersapi/app-components-beta/150).
+feel free to visit our [App Components forum](https://forum.asana.com/c/api/app-components-beta/150).
 
 </section>

@@ -16,11 +16,11 @@ $(function() {
   });
 
   $('.positiveFeedback-DevSatisfaction').on('click', function() {
-    $(this).parent().html('Thanks! For the latest in our API, feel free to check out the developer community <a href="https://forum.asana.com/c/developersAPI" target="_blank">forum</a>.')
+    $(this).parent().html('Thanks! For the latest in our API, feel free to check out the developer community <a href="https://forum.asana.com/c/api/24" target="_blank">forum</a>.')
   });
 
   $('.negativeFeedback-DevSatisfaction').on('click', function() {
-    $(this).parent().html('We are sorry to hear that! Feel free to <a href="https://form.asana.com?hash=c439d6062b165442b3d40383ab2f95cac08176b5b8ced11cf47817743a704728&id=1137609721785458" target="_blank">leave feedback</a> or post a question on our <a href="https://forum.asana.com/c/developersAPI" target="_blank">forum</a>.')
+    $(this).parent().html('We are sorry to hear that! Feel free to <a href="https://form.asana.com?hash=c439d6062b165442b3d40383ab2f95cac08176b5b8ced11cf47817743a704728&id=1137609721785458" target="_blank">leave feedback</a> or post a question on our <a href="https://forum.asana.com/c/api/24" target="_blank">forum</a>.')
   });
 
   $('.asana-table').on('click', 'tr',function (e) {
