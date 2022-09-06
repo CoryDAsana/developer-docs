@@ -141,7 +141,7 @@ Asana's API enables customization and automation of your organization’s workfl
 
 ### Tracking timely responses to support questions
 
-Asana’s developer relations team manages technical support for our API through a number of channels: support tickets, questions about our API and integrations forwarded on from our colleagues, the [Asana Community's Developer category](https://community.asana.com/c/developersAPI "Asana Developer Community"), Stack Overflow, pull requests and bug reports from open-source GitHub projects like our [client libraries](/docs/official-client-libraries "Official Asana client libraries"), and more. Staying on top of all of these channels can be daunting, but we want our users to reach us however works best for them. At the same time, we want to isolate the noisiness of incoming requests for our colleagues at Asana who are involved with only one channel.
+Asana’s developer relations team manages technical support for our API through a number of channels: support tickets, questions about our API and integrations forwarded on from our colleagues, the [Asana Community's Developer category](https://forum.asana.com/c/api/24 "Asana Developer Community"), Stack Overflow, pull requests and bug reports from open-source GitHub projects like our [client libraries](/docs/official-client-libraries "Official Asana client libraries"), and more. Staying on top of all of these channels can be daunting, but we want our users to reach us however works best for them. At the same time, we want to isolate the noisiness of incoming requests for our colleagues at Asana who are involved with only one channel.
 
 Additionally, the management of the question and answer process, triaging the incoming requests, troubleshooting with our engineers, and measuring our response performance are all internal processes. Even if we have a workflow in place to support our developer relations team, we want the experience for other teams to be easy and lightweight. We want to ensure our coworkers do the right things by default without hindering the consistency of our work and our ability to track progress.
 
@@ -186,7 +186,7 @@ By managing this routine and specialized workflow with automation through Asana�
 
 Over time, we've continuously tweaked how our integration behaves to evolve our process, empowering us to adjust and iterate our approach. This is one of the key opportunities that Asana's API provides: ownership and control over how work gets done. Incremental improvements provide the chance to try out new workflows and settle on one that works well for everyone, leading to a more consistent and customized experience of using Asana.
 
-To get started, check out our [examples](/docs/examples "Examples") page. For support or to generate ideas of how your team can work more effectively with Asana, head to the [Asana Community](https://community.asana.com/c/developersAPI "Asana Developers Community") to chat with Asana team members and users!
+To get started, check out our [examples](/docs/examples "Examples") page. For support or to generate ideas of how your team can work more effectively with Asana, head to the [Asana Community](https://forum.asana.com/c/api/24 "Asana Developers Community") to chat with Asana team members and users!
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -373,7 +373,7 @@ Before we get started, here are some helpful links for building on the Asana API
 
 * [Asana API reference docs](/docs/asana)
 * [Asana longform documentation](/docs/why-use-asana-39-s-api)
-* [Asana developer community](https://forum.asana.com/c/developersAPI) -- if you get blocked or have a question about the API, there are devs in our community that are eager to help. We also post API updates and news to the community forum.
+* [Asana developer community](https://forum.asana.com/c/api/24) -- if you get blocked or have a question about the API, there are devs in our community that are eager to help. We also post API updates and news to the community forum.
 * The [code for this bot on GitHub](https://github.com/Asana/devrel-examples/tree/master/javascript/triage_bot)
 
 ### Create your bot user in Asana

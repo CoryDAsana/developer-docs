@@ -5369,7 +5369,8 @@ components:
             organization:
               type: string
               description: >
-                The organization/workspace the team belongs to.
+                The organization/workspace the team belongs to. This must be the same
+                organization you are in and cannot be changed once set.
               example: '123456789'
             visibility:
               description: >

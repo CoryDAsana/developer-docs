@@ -190,7 +190,7 @@ You should consider using one of our [API client libraries](/docs/official-clien
 Note that client library functions are not documented. You need to check the `lib/resources/gen` folder of each library to see the built-in functions.  
 
 #### API support 
-If you get stuck or need help developing your custom app (or just want to meet other Asana developers), join our active [developer community](https://forum.asana.com/c/developersAPI/24). On the forum, you can find answers to many technical questions. If your question has not yet been answered, post it and you should get a reply within a day or so. In addition to community support, internal Asana engineers also help troubleshoot issues on the forum.
+If you get stuck or need help developing your custom app (or just want to meet other Asana developers), join our active [developer community](https://forum.asana.com/c/api/24). On the forum, you can find answers to many technical questions. If your question has not yet been answered, post it and you should get a reply within a day or so. In addition to community support, internal Asana engineers also help troubleshoot issues on the forum.
 If you have found an API bug, you can either post it to the community or email the issue to api-support at Asana dot com.
 
 #### Deployment 
@@ -205,14 +205,14 @@ Remember to [securely store your PAT](https://www.freecodecamp.org/news/how-to-s
 #### Maintenance 
 Make certain that the email address associated with your custom app is being actively monitored. We only email developers for critical issues such as API bans and [upcoming deprecations](/docs/communicating-about-breaking-changes) that our logs show will break your app. If you’re using a PAT to authenticate, you should confirm that the email address associated with the Asana account that generated the PAT is being actively monitored by one or more people. 
 
-We also recommend all developers join the [Asana developer community](https://forum.asana.com/c/developersAPI/24). This is where we will communicate new API features as well as announce upcoming breaking changes. To ensure you don’t miss these announcements, we encourage you to turn on notifications for the [Platform News](https://forum.asana.com/c/forum-en/api/news) section of the community.
+We also recommend all developers join the [Asana developer community](https://forum.asana.com/c/api/24). This is where we will communicate new API features as well as announce upcoming breaking changes. To ensure you don’t miss these announcements, we encourage you to turn on notifications for the [Platform News](https://forum.asana.com/c/forum-en/api/news) section of the community.
 
 If your app is having issues, here are some steps to help you troubleshoot the issue:
 
 1. Carefully read any error messages (here are the docs for Asana [error codes](/docs/errors)). 
 2. Check the [status of the Asana API](https://status.asana.com/) to confirm it’s up and available.
 3. Check for any issues with the server that is hosting your app.
-4. Check the [Asana dev community](https://forum.asana.com/c/developersAPI/24) to see if others are having the same issue.
+4. Check the [Asana dev community](https://forum.asana.com/c/api/24) to see if others are having the same issue.
 5. If you can't find an answer on the community, post your issue and someone will likely help. Please include all of the required information to reproduce the issue (e.g. verbose CURL request with full response). Never post a PAT to the forum (or share it anywhere else). 
 
 <div>
