@@ -21,7 +21,7 @@ In general, a breaking change refers to a change in an API that may require you 
 
 - Only allowing a method to be called if some new condition is met, where this was not true before
 
-**Removing the space of types or values that clients can provide**, e.g.,
+**Removing the types or values that clients can provide**, e.g.,
 
 - No longer allowing a value to be null where it could before
 - Newly enforcing that a numeric value is nonzero
