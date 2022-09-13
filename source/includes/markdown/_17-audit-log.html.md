@@ -93,7 +93,7 @@ All role events operate on the _User_ resource type.
 | workspace_members_export_started | Workspace | A member CSV export was started for the workspace. |
 | project_csv_export_started | Project | A project CSV export was started. |
 | attachment_downloaded | Attachment | An attachment was downloaded. |
- 
+| workspace_attachment_export_started | Attachment | An attachment export was started. |
  
 ### Access Control
  
