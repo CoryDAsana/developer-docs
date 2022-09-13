@@ -95,7 +95,7 @@ All role events operate on the _User_ resource type.
 | attachment_downloaded | Attachment | An attachment was downloaded. |
 | workspace_attachment_export_started | Attachment | An attachment export was started. |
 
- 
+
 ### Access Control
  
 | Event Type | Resource Type | Description |
