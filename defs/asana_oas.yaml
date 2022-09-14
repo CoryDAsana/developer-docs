@@ -3051,6 +3051,11 @@ components:
               format: date-time
               nullable: true
               example: '2019-09-15'
+            custom_fields:
+              description: Array of Custom Fields.
+              type: array
+              items:
+                $ref: '#/components/schemas/CustomFieldCompact'
             members:
               type: array
               readOnly: true
