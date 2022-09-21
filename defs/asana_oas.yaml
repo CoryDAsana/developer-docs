@@ -269,7 +269,7 @@ tags:
       #### Types of Custom Fields
 
 
-      Integrations using Custom Fields need to be aware of the five basic types that
+      Integrations using Custom Fields need to be aware of the six basic types that
       a Custom Field can adopt. These types are:
 
 
@@ -284,6 +284,9 @@ tags:
       (i.e., mutually inclusive selections)
 
       * `date` - a reference date with an optional time value
+
+      * `people` - a list of active contributors (i.e., where their relationship to
+      the work is defined in the custom field title)
 
 
       #### Example use-case
@@ -1894,6 +1897,7 @@ components:
                 - multi_enum
                 - number
                 - date
+                - people
             type:
               description: >
                 *Deprecated: new integrations should prefer the resource_subtype
@@ -1925,7 +1929,7 @@ components:
               description: >-
                 *Conditional*. Only relevant for custom fields of type `date`.
                 This object reflects the chosen date (and optionally, time) value
-                of a date custom field. If no date is selected, the value of
+                of a `date` custom field. If no date is selected, the value of
                 `date_value` will be `null`.
               type: object
               properties:
@@ -1947,24 +1951,24 @@ components:
                 - type: object
                   description: >-
                     *Conditional*. Only relevant for custom fields of type
-                    `enum`. This object is the chosen value of an enum custom
+                    `enum`. This object is the chosen value of an `enum` custom
                     field.
             multi_enum_values:
               description: >-
                 *Conditional*. Only relevant for custom fields of type
-                `multi_enum`. This object is the chosen values of a multi_enum custom
+                `multi_enum`. This object is the chosen values of a `multi_enum` custom
                 field.
               type: array
               items:
                 $ref: '#/components/schemas/EnumOption'
             number_value:
               description: >-
-                *Conditional*. This number is the value of a number custom field.
+                *Conditional*. This number is the value of a `number` custom field.
               type: number
               example: 5.2
             text_value:
               description: >-
-                *Conditional*. This string is the value of a text custom field.
+                *Conditional*. This string is the value of a `text` custom field.
               type: string
               example: Some Value
             display_value:
@@ -1988,6 +1992,19 @@ components:
               description: >-
                 *Create-Only* The workspace to create a custom field in.
               example: '1331'
+            people_value:
+              description: >-
+                *Conditional*. Only relevant for custom fields of type `people`.
+                This array of user GIDs reflects the users to be written to a `people`
+                custom field. Note that *write* operations will replace existing users
+                (if any) in the custom field with the users specified in this array.
+              type: array
+              items:
+                type: string
+                description: >-
+                  The GID of a user.
+              example:
+                - '12345'
     CustomFieldResponse:
       allOf:
         - $ref: '#/components/schemas/CustomFieldBase'
@@ -1996,6 +2013,15 @@ components:
             created_by:
               $ref: '#/components/schemas/UserCompact'
               nullable: true
+            people_value:
+              description: >-
+                *Conditional*. Only relevant for custom fields of type `people`.
+                This array of [compact user](/docs/user-compact) objects reflects
+                the values
+                of a `people` custom field.
+              type: array
+              items:
+                $ref: '#/components/schemas/UserCompact'
     CustomFieldSettingBase:
       $ref: '#/components/schemas/CustomFieldSettingCompact'
     CustomFieldSettingCompact:
@@ -3855,10 +3881,13 @@ components:
       properties:
         gid:
           description: >-
-            Globally unique identifier of date variable, as a string.
+            Globally unique identifier of the date field in the project template.
+            A value of
+            `1` refers to the project start date, while `2` refers to the project
+            due date. 
           type: string
           readOnly: true
-          example: '12345'
+          example: '1'
         name:
           description: >-
             The name of the date variable.
@@ -3877,9 +3906,12 @@ components:
       properties:
         gid:
           description: >-
-            Globally unique identifier of date variable, as a string.
+            Globally unique identifier of the date field in the project template.
+            A value of
+            `1` refers to the project start date, while `2` refers to the project
+            due date.
           type: string
-          example: '12345'
+          example: '1'
         value:
           description: >-
             The date with which the date variable should be replaced when instantiating
@@ -5115,7 +5147,7 @@ components:
             custom_fields:
               description: >-
                 An object where each key is a Custom Field GID and each value is
-                an enum GID, string, number, or object.
+                an enum GID, string, number, object, or array.
               type: object
               additionalProperties:
                 type: string
@@ -5963,7 +5995,17 @@ paths:
       - $ref: '#/components/parameters/fields'
     get:
       summary: Get attachments from an object
-      description: Returns the compact records for all attachments on the object.
+      description: >-
+        Returns the compact records for all attachments on the object.
+
+
+        There are three possible `parent` values for this request: `project`, `project_brief`,
+        and `task`.
+        For a project, an attachment refers to a file uploaded to the "Key resources"
+        section in the project
+        Overview. For a project brief, an attachment refers to inline files in the
+        project brief itself. For
+        a task, an attachment refers to a file directly associated to that task.
       tags:
         - Attachments
       operationId: getAttachmentsForObject
@@ -5976,7 +6018,7 @@ paths:
           description: >-
             Globally unique identifier for object to fetch statuses from. Must be
             a GID
-            for a task, project, or project_brief.
+            for a `project`, `project_brief`, or `task`.
           schema:
             type: string
           example: '159874'
@@ -6287,7 +6329,8 @@ paths:
 
         A custom field’s name must be unique within a workspace and not conflict
         with names of existing task properties such as `Due Date` or `Assignee`.
-        A custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`, or `date`.
+        A custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`,
+        `date`, or `people`.
 
         Returns the full record of the newly created custom field.
       tags:
@@ -8576,6 +8619,14 @@ paths:
       summary: Instantiate a project from a project template
       description: >-
         Creates and returns a job that will asynchronously handle the project instantiation.
+
+
+        To form this request, it is recommended to first make a request to
+        [get a project template](docs/get-a-project-template). Then, from the response,
+        copy the
+        `gid` from the object in the `requested_dates` array. This `gid` should be
+        used in
+        `requested_dates` to instantiate a project.
 
 
         _Note: The body of this request will differ if your workspace is an organization.

@@ -350,6 +350,8 @@ $result = $client->attachments->getAttachmentsForObject(array('param' => 'value'
 
 <span class="description">
 Returns the compact records for all attachments on the object.
+
+There are three possible `parent` values for this request: `project`, `project_brief`, and `task`. For a project, an attachment refers to a file uploaded to the "Key resources" section in the project Overview. For a project brief, an attachment refers to inline files in the project brief itself. For a task, an attachment refers to a file directly associated to that task.
 </span>
 
 <h3 id="get-attachments-from-an-object-parameters">Parameters</h3>
@@ -358,7 +360,7 @@ Returns the compact records for all attachments on the object.
 |---|---|
 |?limit<span class="param-type"> integer</span>|Results per page.|
 |?offset<span class="param-type"> string</span>|Offset token.|
-|?parent<span class="param-type"> string</span><div class="param-required">required</div>|Globally unique identifier for object to fetch statuses from. Must be a GID for a task, project, or project_brief.|
+|?parent<span class="param-type"> string</span><div class="param-required">required</div>|Globally unique identifier for object to fetch statuses from. Must be a GID for a `project`, `project_brief`, or `task`.|
 |?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
 |?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|
 
@@ -976,13 +978,14 @@ In the Asana application, Tasks, Projects, and Portfolios can hold user-specifie
 
 #### Types of Custom Fields
 
-Integrations using Custom Fields need to be aware of the five basic types that a Custom Field can adopt. These types are:
+Integrations using Custom Fields need to be aware of the six basic types that a Custom Field can adopt. These types are:
 
 * `text` - an arbitrary, relatively short string of text
 * `number` - a number with a defined level of precision
 * `enum` - a selection of a single option from a defined list of options (i.e., mutually exclusive selections)
 * `multi_enum` - a selection of one or more options from a defined list of options (i.e., mutually inclusive selections)
 * `date` - a reference date with an optional time value
+* `people` - a list of active contributors (i.e., where their relationship to the work is defined in the custom field title)
 
 #### Example use-case
 
@@ -1163,6 +1166,9 @@ $result = $client->customfields->createCustomField(array('field' => 'value', 'fi
     ],
     "name": "Status",
     "number_value": 5.2,
+    "people_value": [
+      "12345"
+    ],
     "precision": 2,
     "resource_subtype": "text",
     "text_value": "Some Value",
@@ -1223,6 +1229,13 @@ $result = $client->customfields->createCustomField(array('field' => 'value', 'fi
     ],
     "name": "Status",
     "number_value": 5.2,
+    "people_value": [
+      {
+        "gid": "12345",
+        "resource_type": "user",
+        "name": "Greg Sanchez"
+      }
+    ],
     "precision": 2,
     "resource_subtype": "text",
     "text_value": "Some Value",
@@ -1244,7 +1257,8 @@ changed once set.
 
 A custom field’s name must be unique within a workspace and not conflict
 with names of existing task properties such as `Due Date` or `Assignee`.
-A custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`, or `date`.
+A custom field’s type must be one of `text`, `enum`, `multi_enum`, `number`,
+`date`, or `people`.
 
 Returns the full record of the newly created custom field.
 </span>
@@ -1258,7 +1272,7 @@ Returns the full record of the newly created custom field.
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
-|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
@@ -1267,21 +1281,22 @@ Returns the full record of the newly created custom field.
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
-|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
 |»» format<span class="param-type"> string</span>|The format of this custom field.|
 |»» has_notifications_enabled<span class="param-type"> boolean</span>|*Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.|
-|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
 |»» name<span class="param-type"> string</span>|The name of the custom field.|
-|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
+|»» people_value<span class="param-type"> [string]</span>|*Conditional*. Only relevant for custom fields of type `people`. This array of user GIDs reflects the users to be written to a `people` custom field. Note that *write* operations will replace existing users (if any) in the custom field with the users specified in this array.|
 |»» precision<span class="param-type"> integer</span>|Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.|
 |»» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |»» workspace<span class="param-type"> string</span><div class="param-required">required</div>|*Create-Only* The workspace to create a custom field in.|
 |?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
 |?opt_fields<span class="param-type"> array[string]</span>|Defines fields to return.|
@@ -1310,6 +1325,7 @@ The identifier format will always have a precision of 0.
 | resource_subtype|multi_enum|
 | resource_subtype|number|
 | resource_subtype|date|
+| resource_subtype|people|
 
 <h3 id="create-a-custom-field-responses">Responses</h3>
 
@@ -1437,6 +1453,13 @@ $result = $client->customfields->getCustomField($custom_field_gid, array('param'
     ],
     "name": "Status",
     "number_value": 5.2,
+    "people_value": [
+      {
+        "gid": "12345",
+        "resource_type": "user",
+        "name": "Greg Sanchez"
+      }
+    ],
     "precision": 2,
     "resource_subtype": "text",
     "text_value": "Some Value",
@@ -1585,6 +1608,9 @@ $result = $client->customfields->updateCustomField($custom_field_gid, array('fie
     ],
     "name": "Status",
     "number_value": 5.2,
+    "people_value": [
+      "12345"
+    ],
     "precision": 2,
     "resource_subtype": "text",
     "text_value": "Some Value",
@@ -1645,6 +1671,13 @@ $result = $client->customfields->updateCustomField($custom_field_gid, array('fie
     ],
     "name": "Status",
     "number_value": 5.2,
+    "people_value": [
+      {
+        "gid": "12345",
+        "resource_type": "user",
+        "name": "Greg Sanchez"
+      }
+    ],
     "precision": 2,
     "resource_subtype": "text",
     "text_value": "Some Value",
@@ -1677,7 +1710,7 @@ Returns the complete updated custom field record.
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
-|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
@@ -1686,21 +1719,22 @@ Returns the complete updated custom field record.
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
-|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
 |»» format<span class="param-type"> string</span>|The format of this custom field.|
 |»» has_notifications_enabled<span class="param-type"> boolean</span>|*Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.|
-|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
 |»» name<span class="param-type"> string</span>|The name of the custom field.|
-|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
+|»» people_value<span class="param-type"> [string]</span>|*Conditional*. Only relevant for custom fields of type `people`. This array of user GIDs reflects the users to be written to a `people` custom field. Note that *write* operations will replace existing users (if any) in the custom field with the users specified in this array.|
 |»» precision<span class="param-type"> integer</span>|Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.|
 |»» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |»» workspace<span class="param-type"> string</span><div class="param-required">required</div>|*Create-Only* The workspace to create a custom field in.|
 |/custom_field_gid<span class="param-type"> string</span><div class="param-required">required</div>|Globally unique identifier for the custom field.|
 |?opt_pretty<span class="param-type"> boolean</span>|Provides “pretty” output.|
@@ -1728,6 +1762,7 @@ The identifier format will always have a precision of 0.
 | resource_subtype|multi_enum|
 | resource_subtype|number|
 | resource_subtype|date|
+| resource_subtype|people|
 
 <h3 id="update-a-custom-field-responses">Responses</h3>
 
@@ -1966,6 +2001,13 @@ $result = $client->customfields->getCustomFieldsForWorkspace($workspace_gid, arr
       ],
       "name": "Status",
       "number_value": 5.2,
+      "people_value": [
+        {
+          "gid": "12345",
+          "resource_type": "user",
+          "name": "Greg Sanchez"
+        }
+      ],
       "precision": 2,
       "resource_subtype": "text",
       "text_value": "Some Value",
@@ -2535,6 +2577,13 @@ $result = $client->customfieldsettings->getCustomFieldSettingsForProject($projec
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -2706,6 +2755,13 @@ $result = $client->customfieldsettings->getCustomFieldSettingsForPortfolio($port
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -6054,6 +6110,13 @@ $result = $client->portfolios->createPortfolio(array('field' => 'value', 'field'
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -6338,6 +6401,13 @@ $result = $client->portfolios->getPortfolio($portfolio_gid, array('param' => 'va
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -6605,6 +6675,13 @@ $result = $client->portfolios->updatePortfolio($portfolio_gid, array('field' => 
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -7362,6 +7439,13 @@ $result = $client->portfolios->addCustomFieldSettingForPortfolio($portfolio_gid,
       ],
       "name": "Status",
       "number_value": 5.2,
+      "people_value": [
+        {
+          "gid": "12345",
+          "resource_type": "user",
+          "name": "Greg Sanchez"
+        }
+      ],
       "precision": 2,
       "resource_subtype": "text",
       "text_value": "Some Value",
@@ -7690,6 +7774,13 @@ $result = $client->portfolios->addMembersForPortfolio($portfolio_gid, array('fie
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -7958,6 +8049,13 @@ $result = $client->portfolios->removeMembersForPortfolio($portfolio_gid, array('
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -8766,6 +8864,13 @@ $result = $client->projects->createProject(array('field' => 'value', 'field' => 
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -9140,6 +9245,13 @@ $result = $client->projects->getProject($project_gid, array('param' => 'value', 
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -9487,6 +9599,13 @@ $result = $client->projects->updateProject($project_gid, array('field' => 'value
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -10405,6 +10524,13 @@ $result = $client->projects->createProjectForTeam($team_gid, array('field' => 'v
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -10928,6 +11054,13 @@ $result = $client->projects->createProjectForWorkspace($workspace_gid, array('fi
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -11282,6 +11415,13 @@ $result = $client->projects->addCustomFieldSettingForProject($project_gid, array
       ],
       "name": "Status",
       "number_value": 5.2,
+      "people_value": [
+        {
+          "gid": "12345",
+          "resource_type": "user",
+          "name": "Greg Sanchez"
+        }
+      ],
       "precision": 2,
       "resource_subtype": "text",
       "text_value": "Some Value",
@@ -11738,6 +11878,13 @@ $result = $client->projects->addMembersForProject($project_gid, array('field' =>
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -12057,6 +12204,13 @@ $result = $client->projects->removeMembersForProject($project_gid, array('field'
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -12376,6 +12530,13 @@ $result = $client->projects->addFollowersForProject($project_gid, array('field' 
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -12695,6 +12856,13 @@ $result = $client->projects->removeFollowersForProject($project_gid, array('fiel
           ],
           "name": "Status",
           "number_value": 5.2,
+          "people_value": [
+            {
+              "gid": "12345",
+              "resource_type": "user",
+              "name": "Greg Sanchez"
+            }
+          ],
           "precision": 2,
           "resource_subtype": "text",
           "text_value": "Some Value",
@@ -14384,7 +14552,7 @@ $result = $client->projecttemplates->getProjectTemplate($project_template_gid, a
     "requested_dates": [
       {
         "description": "Choose a start date for your project.",
-        "gid": "12345",
+        "gid": "1",
         "name": "Start Date"
       }
     ],
@@ -14720,7 +14888,7 @@ $result = $client->projecttemplates->instantiateProject($project_template_gid, a
     "public": true,
     "requested_dates": [
       {
-        "gid": "12345",
+        "gid": "1",
         "value": "2022-01-01"
       }
     ],
@@ -14768,6 +14936,8 @@ $result = $client->projecttemplates->instantiateProject($project_template_gid, a
 <span class="description">
 Creates and returns a job that will asynchronously handle the project instantiation.
 
+To form this request, it is recommended to first make a request to [get a project template](docs/get-a-project-template). Then, from the response, copy the `gid` from the object in the `requested_dates` array. This `gid` should be used in `requested_dates` to instantiate a project.
+
 _Note: The body of this request will differ if your workspace is an organization. To determine if your workspace is an organization, use the [is_organization](/docs/workspace) parameter._
 </span>
 
@@ -14781,7 +14951,7 @@ _Note: The body of this request will differ if your workspace is an organization
 |»» name<span class="param-type"> string</span><div class="param-required">required</div>|The name of the new project.|
 |»» public<span class="param-type"> boolean</span><div class="param-required">required</div>|Sets the project to public to its team.|
 |»» requested_dates<span class="param-type"> [object]</span>|Array of mappings of date variables to calendar dates.|
-|»»» gid<span class="param-type"> string</span>|Globally unique identifier of date variable, as a string.|
+|»»» gid<span class="param-type"> string</span>|Globally unique identifier of the date field in the project template. A value of `1` refers to the project start date, while `2` refers to the project due date.|
 |»»» value<span class="param-type"> string(date-time)¦null</span>|The date with which the date variable should be replaced when instantiating a project. This takes a date with `YYYY-MM-DD` format.|
 |»» team<span class="param-type"> string</span>|*Conditional*. Sets the team of the new project. If the project template exists in an _organization_, you must specify a value for `team` and not `workspace`.|
 |»» workspace<span class="param-type"> string</span>|*Conditional*. Sets the workspace of the new project. If the project template exists in a _workspace_, you must specify a value for `workspace` and not `team`.|
@@ -19041,6 +19211,13 @@ $result = $client->tasks->createTask(array('field' => 'value', 'field' => 'value
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -19112,7 +19289,7 @@ explicitly if you specify `projects` or a `parent` task instead.
 |»» completed<span class="param-type"> boolean</span>|True if the task is currently marked complete, false if not.|
 |»» completed_by<span class="param-type"> object</span>|A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.|
 |»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, object, or array.|
 |»» due_at<span class="param-type"> string(date)¦null</span>|The UTC date and time on which this task is due, or null if the task has no due time. This takes an ISO 8601 date string in UTC and should not be used together with `due_on`.|
 |»» due_on<span class="param-type"> string(date)¦null</span>|The localized date on which this task is due, or null if the task has no due date. This takes a date with `YYYY-MM-DD` format and should not be used together with `due_at`.|
 |»» external<span class="param-type"> object</span>|*OAuth Required*. *Conditional*. This field is returned only if external values are set or included by using [Opt In] (/docs/input-output-options).|
@@ -19383,6 +19560,13 @@ $result = $client->tasks->getTask($task_gid, array('param' => 'value', 'param' =
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -19707,6 +19891,13 @@ $result = $client->tasks->updateTask($task_gid, array('field' => 'value', 'field
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -19780,7 +19971,7 @@ Returns the complete updated task record.
 |»» completed<span class="param-type"> boolean</span>|True if the task is currently marked complete, false if not.|
 |»» completed_by<span class="param-type"> object</span>|A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.|
 |»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, object, or array.|
 |»» due_at<span class="param-type"> string(date)¦null</span>|The UTC date and time on which this task is due, or null if the task has no due time. This takes an ISO 8601 date string in UTC and should not be used together with `due_on`.|
 |»» due_on<span class="param-type"> string(date)¦null</span>|The localized date on which this task is due, or null if the task has no due date. This takes a date with `YYYY-MM-DD` format and should not be used together with `due_at`.|
 |»» external<span class="param-type"> object</span>|*OAuth Required*. *Conditional*. This field is returned only if external values are set or included by using [Opt In] (/docs/input-output-options).|
@@ -20929,6 +21120,13 @@ $result = $client->tasks->createSubtaskForTask($task_gid, array('field' => 'valu
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -20994,7 +21192,7 @@ Creates a new subtask and adds it to the parent task. Returns the full record fo
 |»» completed<span class="param-type"> boolean</span>|True if the task is currently marked complete, false if not.|
 |»» completed_by<span class="param-type"> object</span>|A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.|
 |»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
-|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, or object.|
+|»» custom_fields<span class="param-type"> object</span>|An object where each key is a Custom Field GID and each value is an enum GID, string, number, object, or array.|
 |»» due_at<span class="param-type"> string(date)¦null</span>|The UTC date and time on which this task is due, or null if the task has no due time. This takes an ISO 8601 date string in UTC and should not be used together with `due_on`.|
 |»» due_on<span class="param-type"> string(date)¦null</span>|The localized date on which this task is due, or null if the task has no due date. This takes a date with `YYYY-MM-DD` format and should not be used together with `due_at`.|
 |»» external<span class="param-type"> object</span>|*OAuth Required*. *Conditional*. This field is returned only if external values are set or included by using [Opt In] (/docs/input-output-options).|
@@ -21282,6 +21480,13 @@ $result = $client->tasks->setParentForTask($task_gid, array('field' => 'value', 
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -22837,6 +23042,13 @@ $result = $client->tasks->addFollowersForTask($task_gid, array('field' => 'value
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -23134,6 +23346,13 @@ $result = $client->tasks->removeFollowerForTask($task_gid, array('field' => 'val
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -28170,7 +28389,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
 |---|---|
 |gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |resource_type<span class="param-type"> string</span>|The base type of this resource.|
-|date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
@@ -28181,22 +28400,22 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
 |» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |» name<span class="param-type"> string</span>|The name of the enum option.|
-|enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |» name<span class="param-type"> string</span>|The name of the enum option.|
-|multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |» name<span class="param-type"> string</span>|The name of the enum option.|
 |name<span class="param-type"> string</span>|The name of the custom field.|
-|number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
 |resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 
 #### Enumerated Values
@@ -28208,6 +28427,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -28271,6 +28491,13 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
   ],
   "name": "Status",
   "number_value": 5.2,
+  "people_value": [
+    {
+      "gid": "12345",
+      "resource_type": "user",
+      "name": "Greg Sanchez"
+    }
+  ],
   "precision": 2,
   "resource_subtype": "text",
   "text_value": "Some Value",
@@ -28299,7 +28526,7 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 |currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
-|date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
@@ -28311,7 +28538,7 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 |» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |» name<span class="param-type"> string</span>|The name of the enum option.|
-|enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
@@ -28320,17 +28547,21 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 |format<span class="param-type"> string</span>|The format of this custom field.|
 |has_notifications_enabled<span class="param-type"> boolean</span>|*Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.|
 |is_global_to_workspace<span class="param-type"> boolean</span>|This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true.|
-|multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |» name<span class="param-type"> string</span>|The name of the enum option.|
 |name<span class="param-type"> string</span>|The name of the custom field.|
-|number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
+|people_value<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `people`. This array of [compact user](/docs/user-compact) objects reflects the values of a `people` custom field.|
+|» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
+|» resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
 |precision<span class="param-type"> integer</span>|Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.<br>For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%.<br>The identifier format will always have a precision of 0.|
 |resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 
 #### Enumerated Values
@@ -28349,6 +28580,7 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -28444,6 +28676,13 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
     ],
     "name": "Status",
     "number_value": 5.2,
+    "people_value": [
+      {
+        "gid": "12345",
+        "resource_type": "user",
+        "name": "Greg Sanchez"
+      }
+    ],
     "precision": 2,
     "resource_subtype": "text",
     "text_value": "Some Value",
@@ -28485,7 +28724,7 @@ Custom Fields Settings objects represent the many-to-many join of the Custom Fie
 |» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
-|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
@@ -28497,7 +28736,7 @@ Custom Fields Settings objects represent the many-to-many join of the Custom Fie
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
@@ -28506,17 +28745,21 @@ Custom Fields Settings objects represent the many-to-many join of the Custom Fie
 |» format<span class="param-type"> string</span>|The format of this custom field.|
 |» has_notifications_enabled<span class="param-type"> boolean</span>|*Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.|
 |» is_global_to_workspace<span class="param-type"> boolean</span>|This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true.|
-|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
 |» name<span class="param-type"> string</span>|The name of the custom field.|
-|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
+|» people_value<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `people`. This array of [compact user](/docs/user-compact) objects reflects the values of a `people` custom field.|
+|»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
+|»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
 |» precision<span class="param-type"> integer</span>|Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.<br>For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%.<br>The identifier format will always have a precision of 0.|
 |» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |» type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 |is_important<span class="param-type"> boolean</span>|`is_important` is used in the Asana web application to determine if this custom field is displayed in the list/grid view of a project or portfolio.|
 |parent<span class="param-type"> object</span>|The parent to which the custom field is applied. This can be a project or portfolio and indicates that the tasks or projects that the parent contains may be given custom field values for this custom field.|
@@ -28544,6 +28787,7 @@ Custom Fields Settings objects represent the many-to-many join of the Custom Fie
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -29546,6 +29790,13 @@ This object determines if a user is a member of a portfolio.
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -29668,7 +29919,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
-|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
@@ -29680,7 +29931,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
-|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
@@ -29689,17 +29940,21 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |»» format<span class="param-type"> string</span>|The format of this custom field.|
 |»» has_notifications_enabled<span class="param-type"> boolean</span>|*Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.|
 |»» is_global_to_workspace<span class="param-type"> boolean</span>|This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true.|
-|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
 |»» name<span class="param-type"> string</span>|The name of the custom field.|
-|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
+|»» people_value<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `people`. This array of [compact user](/docs/user-compact) objects reflects the values of a `people` custom field.|
+|»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
+|»»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
 |»» precision<span class="param-type"> integer</span>|Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.<br>For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%.<br>The identifier format will always have a precision of 0.|
 |»» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |»» type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 |» is_important<span class="param-type"> boolean</span>|`is_important` is used in the Asana web application to determine if this custom field is displayed in the list/grid view of a project or portfolio.|
 |» parent<span class="param-type"> object</span>|The parent to which the custom field is applied. This can be a project or portfolio and indicates that the tasks or projects that the parent contains may be given custom field values for this custom field.|
@@ -29713,7 +29968,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |custom_fields<span class="param-type"> [object]</span>|Array of Custom Fields.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
-|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
@@ -29724,22 +29979,22 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
 |» name<span class="param-type"> string</span>|The name of the custom field.|
-|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
 |» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |» type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 |due_on<span class="param-type"> string(date-time)¦null</span>|The localized day on which this portfolio is due. This takes a date with format YYYY-MM-DD.|
 |members<span class="param-type"> [object]</span>|none|
@@ -29795,6 +30050,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -29804,6 +30060,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -30103,6 +30360,13 @@ With the introduction of “comment-only” projects in Asana, a user’s member
         ],
         "name": "Status",
         "number_value": 5.2,
+        "people_value": [
+          {
+            "gid": "12345",
+            "resource_type": "user",
+            "name": "Greg Sanchez"
+          }
+        ],
         "precision": 2,
         "resource_subtype": "text",
         "text_value": "Some Value",
@@ -30273,7 +30537,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |»» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |»» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |»» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
-|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|»» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
@@ -30285,7 +30549,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
-|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|»» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
@@ -30294,17 +30558,21 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |»» format<span class="param-type"> string</span>|The format of this custom field.|
 |»» has_notifications_enabled<span class="param-type"> boolean</span>|*Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.|
 |»» is_global_to_workspace<span class="param-type"> boolean</span>|This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true.|
-|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|»» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»»» name<span class="param-type"> string</span>|The name of the enum option.|
 |»» name<span class="param-type"> string</span>|The name of the custom field.|
-|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|»» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
+|»» people_value<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `people`. This array of [compact user](/docs/user-compact) objects reflects the values of a `people` custom field.|
+|»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
+|»»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|»»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
 |»» precision<span class="param-type"> integer</span>|Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.<br>For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%.<br>The identifier format will always have a precision of 0.|
 |»» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|»» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |»» type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 |» is_important<span class="param-type"> boolean</span>|`is_important` is used in the Asana web application to determine if this custom field is displayed in the list/grid view of a project or portfolio.|
 |» parent<span class="param-type"> object</span>|The parent to which the custom field is applied. This can be a project or portfolio and indicates that the tasks or projects that the parent contains may be given custom field values for this custom field.|
@@ -30346,7 +30614,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |custom_fields<span class="param-type"> [object]</span>|Array of Custom Fields.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
-|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
@@ -30357,22 +30625,22 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
 |» name<span class="param-type"> string</span>|The name of the custom field.|
-|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
 |» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |» type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 |followers<span class="param-type"> [object]</span>|Array of users following this project. Followers are a subset of members who have opted in to receive "tasks added" notifications for a project.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -30433,6 +30701,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -30446,6 +30715,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -30640,7 +30910,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_ProjectT
   "requested_dates": [
     {
       "description": "Choose a start date for your project.",
-      "gid": "12345",
+      "gid": "1",
       "name": "Start Date"
     }
   ],
@@ -30675,7 +30945,7 @@ A *project template* is an object that allows new projects to be created with a 
 |public<span class="param-type"> boolean</span>|True if the project template is public to its team.|
 |requested_dates<span class="param-type"> [object]</span>|Array of date variables in this project template. Calendar dates must be provided for these variables when instantiating a project.|
 |» description<span class="param-type"> string</span>|The description of what the date variable is used for when instantiating a project.|
-|» gid<span class="param-type"> string</span>|Globally unique identifier of date variable, as a string.|
+|» gid<span class="param-type"> string</span>|Globally unique identifier of the date field in the project template. A value of `1` refers to the project start date, while `2` refers to the project due date.|
 |» name<span class="param-type"> string</span>|The name of the date variable.|
 |team<span class="param-type"> object</span>|A *team* is used to group related projects and people together within an organization. Each project in an organization is associated with a team.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -31261,7 +31531,7 @@ A story represents an activity associated with an object in the Asana system.
 |custom_field<span class="param-type"> object</span>|Custom Fields store the metadata that is used in order to add user-specified information to tasks in Asana. Be sure to reference the [Custom Fields](/docs/asana-custom-fields) developer documentation for more information about how custom fields relate to various resources in Asana.<br><br>Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/custom-fields#gl-lock-fields), which will make them read-only when accessed by other users. Attempting to edit a locked custom field will return HTTP error code `403 Forbidden`.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
-|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
@@ -31272,22 +31542,22 @@ A story represents an activity associated with an object in the Asana system.
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
 |» name<span class="param-type"> string</span>|The name of the custom field.|
-|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
 |» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |» type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 |dependency<span class="param-type"> object</span>|The *task* is the basic object around which many operations in Asana are centered.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -31437,6 +31707,7 @@ A story represents an activity associated with an object in the Asana system.
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
@@ -31808,6 +32079,13 @@ A response object returned from the task count endpoint.
       ],
       "name": "Status",
       "number_value": 5.2,
+      "people_value": [
+        {
+          "gid": "12345",
+          "resource_type": "user",
+          "name": "Greg Sanchez"
+        }
+      ],
       "precision": 2,
       "resource_subtype": "text",
       "text_value": "Some Value",
@@ -31933,7 +32211,7 @@ The *task* is the basic object around which many operations in Asana are centere
 |» currency_code<span class="param-type"> string¦null</span>|ISO 4217 currency code to format this custom field. This will be null if the `format` is not `currency`.|
 |» custom_label<span class="param-type"> string¦null</span>|This is the string that appears next to the custom field value. This will be null if the `format` is not `custom`.|
 |» custom_label_position<span class="param-type"> string</span>|Only relevant for custom fields with `custom` format. This depicts where to place the custom label. This will be null if the `format` is not `custom`.|
-|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a date custom field. If no date is selected, the value of `date_value` will be `null`.|
+|» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
@@ -31945,7 +32223,7 @@ The *task* is the basic object around which many operations in Asana are centere
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
-|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an enum custom field.|
+|» enum_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `enum`. This object is the chosen value of an `enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
@@ -31954,17 +32232,21 @@ The *task* is the basic object around which many operations in Asana are centere
 |» format<span class="param-type"> string</span>|The format of this custom field.|
 |» has_notifications_enabled<span class="param-type"> boolean</span>|*Conditional*. This flag describes whether a follower of a task with this field should receive inbox notifications from changes to this field.|
 |» is_global_to_workspace<span class="param-type"> boolean</span>|This flag describes whether this custom field is available to every container in the workspace. Before project-specific custom fields, this field was always true.|
-|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a multi_enum custom field.|
+|» multi_enum_values<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `multi_enum`. This object is the chosen values of a `multi_enum` custom field.|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |»» color<span class="param-type"> string</span>|The color of the enum option. Defaults to ‘none’.|
 |»» enabled<span class="param-type"> boolean</span>|Whether or not the enum option is a selectable value for the custom field.|
 |»» name<span class="param-type"> string</span>|The name of the enum option.|
 |» name<span class="param-type"> string</span>|The name of the custom field.|
-|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a number custom field.|
+|» number_value<span class="param-type"> number</span>|*Conditional*. This number is the value of a `number` custom field.|
+|» people_value<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `people`. This array of [compact user](/docs/user-compact) objects reflects the values of a `people` custom field.|
+|»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
+|»» resource_type<span class="param-type"> string</span>|The base type of this resource.|
+|»» name<span class="param-type"> string</span>|*Read-only except when same user as requester*. The user’s name.|
 |» precision<span class="param-type"> integer</span>|Only relevant for custom fields of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.<br>For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%.<br>The identifier format will always have a precision of 0.|
 |» resource_subtype<span class="param-type"> string</span>|The type of the custom field. Must be one of the given values.|
-|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a text custom field.|
+|» text_value<span class="param-type"> string</span>|*Conditional*. This string is the value of a `text` custom field.|
 |» type<span class="param-type"> string</span>|*Deprecated: new integrations should prefer the resource_subtype field.* The type of the custom field. Must be one of the given values.|
 |followers<span class="param-type"> [object]</span>|Array of users following this task.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -32018,6 +32300,7 @@ The *task* is the basic object around which many operations in Asana are centere
 |resource_subtype|multi_enum|
 |resource_subtype|number|
 |resource_subtype|date|
+|resource_subtype|people|
 |type|text|
 |type|enum|
 |type|multi_enum|
