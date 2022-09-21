@@ -4,8 +4,6 @@
 # Overview of App Components
 
 <span class="beta-indicator">BETA</span>
-  
-**Now recruiting:** [Participate in Asana Research and earn a $300 gift card of your choice!](https://forum.asana.com/t/participate-in-asana-research-and-earn-a-300-gift-card-of-your-choice/163451)
 
 An important step in maintaining flow at work is having all the information you need in one place. Asana is for teams to track 
 projects, to provide clarity on *who* is doing *what* by *when*, and to automate repetitive processes. With App Components, it's
