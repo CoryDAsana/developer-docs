@@ -1,7 +1,7 @@
 const fs = require('fs');
 const https = require("https");
 
-const docsFilename = './source/includes/markdown/_12_1-news-and-changelog.html.md';
+const docsFilename = './source/includes/markdown/_11_1-news-and-changelog.html.md';
 
 let result = "";
 
