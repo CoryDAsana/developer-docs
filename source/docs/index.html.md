@@ -30,11 +30,11 @@ includes:
   - markdown/17-submit-your-app.html.md
   - markdown/18-managing-your-app.html.md
   - markdown/19-custom-apps.html.md
-  - markdown/15-how-to-use.html.md
-  - markdown/15-why-use-asanas-api.html.md
-  - markdown/15-library-quick-start.html.md
-  - markdown/16-official-client-libs.html.md
-  - markdown/18-webhooks.html.md
+  - markdown/20-how-to-use.html.md
+  - markdown/21-common-use-cases.html.md
+  - markdown/22-examples.html.md
+  - markdown/23-official-client-libs.html.md
+  - markdown/24-webhooks.html.md
   - markdown/13-platform-ui.html.md
   - helpers/platform-ui-wrapper.html.md
   - ui-hooks-reference/index.html.md

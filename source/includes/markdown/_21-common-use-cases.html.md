@@ -2,7 +2,7 @@
 <section class="full-section">
 <section>
 
-# Common Usecases
+# Common Use Cases
 <a id="why-use-asanas-api"></a>
 <a id="asanas-api-and-you"></a>
 
