@@ -58,6 +58,7 @@ All admin settings events operate on the _Workspace_ resource type except for `w
 | workspace_associated_email_domain_removed            | An email domain was removed from the workspace. |
 | workspace_require_two_factor_auth_enabled            | Two factor authentication was set as required for the workspace. |
 | workspace_require_two_factor_auth_disabled           | Two factor authentication was set as not required for the workspace. |
+| workspace_app_recipient_emails_changed               | A list of recipients for app approval requests was changed. |
 | workspace_view_links_enabled                         | Read-only link sharing was enabled for the workspace. |
 | workspace_view_links_disabled                        | Read-only link sharing was disabled for the workspace. |
 | workspace_default_session_duration_changed           | The workspace's default session duration was changed. |
