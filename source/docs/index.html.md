@@ -25,7 +25,11 @@ includes:
   - markdown/12-audit-log.html.md
   - markdown/13-scim.html.md
   - markdown/14-deprecations.html.md
-  - markdown/14-publish-your-app.html.md
+  - markdown/15-developer-sandbox.html.md
+  - markdown/16-api-explorer.html.md
+  - markdown/17-submit-your-app.html.md
+  - markdown/18-managing-your-app.html.md
+  - markdown/19-custom-apps.html.md
   - markdown/15-how-to-use.html.md
   - markdown/15-why-use-asanas-api.html.md
   - markdown/15-library-quick-start.html.md
