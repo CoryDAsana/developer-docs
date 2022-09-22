@@ -35,10 +35,10 @@ includes:
   - markdown/22-examples.html.md
   - markdown/23-official-client-libs.html.md
   - markdown/24-webhooks.html.md
-  - markdown/13-platform-ui.html.md
-  - helpers/platform-ui-wrapper.html.md
-  - ui-hooks-reference/index.html.md
-  - helpers/platform-ui-wrapper-close.html.md
+  - markdown/25-app-components.html.md
+  - helpers/app-components-wrapper.html.md
+  - app-components-reference/index.html.md
+  - helpers/app-components-wrapper-close.html.md
   - api-reference/index.html.md
 search: true
 highlight_theme: github

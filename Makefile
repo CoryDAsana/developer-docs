@@ -18,7 +18,7 @@ CMD_SWAGGER_CLI := swagger-codegen-cli.jar
 
 FILE_CODEZ_API_OAS := $(realpath $(OPENAPI_DIR)/dist/public_asana_oas.yaml)
 FILE_CODEZ_APP_COMPONENTS_OAS := $(realpath $(OPENAPI_DIR)/app_components_oas.yaml)
-FILE_SOURCE_UI_HOOKS_REFERENCE := source/includes/ui-hooks-reference/_index.html.md
+FILE_SOURCE_UI_HOOKS_REFERENCE := source/includes/app-components-reference/_index.html.md
 FILE_SOURCE_API_REFERENCE := source/includes/api-reference/_index.html.md
 FILE_SOURCE_CHANGELOG := source/includes/markdown/_11_1-news-and-changelog.html.md
 
