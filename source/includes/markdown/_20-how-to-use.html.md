@@ -2,7 +2,7 @@
 <section class="full-section">
 <section>
 
-# How to use the API
+# How to Use the API
 
 > Request
 
@@ -16,12 +16,12 @@ _If you're familiar with building against APIs, you can jump to our [examples](/
 If you’re new to developing on APIs, this is a great place to start.  You’ll learn in this guide how to make the simplest Asana API request -- getting your user information. 
 </span>
 
-To get started
+To get started:
 
 1. Be [logged into Asana](https://app.asana.com).
 2. Go to this URL: <a href="https://app.asana.com/api/1.0/users/me?opt_pretty&opt_client_name=hello_world_browser" target="_blank">https://app.asana.com/api/1.0/users/me</a>
 
-`me` is a User Identifier that refers to the logged in user. A User Identifier can be either `me`, an email_address, or the gid of the user.
+`me` is a User Identifier that refers to the logged in user. A User Identifier can be either `me`, an email_address, or the GID of the user.
 
 > Response
 

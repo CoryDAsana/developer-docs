@@ -4,7 +4,7 @@ const YAML = require("yaml");
 
 const markdownFiles = [
   // "./source/includes/api-reference/_index.html.md",
-  "./source/includes/ui-hooks-reference/_index.html.md",
+  "./source/includes/app-components-reference/_index.html.md",
 ];
 
 const clientLibraryInfo = [
