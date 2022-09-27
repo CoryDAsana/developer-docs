@@ -394,7 +394,7 @@ The tutorials in this guide will cover the first two steps of the overall build 
 
 To get started with App Components, you'll need an Asana account. This will give you a workspace to access the [developer console](https://app.asana.com/0/developer-console), through which you can create and configure apps directly in Asana's user interface. 
 
-While you can [sign up](https://asana.com/guide/help/fundamentals/about-asana) for an account if you don't already have one, we actually recommend using a [Developer Sandbox](/docs/developer-sandbox) to help you build in a separate, dedicated environment. You'll still be able to access the developer console this way, but the developer sandbox will also grant you access to the [Example App](/docs/example-app), where you can explore the capabilities and features of App Components in-depth.
+While you can [sign up](https://asana.com/guide/help/fundamentals/about-asana) for an account if you don't already have one, we actually recommend using a [Developer Sandbox](/docs/developer-sandbox) to help you build in a separate, dedicated environment. You'll still be able to access the developer console this way, but the developer sandbox will also grant you access to the [Example App](/docs/example-apps), where you can explore the capabilities and features of App Components in-depth.
 
 ### Consider the App's User Experience
 
@@ -406,7 +406,7 @@ To see visual documentation for how you can design your app, check out the [App 
 
 Because App Components allow your end users to interact with resources outside of Asana's user interface, an [App Server](/docs/app-server) is required for building with App Components. While it isn't necessary to have a complete App Server before moving forward, it's a good idea to at least know the URLs to any server endpoints you want to configure ahead of time (e.g., your URL to [get the metadata](/docs/get-widget-metadata) for a [Widget](/docs/widget)), though these can be configured or changed at any time.
 
-Feel free to review the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub to see an example server written in Express.js. This server is also used in the [Example App](/docs/example-app).
+Feel free to review the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub to see an example server written in Express.js. This server is also used in the [Example App](/docs/example-apps).
 
 <hr>
 
@@ -552,7 +552,7 @@ To get started with the UI Builder, visit **App Components** in the sidebar of y
 
 Because apps built with App Components allow end users to interact with resources external to Asana, an [App Server](/docs/app-server) is required in order for your app to function. Asana will make requests directly to endpoints exposed on the App Server, which controls, for example, what the user sees in a [Widget](/docs/widget) or [what happens](/docs/rule-action) when the user takes certain actions.
 
-To see an example server written in Express.js, check out the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub. This server is also used in the [Example App](/docs/example-app).
+To see an example server written in Express.js, check out the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub. This server is also used in the [Example App](/docs/example-apps).
 
 As a final note, we recommend [creating and configuring your app](/docs/getting-started) before moving forward with building the App Server. You may also leverage the [UI Builder](/docs/ui-builder) to test and render the user interface of your application.
 
