@@ -109,7 +109,7 @@ URL parameters like `task`, `user`, and `workspace`.
 
 ### UI Builder
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/widget) to test and configure a Widget.
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/widget) to configure a Widget in an interactive test environment.
 
 ### Widget Configurations
 
@@ -205,7 +205,7 @@ endpoint is the [On change callback request](/docs/on-change-callback).
 
 ### UI Builder
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/modal-form) to test and configure a Modal Form.
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/modal-form) to configure a Modal Form in an interactive test environment.
 
 ### Modal Form Configurations
 
@@ -249,7 +249,7 @@ resource or an error.
 
 ### UI Builder
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/lookup) to test and configure a Lookup.
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/lookup) to configure a Lookup in an interactive test environment.
 
 ### Lookup Configurations
 
@@ -319,7 +319,7 @@ To see an example app server written for Rule Actions, see our [app-components-r
 
 ### UI Builder
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-action) to test and configure a Rule Action.
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-action) to configure a Rule Action in an interactive test environment.
 
 ### Rule Action Configurations
 
@@ -504,7 +504,7 @@ Use the UI Builder to see how your:
 * [Modal Form](/docs/modal-forms) renders as a result of [getting form metadata](/docs/get-form-metadata)
 * [Lookup](/docs/lookup) renders with different items and configurations
 * [Widget](/docs/widget) renders as a result of [getting widget metadata](/docs/get-widget-metadata)
-* [Rule Action](/docs/widget) renders as a result of [getting action metadata](/docs/get-action-metadata)
+* [Rule Action](/docs/rule-action) renders as a result of [getting action metadata](/docs/get-action-metadata)
 
 _Note: The UI Builder is a front end tool that allows you to test building your App Component application's user interface. The UI Builder itself is not capable of making HTTP requests, and as such, certain features cannot be displayed dynamically (e.g., watched fields, Typeahead, etc.)._
 
