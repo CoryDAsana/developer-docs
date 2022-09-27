@@ -107,6 +107,10 @@ that fits with an App's registered `match url` (ex: `https:\/\/.*.atlassian.net\
 then it shows a Widget. A GET request is sent to the App's `Widget metadata URL`, including 
 URL parameters like `task`, `user`, and `workspace`.
 
+### UI Builder
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/widget) to test and configure a Widget.
+
 ### Widget Configurations
 
 | Property            | Description                                                                                                                                 |
@@ -199,6 +203,10 @@ See the `on_change` field in the response to the
 [form metadata request](/docs/get-form-metadata). The request sent to that
 endpoint is the [On change callback request](/docs/on-change-callback).
 
+### UI Builder
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/modal-form) to test and configure a Modal Form.
+
 ### Modal Form Configurations
 
 | Property              | Description                                                                                          |
@@ -237,7 +245,11 @@ https://app-server.com/lookup?value=Cool&workspace=12345&task=23456&user=34567&l
 
 Users can send a search term to the app server. The term is often a URL or 
 the title of an external resource. The app server then responds with a 
-resource or an error. 
+resource or an error.
+
+### UI Builder
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/lookup) to test and configure a Lookup.
 
 ### Lookup Configurations
 
@@ -304,6 +316,10 @@ Rule Actions are a part of [Asana Rules](https://asana.com/guide/help/premium/ru
 _Note: An App Server must be hosted in order for Rule Actions to function. For a brief list of popular hosting options, see [Hosting](/docs/hosting)._
 
 To see an example app server written for Rule Actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub.
+
+### UI Builder
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-action) to test and configure a Rule Action.
 
 ### Rule Action Configurations
 
