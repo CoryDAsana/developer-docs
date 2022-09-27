@@ -501,7 +501,7 @@ When both your app and your App Server are complete, you can move forward with g
 
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
-By building with App Components, applications can display customized widgets, forms, and rules within Asana's user interface. The [UI Builder](https://app.asana.com/0/my-apps/response-builder) is a place for developers to build the user interface of these capabilities in an dynamic, interactive test environment.
+By building with App Components, applications can display customized widgets, forms, and rules within Asana's user interface. The [UI Builder](https://app.asana.com/0/my-apps/response-builder) is a place for developers to build the user interface of these capabilities in a dynamic, interactive test environment.
 
 Use the UI Builder to see how your:
 
