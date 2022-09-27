@@ -107,9 +107,10 @@ that fits with an App's registered `match url` (ex: `https:\/\/.*.atlassian.net\
 then it shows a Widget. A GET request is sent to the App's `Widget metadata URL`, including 
 URL parameters like `task`, `user`, and `workspace`.
 
-### UI Builder
+### UI Builder: Widget
 
 Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/widget) to configure a Widget in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Widget Configurations
 
@@ -203,9 +204,10 @@ See the `on_change` field in the response to the
 [form metadata request](/docs/get-form-metadata). The request sent to that
 endpoint is the [On change callback request](/docs/on-change-callback).
 
-### UI Builder
+### UI Builder: Modal Form
 
 Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/modal-form) to configure a Modal Form in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Modal Form Configurations
 
@@ -247,9 +249,10 @@ Users can send a search term to the app server. The term is often a URL or
 the title of an external resource. The app server then responds with a 
 resource or an error.
 
-### UI Builder
+### UI Builder: Lookup
 
 Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/lookup) to configure a Lookup in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Lookup Configurations
 
@@ -317,9 +320,10 @@ _Note: An App Server must be hosted in order for Rule Actions to function. For a
 
 To see an example app server written for Rule Actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub.
 
-### UI Builder
+### UI Builder: Rule Action
 
 Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-action) to configure a Rule Action in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Rule Action Configurations
 
