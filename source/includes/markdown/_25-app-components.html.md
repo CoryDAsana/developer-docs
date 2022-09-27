@@ -32,6 +32,8 @@ For a visual tour on getting started with App Components, feel free to review th
   
 You can find the [tutorial source code here](https://github.com/Asana/app-components-example-app).
 
+To test and render the different capabilities of App Components dynamically, you may access the [UI Builder](/docs/ui-builder).
+
 **App Components are currently in open beta**. For the latest updates and announcements,
 [subscribe to our developer forum](https://forum.asana.com/c/api/app-components-beta/150).
   
@@ -104,6 +106,11 @@ Asana, it checks each attachment on the task. If an attachment has a URL
 that fits with an App's registered `match url` (ex: `https:\/\/.*.atlassian.net\/.*`) 
 then it shows a Widget. A GET request is sent to the App's `Widget metadata URL`, including 
 URL parameters like `task`, `user`, and `workspace`.
+
+### UI Builder: Widget
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/widget) to configure a Widget in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Widget Configurations
 
@@ -197,6 +204,11 @@ See the `on_change` field in the response to the
 [form metadata request](/docs/get-form-metadata). The request sent to that
 endpoint is the [On change callback request](/docs/on-change-callback).
 
+### UI Builder: Modal Form
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/modal-form) to configure a Modal Form in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
+
 ### Modal Form Configurations
 
 | Property              | Description                                                                                          |
@@ -235,7 +247,12 @@ https://app-server.com/lookup?value=Cool&workspace=12345&task=23456&user=34567&l
 
 Users can send a search term to the app server. The term is often a URL or 
 the title of an external resource. The app server then responds with a 
-resource or an error. 
+resource or an error.
+
+### UI Builder: Lookup
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/lookup) to configure a Lookup in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Lookup Configurations
 
@@ -302,6 +319,11 @@ Rule Actions are a part of [Asana Rules](https://asana.com/guide/help/premium/ru
 _Note: An App Server must be hosted in order for Rule Actions to function. For a brief list of popular hosting options, see [Hosting](/docs/hosting)._
 
 To see an example app server written for Rule Actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub.
+
+### UI Builder: Rule Action
+
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-actions) to configure a Rule Action in an interactive test environment.
+For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Rule Action Configurations
 
@@ -469,9 +491,58 @@ For an in-depth overview of the installation flow (including its customizations)
 
 At this point, your app has been created and fully configured. For further configurations (e.g., updating a URL, replacing button text, etc.), you can head back into the [developer console](https://app.asana.com/0/developer-console) to make any necessary changes. 
 
-Next, you'll want to finish building the [App Server](/docs/building-the-app-server). Leveraging the URLs configured earlier in this guide, this is what enables your end users to interact with resources external to Asana (i.e., via requests to endpoints exposed on the App Server). 
+Next, you can explore how to build the UI of your application via the [UI Builder](/docs/ui-builder), which will help you finish building your [App Server](/docs/building-the-app-server). By leveraging the URLs configured earlier in the sections above, your App Server is what enables your end users to interact with resources external to Asana (i.e., via requests to endpoints exposed on the App Server). 
 
 When both your app and your App Server are complete, you can move forward with getting your app [ready for publishing](/docs/publishing-an-app).
+
+<hr class="full-line">
+
+# UI Builder
+
+<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+
+By building with App Components, applications can display customized widgets, forms, and rules within Asana's user interface. The [UI Builder](https://app.asana.com/0/my-apps/response-builder) is a place for developers to build the user interface of these capabilities in an dynamic, interactive test environment.
+
+Use the UI Builder to see how your:
+
+* [Modal Form](/docs/modal-forms) renders as a result of [getting form metadata](/docs/get-form-metadata)
+* [Lookup](/docs/lookup) renders with different items and configurations
+* [Widget](/docs/widget) renders as a result of [getting widget metadata](/docs/get-widget-metadata)
+* [Rule Action](/docs/rule-action) renders as a result of [getting action metadata](/docs/get-action-metadata)
+
+_Note: The UI Builder is a front end tool that allows you to test building your App Component application's user interface. The UI Builder itself is not capable of making HTTP requests, and as such, certain features cannot be displayed dynamically (e.g., watched fields, Typeahead, etc.)._
+
+<img src="../images/ui-builder.png" alt="UI Builder"/>
+
+<hr>
+
+## Preset Configurations
+
+The [UI Builder](https://app.asana.com/0/my-apps/response-builder) allows you to view preset UI configurations for the capabilities of App Components:
+
+<img src="../images/ui-builder-capability-selection.gif" alt="UI Builder capability selection"/>
+
+Likewise, _within_ each selected capability, you are able to select and view **Minimalist**,  **Normal**, and **Everything** levels of preset configuration (i.e., with **Everything** being the highest level of configuration):
+
+<img src="../images/ui-builder-preset-configurations.gif" alt="UI Builder preset configurations"/>
+
+<hr>
+
+## Custom Configurations
+
+Beyond the preset "template" configurations, you are also able to interact with the [UI Builder](https://app.asana.com/0/my-apps/response-builder)'s code editor directly. The result of the properties and values that you input in the editor will be dynamically rendered in the left panel:
+
+<img src="../images/ui-builder-custom-configurations.gif" alt="UI Builder custom configurations"/>
+
+<hr>
+
+## Copying Configurations
+
+As you use the [UI Builder](https://app.asana.com/0/my-apps/response-builder) to test and build your server responses (e.g., [getting form metadata](/docs/get-form-metadata)), use the **Copy to clipboard** button to quickly copy the resulting metadata. You may choose to paste this metadata directly into your App Server code.
+
+<img src="../images/ui-builder-copy-button.gif" alt="UI Builder copy button"/>
+
+To get started with the UI Builder, visit **App Components** in the sidebar of your app in the [developer console](https://app.asana.com/0/developer-console), then select **View UI builder**. Alternatively, you may access the [UI Builder](https://app.asana.com/0/my-apps/response-builder) directly.
 
 <hr class="full-line">
 
@@ -483,7 +554,9 @@ Because apps built with App Components allow end users to interact with resource
 
 To see an example server written in Express.js, check out the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub. This server is also used in the [Example App](/docs/example-app).
 
-As a final note, we recommend [creating and configuring your app](/docs/getting-started) before moving forward with building the App Server. After you have completed building both the app and App Server, you will be ready to begin the [publishing process](/docs/publishing-an-app).
+As a final note, we recommend [creating and configuring your app](/docs/getting-started) before moving forward with building the App Server. You may also leverage the [UI Builder](/docs/ui-builder) to test and render the user interface of your application.
+
+After you have completed building both the app and App Server, you will be ready to begin the [publishing process](/docs/publishing-an-app).
 
 <hr>
 
