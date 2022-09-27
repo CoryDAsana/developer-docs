@@ -322,7 +322,7 @@ To see an example app server written for Rule Actions, see our [app-components-r
 
 ### UI Builder: Rule Action
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-action) to configure a Rule Action in an interactive test environment.
+Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-actions) to configure a Rule Action in an interactive test environment.
 For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ### Rule Action Configurations
