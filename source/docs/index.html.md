@@ -9,7 +9,7 @@ language_tabs:
   - ruby: ' ruby'
 toc_footers: []
 includes:
-  - markdown/01-basic-concepts.html.md
+  - markdown/01-overview.html.md
   - markdown/02-object-hierarchy.html.md
   - markdown/03-auth.html.md
   - markdown/04-errors.html.md
