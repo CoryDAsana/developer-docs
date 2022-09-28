@@ -1,7 +1,7 @@
 <hr class="full-line">
 <section>
 
-# Rich Text
+# Rich text
 
 ***Note:***  *We are actively adding new rich texts formats to various objects in Asana. __This may break existing apps. New apps should be built using parsers and display logic that is forward compatible with the forthcoming rich text formats__. More details and ongoing updates can be found in __[this post in the developer forum](https://forum.asana.com/t/changes-are-coming-to-rich-text-html-notes-and-html-text-in-asana/113434)__.*
 
