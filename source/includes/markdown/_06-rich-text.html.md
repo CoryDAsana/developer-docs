@@ -1,12 +1,12 @@
-<hr>
+<hr class="full-line">
 <section>
 
 # Rich Text
 
-***Note:***  *we are actively adding new rich texts formats to various objects in Asana. __This may break existing apps. New apps should be built using parsers and display logic that is forward compatible with the forthcoming rich text formats__. More details and ongoing updates can be found in __[this post in the developer forum](https://forum.asana.com/t/changes-are-coming-to-rich-text-html-notes-and-html-text-in-asana/113434)__.*
+***Note:***  *We are actively adding new rich texts formats to various objects in Asana. __This may break existing apps. New apps should be built using parsers and display logic that is forward compatible with the forthcoming rich text formats__. More details and ongoing updates can be found in __[this post in the developer forum](https://forum.asana.com/t/changes-are-coming-to-rich-text-html-notes-and-html-text-in-asana/113434)__.*
 
 
-> Example Rich Text
+> Example rich text
 
 ```html
 ~
@@ -28,18 +28,19 @@ The rich text field name for an object is equivalent to its plain text field nam
 | Project briefs         | `text`           | `html_text`        | Yes             |
 | Teams                  | `description`    | `html_description` | No              |
 
+<hr>
+
 <a id="blocks"></a>
-## Blocks and Whitespace
+## Blocks and whitespace
 
-Several object types support block-based editing, as denoted by the "Supports blocks" column in the table above. On the Asana Web App UI, the rich text for these object types will be displayed as independently-draggable “blocks”.
+Several object types support block-based editing, as denoted by the "Supports blocks" column in the table above. On the Asana web app UI, the rich text for these object types will be displayed as independently-draggable “blocks”. The UI “blocks” are divided between:
 
-The UI “blocks” are divided between:
-- Each header (`<h1>`/`<h2>` tag)
-- Each horizontal rule (`<hr>` tag)
-- Each list item (`<li>` tag)
-- Each inline image (`<img>` tag)
-- Each media embed (`<object>` tag)
-- Each sequence of content that includes none of these tags (implicitly a “paragraph block”)
+* Each header (`<h1>`/`<h2>` tag)
+* Each horizontal rule (`<hr>` tag)
+* Each list item (`<li>` tag)
+* Each inline image (`<img>` tag)
+* Each media embed (`<object>` tag)
+* Each sequence of content that includes none of these tags (implicitly a “paragraph block”)
 
 Multiple paragraph blocks can exist in sequence. When this happens, a double-newline `\n\n` will indicate a division between two blocks. This contrasts with a line break `\n`, which indicates a new line within the same block.
 
@@ -49,6 +50,8 @@ Example:
 ```html
 Line one\n\u200b\nLine three\n\nA separate block
 ```
+
+<hr>
 
 <a id="reading"></a>
 ## Reading rich text
@@ -118,19 +121,19 @@ In addition, the following tags are supported in the rich text of only some obje
 
 | Tag                                                        | Meaning in Asana              | Objects Supported     |
 |------------------------------------------------------------|-------------------------------|-----------------------|
-| `<h1>`, `<h2>`                                             | Header                        | Project Briefs, Tasks |
-| `<hr>`                                                     | Horizontal rule               | Project Briefs, Tasks |
-| `<img>`                                                    | Inline image                  | Project Briefs        |
-| `<table>`, `<tr>`, `<td>`                                  | Table                         | Project Briefs        |
-| `<object type="application/vnd.asana.external_media">`     | External media embed (iframe) | Project Briefs        |
-| `<object type="application/vnd.asana.project_milestones">` | List of milestones            | Project Briefs        |
-| `<object type="application/vnd.asana.project_goals">`      | List of goals                 | Project Briefs        |
+| `<h1>`, `<h2>`                                             | Header                        | Project briefs, tasks |
+| `<hr>`                                                     | Horizontal rule               | Project briefs, tasks |
+| `<img>`                                                    | Inline image                  | Project briefs        |
+| `<table>`, `<tr>`, `<td>`                                  | Table                         | Project briefs        |
+| `<object type="application/vnd.asana.external_media">`     | External media embed (iframe) | Project briefs        |
+| `<object type="application/vnd.asana.Project_milestones">` | List of milestones            | Project briefs        |
+| `<object type="application/vnd.asana.Project_goals">`      | List of goals                 | project briefs        |
 
-**Note:** The above lists will expand as new features are introduced to the Asana web product. Treat rich text as you would treat arbitrary HTML, and ensure that your code doesn't break when it encounters a tag not on this list. 
+_Note: The above lists will expand as new features are introduced to the Asana web product. Treat rich text as you would treat arbitrary HTML, and ensure that your code does not break when it encounters a tag not on this list._
 
 **Links**
 
-While links are easy to understand when users view the rendered in the Asana web product, an `<a>` tag and its `href` alone are insufficient to programmatically understand what the target of the link is. This is confused further by the fact that the formats of these links are frequently ambiguous. For example, an @-mention to a user generates a link to their "My Tasks", which looks identical to a link to a normal project.
+While links are intuitive to understand when users view the rendered result in the Asana web product, an `<a>` tag and its `href` alone are insufficient to programmatically understand what the target of the link is. This is confused further by the fact that the formats of these links are frequently ambiguous. For example, an @-mention to a user generates a link to their "[My Tasks](https://asana.com/guide/help/fundamentals/my-tasks)", which looks identical to a link to a normal project.
 
 Because of this, the API will return additional attributes in `<a>` tags to convey meaningful information about the target. The following is a complete list of attributes we may return inside an `<a>` tag, in addition to the usual `href`:
 
@@ -155,7 +158,7 @@ Here are some examples of how this behavior manifests:
   - The raw link generated in Asana will be `https://app.asana.com/0/5678/list`.
   - The `<a>` tag returned in the API will be `<a href="https://app.asana.com/0/5678/list" data-asana-accessible="false" data-asana-dynamic="true">Private Link</a>`
 
-Here's an example of what a complete rich comment might look like in the API:
+Here is an example of what a complete rich comment might look like in the API:
 
 `
 <body>All these new tasks are <em>really</em> getting disorganized, so <a href="https://app.asana.com/0/4168466/list" data-asana-accessible="true" data-asana-dynamic="true" data-asana-type="user" data-asana-gid="4168112">@Tim Bizzaro</a> just made the new <a href="https://app.asana.com/0/5732985/list" data-asana-accessible="true" data-asana-dynamic="true" data-asana-type="project" data-asana-gid="5732985">Work Requests</a> project to help keep them organized. <strong>Everyone</strong> should start using the <a href="https://app.asana.com/0/5732985/6489418" data-asana-accessible="true" data-asana-dynamic="true" data-asana-type="task" data-asana-gid="6489418" data-asana-project="5732985">Request template</a> when adding new tasks there.</body>
@@ -186,7 +189,7 @@ If the attachment has been deleted, the HTML will contain `data-asana-deleted="t
 
 The image URLs expire after a few minutes.
 
-**External media embeds (iframes)**
+**External media embeds (iFrames)**
 
 > Reading an external media embed
 
@@ -201,8 +204,19 @@ The image URLs expire after a few minutes.
 </object>
 ```
 
-You can embed Figma, Loom, YouTube, etc. within rich text. The effect is similar to an HTML iframe. There is a fixed, predefined list of external media sources that are supported:
-Adobe XD, Canva, Figma, InVision, Loom, LucidChart, Miro, Vimeo, Whimsical, and Wistia.
+You can embed Figma, Loom, YouTube, etc. within rich text. The effect is similar to an [HTML iFrame](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+There is a fixed, predefined list of external media sources that are supported: 
+
+* Adobe XD
+* Canva
+* Figma
+* InVision
+* Loom
+* LucidChart
+* Miro
+* Vimeo
+* Whimsical
+* Wistia
 
 **Milestones and goals**
 
@@ -303,6 +317,8 @@ Render as a new line if the tag is a block.
 #### Other semantic non-terminal tags
 Ignore the tag and render whatever is inside. Follow the HTML convention for whether it is a block or not.
 
+<hr>
+
 <a name="writing"></a>
 ## Writing rich text
 
@@ -344,22 +360,26 @@ When writing an inline image, you don't need most of the attributes; all you nee
 To write rich text that contains a new external media embed:
 
 1. Create URL attachment with a call to [`POST /attachments`](/docs/upload-an-attachment), with `{ ..., "resource_subtype": "external", "url": "<your_url>" }`. **Important:** Use the URL that would appear in the browser address bar (e.g. `https://youtube.com/watch?v=...`), NOT the embeddable URL (e.g. `https://youtube.com/embed/...`).
+
 2. Make a second API call to write the rich text, using the returned GID as the `data-asana-gid` field of the `<object>` tag. You don't need the inner HTML and you only need a couple of the `<object>` tag attributes: All that is needed is `<object type="application/vnd.asana.external_media" data-asana-gid="..."></object>`
+
+<hr>
 
 ## Writing defensively
 
 ### When processing rich text and sending it back
 
-It’s ok to ignore tags or attributes on tags that are unknown for rendering/processing. It’s very important to send 
-everything back (attributes and inner content) to avoid data loss. `<object>` is an exception where it’s ok to not send 
-any inner content back (all inner content in `<object>` will be ignored).
+It is okay to ignore tags or attributes on tags that are unknown for rendering/processing. It is important to send 
+everything back (attributes and inner content) to avoid data loss.
+
+_Note: `<object>` is an exception where it is acceptable to not send any inner content back (all inner content in `<object>` will be ignored)._
 
 ### If you plan to write an editor
 
 If the tag and attributes are known, but it contains unknown attributes, it must be treated as unknown.
 
-If a tag is unknown, first determine if the tag is block or inline and render it as a block or inline atomic and 
-non-copiable (and non-cut&paste-able) editor node (all inner content is non-editable). This is because we don’t know if 
+If a tag is unknown, first determine if the tag is block or inline, then render it as a block or inline atomic and 
+non-copiable (and non-cut-and-paste-able) editor node (all inner content is non-editable). This is because we don’t know if 
 the unknown node has constraints on inner content or where it can appear. The node must also keep track of all 
 attributes and inner content to be serialized back.
 

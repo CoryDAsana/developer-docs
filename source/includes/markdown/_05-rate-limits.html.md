@@ -4,7 +4,7 @@
 # Rate limits
 
 <span class="description">
-To protect the stability of the API and keep it available to all users, Asana enforces multiple kinds of rate limiting. Requests that hit any of our rate limits will receive a `429` Too Many Requests response, which contains the standard `Retry-After` header indicating how many seconds the client should wait before retrying the request.
+To protect the stability of the API and keep it available to all users, Asana enforces multiple kinds of rate limiting. Requests that hit any of our rate limits will receive a `429 Too Many Requests` response, which contains the standard `Retry-After` header indicating how many seconds the client should wait before retrying the request.
 </span>
 
 Limits are allocated per authorization token. Different tokens will have independent limits.
@@ -64,7 +64,7 @@ In addition to limiting the total number of requests in a given time window, we 
 | Reads `GET` | 50 |
 | Writes `POST, PUT, PATCH, DELETE` | 15 |
 
-For example, if you have 50 read requests in-flight and attempt to make another read request, the API will return a `429` Too Many Requests error. The read and write limits are independent of each other, so the number of read requests you make at one time will have no impact on the number of write requests you can make.
+For example, if you have 50 read requests in-flight and attempt to make another read request, the API will return a `429 Too Many Requests` error. The read and write limits are independent of each other, so the number of read requests you make at one time will have no impact on the number of write requests you can make.
 
 Responses for requests rejected by this concurrent request limiter will contain a `Retry-After` header, which specifies a duration long enough (in seconds) such that the other in-flight requests are guaranteed to have either completed or timed out.
 
@@ -87,7 +87,7 @@ Because there can be a wide range in the cost of any given API request in terms 
 
 The cost we associate with a request isn't equivalent to the number of links in the subset of the graph involved, but it is roughly proportional. The cost of a request is calculated after the response has been fully built and we know how much data we needed to fetch from our databases to build it. This cost is then deducted from a quota, and the response is returned. Because the cost of a request is not known until we’ve built the response, we allow this deduction to result in a net negative quota. The request that causes the quota to become negative will receive the expected response and not be rejected.
 
-When a request is received, if the remaining quota is not positive, the new request is rejected with a `429` Too Many Requests. As with the standard rate limits, this quota is defined per-minute but is updated on a more frequent interval. The `Retry-After` header will specify how long you must wait for the quota to become positive again.
+When a request is received, if the remaining quota is not positive, the new request is rejected with a `429 Too Many Requests`. As with the standard rate limits, this quota is defined per-minute but is updated on a more frequent interval. The `Retry-After` header will specify how long you must wait for the quota to become positive again.
 
 The _vast_ majority of developers will be unaffected by the cost limit, and the quota is set sufficiently high that it only affects users making requests that would compromise the stability of the API. Rather than unconditionally blocking their token from the API, this cost limiter will permit them to continue operation at a slower but safe and stable rate.
 
