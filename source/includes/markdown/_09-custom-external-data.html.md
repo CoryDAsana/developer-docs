@@ -4,7 +4,7 @@
 # Custom External Data
 
 <span class="description">
-Custom external data allows a client application to add app-specific metadata to [Tasks](/docs/asana-tasks)
+Custom external data allows a client application to add app-specific metadata to [Tasks](/docs/tasks)
 in the API. The custom data includes a string `gid` that can be used to retrieve objects and a data blob that can store
 character strings.
 </span>
