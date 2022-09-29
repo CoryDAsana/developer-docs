@@ -1,3 +1,5 @@
+<hr class="full-line">
+
 # Managing your App
 
 ### Duplicating an app
