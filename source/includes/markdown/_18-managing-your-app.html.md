@@ -14,11 +14,11 @@ of your application. As a result of this operation, the newly-generated app will
 including:
 
 * Basic information (e.g., app name, descriptions, authentication URL, etc.)
-* Configurations of App Components
+* Configurations of app components
 
 Because the newly-generated app is its own unique app, the following _will not_ be carried over from the original app:
 
-* App credentials (i.e., a new Client ID and Client Secret will be generated)
+* App credentials (i.e., a new client ID and client secret will be generated)
 * Users who have completed OAuth
 * Organizations in which the app is available
 * Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installation-flow)
