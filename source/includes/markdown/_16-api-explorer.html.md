@@ -1,3 +1,5 @@
+<hr class="full-line">
+
 # API Explorer
 
 <span class="description">
