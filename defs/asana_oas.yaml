@@ -629,6 +629,18 @@ tags:
       have access to and will receive status updates of the project. Adding
       followers to a project will add them as members if they are not
       already, removing followers from a project will not affect membership.
+
+
+      **Note:** You can use certain Project endpoints to operate on
+      [User Task Lists](/docs/user-task-lists) ([My Tasks](https://asana.com/guide/help/fundamentals/my-tasks))
+      by substituting the `{project_gid}` with the `{user_task_list_gid}`. For example,
+      you can perform
+      operations on the custom fields of a [User Task List](/docs/user-task-lists)
+      by using the following
+      Projects endpoints: [Add a custom field to a project](/docs/add-a-custom-field-to-a-project),
+      [Remove a custom field from a project](/docs/remove-a-custom-field-from-a-project)
+      and
+      [Get a project's custom fields](/docs/get-a-projects-custom-fields)
   - name: Project Briefs
     description: >-
       A *project brief* object represents a rich text document that describes
@@ -761,6 +773,8 @@ tags:
   - name: User Task Lists
     description: >-
       A user task list represents the tasks assigned to a particular user.
+      This list is the user's [My Tasks](https://asana.com/guide/help/fundamentals/my-tasks)
+      list.
   - name: Webhooks
     description: >-
       Webhooks allow you to subscribe to notifications about events that occur on
@@ -3884,7 +3898,7 @@ components:
             Globally unique identifier of the date field in the project template.
             A value of
             `1` refers to the project start date, while `2` refers to the project
-            due date. 
+            due date.
           type: string
           readOnly: true
           example: '1'
@@ -5593,7 +5607,8 @@ components:
         - type: object
           description: >-
             A user task list represents the tasks assigned to a particular user.
-            It provides API access to a user’s “My Tasks” view in Asana.
+            It provides API access to a user’s [My Tasks](https://asana.com/guide/help/fundamentals/my-tasks)
+            view in Asana.
           x-docs-overrides:
             properties.resource_type.example: user_task_list
           properties:

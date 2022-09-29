@@ -8553,6 +8553,8 @@ A `project` represents a prioritized list of tasks in Asana or a board with colu
 Projects in organizations are shared with a single team. You cannot currently change the team of a project via the API. Non-organization workspaces do not have teams and so you should not specify the team of project in a regular workspace.
 
 Followers of a project are a subset of the members of that project. Followers of a project will receive all updates including tasks created, added and removed from that project. Members of the project have access to and will receive status updates of the project. Adding followers to a project will add them as members if they are not already, removing followers from a project will not affect membership.
+
+**Note:** You can use certain Project endpoints to operate on [User Task Lists](/docs/user-task-lists) ([My Tasks](https://asana.com/guide/help/fundamentals/my-tasks)) by substituting the `{project_gid}` with the `{user_task_list_gid}`. For example, you can perform operations on the custom fields of a [User Task List](/docs/user-task-lists) by using the following Projects endpoints: [Add a custom field to a project](/docs/add-a-custom-field-to-a-project), [Remove a custom field from a project](/docs/remove-a-custom-field-from-a-project) and [Get a project's custom fields](/docs/get-a-projects-custom-fields)
 </span>
 
 </section>
@@ -26022,7 +26024,7 @@ Results are sorted alphabetically and limited to 2000. For more results use the 
 </pre>
 
 <span class="description">
-A user task list represents the tasks assigned to a particular user.
+A user task list represents the tasks assigned to a particular user. This list is the user's [My Tasks](https://asana.com/guide/help/fundamentals/my-tasks) list.
 </span>
 
 </section>
@@ -32783,7 +32785,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_UserTask
 ```
 
 <span class="description">
-A user task list represents the tasks assigned to a particular user. It provides API access to a user’s “My Tasks” view in Asana.
+A user task list represents the tasks assigned to a particular user. It provides API access to a user’s [My Tasks](https://asana.com/guide/help/fundamentals/my-tasks) view in Asana.
 
 </span>
 
@@ -33094,7 +33096,7 @@ This object determines if a user is a member of a workspace.
 |is_active<span class="param-type"> boolean</span>|Reflects if this user still a member of the workspace.|
 |is_admin<span class="param-type"> boolean</span>|Reflects if this user is an admin of the workspace.|
 |is_guest<span class="param-type"> boolean</span>|Reflects if this user is a guest of the workspace.|
-|user_task_list<span class="param-type"> object</span>|A user task list represents the tasks assigned to a particular user. It provides API access to a user’s “My Tasks” view in Asana.|
+|user_task_list<span class="param-type"> object</span>|A user task list represents the tasks assigned to a particular user. It provides API access to a user’s [My Tasks](https://asana.com/guide/help/fundamentals/my-tasks) view in Asana.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
 |» resource_type<span class="param-type"> string</span>|The base type of this resource.|
 |» name<span class="param-type"> string</span>|The name of the user task list.|
