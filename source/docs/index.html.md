@@ -26,11 +26,11 @@ includes:
   - markdown/13-scim.html.md
   - markdown/14-deprecations.html.md
   - markdown/15-developer-sandbox.html.md
-  - markdown/16-api-explorer.html.md
-  - markdown/17-submit-your-app.html.md
-  - markdown/18-managing-your-app.html.md
-  - markdown/19-custom-apps.html.md
-  - markdown/20-how-to-use.html.md
+  - markdown/16-how-to-use.html.md
+  - markdown/17-api-explorer.html.md
+  - markdown/18-custom-apps.html.md
+  - markdown/19-submit-your-app.html.md
+  - markdown/20-managing-your-app.html.md
   - markdown/21-common-use-cases.html.md
   - markdown/22-examples.html.md
   - markdown/23-official-client-libs.html.md

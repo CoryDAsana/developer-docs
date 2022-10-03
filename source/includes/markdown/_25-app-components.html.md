@@ -775,7 +775,7 @@ As part of the customizations, a `Headline` and `Subhead` can be shown at the to
 
 <hr>
 
-### Authenticating
+### Connecting to the app
 
 <span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
 
