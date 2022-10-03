@@ -1,6 +1,6 @@
 <hr class="full-line">
 
-# Managing your App
+# Managing your app
 
 ### Duplicating an app
 
@@ -49,5 +49,3 @@ _the original (i.e., previous) app will reflect the new updates_, while the dupl
       <h4>Was this section helpful? <a class="positiveFeedback-DevSatisfaction" style="cursor:pointer;">Yes </a><a class="negativeFeedback-DevSatisfaction" style="cursor:pointer;">No</a></h4>
   </div>
 </div>
-
-<hr class="full-line">

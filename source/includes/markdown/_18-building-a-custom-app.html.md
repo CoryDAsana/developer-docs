@@ -1,11 +1,12 @@
-# Custom apps
+<hr class="full-line">
 
-#### What to consider when building a custom app
-
+# Building a custom app
 
 <span class="description">
-Unlike third-party apps and integrations used by many companies, custom apps are designed to only be used within a single domain. For example, an Asana customer may want to use the API to create a bot, integrate Asana with a homegrown tool, or generate custom reports. For more ideas on what you can accomplish through custom apps, here are some [common use cases](/docs/common-usecases).
+Unlike third-party apps and integrations used by many companies, custom apps are designed to only be used within a single domain. For example, an Asana customer may want to use the API to create a bot, integrate Asana with a homegrown tool, or generate custom reports. For more ideas on what you can accomplish through custom apps, here are some [common use cases](/docs/common-use-cases).
 </span>
+
+Here is a brief list of what to consider when building a custom app:
 
 #### API explorer 
 If you are unfamiliar with our API, it may be helpful to start by playing around with our [API explorer](/docs/api-explorer). The API explorer is a quick and easy way to test various _read_ endpoints and see how various parameters affect responses. You will also find guides and [code examples](/docs/examples) in our documentation and as well as [client libraries](/docs/official-client-libraries) that are helpful when getting started.
