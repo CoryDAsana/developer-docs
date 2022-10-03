@@ -1,16 +1,16 @@
-<hr>
+<hr class="full-line">
 <section>
 
-# Input/Output Options
+# Input/output options
 
-> GET url params
+> `GET` URL params
 
 ```
 ?opt_pretty
 ?opt_fields=followers,assignee
 ``` 
 
-> PUT or POST body options
+> `PUT` or `POST` body options
 
 ```
 options: { 
@@ -20,15 +20,16 @@ options: {
 ```
 
 <span class="description">
-In addition to providing fields and their values in a request, you may also specify options to control how your request
-is interpreted and how the response is generated. For GET requests, options are specified as URL parameters prefixed
-with `opt_`. For POST or PUT requests, options are specified in the body. If the body uses the `application/x-www-form-urlencoded`
-content type, then options are prefixed with `opt_` just like for GET requests. If the body uses the `application/json`
-content type, then options are specified inside the top-level `options` object
-(a sibling of the `data` object).
+In addition to providing fields and their values in a request, you may also specify `options` to control how your request
+is interpreted and how the response is generated.
+
+For `GET` requests, options are specified as URL parameters prefixed with `opt_`. For `POST` or `PUT` requests, options are specified in the body.
+
+If the body uses the `application/x-www-form-urlencoded` content type, then options are prefixed with `opt_` just like for `GET` requests. If the
+body uses the `application/json` content type, then options are specified inside the top-level `options` object (a sibling of the `data` object).
 </span>
 
-> ?opt_fields=name,notes&opt_pretty response
+> `?opt_fields=name,notes&opt_pretty` response
 
 ```
 HTTP/1.1 200
@@ -46,13 +47,13 @@ the response.
 
 | Option | Description |
 |---|---|---|
-| **pretty** | Provides the response in "pretty" output. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging. |
-| **fields** | Some requests return *compact* representations of objects, to conserve resources and complete the request more efficiently. Other times requests return more information than you may need. This option allows you to list the exact set of fields that the API should be sure to return for the objects. The field names should be provided as <a href="/docs/paths">paths</a>, described below. <br><br> The `gid` of included objects will always be returned, regardless of the field options. |
+| pretty | Provides the response in "pretty" output. In the case of JSON this means doing proper line breaking and indentation to make it readable. This will take extra time and increase the response size so it is advisable only to use this during debugging. |
+| fields | Some requests return *compact* representations of objects, to conserve resources and complete the request more efficiently. Other times requests return more information than you may need. This option allows you to list the exact set of fields that the API should be sure to return for the objects. The field names should be provided as <a href="/docs/paths">paths</a>, described below. <br><br> The `gid` of included objects will always be returned, regardless of the field options. |
 
 <a name="paths"></a>
-**SELECTING FIELDS**
+#### Selecting fields
 
-> opt_fields nesting
+> `opt_fields` nesting
 
 ```
 "data": {                       < this
@@ -73,18 +74,18 @@ the response.
 ```
 
 Some output options allow you to reference fields of objects to include in the response.
-The way to specify a field is by *path*. A path is made up of a sequence of *terms* separated by the dot (`.`)
-operator. It takes the form `this.a.b`… where *this* refers to an object returned at the top level of the response,
-*a* the name of a field on a root object, *b* a field on a child object referred to by *a*, and so on.
+The way to specify a field is by _path_. A path is made up of a sequence of _terms_ separated by the dot (`.`)
+operator. It takes the form `this.a.b`… where _this_ refers to an object returned at the top level of the response,
+_a_ the name of a field on a root object, _b_ a field on a child object referred to by _a_, and so on.
 
 For example, when retrieving a task or tasks, the path `this.followers.email` refers to the email field of all users
-mentioned in the `followers` field of the task or tasks returned. See the annotated output below:
+mentioned in the `followers` field of the task or tasks returned (see the annotated output on the right).
 
 There are also some advanced operators you can use for shorter syntax in selecting fields:
 
 **`(` .. `|` .. `)`**
 
-The **group** operator can be used in place of any whole term in a path, and will match any of a group of terms.
+The **group** operator can be used in place of any whole term in a path, and will match any of a group of terms. For example:
 
 `this.(followers|assignee).email` will match the `email` field of the `assignee` object or any of the `followers`.
 

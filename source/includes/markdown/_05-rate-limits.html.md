@@ -1,7 +1,7 @@
-<hr>
+<hr class="full-line">
 <section>
 
-# Rate Limits
+# Rate limits
 
 <span class="description">
 To protect the stability of the API and keep it available to all users, Asana enforces multiple kinds of rate limiting. Requests that hit any of our rate limits will receive a `429 Too Many Requests` response, which contains the standard `Retry-After` header indicating how many seconds the client should wait before retrying the request.
@@ -11,8 +11,10 @@ Limits are allocated per authorization token. Different tokens will have indepen
 
 The [client libraries](/docs/official-client-libraries) respect the rate-limited responses and will wait the appropriate amount of time before automatically retrying the request, up to a configurable maximum number of retries.
 
+<hr>
+
 <a name="standard"></a>
-## Standard Rate Limits
+## Standard rate limits
 
 > Request
 
@@ -46,12 +48,14 @@ Our standard rate limiter imposes a quota on how many requests can be made in a 
 
 In addition, calls to the [search API](/docs/search-tasks-in-a-workspace) are limited to 60 requests per minute. The [duplication endpoints](/docs/duplicate-a-task) are limited to 5 concurrent jobs.
 
-Although the quota is defined per minute, it is evaluated more frequently than once per minute, so you may not need to wait for a full minute before retrying your request. For requests rejected by this limiter, the `Retry-After` header has the result of this calculation.
+Although the quota is defined per minute, it is evaluated more frequently than once per minute. As such, you may not need to wait for a full minute before retrying your request. For requests rejected by this limiter, the `Retry-After` header has the result of this calculation.
 
-Requests rejected by this limiter **still count against the quotas** so that ignoring the `Retry-After` header will result in fewer and fewer requests being accepted during the subsequent tine windows.
+Requests rejected by this limiter _still count against the quotas_, so that ignoring the `Retry-After` header will result in fewer and fewer requests being accepted during the subsequent time windows.
+
+<hr>
 
 <a name="concurrent"></a>
-## Concurrent Request Limits
+## Concurrent request limits
 
 In addition to limiting the total number of requests in a given time window, we also limit the number of requests being handled at any given instant. We may change these limits or add new limits in the future.
 
@@ -62,20 +66,22 @@ In addition to limiting the total number of requests in a given time window, we 
 
 For example, if you have 50 read requests in-flight and attempt to make another read request, the API will return a `429 Too Many Requests` error. The read and write limits are independent of each other, so the number of read requests you make at one time will have no impact on the number of write requests you can make.
 
-Responses for requests rejected by this concurrent request limiter will contain a `Retry-After` header specifying a duration long enough (in seconds) such that the other in-flight requests are guaranteed to have either completed or timed out.
+Responses for requests rejected by this concurrent request limiter will contain a `Retry-After` header, which specifies a duration long enough (in seconds) such that the other in-flight requests are guaranteed to have either completed or timed out.
+
+<hr>
 
 <a name="cost"></a>
-## Cost Limits
+## Cost limits
 
-Objects in Asana are connected to each other in a graph. Some examples of links in this graph are:
+Objects in Asana are connected to each other in a graph. Some examples of "links" in this graph are:
 
-- a task object is linked to a user object as the assignee
-- a user is linked to the projects it's following
-- a tag is linked to all its tasks
-- a task is linked to all its subtasks
-- a task is linked to all its custom field values
+- A task object is linked to a user object as the assignee
+- A user is linked to the projects it is following
+- A tag is linked to all its tasks
+- A task is linked to all its subtasks
+- A task is linked to all its custom field values
 
-Depending on the kind of requests you make to our API, our servers have to traverse different parts of the graph. The sizes of these parts directly influence how expensive it is for our servers to build the API responses. For example, fetching just the name and `gid` of a task requires very few resources and no traversal of the graph, but fetching all tasks in a project and all their attributes (assignee, followers, custom fields, likes) can require following several thousand links in the graph.
+Depending on the kind of requests you make to our API, our servers traverse different parts of the graph. The sizes of these parts directly influence how expensive it is for our servers to build the API responses. For example, fetching just the `name` and `gid` of a task requires very few resources and no traversal of the graph, but fetching all tasks in a project and all their attributes (`assignee`, `followers`, `custom_fields`, `likes`) can require following several thousand links in the graph.
 
 Because there can be a wide range in the cost of any given API request in terms of the computational resources and database load, the standard rate limits are not always enough to maintain stability of the API. In the past, when we’ve received bursts of expensive requests, our typical course of action has been to block the offending authorization token and reject all future requests, resulting in confusion for both the user and the app developer. Instead, to protect against the extreme cases where API requests require inordinate traversal of the graph, we impose an additional limit based on the computational cost.
 
@@ -83,12 +89,14 @@ The cost we associate with a request isn't equivalent to the number of links in 
 
 When a request is received, if the remaining quota is not positive, the new request is rejected with a `429 Too Many Requests`. As with the standard rate limits, this quota is defined per-minute but is updated on a more frequent interval. The `Retry-After` header will specify how long you must wait for the quota to become positive again.
 
-The **vast** majority of developers will be unaffected by the cost limit, and the quota is set sufficiently high that it only affects users making requests that would compromise the stability of the API. Rather than unconditionally blocking their token from the API, this cost limiter will permit them to continue operation at a slower but safe and stable rate.
+The _vast_ majority of developers will be unaffected by the cost limit, and the quota is set sufficiently high that it only affects users making requests that would compromise the stability of the API. Rather than unconditionally blocking their token from the API, this cost limiter will permit them to continue operation at a slower but safe and stable rate.
 
-## Common issues & pathological cases to avoid
+<hr>
 
-* Deeply nested subtasks (i.e. working sub-subtasks, sub-sub-subtasks, etc.)
-* Projects with too many tasks (i.e projects with over 1,000 tasks)
+## Common issues and pathological cases to avoid
+
+* Deeply nested subtasks (i.e., working sub-subtasks, sub-sub-subtasks, etc.)
+* Projects with a large number of tasks (i.e, projects with over 1,000 tasks)
 * Too many unreadable tags in a workspace
 * Domains with too many projects for typeahead to work well
 * Undeleted webhooks

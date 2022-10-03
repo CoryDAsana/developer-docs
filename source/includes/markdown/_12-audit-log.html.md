@@ -1,21 +1,21 @@
 <hr class="full-line">
 <section class="full-section">
  
-# Audit Log Events
+# Audit log events
  
-Asana’s Audit Log API allows you to monitor and act upon critical events in your organization's Asana instance.
+Asana’s audit log API allows you to monitor and act upon critical events in your organization's Asana instance.
  
-Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in [Enterprise Domains](https://asana.com/enterprise) can access Audit Log API endpoints. Authentication with a Service Account's [Personal Access Token](/docs/personal-access-token) is required.
+Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in [Enterprise domains](https://asana.com/enterprise) can access audit log API endpoints. Authentication with a Service Account's [personal access token](/docs/personal-access-token) is required.
 
-To get started with the Audit Log API, visit the [API Reference](/docs/audit-log-api). 
+To get started with the audit log API, visit the [API reference](/docs/audit-log-api). 
  
 ## Supported AuditLogEvents
  
-The following tables list our currently supported [AuditLogEvent](/docs/audit-log-event) `event_type`s, organized by `event_category`. Audit log events are retained for 90 days from the date of capture. If an event that you're looking to monitor isn't listed below, please [send us your feedback](https://form.asana.com/?hash=c439d6062b165442b3d40383ab2f95cac08176b5b8ced11cf47817743a704728&id=1137609721785458).
+The following tables list our currently supported [AuditLogEvent](/docs/audit-log-event) `event_type`s, organized by `event_category`. Audit log events are retained for 90 days from the date of capture. If an event that you are looking to monitor isn't listed below, please [send us your feedback](https://form.asana.com/?hash=c439d6062b165442b3d40383ab2f95cac08176b5b8ced11cf47817743a704728&id=1137609721785458).
  
 ### Logins
  
-All login events operate on the _User_ resource type.
+All login events operate on the _user_ resource type.
  
 | Event Type | Description |
 |------------|---------------|
@@ -23,9 +23,9 @@ All login events operate on the _User_ resource type.
 | user_login_failed | A user failed to log in to their Asana account. |
 | user_logged_out | A user logged out of their Asana account. |
  
-### User Updates
+### User updates
  
-All user events operate on the _User_ resource type.
+All user events operate on the _user_ resource type.
  
 | Event Type | Description |
 |------------|---------------|
@@ -38,8 +38,8 @@ All user events operate on the _User_ resource type.
 | user_two_factor_auth_enabled | A user’s two factor authentication was enabled. |
 | user_two_factor_auth_disabled | A user’s two factor authentication was disabled. |
  
-### Admin Settings
-All admin settings events operate on the _Workspace_ resource type except for `workspace_announcement_created` and `workspace_announcement_removed` that operate on the _Workspace Announcement_ resource type.
+### Admin settings
+All admin settings events operate on the _workspace_ resource type except for `workspace_announcement_created` and `workspace_announcement_removed` that operate on the _workspace announcement_ resource type.
 
 | Event Type | Description |
 |------------|---------------|
@@ -74,16 +74,17 @@ All admin settings events operate on the _Workspace_ resource type except for `w
 | workspace_form_is_embeddable_forms_disabled          | Embeddable forms is disabled in admin |
 | workspace_logged_out_view_authentication_required_enabled | For this workspace, logged out view link authentication was set as required, so all viewers need to authenticate with Asana in order to open logged out view links. |
 | workspace_logged_out_view_authentication_required_disabled | For this workspace, logged out view link authentication was set as not required, however authentication may still be required for individual links. Some viewers may not need to authenticate with Asana in order to open logged out view links. |
+
 ### Roles
  
-All role events operate on the _User_ resource type.
+All role events operate on the _user_ resource type.
  
 | Event Type | Description |
 |------------|---------------|
 | user_workspace_admin_role_changed | A user’s workspace admin role was changed. |
 | user_division_admin_role_changed  | A user’s division admin role was changed. |
  
-### Content Export
+### Content export
  
 | Event Type | Resource Type | Description |
 |------------|---------------|-------------|
@@ -97,7 +98,7 @@ All role events operate on the _User_ resource type.
 | workspace_attachment_export_started | Attachment | An attachment export was started. |
 
 
-### Access Control
+### Access control
  
 | Event Type | Resource Type | Description |
 |------------|---------------|-------------|

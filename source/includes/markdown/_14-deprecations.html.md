@@ -1,4 +1,4 @@
-<hr>
+<hr class="full-line">
 <section>
 
 # Deprecations
@@ -31,6 +31,8 @@ In general, a breaking change refers to a change in an API that may require you 
 
 - Removing a mutation or some of its behavior
 
+<hr>
+
 ## Communicating about breaking changes
 <a name="communication" class="jump-anchor"></a>
 
@@ -44,14 +46,16 @@ Whenever possible, the Asana API aims to preserve backwards compatibility for it
 
 If a breaking change is required, the API team will provide a number of resources to help our developers get through the change:
 
-- We will communicate early, and through a variety of channels. We recommend that you join the [developers community forum](https://forum.asana.com/c/api/24) to learn about changes to the API.
+- We will communicate early, and through a variety of channels. We recommend that you join the [developer community forum](https://forum.asana.com/c/api/24) to learn about changes to the API.
 - We will provide a clear description of the change, how it affects your requests, and a migration plan to follow to transition through the deprecation.
 - We will designate a deprecation period during which you will be able to choose between both old and new behavior from the API, allowing you to test out the change without having to put your entire app at risk.
+
+<hr>
 
 ## Response header notifications
 <a name="response-header" class="jump-anchor"></a>
 
-While the previously mentioned communication channels are the best place to learn about upcoming changes, the API _itself_ will also alert you of upcoming changes. Shortly after we post communication, the API will begin sending `Asana-Change` headers in the responses. These headers will have two or three pieces of information:
+While the previously-mentioned communication channels are the best place to learn about upcoming changes, the API _itself_ will also alert you of upcoming changes. Shortly after we post communication, the API will begin sending `Asana-Change` headers in the responses. These headers will have two or three pieces of information:
 
 - The unique name of the change
 - A URL to our blog post describing the change 
@@ -64,7 +68,9 @@ Asana-Change: name=security_headers;info=https://asa.na/api-sh;affected=true
 Asana-Change: name=other_change;info=https://asa.na/api-oc
 ```
 
-**Note:** If your request is *not* affected, we will not claim `affected=false`. This is in case, during the deprecation, we detect that the change has a larger scope than initially thought. A request going from "you **may** be affected" to "you definitely **are** affected" is an acceptable update, but a request going from "you definitely are **not** affected" to "you definitely **are** affected" is not an acceptable update.
+_Note: If your request is **not** affected, we will not claim `affected=false`. This is in case, during the deprecation, we detect that the change has a larger scope than initially thought. A request going from "you **may** be affected" to "you definitely **are** affected" is an acceptable update, but a request going from "you definitely are **not** affected" to "you definitely **are** affected" is not an acceptable update._
+
+<hr>
 
 ## Request header options
 <a name="request-header" class="jump-anchor"></a>
@@ -82,23 +88,25 @@ The start, activation, and end dates will clearly be documented in our communica
 
 These dates are arranged such that, if a developer happens to miss our communication and their app breaks when the default behavior changes on the activation date, they can begin sending the `Asana-Disable` header to restore the old behavior and use the remaining half of the deprecation period to make their app compatible.
 
-Here's an example of how these headers would look:
+Here is an example of how these headers would look:
 
 ```text
 Asana-Enable: security_headers,another_change
 Asana-Disable: a_third_change
 ```
 
-Aside from reserving the right to push the date of changes to a future date, the precise *time* during the activation date isn't specified. However, since the default will only affect your integration if you do not pass either the `Asana-Enable` or `Asana-Disable` headers for a particular deprecation you can ensure predictable behavior of our API for your app during the entire period, including throughout the activation date.
+Aside from reserving the right to push the date of changes to a future date, the precise _time_ during the activation date is not specified. However, since the default will only affect your integration if you do not pass either the `Asana-Enable` or `Asana-Disable` headers for a particular deprecation, you can ensure predictable behavior of our API for your app during the entire period, including throughout the activation date.
 
 The way we recommend you implement these changes in your integration is this:
 
-- Whenever you detect a new Asana-Change header, log these requests and be sure to take note that a change is coming. Recall that the `info` key in the header will contain a link with the details.
+- Whenever you detect a new `Asana-Change` header, log these requests and be sure to take note that a change is coming. Recall that the `info` key in the header will contain a link with the details.
 - Identify the nature of the upcoming deprecation and decide if your integration is sensitive to the change, paying particular attention to the cases where we return `affected=true`.
 - If changes are necessary in your integration, test the new behavior manually by making requests with `Asana-Enable` set to the name of the deprecation. This should provide a clear example of the new behavior as it is implemented in our API.
-- Implement the changes in your integration in such a way that it can handle the new behavior **and** be sure to pass the `Asana-Enable` header when you make requests. This will ensure that you will always get the new behavior regardless of when the default behavior changes.
+- Implement the changes in your integration in such a way that it can handle the new behavior _and_ be sure to pass the `Asana-Enable` header when you make requests. This will ensure that you will always get the new behavior regardless of when the default behavior changes.
 
-At this point, your integration has been migrated to the new behavior. At any point after the end date the `Asana-Enable` header will be ignored by the Asana API and you can feel free to remove it. (We strongly recommend keeping it all the way through the end date in case of unforseen circumstances that cause us to temporarily reset the default behavior from the new implementation to the deprecated behavior.)
+At this point, your integration has been migrated to the new behavior. At any point after the end date the `Asana-Enable` header will be ignored by the Asana API and you can feel free to remove it. We strongly recommend keeping it all the way through the end date in case of unforseen circumstances that cause us to temporarily reset the default behavior from the new implementation to the deprecated behavior.
+
+<hr>
 
 ## Client library support
 <a name="client-libraries" class="jump-anchor"></a>
