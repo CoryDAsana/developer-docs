@@ -9,13 +9,16 @@
 
 ```python
 !
+
+# Import the library
 import asana
 
-# replace with your personal access token. 
+# Note: Replace this value with your own personal access token
 personal_access_token = '0/123456789....'
 
 # Construct an Asana client
 client = asana.Client.access_token(personal_access_token)
+
 # Set things up to send the name of this script to us to show that you succeeded! This is optional.
 client.options['client_name'] = "hello_world_python"
 
@@ -24,25 +27,23 @@ me = client.users.me()
 
 # Print out your information
 print("Hello world! " + "My name is " + me['name'] + "!")
-
 ```
 
-<span class="description">
-To get started, run `pip install asana` or follow the detailed installation instructions on the [GitHub page for the Python client library](https://github.com/Asana/python-asana/).  
-</span>
+In this brief tutorial, we'll build a `GET` request to `/users/me` using the [Python client library](/docs/python). To get started, first run `pip install asana` or follow the detailed installation instructions on the [GitHub page for the Python client library](https://github.com/Asana/python-asana/). Then, once the library is installed:
 
-Once it’s installed, open your favorite text editor and we’ll code a GET request to `/users/me` in Python.
+1. Copy the example code on the right.
 
+2. Open a text editor and save this code in a file (i.e., a descriptive file name such as **hello_world.py**).
 
-Save this file as something descriptive like "hello_world.py"
+3. Run this script in your console by passing it as an argument to the Python interpreter: `python hello_world.py`. You must execute this command in the same directory as the file. 
 
-To run this script in your console, pass it as an argument to the python interpreter, i.e. `python hello_world.py` from the same directory as the file. You should see the message we wrote above with your user information.
+4. You should see the response outputted to the console.
 
-As an aside, for clarity `python-asana` will also work with Python 3.x (with small changes to the above example to make it compatible.)
+As an aside, for clarity `python-asana` will also work with Python 3.x (with minor changes to the above example to make it compatible.)
 
-All of the built-in functions can be found in the [/gen folder of the client library](https://github.com/Asana/python-asana/tree/master/asana/resources/gen). 
+All of the built-in functions can be found in the [**/gen** folder of the client library](https://github.com/Asana/python-asana/tree/master/asana/resources/gen). 
 
-You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/python" target="_blank">GitHub examples repository</a>
+You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/python" target="_blank">GitHub examples repository</a>.
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -58,9 +59,10 @@ You can see a variant of this script, and other useful Asana API scripts, in our
 
 ```javascript
 !
+// Import the library
 var asana = require('asana');
 
-// replace with your personal access token. 
+// Note: Replace this value with your own personal access token
 var personalAccessToken = '0/123456789....';
 
 // Construct an Asana client
@@ -74,19 +76,21 @@ client.users.me()
 });
 ```
 
-<span class="description">
+In this brief tutorial, we'll build a `GET` request to `/users/me` using the [Node client library](/docs/javascript-node). To get started, first run `npm install asana` or follow the detailed installation instructions on the [GitHub page for the Node client library](https://github.com/Asana/node-asana/). Then, once the library is installed:
+
 To get started, `npm install asana` or follow the detailed installation instructions on the [GitHub page for the Node client library](https://github.com/Asana/node-asana/).  
-</span>
 
-Once it’s installed, open your favorite text editor and we’ll code a GET request to `/users/me` - the same request as above, but in JavaScript.
+1. Copy the example code on the right.
 
-Save this file as something descriptive like "hello_world.js"
+2. Open a text editor and save this code in a file (i.e., a descriptive file name such as **hello_world.js**).
 
-To run this script in your console, pass it as an argument to the node interpreter, i.e. `node hello_world.js` from the same directory as the file. You should see the message we wrote above with your user information.
+3. Run this script in your console by passing it as an argument to the Python interpreter: `node hello_world.js`. You must execute this command in the same directory as the file. 
 
-All of the built-in functions can be found in the [/gen folder of the client library](https://github.com/Asana/node-asana/tree/master/lib/resources/gen).
+4. You should see the response outputted to the console.
 
-You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/javascript" target="_blank">GitHub examples repository</a>
+All of the built-in functions can be found in the [**/gen** folder of the client library](https://github.com/Asana/node-asana/tree/master/lib/resources/gen).
+
+You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/javascript" target="_blank">GitHub examples repository</a>.
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -102,36 +106,39 @@ You can see a variant of this script, and other useful Asana API scripts, in our
 
 ```ruby
 !
+# Import the library (gem)
 require 'asana'
 
-# replace with your personal access token. 
-
+# Note: Replace this value with your own personal access token
 personal_access_token = '0/123456789....'
 
+# Construct an Asana client
 client = Asana::Client.new do |c|
-
   c.authentication :access_token, personal_access_token
-
 end
 
+# Get your user info
 me = client.users.me
 
+# Print out your information
 puts "Hello world! " + "My name is " + me.name + "!"
 ```
 
-<p>
-To get started, `gem install asana` or follow the detailed installation instructions on the [GitHub page for the Ruby client library](https://github.com/Asana/ruby-asana/).  
-</p>
+In this brief tutorial, we'll build a `GET` request to `/users/me` using the [Ruby client library](/docs/ruby). To get started, first run `gem install asana` or follow the detailed installation instructions on the [GitHub page for the Ruby client library](https://github.com/Asana/ruby-asana/). Then, once the library is installed:
 
-Once it’s installed, open your favorite text editor and we’ll code a GET request to `/users/me` - the same request as above, but in Ruby.
+1. Copy the example code on the right.
 
-Save this file as something descriptive like "hello_world.rb"
+2. Open a text editor and save this code in a file (i.e., a descriptive file name such as **hello_world.rb**).
 
-To run this script in your console, pass it as an argument to the ruby interpreter, i.e. `ruby hello_world.rb` from the same directory as the file. You should see the message we wrote above with your user information.
+3. Run this script in your console by passing it as an argument to the Ruby interpreter: `ruby hello_world.rb`. You must execute this command in the same directory as the file. 
 
-All of the built-in methods can be found in the [/resources folder of the client library](https://github.com/Asana/ruby-asana/tree/master/lib/asana/resources). 
+4. You should see the response outputted to the console.
 
-You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/ruby" target="_blank">GitHub examples repository</a>
+All of the built-in methods can be found in the [**/resources** folder of the client library](https://github.com/Asana/ruby-asana/tree/master/lib/asana/resources). 
+
+You can see a variant of this script, and other useful Asana API scripts, in our open-source <a href="https://github.com/Asana/DevRel-Examples/tree/master/ruby" target="_blank">GitHub examples repository</a>.
+
+<hr>
 
 ## Workflow automation script
 
