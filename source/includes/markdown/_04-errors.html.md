@@ -1,4 +1,4 @@
-<hr>
+<hr class="full-line">
 <section>
 
 # Errors
@@ -20,14 +20,14 @@ HTTP/1.1 401 Not Authorized
 ```
 
 <span class="description">
-Sadly, sometimes requests to the API are not successful. Failures can occur for a wide range of reasons. In all cases,
-the API should return an HTTP Status Code that indicates the nature of the failure (below), with a response body in
-JSON format containing additional information.
+Unfortunately, sometimes requests to the API are not successful. Failures can occur for a wide range of reasons. In all cases,
+the API should return an [HTTP response status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) that indicates
+the nature of the failure (below), with a response body in JSON format containing additional information.
 </span>
 
-In the event of a server error the response body will contain an error phrase. These phrases are automatically generated
-using the [node-asana-phrase](https://github.com/Asana/node-asana-phrase) library and can be used by Asana support to
-quickly look up the incident that caused the server error.
+In the event of a server error, the response body will contain an error phrase. These phrases are automatically generated
+using the [node-asana-phrase](https://github.com/Asana/node-asana-phrase) library and can be used by [Asana support](https://asana.com/support)
+to quickly look up the incident that caused the server error.
 
 > Bad request parameters
 
