@@ -149,7 +149,7 @@ To begin:
 
 You should see the response in your terminal! In our API documentation, we will often write examples as cURL commands, since it is a "middle-of-the-road" approach to accessing our API -- more flexible than using a browser, but user-friendly enough to be functional right out-of-the-box.
 
-At this point, you are ready to begin development against the API! Asana has [client libraries](/docs/official-client-libraries) in several popular coding languages. Using these libraries has several advantages (e.g., managing authorization, retrying errors, etc.) that make them a good place to go from here. In the [examples](/docs/examples) section, feel free to see how you can make the same `/users/me` request in Python, JavaScript, and Ruby.
+At this point, you are ready to begin development against the API! Asana has [client libraries](/docs/client-libraries) in several popular coding languages. Using these libraries has several advantages (e.g., managing authorization, retrying errors, etc.) that make them a good place to go from here. In the [examples](/docs/examples) section, feel free to see how you can make the same `/users/me` request in Python, JavaScript, and Ruby.
 
 <div>
   <div class="docs-developer-satisfaction-content">

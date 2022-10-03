@@ -9,7 +9,7 @@ To protect the stability of the API and keep it available to all users, Asana en
 
 Limits are allocated per authorization token. Different tokens will have independent limits.
 
-The [client libraries](/docs/official-client-libraries) respect the rate-limited responses and will wait the appropriate amount of time before automatically retrying the request, up to a configurable maximum number of retries.
+The [client libraries](/docs/client-libraries) respect the rate-limited responses and will wait the appropriate amount of time before automatically retrying the request, up to a configurable maximum number of retries.
 
 <hr>
 

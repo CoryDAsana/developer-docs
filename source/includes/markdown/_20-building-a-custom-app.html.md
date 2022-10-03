@@ -3,13 +3,13 @@
 # Building a custom app
 
 <span class="description">
-Unlike third-party apps and integrations used by many companies, custom apps are designed to only be used within a single domain. For example, an Asana customer may want to use the API to create a bot, integrate Asana with a homegrown tool, or generate custom reports. For more ideas on what you can accomplish through custom apps, here are some [common use cases](/docs/common-use-cases).
+Unlike third-party apps and integrations used by many companies, custom apps are designed to only be used within a single domain. For example, an Asana customer may want to use the API to create a bot, integrate Asana with a homegrown tool, or generate custom reports. For more ideas on what you can accomplish through custom apps, here are some [common use cases](/docs/common-api-use-cases).
 </span>
 
 Here is a brief list of what to consider when building a custom app:
 
 #### API explorer 
-If you are unfamiliar with our API, it may be helpful to start by playing around with our [API explorer](/docs/api-explorer). The API explorer is a quick and easy way to test various _read_ endpoints and see how various parameters affect responses. You will also find guides and [code examples](/docs/examples) in our documentation and as well as [client libraries](/docs/official-client-libraries) that are helpful when getting started.
+If you are unfamiliar with our API, it may be helpful to start by playing around with our [API explorer](/docs/api-explorer). The API explorer is a quick and easy way to test various _read_ endpoints and see how various parameters affect responses. You will also find guides and [code examples](/docs/examples) in our documentation and as well as [client libraries](/docs/client-libraries) that are helpful when getting started.
 
 To make API requests against a more comprehensive collection of endpoints, you may wish to use our [Postman Collection](/docs/using-postman).
 
@@ -17,7 +17,7 @@ To make API requests against a more comprehensive collection of endpoints, you m
 Most custom apps use [persona access token](/docs/personal-access-token) (PATs) for authentication. In general, PATs are best for projects that don't require multiple users to log in. For example, it is advisable to use PATs to auth scripts, bots, or anything else that doesn’t require taking action on behalf of multiple Asana users. If your custom app requires users to sign in to use it, then you should consider [using OAuth](/docs/oauth).  
 
 #### Client libraries
-You should consider using one of our [API client libraries](/docs/official-client-libraries) for your custom app. They simplify some of the more technically challenging aspects of development such as authentication and pagination. There are code examples for each library to help you get started. The client libraries also help developers navigate [API deprecations](/docs/communicating-about-breaking-changes), which will help you avoid unexpected breaking changes and reduce the overall time required for maintenance. 
+You should consider using one of our [API client libraries](/docs/client-libraries) for your custom app. They simplify some of the more technically challenging aspects of development such as authentication and pagination. There are code examples for each library to help you get started. The client libraries also help developers navigate [API deprecations](/docs/communicating-about-breaking-changes), which will help you avoid unexpected breaking changes and reduce the overall time required for maintenance. 
 
 Note that client library functions are not documented. You need to check the **lib/resources/gen** folder of each library to see the built-in functions.  
 

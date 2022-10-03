@@ -141,7 +141,7 @@ Asana's API enables customization and automation of your organization’s workfl
 
 ### Tracking timely responses to support questions
 
-Asana’s developer relations team manages technical support for our API through a number of channels: support tickets, questions about our API and integrations forwarded on from our colleagues, the [Asana Community's Developer category](https://forum.asana.com/c/api/24 "Asana Developer Community"), Stack Overflow, pull requests and bug reports from open-source GitHub projects like our [client libraries](/docs/official-client-libraries "Official Asana client libraries"), and more. Staying on top of all of these channels can be daunting, but we want our users to reach us however works best for them. At the same time, we want to isolate the noisiness of incoming requests for our colleagues at Asana who are involved with only one channel.
+Asana’s developer relations team manages technical support for our API through a number of channels: support tickets, questions about our API and integrations forwarded on from our colleagues, the [Asana Community's Developer category](https://forum.asana.com/c/api/24 "Asana Developer Community"), Stack Overflow, pull requests and bug reports from open-source GitHub projects like our [client libraries](/docs/client-libraries "Official Asana client libraries"), and more. Staying on top of all of these channels can be daunting, but we want our users to reach us however works best for them. At the same time, we want to isolate the noisiness of incoming requests for our colleagues at Asana who are involved with only one channel.
 
 Additionally, the management of the question and answer process, triaging the incoming requests, troubleshooting with our engineers, and measuring our response performance are all internal processes. Even if we have a workflow in place to support our developer relations team, we want the experience for other teams to be easy and lightweight. We want to ensure our coworkers do the right things by default without hindering the consistency of our work and our ability to track progress.
 
@@ -388,7 +388,7 @@ Next, click “+ New access token” and follow the instructions to get your tok
 Before we start coding, [create a project in Asana](https://asana.com/guide/help/projects/basics#gl-create) to use as a sandbox. While not required, I like to [set the project to private](https://asana.com/guide/help/permissions/project-permissions#gl-private-project) while developing. To get some users in the project, add your main Asana user as well as your bot account. You could also invite a personal email as a guest user.
 
 ### Choose an Asana client library 
-The Asana API has [SDKs in several popular languages](/docs/official-client-libraries). For most developers, we recommend using one of our client libraries because they help with some of the complexities of using an API such as authentication, pagination, and deprecations. 
+The Asana API has [SDKs in several popular languages](/docs/client-libraries). For most developers, we recommend using one of our client libraries because they help with some of the complexities of using an API such as authentication, pagination, and deprecations. 
 
 For this guide, we will use the [Asana Node client library](https://github.com/Asana/node-asana), however, you can follow along in any language of your choice. 
 
