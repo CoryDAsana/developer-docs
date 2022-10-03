@@ -5,7 +5,7 @@
 # Client libraries
 
 <span class="description">
-Asana is committed to making the developer experience as smooth as possible. Part of this effort is providing high-quality libraries you can use to access the API. The available libraries are listed below, and more are in development. If you don't see what you need, check the open-source community for your platform, and let us know that you'd like to find one here!
+Asana is committed to delivering a feature-rich API and developer experience. Part of this effort is through providing high-quality libraries you can use to access the API. The official libraries available are listed below, and more are in development. If you don't see what you need, please let us know in the [developer forum](https://forum.asana.com/c/api/24) or [send us feedback](https://form.asana.com/?k=2gi5cFtcpJT_Gy-NVPd0kA&d=15793206719).
 </span>
 
 <div>
@@ -27,11 +27,11 @@ npm install asana
 
 For use in the Node server-side JavaScript runtime.
 
-* [Node Quick Start](/docs/node-hello-world)
+* [Node quick start](/docs/node-hello-world)
 * [GitHub](https://github.com/Asana/node-asana/)
 
 <span class="description">
-**Installation:** Install with npm
+**Installation:** Install with [npm](https://docs.npmjs.com/cli/v6/commands/npm)
 </span>
 
 </section>
@@ -39,15 +39,15 @@ For use in the Node server-side JavaScript runtime.
 <section>
 
 <a name="BrowserJS"></a>
-## JavaScript (Browser)
+## JavaScript (browser)
 ```html
 !
 <script src="asana-min.js"></script>
 ```
 
-This is built our Node library, so you get the exact same interface.
+This is built with our Node library, so you get the same interface.
 
-* [Node Quick Start](/docs/node-hello-world)
+* [Node quick start](/docs/node-hello-world)
 * [GitHub](https://github.com/Asana/node-asana/)
 
 <span class="description">
@@ -65,11 +65,11 @@ This is built our Node library, so you get the exact same interface.
 pip install asana
 ```
 
-* [Python Quick Start](/docs/python-hello-world)
+* [Python quick start](/docs/python-hello-world)
 * [GitHub](https://github.com/Asana/python-asana/)
 
 <span class="description">
-**Installation:** Install with pip
+**Installation:** Install with [pip](https://pip.pypa.io/en/stable/getting-started/)
 </span>
 
 </section>
@@ -83,11 +83,11 @@ pip install asana
 gem install asana
 ```
 
-* [Ruby Quick Start](/docs/ruby-hello-world)
+* [Ruby quick start](/docs/ruby-hello-world)
 * [GitHub](https://github.com/Asana/ruby-asana/)
 
 <span class="description">
-**Installation:** Install with gem
+**Installation:** Install with [gem](https://guides.rubygems.org/command-reference/#gem-install)
 </span>
 
 </section>
@@ -126,7 +126,7 @@ gem install asana
 * [GitHub](https://github.com/Asana/php-asana/)
 
 <span class="description">
-**Installation:** If you use [Composer](https://getcomposer.org/) to manage dependencies you can include the
+**Installation:** If you use [Composer](https://getcomposer.org/) to manage dependencies, you can include the
 "asana/asana" package as a dependency.
 </span>
 
