@@ -356,7 +356,7 @@ curl https://app.asana.com/api/1.0/users/me \
   -H "Authorization: Bearer ACCESS_TOKEN"
 ```
 
-You can generate a personal access token from the Asana [developer console](https://app.asana.com/0/developer-console). See the [authenticating](/docs/authenticating) for detailed instructions on getting started with PATs. 
+You can generate a personal access token from the Asana [developer console](https://app.asana.com/0/developer-console). See the [authenticating](/docs/authenticating) section for detailed instructions on getting started with PATs. 
 
 For security, you should regularly review the list of personal access tokens you have created and deauthorize those that you no
 longer need.
