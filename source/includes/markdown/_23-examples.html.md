@@ -148,9 +148,9 @@ Asana's API enables customization and automation of your organization’s workfl
 
 ### Tracking timely responses to support questions
 
-Asana’s developer relations team manages technical support for our API through a number of channels: support tickets, questions about our API and integrations forwarded on from our colleagues, the [Asana Community's Developer category](https://forum.asana.com/c/api/24 "Asana Developer Community"), Stack Overflow, pull requests and bug reports from open-source GitHub projects like our [client libraries](/docs/client-libraries "Official Asana client libraries"), and more. Staying on top of all of these channels can be daunting, but we want our users to reach us however works best for them. At the same time, we want to isolate the noisiness of incoming requests for our colleagues at Asana who are involved with only one channel.
+Asana’s developer relations team manages technical support for our API through a number of channels: support tickets, questions about our API and integrations forwarded on from our colleagues, the [developer forum](https://forum.asana.com/c/api/24), Stack Overflow, pull requests, and bug reports from open-source GitHub projects like our [client libraries](/docs/client-libraries), and more. Staying on top of all of these channels can be daunting, but we want our users to reach us however works best for them. At the same time, we want to isolate the noise of incoming requests for our colleagues at Asana who are involved with only one channel.
 
-Additionally, the management of the question and answer process, triaging the incoming requests, troubleshooting with our engineers, and measuring our response performance are all internal processes. Even if we have a workflow in place to support our developer relations team, we want the experience for other teams to be easy and lightweight. We want to ensure our coworkers do the right things by default without hindering the consistency of our work and our ability to track progress.
+Additionally, the management of the question and answer process, triaging the incoming requests, troubleshooting with our engineers, and measuring our response performance are all internal processes. Even if we have a workflow in place to support our developer relations team, we want the experience for other teams to be easy and lightweight. We want to ensure our coworkers do the right things by default, without hindering the consistency of our work and our ability to track progress.
 
 Our solution: automation and reporting through our API to provide consistent management of the whole process.
 
@@ -158,7 +158,7 @@ To do this, we wrote an integration with the following goals in mind:
 
 * Maintain clarity amongst our teams by tracking work in Asana.
 * Have only one place we have to look to stay in the loop.
-* Ensure that no questions get missed, i.e. a [reminder bot](/docs/bot-examples "Reminder Bot").
+* Ensure that no questions get missed (i.e., a [reminder bot](/docs/bot-examples).
 * Let our API users know that they've been heard in a timely fashion.
 * Track our performance in remaining responsive.
 * Automate some of the bookkeeping required to maintain a consistent workflow.
@@ -167,19 +167,19 @@ To do this, we wrote an integration with the following goals in mind:
 The script we built does the following for us:
 
 1. Integrate with external sources to put incoming questions into Asana, one project per channel.
-2. Add question tasks from each incoming project into a [single combined project.](https://asana.com/guide/help/tasks/fields#gl-multi-home "Multi-Home")
+2. Add question tasks from each incoming project into a [single combined project](https://asana.com/guide/help/tasks/fields#gl-multi-home).
 3. Acknowledge a question has been received and begin tracking response times.
 4. Upon first response, complete a task to signal relevant followers that we've reached out.
 
 ### Maintain focus
 
-We use [webhooks](/docs/asana-webhooks "Webhooks documentation") to get notified in near-real time when new tasks are created in any of several Asana projects, one per incoming channel. Some of these projects are automatically synced with outside sources, others are available for our coworkers to create tasks in. Keeping tasks in their source channel helps keep us organized for where to go to respond. These projects are what our colleagues follow in order to remain focused on their own channels. 
+We use [webhooks](/docs/overview-of-webhooks) to get notified in near-real time when new tasks are created in any of several Asana projects, one per incoming channel. Some of these projects are automatically synced with outside sources, others are available for our coworkers to create tasks in. Keeping tasks in their source channel helps keep us organized for where to go to respond. These projects are what our colleagues follow in order to remain focused on their own channels. 
 
-Our script responds to these webhook notifications from each project by adding these tasks into a single "Developer Questions" project. Our developer relations team can then see all outstanding questions about our API in a single place. This is a key part of hitting our service level agreement (SLA) goals: not having to cycle through many projects and channels to see how we're progressing.
+Our script responds to these webhook notifications from each project by adding these tasks into a single "Developer Questions" project. Our developer relations team can then see outstanding questions about our API in a single place. This is a key part offor reaching our service level agreement (SLA) goals: not having to cycle through many projects and channels to see how we're progressing.
 
 ### Ensure timely responses
 
-Once a question gets added to our Developer Questions project, our integration creates a subtask on it. This signals to our colleagues that we have received the question and will begin to triage and investigate. The subtask is completed when we first respond to our users to inform them that we're investigating. Completion of the question task itself signals that we've achieved a resolution for the person who reached out to us.
+Once a question gets added to our Developer Questions project, our integration creates a subtask on it. This signals to our colleagues that we have received the question and will begin to triage and investigate. The subtask is completed when we first respond to our users to inform them that we're investigating. Completion of the question task itself signals that we've achieved a resolution for the party who reached out to us.
 
 ### Track progress
 
@@ -189,11 +189,11 @@ Our script can generate a simple report to see which questions are still open, h
 
 Our integration also helps automate some of the routine steps to ensure questions get answered. After a task gets triaged for priority, our integration sets an appropriate due date. It can also set an assignee and followers based on current workload and by matching certain keywords in the task description. If the task approaches its due date and it has not received a response, the script comments on the task to alert us that the question is about to reach our SLA limit. This helps us keep the right people in the loop with minimal overhead and maximum clarity of what needs to be done by when.
 
-By managing this routine and specialized workflow with automation through Asana’s API, our team is more efficient, more effective, and less likely to make a mistake. We know how responsive we've been and can see how we're doing at any time. We're better able to minimize the number of questions which slip through the cracks. The result is better support for outside developers and increased focus on core work, not work about work. 
+By managing this routine and specialized workflow with automation through Asana’s API, our team is more efficient, more effective, and less likely to make a mistake. We know how responsive we've been and can see how we're doing at any time. We're better able to minimize the number of questions which may become overlooked. The result is better support for outside developers and increased focus on core work, rather than "work about work." 
 
-Over time, we've continuously tweaked how our integration behaves to evolve our process, empowering us to adjust and iterate our approach. This is one of the key opportunities that Asana's API provides: ownership and control over how work gets done. Incremental improvements provide the chance to try out new workflows and settle on one that works well for everyone, leading to a more consistent and customized experience of using Asana.
+Over time, we've continuously optimized how our integration behaves to evolve our process, empowering us to adjust and iterate our approach. This is one of the key opportunities that Asana's API provides: ownership and control over how work gets done. Incremental improvements provide the chance to try out new workflows and settle on one that works well for everyone, leading to a more consistent and customized experience of using Asana.
 
-To get started, check out our [examples](/docs/examples "Examples") page. For support or to generate ideas of how your team can work more effectively with Asana, head to the [Asana Community](https://forum.asana.com/c/api/24 "Asana Developers Community") to chat with Asana team members and users!
+For support or to generate ideas of how your team can work more effectively with Asana, visit the [developer forum](https://forum.asana.com/c/api/24) to chat with the community.
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -228,10 +228,10 @@ $ touch config.js app.js
 
 ```
  
-> Add gids (global ids) for the workspace, design request project, and designers that will be assigned requests 
-(note that all gids in Asana should be strings).  You can get a project’s gid from its URL in the Asana web product 
-(e.g. the structure of links for a task is www.asana.com/0/{project_gid}/{task_gid}). Similarly, you can get user’s 
-gid from the URL of their task list (i.e. click on their name in Asana). To get your workspace gid(s), go to 
+> Add GIDs (global identifiers) for the workspace, design request project, and designers that will be assigned requests 
+(note that all GIDs in Asana should be strings). You can get a project’s GID from its URL in the Asana web product 
+(e.g., the structure of links for a task is www.asana.com/0/{project_gid}/{task_gid}). Similarly, you can get user’s 
+GID from the URL of their task list (i.e., click on their name in Asana). To get your workspace GID(s), go to 
 https://app.asana.com/api/1.0/users/me/workspaces.
 
 ```javascript
@@ -239,7 +239,7 @@ https://app.asana.com/api/1.0/users/me/workspaces.
 let config = {
   workspaceId: "15793206719",
   designRequestProjectId: "180350018127066",
-  //gids of designers who are fulfilling design requests
+  // GIDs of designers who are fulfilling design requests
   designers: ["180015866142449", "180015866142454", "180015886142844"]
 };
 
@@ -255,10 +255,10 @@ let config = require('./config');
 ```
 
 > Get your access token and use it to create an Asana client. At the time of writing this guide, the Asana API is going 
-through two deprecations (moving to string gids and changing how sections function). You can learn about our 
+through two deprecations (moving to string GIDs and changing how sections function). You can learn about our 
 [deprecations framework in our docs](/docs/deprecations). 
 To prevent my app from breaking when the deprecations are finalized, I'm passing headers to enable the new API 
-behavior for string gids and sections. We will also set a delay to determine how quickly our parallel requests are sent.
+behavior for string GIDs and sections. We will also set a delay to determine how quickly our parallel requests are sent.
 
 ```javascript
 !
@@ -297,7 +297,7 @@ function getUnassignedTasks() {
 }
 ```
 
-> We’ll need a few helper functions. One to shuffle an array and another to assign tasks.
+> We’ll need a few helper functions: one to shuffle an array and another to assign tasks.
 
 ```javascript
 !
@@ -319,8 +319,8 @@ function assignTask(taskStringId, assigneeStringId) {
 > Our final function will take the array of unassigned tasks and round-robin assign them to the group of shuffled 
 designers from the config file. We will use an interval to loop so we can control the speed of the requests. 
 You can change the delay with the const you declared earlier. This is a balance between speed and staying within our 
-[concurrent request limit](/docs/concurrent-request-limits). 
-In node, a normal loop would send all requests at once, which doesn’t work in larger projects.
+[rate limits](/docs/rate-limits). 
+In Node, a normal loop would send all requests at once, which doesn’t work in larger projects.
 
 ```javascript
 !
@@ -345,7 +345,7 @@ function randomAssigner(unassignedTasks) {
 
 ```
 
-> Then we just need to call our getUnassignedTasks function to kick-off the script:
+> Then we just need to call our getUnassignedTasks() function to run the script:
 
 ```javascript
 !
@@ -360,48 +360,45 @@ $ node app.js
 ```
 
 ### Why build a bot?
-When processes get complex in Asana there can begin to be work about work. This could be happening to you (or someone you love) if you find yourself spending time doing repetitive work such as triaging tasks, reminding people to do something, or adding/removing followers as you move a task through a workflow. 
+When processes get complex in Asana, there can begin to be "work about work." This could be happening to you if you find yourself spending time doing repetitive work such as triaging tasks, reminding people to do something, or adding/removing followers as you move a task through a workflow. 
 
 ### What we’re going to build
-<span class="description">
-In this guide, we will build a simple triage bot that will assign tasks. This is a common Asana use case with support inboxes or request projects. 
-</span>
+In this guide, we will build a simple triage bot that will assign tasks. This is a common Asana use case among users who work with support inboxes or request projects. 
 
-If you want to skip ahead and see the code for the triage bot, it’s on GitHub in the JavaScript folder of our [devrel-examples repo](https://github.com/Asana/devrel-examples).
+If you want to skip ahead and see the code for the triage bot, you can visit the project within the [devrel-examples](https://github.com/Asana/devrel-examples/tree/master/javascript/triage_bot) repo.
 
 For this guide, let’s suppose a design team has a requests project where people from the marketing team fill out an [Asana form](https://asana.com/guide/help/premium/forms) to request graphics from the design team. The form creates a task in the design requests project that needs to be assigned to a designer. 
 
 Our triage bot will gather all unassigned tasks in the design request project and then randomly distribute the requests across a group of designers. 
 
-For the purposes of this guide, we will keep it this simple, however, you could add more complex logic to your bot. For instance, you could check custom field values on the request task to see what type of request it is (e.g. video, graphic, logo, etc.) and then assign it to the designer that has those skills.  You could go even further and check the designers workload to see who currently has the least amount of work already assigned to them (this could be determined by a point value for tasks assigned to them in the project). You could then have the bot ping the design request task as it approaches the due date to ensure that the designer will have it completed on deadline.
+For the purposes of this guide, we will keep it this simple, however, you could add more complex logic to your bot. For instance, you could check custom field values on the request task to see what type of request it is (e.g., video, graphic, logo, etc.) and then assign it to the designer who has those skills. You could go even further and check the designers workload to see who currently has the least amount of work already assigned to them (this could be determined by a point value for tasks assigned to them in the project). You could then have the bot "ping" the design request task as it approaches the due date to ensure that the designer will have it completed on deadline.
 
 ### Helpful links
 Before we get started, here are some helpful links for building on the Asana API:
 
-* [Asana API reference docs](/docs/asana)
-* [Asana longform documentation](/docs/why-use-asana-39-s-api)
-* [Asana developer community](https://forum.asana.com/c/api/24) -- if you get blocked or have a question about the API, there are devs in our community that are eager to help. We also post API updates and news to the community forum.
-* The [code for this bot on GitHub](https://github.com/Asana/devrel-examples/tree/master/javascript/triage_bot)
+* [Asana API reference documentation](/docs/asana)
+* [Asana developer forum](https://forum.asana.com/c/api/24)
+* The [source code for this bot on GitHub](https://github.com/Asana/devrel-examples/tree/master/javascript/triage_bot)
 
 ### Create your bot user in Asana
-Create a new Asana account for your bot ([instructions for inviting users](https://asana.com/guide/help/organizations/members#gl-invite)). You want to create a distinct Asana account for your bot because any action it takes in Asana will be attributed to this user. Give your bot a name and photo that will be recognizable to users in Asana that encounter it. Note that if your bot is a guest member in Asana that it will need to be added to every project you need it to work in. Bots based on guest Asana accounts will also not have access to some API features such as defining new custom fields or modifying their settings.
+Create a new Asana account for your bot ([instructions for inviting users](https://asana.com/guide/help/organizations/members#gl-invite)). You will want to create a separate, distinct Asana account for your bot because any action it takes in Asana will be attributed to this user. Give your bot a name and photo that will be recognizable to other users in Asana who may encounter it. Note that if your bot is a guest member in Asana, it will need to be added to every project you need it to work in. Bots based on guest Asana accounts will also _not_ have access to some API features such as defining new custom fields or modifying their settings.
 
 ### Authenticating your bot
-We will authenticate our bot using a [Personal Access Token (PAT)](/docs/personal-access-token). Log in to the Asana account that will be used for the bot and navigate to the developer console. You can get to your dev console by either using this URL https://app.asana.com/-/developer_console or from within Asana by clicking your photo icon in the upper right of Asana -> My Profile Settings -> Apps -> Manage Developer Apps.
+We will authenticate our bot using a [personal access token (PAT)](/docs/personal-access-token). Log in to the Asana account that will be used for the bot and navigate to the developer console. [You can get to the developer console directly here](https://app.asana.com/0/my-apps).
 
-Next, click “+ New access token” and follow the instructions to get your token. Treat this token like a username and password. Don’t share it with anyone and never publish it to a public repository. I like to save my PAT as an environment variable (here are instructions on [how to do this on Mac](https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255)). For this guide, I’ve saved a PAT as an env variable called `triage_bot_pat`.
+Next, click **+ Create new token** and follow the instructions to get your token. Treat this token like a username and password. Do not share it with anyone and never publish it to a public repository. You may also wish to save the token as an environment variable ([instructions on how to do this on Mac](https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255)). For this guide, the personal access token was saved as an environment variable called `triage_bot_pat`.
 
-### Create an Asana sandbox
-Before we start coding, [create a project in Asana](https://asana.com/guide/help/projects/basics#gl-create) to use as a sandbox. While not required, I like to [set the project to private](https://asana.com/guide/help/permissions/project-permissions#gl-private-project) while developing. To get some users in the project, add your main Asana user as well as your bot account. You could also invite a personal email as a guest user.
+### Create a "sandbox" project
+Before we start coding, [create a project in Asana](https://asana.com/guide/help/projects/basics#gl-create) to use as a sandbox. While not required, you can [set the project to private](https://asana.com/guide/help/permissions/project-permissions#gl-private-project) while developing. To get some users in the project, add your main Asana user as well as your bot account. You may also invite a personal email as a guest user.
 
 ### Choose an Asana client library 
-The Asana API has [SDKs in several popular languages](/docs/client-libraries). For most developers, we recommend using one of our client libraries because they help with some of the complexities of using an API such as authentication, pagination, and deprecations. 
+The Asana API has [official client libraries in several popular languages](/docs/client-libraries). For most developers, we recommend using one of our client libraries, because they help with some of the complexities of using an API such as authentication, pagination, and deprecations. 
 
-For this guide, we will use the [Asana Node client library](https://github.com/Asana/node-asana), however, you can follow along in any language of your choice. 
+For this guide, we will use the [Asana Node client library](https://github.com/Asana/javascript-node). However, you can follow along in any language of your choice. 
 
-Each library has an examples folder in addition to the readme, which can be helpful for getting started. The methods for each resource can be found in the “gen” folder of each client library (e.g. node-asana/lib/resources/gen/).
+Each library has an **examples** folder in addition to the README, which can be helpful for getting started. The methods for each resource can be found in the **gen** folder of each client library (e.g., **node-asana/lib/resources/gen/**).
 
-###Now head over to the top of the right pane to start coding your bot ----->
+### At this point, head to the top of the right pane to start building your bot ----->
 
 >### Congratulations! Now go above and beyond
 You’ve created an Asana triage bot. Let’s explore a few ideas on how to make it even better.
@@ -419,7 +416,7 @@ To take your bot’s accessibility to the next level, put your configuration in 
 >To see this approach in the wild, checkout [Ohmega](https://github.com/Asana/ohmega), an automation framework we created. Here’s the [configuration service](https://github.com/Asana/ohmega/blob/master/ohmega/services/configuration_service.py) that reads a tree of tasks for its configuration. 
 
 >### Use webhooks for real-time triaging 
-If you need your bot to react to changes in real time, then you’ll need to use [webhooks](/docs/asana-webhooks). We built a [python webhook inspector](https://github.com/Asana/devrel-examples/tree/master/python/webhooks) to help developers get started using Asana webhooks. 
+If you need your bot to react to changes in real time, then you’ll need to use [webhooks](/docs/overview-of-webhooks). We built a [Yython webhook inspector](https://github.com/Asana/devrel-examples/tree/master/python/webhooks) to help developers get started using Asana webhooks. 
 
 <div>
   <div class="docs-developer-satisfaction-content">
@@ -436,23 +433,20 @@ If you need your bot to react to changes in real time, then you’ll need to use
 
 ### Reminder bot
 
-<span class="description">
-Even the most conscientious and best-intentioned teammate can get overloaded and occasionally forget a task. For project managers, team leads, or coordinators, it can be draining to check-in on everyone to make sure that everything is going according to schedule. How can you stay on track and minimize the work-about-work?
-</span>
 
-Instead of continually reminding teammates to stay focused, use Asana’s API to create a bot for automatic reminders (a bot is a script that performs a task automatically). In this case, a "ping bot" takes action when due dates are approaching (or for any other specified trigger). This can act as a more intelligent version of the reminders that Asana already sends when due dates approach. For example, this persistent friend could comment with reminders further in advance, ask assignees or followers to take some action like setting a custom field, re-assign the work, and/or push out due dates. With a bot taking care of the schedule and reminders, people can spend their time on the work that needs human attention, like ideation and feedback.
+Even the most conscientious and best-intentioned teammate can get overloaded and occasionally forget a task. For project managers, team leads, or coordinators, it can be draining to check in on everyone to make sure that everything is going according to schedule. To stay on track and minimize the work-about-work use, you can Asana’s API to create a bot (i.e., a script that performs a task automatically) for automatic reminders. In this case, a "ping bot" takes action when due dates are approaching (or for any other specified trigger). This can act as a more intelligent version of the reminders that Asana already sends when due dates approach. For example, the bot could comment with reminders further in advance, ask assignees or followers to take some action (e.g., setting a custom field), reassign the work, and/or modify due dates. With a bot handling the schedule and reminders, people can spend their time on the work that needs human attention, such as ideation and feedback.
 
 ### Recruiting bot
 
 At Asana, we use a bot to help automate the process for evaluating engineering candidates. The bot helps ensure that applicant coding tests are graded in a timely manner by the right engineer.
 
-When candidates have submitted their coding test, the bot uses the Asana API to assign the test to a grader based on specific criteria tracked in Asana, such as their preferred programming languages and number of previous evaluations. Graders are given *x* days to grade tests (the bot takes into account when graders are out of office). If tests have not been graded by the due date, graders are pinged by the bot with a comment on the task to either grade the test or re-assign it to someone else. After *y* days, the bot automatically re-assigns the test to the next grader to keep the process moving.
+When candidates have submitted their coding test, the bot uses the Asana API to assign the test to a grader based on specific criteria tracked in Asana, such as their preferred programming languages and number of previous evaluations. Graders are given _x_ days to grade tests (the bot takes into account when graders are out-of-office). If tests have not been graded by the due date, graders are pinged (i.e., notified) by the bot with a comment on the task to either grade the test or to reassign it to someone else. After _y_ days, the bot automatically re-assigns the test to the next grader to keep the process moving.
 
 ### Bugs bot
 
 Our engineering teams handle triaging bug reports by creating a task in a "Bugs" project. A bot then adds the project manager of the relevant team in Asana as a follower, moves the task into a "needs triage" section, and requests assistance. The project manager can then evaluate the bug and triage it.
 
-Since the evaluation of the severity of the bug is important for understanding how urgent the fix is, Bugs Bot will remain persistent, commenting every few days until the task has been moved out of the triage section and into a section of the relevant priority. This process ensures that we're aware of the impact of bugs and helps us avoid severe bugs slipping through the cracks.
+Since the evaluation of the severity of the bug is important for understanding how urgent the fix is, the bugs bot will remain persistent, commenting every few days until the task has been moved out of the triage section and into a section of the relevant priority. This process ensures that we are aware of the impact of bugs and helps us accidentally overlooking severe bugs.
 
 <div>
   <div class="docs-developer-satisfaction-content">
