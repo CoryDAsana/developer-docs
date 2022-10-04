@@ -70,6 +70,7 @@ Now, let’s make the same call to `/users/me` more like software would. Before 
 <section>
 
 ## Authenticating
+<a id="authentication-quick-start"></a>
 
 <span class="description">
 Similar to entering your username/password into a website or logging into Asana with Google, when you access your Asana data via the API, you need to authenticate. In the above example, you were already logged into Asana in your browser, so you were able to authenticate to the API with credentials stored by your browser.

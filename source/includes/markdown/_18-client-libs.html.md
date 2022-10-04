@@ -3,6 +3,7 @@
 <section>
 
 # Client libraries
+<a id="official-client-libraries"></a>
 
 <span class="description">
 Asana is committed to delivering a feature-rich API and developer experience. Part of this effort is through providing high-quality libraries you can use to access the API. The official libraries available are listed below, and more are in development. If you don't see what you need, please let us know in the [developer forum](https://forum.asana.com/c/api/24) or [send us feedback](https://form.asana.com/?k=2gi5cFtcpJT_Gy-NVPd0kA&d=15793206719).

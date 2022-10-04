@@ -1,6 +1,7 @@
 <hr class="full-line">
 
 # Building a custom app
+<a id="custom-apps"></a>
 
 <span class="description">
 Unlike third-party apps and integrations used by many companies, custom apps are designed to only be used within a single domain. For example, an Asana customer may want to use the API to create a bot, integrate Asana with a homegrown tool, or generate custom reports. For more ideas on what you can accomplish through custom apps, here are some [common use cases](/docs/common-api-use-cases).
