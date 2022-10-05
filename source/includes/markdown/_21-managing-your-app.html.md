@@ -1,4 +1,6 @@
-# Managing your App
+<hr class="full-line">
+
+# Managing your app
 
 ### Duplicating an app
 
@@ -12,11 +14,11 @@ of your application. As a result of this operation, the newly-generated app will
 including:
 
 * Basic information (e.g., app name, descriptions, authentication URL, etc.)
-* Configurations of App Components
+* Configurations of app components
 
 Because the newly-generated app is its own unique app, the following _will not_ be carried over from the original app:
 
-* App credentials (i.e., a new Client ID and Client Secret will be generated)
+* App credentials (i.e., a new client ID and client secret will be generated)
 * Users who have completed OAuth
 * Organizations in which the app is available
 * Published listings in the [app directory](https://asana.com/apps) or [app gallery](/docs/installation-flow)
@@ -47,5 +49,3 @@ _the original (i.e., previous) app will reflect the new updates_, while the dupl
       <h4>Was this section helpful? <a class="positiveFeedback-DevSatisfaction" style="cursor:pointer;">Yes </a><a class="negativeFeedback-DevSatisfaction" style="cursor:pointer;">No</a></h4>
   </div>
 </div>
-
-<hr class="full-line">

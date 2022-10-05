@@ -54,7 +54,7 @@ curl "https://app.asana.com/api/1.0/tasks?project=1337&limit=5&offset=eyJ0eXAiOJ
 ```
 
 Note that all of Asana's official [client
-libraries](/docs/official-client-libraries) support
+libraries](/docs/client-libraries) support
 pagination by default.
 
 When making a paginated request, the API will return a number of results as specified by the `limit` parameter.
