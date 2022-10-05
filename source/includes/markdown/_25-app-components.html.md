@@ -1,27 +1,27 @@
 <hr class="platform-ui-alpha">
 <section class="platform-ui-alpha">
 
-# Overview of App Components
+# Overview of app components
 
 <span class="beta-indicator">BETA</span>
 
 An important step in maintaining flow at work is having all the information you need in one place. Asana is for teams to track 
-projects, to provide clarity on *who* is doing *what* by *when*, and to automate repetitive processes. With App Components, it's
+projects, to provide clarity on *who* is doing *what* by *when*, and to automate repetitive processes. With app components, it's
 now easier than ever to see key work information from other tools on the surface of tasks, as well as automate cross-tool processes.
 
-Apps can use App Components to display customized widgets, forms, and rules within Asana's user interface. Under the hood, requests are
-made from Asana directly to your [App Server](/docs/app-server). Your App Server controls the information within these customized
+Apps can use app components to display customized widgets, forms, and rules within Asana's user interface. Under the hood, requests are
+made from Asana directly to your [app server](/docs/app-server). Your App Server controls the information within these customized
 widgets, as well what happens when a user takes actions within these components.
 
-Using App Components, you can build customizable in-product experiences for apps within Asana by leveraging capabilities such as:
+Using app components, you can build customizable in-product experiences for apps within Asana by leveraging capabilities such as:
 
 * [Widget](/docs/widget)
-* [Modal Form](/docs/modal-form)
+* [Modal form](/docs/modal-form)
 * [Lookup](/docs/lookup)
-* [Rule Action](/docs/rule-action)
-* [Entry Point](/docs/entry-point)
+* [Rule action](/docs/rule-action)
+* [Entry point](/docs/entry-point)
 
-For a visual tour on getting started with App Components, feel free to review the following video. Then, when you're ready, visit our [Getting Started](/docs/getting-started) guide to begin building right away.
+For a visual tour on getting started with app components, feel free to review the following video. Then, when you're ready, visit our [getting started](/docs/getting-started) guide to begin building right away.
 
 <div style="padding:35% 0 0 0;position:relative;width:52%">
   <iframe src="https://player.vimeo.com/video/708387216?h=3f025d1b75&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="App Components: Getting Started">
@@ -30,26 +30,25 @@ For a visual tour on getting started with App Components, feel free to review th
 
 <script src="https://player.vimeo.com/api/player.js"></script>
   
-You can find the [tutorial source code here](https://github.com/Asana/app-components-example-app).
+**You can find the [tutorial source code here](https://github.com/Asana/app-components-example-app)**.
 
-To test and render the different capabilities of App Components dynamically, you may access the [UI Builder](/docs/ui-builder).
+To test and render the different capabilities of app components dynamically, you may access the [UI builder](/docs/ui-builder).
 
-**App Components are currently in open beta**. For the latest updates and announcements,
-[subscribe to our developer forum](https://forum.asana.com/c/api/app-components-beta/150).
+_Note: app components are currently in open beta. For the latest updates and announcements, [subscribe to our developer forum](https://forum.asana.com/c/api/app-components-beta/150)._
   
 <hr>
 
 ## Widget
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-> Request to the App Server
+> Request to the app server
 
 ```http
 https://app-server.com/widget?workspace=12345&task=23456&user=34567&locale=en&attachment=45678&asset=56789&expires_at=2011-10-05T14%3A48%3A00.000Z&resource_url=https%3A%2F%2Fcompany.atlassian.net%2Fissue%2F1254
 ```
 
-> Response from the App Server
+> Response from the app server
 
 ```json
 {
@@ -89,38 +88,38 @@ https://app-server.com/widget?workspace=12345&task=23456&user=34567&locale=en&at
 
 <img style="max-width:420px" src="../images/jira-widget.png" />
 
-A Widget is a card that is used to show data about an external resource. Currently, Widgets
-appear inside of tasks. While the contents of a Widget may change, the overall format stays
+A widget is a card that is used to show data about an external resource. Currently, widget
+appear inside of tasks. While the contents of a widget may change, the overall format stays
 consistent across apps. Apps can control what layout they prefer by supplying their preferred 
 `template`. You can see the available templates in the *Enumerated Values* 
 section of [response schema](/docs/widget-metadata).
 
-The App Server controls the content of this Widget. When an 
-Asana user's browser navigates to a Widget, Asana sends a 
-request to the registered App Server. As long as the response from 
-the server is valid (like the example on the right), the Widget 
+The app server controls the content of this Widget. When an 
+Asana user's browser navigates to a widget, Asana sends a 
+request to the registered app server. As long as the response from 
+the server is valid (like the example on the right), the widget 
 will display.
 
-How does Asana determine when a Widget should be shown? When a task is opened in
+How does Asana determine when a widget should be shown? When a task is opened in
 Asana, it checks each attachment on the task. If an attachment has a URL 
-that fits with an App's registered `match url` (ex: `https:\/\/.*.atlassian.net\/.*`) 
-then it shows a Widget. A GET request is sent to the App's `Widget metadata URL`, including 
+that fits with an app's registered **match URL pattern** (ex: `https:\/\/.*.atlassian.net\/.*`) 
+then it shows a Widget. A `GET` request is sent to the app's **widget metadata URL**, including 
 URL parameters like `task`, `user`, and `workspace`.
 
-### UI Builder: Widget
+### UI builder: widget
 
 Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/widget) to configure a Widget in an interactive test environment.
 For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
-### Widget Configurations
+### Widget configurations
 
 | Property            | Description                                                                                                                                 |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | Widget metadata URL | A URL that Asana uses to make requests for the data needed to load a Widget, which displays information about a third party resource.       |
-| Match URL pattern   | A regex which allows Asana to compute whether a URL attachment is supported by an activated app on the project in order to render a Widget. |
+| Match URL pattern   | A regex which allows Asana to compute whether a URL attachment is supported by an activated app on the project in order to render a widget. |
 
 
-### Related References: 
+### Related references: 
 
 * [Get widget metadata](/docs/get-widget-metadata)
 * [Attach resource](/docs/attach-resource)
@@ -129,7 +128,7 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ## Modal Form
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 > Request to the App Server
 
@@ -226,7 +225,7 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ## Lookup
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 > Request to the App Server
 
@@ -272,7 +271,7 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ## Rule Action
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 > Request to the App Server
 
@@ -345,7 +344,7 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 ## Entry Point
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <img src="../images/entry-point.png" alt="Entry point"/>
 
@@ -364,7 +363,7 @@ To configure the Entry Point, one or both of the above capabilities must be conf
 
 # Getting Started
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 This guide will show you how to begin building with App Components. To make best use of the following tutorials, be sure you've already reviewed the [Overview of App Components](/docs/overview-of-app-components).
 
@@ -372,7 +371,7 @@ This guide will show you how to begin building with App Components. To make best
 
 ## Overview of Build Steps
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 The overall development process for App Components involves the following:
 
@@ -388,7 +387,7 @@ The tutorials in this guide will cover the first two steps of the overall build 
 
 ## Before You Begin
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ### Get a Sandbox
 
@@ -412,7 +411,7 @@ Feel free to review the [app-components-example-app](https://github.com/Asana/ap
 
 ## Create the App
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 The first step is to create the app in your [developer console](https://app.asana.com/0/developer-console). Navigate to **Create new app** and provide a name for your app. If your app is published, this name will appear in the Asana app for users to see, including in both the app gallery and [app directory](https://asana.com/apps).
 
@@ -422,7 +421,7 @@ The first step is to create the app in your [developer console](https://app.asan
 
 ## Configure the App
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 Once your app has been created, you'll automatically be brought to the new app's settings. From here, you can make the configurations necessary to define your app. 
 
@@ -487,7 +486,7 @@ For an in-depth overview of the installation flow (including its customizations)
 
 ## Next Steps
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 At this point, your app has been created and fully configured. For further configurations (e.g., updating a URL, replacing button text, etc.), you can head back into the [developer console](https://app.asana.com/0/developer-console) to make any necessary changes. 
 
@@ -499,7 +498,7 @@ When both your app and your App Server are complete, you can move forward with g
 
 # UI Builder
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 By building with App Components, applications can display customized widgets, forms, and rules within Asana's user interface. The [UI Builder](https://app.asana.com/0/my-apps/response-builder) is a place for developers to build the user interface of these capabilities in a dynamic, interactive test environment.
 
@@ -548,7 +547,7 @@ To get started with the UI Builder, visit **App Components** in the sidebar of y
 
 # Building the App Server
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 Because apps built with App Components allow end users to interact with resources external to Asana, an [App Server](/docs/app-server) is required in order for your app to function. Asana will make requests directly to endpoints exposed on the App Server, which controls, for example, what the user sees in a [Widget](/docs/widget) or [what happens](/docs/rule-action) when the user takes certain actions.
 
@@ -562,7 +561,7 @@ After you have completed building both the app and App Server, you will be ready
 
 ## Authorization
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```html
 <!-- Example: An app might return this HTML in response to the 
@@ -621,7 +620,7 @@ have the token for one user. You may want to suggest users to authenticate with 
 
 ## Security
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 When handling requests from Asana, an App Components app should:
  
@@ -643,7 +642,7 @@ If an app doesn't use OAuth for authentication, the Asana Security Team should m
 
 ## Message Integrity
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 The burden of verifying the request is on the app. Without this check, attackers can send requests to the App Server pretending to be Asana.
 
@@ -665,7 +664,7 @@ To see an example of how the signature is computed, you can view an open source 
 
 ## Timeliness
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 Timeliness is provided by the addition of an expiration parameter: `expires_at`. If this parameter were not added, then a recorded request (e.g., a log), could be reused to continue requesting information from the app at a later time.
 
@@ -676,7 +675,7 @@ replay attacks.
 
 ## Hosting
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 Apps built with App Components allow end users to interact with resources external to Asana. As such an [App Server](/docs/app-server) is required in order for your app to function.
 
@@ -694,7 +693,7 @@ During development, you may choose to use [ngrok](https://ngrok.com/), which cre
 
 ## Final Steps
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 As you finish building the App Server, you may find it necessary to [update certain configurations](/docs/configure-the-app) such as URLs, image links, etc. These configurations can be updated at any time in the [developer console](https://app.asana.com/0/developer-console).
 
@@ -704,7 +703,7 @@ After you have finished building both your app and App Server, you are now ready
 
 # Publishing an App
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 After [creating and configuring your app](/docs/getting-started) to function alongside your [App Server](/docs/building-the-app-server), you may begin the app review process.
 
@@ -714,7 +713,7 @@ Apps built on App Components are manually reviewed before they are accessible wi
 
 ## Publishing Checklist
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 When [configuring your app](/docs/configure-the-app), you should:
 
@@ -740,15 +739,15 @@ through the [developer console](https://app.asana.com/0/my-apps).
 
 ## Installation Flow
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-When the end user connects an app with App Components to Asana for the first time, they will go through an installation flow. This involves walking the user through the app's features (i.e., "value props"), authorizing the app, and adding it to projects in Asana.
+When the end user connects an app with App Components to Asana for the first time, they will go through an installation flow. This involves authorizing the app, and adding it to projects in Asana.
 
 The installation flow can be configured in the [developer console](https://app.asana.com/0/developer-console). Note that a list of all possible configurations can also be found in [Configure the App](/docs/configure-the-app) in the [Getting Started](/docs/getting-started) guide.
 
 For the end user, the installation flow can be triggered through either one of two ways:
 
-1. The in-product app gallery. Users can access the app gallery by going into a project (in which they want to install an app), then navigating to **Customize** > **Add App**.
+1. The in-product app gallery. Users can access the app gallery by going into a project (in which they want to install an app), then navigating to **Customize** > **+ Add App**.
 <br>
 <br>
 <img src="../images/app-gallery.png" alt="app gallery"/>
@@ -765,7 +764,7 @@ Note that subsequent interactions with the same application by the same user wil
 
 ### Features
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 After entering the installation flow, the first screen that users see are the app's features, or value props. 
 
@@ -775,9 +774,9 @@ As part of the customizations, a `Headline` and `Subhead` can be shown at the to
 
 <hr>
 
-### Connecting to the app
+### Authenticating
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 On the next screen, the user will be directed to the auth screen, which will ask them to connect to the external app.
 
@@ -797,7 +796,7 @@ The authentication flow is concluded when the app confirms that authentication i
 
 ### Adding to a Project
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 Once the user has successully granted permissions, they'll be taken to different screens depending on how they entered the installation flow:
 
@@ -820,7 +819,7 @@ From here, the user may choose to add the app to one or more projects, or even s
 
 ## App Submission
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 After you have completed development of your app (and you have addressed the guidelines above), you can [begin the process](/docs/submit-your-app) to have your app published on Asana.
 
@@ -863,7 +862,7 @@ For any questions on App Components, as well as an opportunity to engage with ot
 
 ## Configurations
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 The following tables represent a master list of all the configurations you can make to define your App Components app. Further context for these configurations can be found in the [Configure the App](/docs/configure-the-app) section of the [Getting Started](/docs/getting-started) guide. Feel free to also review the [Toolkit](/docs/toolkit) for a visual documentation of these configurations. To make these configurations, visit the [developer console](https://app.asana.com/0/developer-console).
 
@@ -936,7 +935,7 @@ _Note: You must first create an app in order to be able to configure it. To begi
 
 ### Modal Form & Widget
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 The example app offers a quick way for developers to explore the capabilities and features of App Components. By following the steps below, you'll gain an understanding of how to install App Component apps to your developer sandbox, as well as how an example app communicates with endpoints exposed on a pre-built local server. 
 
@@ -973,7 +972,7 @@ That's it! At this point, feel free to keep exploring how changes in the server 
 
 ### Example Rule Actions
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 To explore the capabilities of Rule Actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub. Follow the instructions outlined in the repository's `README.md` to get started.
 
