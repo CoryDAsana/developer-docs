@@ -942,7 +942,7 @@ The example app offers a quick way for developers to explore the capabilities an
 
 Note that for the App Components apps [that you create](/docs/configurations), you'll be able to configure your own images, descriptions, URLs, and other content. Many of the values for these fields are marked by **{curly braces}** in the example app.
 
-Before you begin, be sure you already have a [developer sandbox]((/docs/developer-sandbox)), as this will give you access the "External Example App" in the app gallery. To start using the example app:
+Before you begin, be sure you already have a [developer sandbox](/docs/developer-sandbox), as this will give you access the "External Example App" in the app gallery. To start using the example app:
 
 1. Clone [this repository](https://github.com/Asana/app-components-example-app) containing an example Express server.
 2. Follow the instructions in the [README](https://github.com/Asana/app-components-example-app/blob/main/README.md) to run the server. This server needs to remain on as you use the example app.
