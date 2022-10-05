@@ -369,7 +369,7 @@ This guide will show you how to begin building with app components. To make best
 
 <hr>
 
-## Overview of Build Steps
+## Overview of build steps
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -484,19 +484,19 @@ For an in-depth overview of the installation flow (including its customizations)
 
 <hr>
 
-## Next Steps
+## Next steps
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 At this point, your app has been created and fully configured. For further configurations (e.g., updating a URL, replacing button text, etc.), you can head back into the [developer console](https://app.asana.com/0/my-apps) to make any necessary changes. 
 
-Next, you can explore how to build the UI of your application via the [UI Builder](/docs/ui-builder), which will help you finish building your [App Server](/docs/building-the-app-server). By leveraging the URLs configured earlier in the sections above, your App Server is what enables your end users to interact with resources external to Asana (i.e., via requests to endpoints exposed on the App Server). 
+Next, you can explore how to build the UI of your application via the [UI builder](/docs/ui-builder), which will help you finish building your [app server](/docs/building-the-app-server). By leveraging the URLs configured earlier in the sections above, your app server is what enables your end users to interact with resources external to Asana (i.e., via requests to endpoints exposed on the app server). 
 
-When both your app and your App Server are complete, you can move forward with getting your app [ready for publishing](/docs/publishing-an-app).
+When both your app and your app server are complete, you can move forward with getting your app [ready for publishing](/docs/publishing-an-app).
 
 <hr class="full-line">
 
-# UI Builder
+# UI builder
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
