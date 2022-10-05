@@ -126,17 +126,17 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 <hr>
 
-## Modal Form
+## Modal form
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-> Request to the App Server
+> Request to the app server
 
 ```http
 https://app-server.com/form?workspace=12345&task=23456&user=34567&locale=en&expires_at=2011-10-05T14%3A48%3A00.000Z
 ```
 
-> Response from the App Server
+> Response from the app server
 
 ```json
 {
@@ -187,34 +187,34 @@ https://app-server.com/form?workspace=12345&task=23456&user=34567&locale=en&expi
 
 <img style="max-width:580px; box-shadow: 0 0 0 1px rgba(111,119,130,.15), 0 5px 20px 0 rgba(21,27,38,.08); border-radius: 4px;" src="../images/jira-modal.png" />
 
-A Modal Form allows users to fill out a dynamic app-controlled list of fields. The number of fields can range from 0-20.
-Once a form is submitted, the information is sent to the App Server and Asana will perform different functionality
-depending on what they responded with. If the App wants to cause additional changes within Asana, the App 
-Server will need to make the changes via the API. 
+A modal form allows users to fill out a dynamic app-controlled list of fields. The number of fields can range from 0-20.
+Once a form is submitted, the information is sent to the app server and Asana will perform different functions
+depending on what the server responded with. If the app wants to cause additional changes within Asana, the app server
+will need to make the changes via the API. 
 
-An advanced feature of Modal Forms is live `on_change` events. While a user is filling out a form,
-the App Server can receive `on_change` requests. These requests include what the user has changed, and
-allow the App Server to respond with an updated form. Apps can build complex branching logic depending
-on changes a user makes.
+An advanced feature of modal forms is live `on_change` events. While a user is filling out a form,
+the app server can receive `on_change` requests. These requests include what the user has changed, and
+allow the app server to respond with an updated form. Apps can build complex branching logic depending
+on changes that a user makes.
 
-To take advantage of `on_change` events, set some form fields `is_watched` value to `true` and an `on_change_callback` 
+To take advantage of `on_change` events, you may set a form field's `is_watched` value to `true` and an `on_change_callback` 
 endpoint to hit with updates. 
 See the `on_change` field in the response to the 
 [form metadata request](/docs/get-form-metadata). The request sent to that
-endpoint is the [On change callback request](/docs/on-change-callback).
+endpoint is the [on change callback request](/docs/on-change-callback).
 
-### UI Builder: Modal Form
+### UI builder: modal form
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/modal-form) to configure a Modal Form in an interactive test environment.
+Visit the [UI builder](https://app.asana.com/0/my-apps/response-builder/modal-form) to configure a modal form in an interactive test environment.
 For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
-### Modal Form Configurations
+### Modal form configurations
 
 | Property              | Description                                                                                          |
 |-----------------------|------------------------------------------------------------------------------------------------------|
-| Form metadata URL     | A URL that Asana uses to request data from the app about fields it should display in the Modal Form. |
+| Form metadata URL     | A URL that Asana uses to request data from the app about fields it should display in the modal form. |
 
-### Related References: 
+### Related references: 
 
 * [Get form metadata](/docs/get-form-metadata)
 * [Get Modal Form typeahead results](/docs/get-modal-form-typeahead-results)
@@ -227,13 +227,13 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-> Request to the App Server
+> Request to the app server
 
 ```http
 https://app-server.com/lookup?value=Cool&workspace=12345&task=23456&user=34567&locale=en&expires_at=2011-10-05T14%3A48%3A00.000Z
 ```
 
-> Response from the App Server
+> Response from the app server
 
 ```json
 {
@@ -273,13 +273,13 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-> Request to the App Server
+> Request to the app server
 
 ```http
 https://app-server.com/rule?workspace=12345&project=23456&action_type=45678&action=56789&user=34567&locale=en&expires_at=2011-10-05T14%3A48%3A00.000Z
 ```
 
-> Response from the App Server
+> Response from the app server
 
 ```json
 {
@@ -309,13 +309,13 @@ https://app-server.com/rule?workspace=12345&project=23456&action_type=45678&acti
 <img style="max-width:380px; box-shadow: 0 0 0 1px rgba(111,119,130,.15), 0 5px 20px 0 rgba(21,27,38,.08); border-radius: 4px;" src="../images/slack-rule.png" />
 
 A Rule Action allows users to customize actions triggered by Asana's rule engine. They use the same functionality as
-the [Modal Form](/docs/modal-form), as Asana requests a form definition from the App Server. The app controls the form 
+the [Modal Form](/docs/modal-form), as Asana requests a form definition from the app server. The app controls the form 
 fields, handles `on_change` events, and stores the inputs of the form. When a rule is created, Asana sends a request to 
-the App Server with the user-specified inputs. When the rule is triggered, Asana sends an event to the App Server.
+the app server with the user-specified inputs. When the rule is triggered, Asana sends an event to the app server.
 
 Rule Actions are a part of [Asana Rules](https://asana.com/guide/help/premium/rules).
 
-_Note: An App Server must be hosted in order for Rule Actions to function. For a brief list of popular hosting options, see [Hosting](/docs/hosting)._
+_Note: An app server must be hosted in order for Rule Actions to function. For a brief list of popular hosting options, see [Hosting](/docs/hosting)._
 
 To see an example app server written for Rule Actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub.
 
