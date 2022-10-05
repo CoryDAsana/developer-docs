@@ -361,11 +361,11 @@ To configure the entry point, one or both of the above capabilities must be conf
 
 <hr class="full-line">
 
-# Getting Started
+# Getting started
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-This guide will show you how to begin building with App Components. To make best use of the following tutorials, be sure you've already reviewed the [Overview of App Components](/docs/overview-of-app-components).
+This guide will show you how to begin building with app components. To make best use of the following tutorials, be sure you've already reviewed the [overview of app components](/docs/overview-of-app-components).
 
 <hr>
 
@@ -373,39 +373,39 @@ This guide will show you how to begin building with App Components. To make best
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-The overall development process for App Components involves the following:
+The overall development process for app components involves the following:
 
-1. Create the app in the [developer console](https://app.asana.com/0/developer-console).
-2. Configure the app in the [developer console](https://app.asana.com/0/developer-console).
-3. [Build the App Server](/docs/building-the-app-server).
+1. Create the app in the [developer console](https://app.asana.com/0/my-apps).
+2. Configure the app in the [developer console](https://app.asana.com/0/my-apps).
+3. [Build the app server](/docs/building-the-app-server).
 4. [Get the app ready for publishing](/docs/publishing-an-app).
 5. [Submit the app for review](/docs/submit-your-app).
 
-The tutorials in this guide will cover the first two steps of the overall build process: creating and configuring the app. By the end of this guide, you will have an app ready to interact with your [App Server](/docs/app-server).
+The tutorials in this guide will cover the first two steps of the overall build process: creating and configuring the app. By the end of this guide, you will have an app ready to interact with your [app server](/docs/app-server).
 
 <hr>
 
-## Before You Begin
+## Before you begin
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-### Get a Sandbox
+### Get a sandbox
 
-To get started with App Components, you'll need an Asana account. This will give you a workspace to access the [developer console](https://app.asana.com/0/developer-console), through which you can create and configure apps directly in Asana's user interface. 
+To get started with app components, you'll need an Asana account. This will give you a workspace to access the [developer console](https://app.asana.com/0/my-apps), through which you can create and configure apps directly in Asana's user interface. 
 
-While you can [sign up](https://asana.com/guide/help/fundamentals/about-asana) for an account if you don't already have one, we actually recommend using a [Developer Sandbox](/docs/developer-sandbox) to help you build in a separate, dedicated environment. You'll still be able to access the developer console this way, but the developer sandbox will also grant you access to the [Example App](/docs/example-apps), where you can explore the capabilities and features of App Components in-depth.
+While you can [sign up](https://asana.com/guide/help/fundamentals/about-asana) for an account if you don't already have one, we actually recommend using a [developer sandbox](/docs/developer-sandbox) to help you build in a separate, dedicated environment. You'll still be able to access the developer console this way, but the developer sandbox will also grant you access to the [example app components app](/docs/example-apps), where you can explore the capabilities and features of app components in-depth.
 
-### Consider the App's User Experience
+### Consider the app's user experience
 
-Each app built with App Components is unique, and will leverage different capabilities of App Components. For example, the [Zoom app](https://asana.com/apps/zoom) lets users create a new meeting or attach an existing meeting to an Asana task. Under the hood, these actions are made possible by using a [Modal Form](/docs/modal-form) to create new meetings, [Lookup](/docs/lookup) to search and connect existing meetings, and a [Widget](/docs/widget) to display the external meeting data in a task. Meanwhile, a different app may forego such functionalities, and instead exclusively use [Rule Actions](/docs/rule-actions) to automate workflows between Asana and another tool. Overall, we encourage you to experiment with different capabilities and decide how you want your end user's experience to be.
+Each app built with app components is unique, and will leverage different capabilities of app components. For example, the [Zoom app](https://asana.com/apps/zoom) lets users create a new meeting or attach an existing meeting to an Asana task. Under the hood, these actions are made possible by using a [modal form](/docs/modal-form) to create new meetings, [lookup](/docs/lookup) to search and connect existing meetings, and a [widget](/docs/widget) to display the external meeting data in a task. Meanwhile, a different app may forego such functionalities, and instead exclusively use [rule actions](/docs/rule-actions) to automate workflows between Asana and another tool. Overall, we encourage you to experiment with different capabilities and decide how you want your end user's experience to be.
 
-To see visual documentation for how you can design your app, check out the [App Components Toolkit](/docs/toolkit). For further inspiration, feel free to navigate to the [app directory](https://asana.com/apps).
+To see visual documentation for how you can design your app, check out the [app components toolkit](/docs/toolkit). For further inspiration, feel free to navigate to the [app directory](https://asana.com/apps).
 
-### Start Building the App Server
+### Start building the app server
 
-Because App Components allow your end users to interact with resources outside of Asana's user interface, an [App Server](/docs/app-server) is required for building with App Components. While it isn't necessary to have a complete App Server before moving forward, it's a good idea to at least know the URLs to any server endpoints you want to configure ahead of time (e.g., your URL to [get the metadata](/docs/get-widget-metadata) for a [Widget](/docs/widget)), though these can be configured or changed at any time.
+Because app components allow your end users to interact with resources outside of Asana's user interface, an [app server](/docs/app-server) is required for building with app components. While it isn't necessary to have a complete app server before moving forward, it's a good idea to at least know the URLs to any server endpoints you want to configure ahead of time (e.g., your URL to [get the metadata](/docs/get-widget-metadata) for a [sidget](/docs/widget)), though these can be configured or changed at any time.
 
-Feel free to review the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub to see an example server written in Express.js. This server is also used in the [Example App](/docs/example-apps).
+Feel free to review the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub to see an example server written in Express.js. This server is also used in the [example app](/docs/example-apps).
 
 <hr>
 
@@ -413,7 +413,7 @@ Feel free to review the [app-components-example-app](https://github.com/Asana/ap
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-The first step is to create the app in your [developer console](https://app.asana.com/0/developer-console). Navigate to **Create new app** and provide a name for your app. If your app is published, this name will appear in the Asana app for users to see, including in both the app gallery and [app directory](https://asana.com/apps).
+The first step is to create the app in your [developer console](https://app.asana.com/0/my-apps). Navigate to **Create new app** and provide a name for your app. If your app is published, this name will appear in the Asana app for users to see, including in both the app gallery and [app directory](https://asana.com/apps).
 
 <img src="../images/my-apps.png" alt="My apps"/>
 
@@ -425,7 +425,7 @@ The first step is to create the app in your [developer console](https://app.asan
 
 Once your app has been created, you'll automatically be brought to the new app's settings. From here, you can make the configurations necessary to define your app. 
 
-_Note: To see these settings again, navigate to your app in the [developer console](https://app.asana.com/0/developer-console)._
+_Note: To see these settings again, navigate to your app in the [developer console](https://app.asana.com/0/my-apps)._
 
 ### Configure Basic Info
 
@@ -449,7 +449,7 @@ These details will be accessible to the end user, and are meant to help them ide
 
 ### Configure Capabilities
 
-The next set of configurations you make will differ depending on what functionality and user experience you're looking to build. Each of the capabilities below are configured separately in the **App Components** tab in the [developer console](https://app.asana.com/0/developer-console):
+The next set of configurations you make will differ depending on what functionality and user experience you're looking to build. Each of the capabilities below are configured separately in the **App Components** tab in the [developer console](https://app.asana.com/0/my-apps):
 
 <img src="../images/app-components-configs.png" alt="App Components configuration"/>
 
@@ -488,7 +488,7 @@ For an in-depth overview of the installation flow (including its customizations)
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-At this point, your app has been created and fully configured. For further configurations (e.g., updating a URL, replacing button text, etc.), you can head back into the [developer console](https://app.asana.com/0/developer-console) to make any necessary changes. 
+At this point, your app has been created and fully configured. For further configurations (e.g., updating a URL, replacing button text, etc.), you can head back into the [developer console](https://app.asana.com/0/my-apps) to make any necessary changes. 
 
 Next, you can explore how to build the UI of your application via the [UI Builder](/docs/ui-builder), which will help you finish building your [App Server](/docs/building-the-app-server). By leveraging the URLs configured earlier in the sections above, your App Server is what enables your end users to interact with resources external to Asana (i.e., via requests to endpoints exposed on the App Server). 
 
@@ -541,7 +541,7 @@ As you use the [UI Builder](https://app.asana.com/0/my-apps/response-builder) to
 
 <img src="../images/ui-builder-copy-button.gif" alt="UI Builder copy button"/>
 
-To get started with the UI Builder, visit **App Components** in the sidebar of your app in the [developer console](https://app.asana.com/0/developer-console), then select **View UI builder**. Alternatively, you may access the [UI Builder](https://app.asana.com/0/my-apps/response-builder) directly.
+To get started with the UI Builder, visit **App Components** in the sidebar of your app in the [developer console](https://app.asana.com/0/my-apps), then select **View UI builder**. Alternatively, you may access the [UI Builder](https://app.asana.com/0/my-apps/response-builder) directly.
 
 <hr class="full-line">
 
@@ -650,7 +650,7 @@ Message integrity is provided by a SHA-256 HMAC signature on the contents of the
 to generate the signature is the query string of the request with escaped characters, omitting the leading "?" of the query string.
 For `POST` requests, the "message" is the JSON blob in the `data` field of the request body. For both types of requests, the secret
 used to compute the signature is your app's Client Secret which can be found in the **OAuth** tab for the app in the
-[developer console](https://app.asana.com/0/developer-console). 
+[developer console](https://app.asana.com/0/my-apps). 
 
 Note that the signature is transmitted via a header in the request body, particularly the value of `x-asana-request-signature`. The
 app server calculates the same signature and compares that to the value in the header. **The app server should reject the request if the two do not match**.
@@ -695,7 +695,7 @@ During development, you may choose to use [ngrok](https://ngrok.com/), which cre
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-As you finish building the App Server, you may find it necessary to [update certain configurations](/docs/configure-the-app) such as URLs, image links, etc. These configurations can be updated at any time in the [developer console](https://app.asana.com/0/developer-console).
+As you finish building the App Server, you may find it necessary to [update certain configurations](/docs/configure-the-app) such as URLs, image links, etc. These configurations can be updated at any time in the [developer console](https://app.asana.com/0/my-apps).
 
 After you have finished building both your app and App Server, you are now ready to begin the [publishing process](/docs/publishing-an-app)! 
 
@@ -743,7 +743,7 @@ through the [developer console](https://app.asana.com/0/my-apps).
 
 When the end user connects an app with App Components to Asana for the first time, they will go through an installation flow. This involves authorizing the app, and adding it to projects in Asana.
 
-The installation flow can be configured in the [developer console](https://app.asana.com/0/developer-console). Note that a list of all possible configurations can also be found in [Configure the App](/docs/configure-the-app) in the [Getting Started](/docs/getting-started) guide.
+The installation flow can be configured in the [developer console](https://app.asana.com/0/my-apps). Note that a list of all possible configurations can also be found in [Configure the App](/docs/configure-the-app) in the [Getting Started](/docs/getting-started) guide.
 
 For the end user, the installation flow can be triggered through either one of two ways:
 
@@ -758,7 +758,7 @@ For the end user, the installation flow can be triggered through either one of t
 <br>
 <img src="../images/app-directory.png" alt="app directory"/>
 
-Note that subsequent interactions with the same application by the same user will _not_ trigger the following installation flow. To force the installation flow in its entirety again (e.g., for QA purposes), you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's Client ID (accessible via the [developer console](https://app.asana.com/0/developer-console)).
+Note that subsequent interactions with the same application by the same user will _not_ trigger the following installation flow. To force the installation flow in its entirety again (e.g., for QA purposes), you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's Client ID (accessible via the [developer console](https://app.asana.com/0/my-apps)).
 
 <hr>
 
@@ -836,13 +836,13 @@ Another reason that you may be seeing this message is when your app server is no
 
 ### App server endpoints are not being triggered
 
-Check that the endpoint paths saved for your app in the [developer console](https://app.asana.com/0/developer-console) match the endpoint paths that you created for your app server. For example, your app server's endpoint to [GET Form Metadata](/docs/get-form-metadata) might be `https://app.example.com/form/metadata`, while in your app's settings it is saved as `https://app.example.com/metadata`. Since these paths are non-matching, when Asana makes a request to [GET Form Metadata](/docs/get-form-metadata), it will be making requests to `https://app.example.com/metadata` instead of `https://app.example.com/form/metadata`.
+Check that the endpoint paths saved for your app in the [developer console](https://app.asana.com/0/my-apps) match the endpoint paths that you created for your app server. For example, your app server's endpoint to [GET Form Metadata](/docs/get-form-metadata) might be `https://app.example.com/form/metadata`, while in your app's settings it is saved as `https://app.example.com/metadata`. Since these paths are non-matching, when Asana makes a request to [GET Form Metadata](/docs/get-form-metadata), it will be making requests to `https://app.example.com/metadata` instead of `https://app.example.com/form/metadata`.
 
 Additionally, some app server responses may contain an `on_change_callback` and an `on_submit_callback` property. Check that the endpoints provided for these values are what you expected.
 
 ### Unable to trigger installation process again
 
-In the event that you would like to test your app's installation flow again, you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`. You can find your `app_client_id` in the URL of your app in the [developer console](https://app.asana.com/0/developer-console).
+In the event that you would like to test your app's installation flow again, you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`. You can find your `app_client_id` in the URL of your app in the [developer console](https://app.asana.com/0/my-apps).
 
 ### App Component - Rule Action: App server is not receiving a response back from Asana
 
@@ -850,7 +850,7 @@ The app server for Rule Action must be hosted in order for Rule Actions to funct
 
 ### App does not appear in the app gallery of my organization
 
-Ensure that your app is added to your organization. This can be done in your app's setting in the [developer console](https://app.asana.com/0/developer-console) under **Install your app** > **Add an organization**.
+Ensure that your app is added to your organization. This can be done in your app's setting in the [developer console](https://app.asana.com/0/my-apps) under **Install your app** > **Add an organization**.
 
 <br>
 <br>
@@ -864,7 +864,7 @@ For any questions on App Components, as well as an opportunity to engage with ot
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-The following tables represent a master list of all the configurations you can make to define your App Components app. Further context for these configurations can be found in the [Configure the App](/docs/configure-the-app) section of the [Getting Started](/docs/getting-started) guide. Feel free to also review the [Toolkit](/docs/toolkit) for a visual documentation of these configurations. To make these configurations, visit the [developer console](https://app.asana.com/0/developer-console).
+The following tables represent a master list of all the configurations you can make to define your App Components app. Further context for these configurations can be found in the [Configure the App](/docs/configure-the-app) section of the [Getting Started](/docs/getting-started) guide. Feel free to also review the [Toolkit](/docs/toolkit) for a visual documentation of these configurations. To make these configurations, visit the [developer console](https://app.asana.com/0/my-apps).
 
 _Note: You must first create an app in order to be able to configure it. To begin, see the [Getting Started](/docs/getting-started) guide._
 
@@ -948,7 +948,7 @@ Before you begin, be sure you already have a [developer sandbox]((/docs/develope
 3. Open the developer sandbox in your browser.
 4. In an existing project, go to **Customize** > **Add App** > **External Example App** to install the App Components example app. 
     - **Important**: The installation flow this takes you through is only shown once per user. To see it a second time, navigate to 
-      `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's Client ID (accessible via the [developer console](https://app.asana.com/0/developer-console)).
+      `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's Client ID (accessible via the [developer console](https://app.asana.com/0/my-apps)).
 <br>
 <br>
 <img src="../images/example-app-gallery-tile.png" />
