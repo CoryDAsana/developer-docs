@@ -269,7 +269,7 @@ For an overview of the UI builder, see [this guide](/docs/ui-builder).
 
 <hr>
 
-## Rule Action
+## Rule action
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -308,23 +308,23 @@ https://app-server.com/rule?workspace=12345&project=23456&action_type=45678&acti
 
 <img style="max-width:380px; box-shadow: 0 0 0 1px rgba(111,119,130,.15), 0 5px 20px 0 rgba(21,27,38,.08); border-radius: 4px;" src="../images/slack-rule.png" />
 
-A Rule Action allows users to customize actions triggered by Asana's rule engine. They use the same functionality as
-the [Modal Form](/docs/modal-form), as Asana requests a form definition from the app server. The app controls the form 
+A rule action allows users to customize actions triggered by Asana's rule engine. They function similarly to a
+[modal form](/docs/modal-form), as Asana requests a form definition from the app server. The app controls the form 
 fields, handles `on_change` events, and stores the inputs of the form. When a rule is created, Asana sends a request to 
 the app server with the user-specified inputs. When the rule is triggered, Asana sends an event to the app server.
 
-Rule Actions are a part of [Asana Rules](https://asana.com/guide/help/premium/rules).
+Rule actions are a part of [Asana rules](https://asana.com/guide/help/premium/rules).
 
-_Note: An app server must be hosted in order for Rule Actions to function. For a brief list of popular hosting options, see [Hosting](/docs/hosting)._
+_Note: An app server must be hosted in order for rule actions to function. For a brief list of popular hosting options, see [hosting](/docs/hosting)._
 
-To see an example app server written for Rule Actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub.
+To see an example app server written for rule actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub.
 
-### UI Builder: Rule Action
+### UI builder: rule action
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/rule-actions) to configure a Rule Action in an interactive test environment.
-For an overview of the UI Builder, see [this guide](/docs/ui-builder).
+Visit the [UI builder](https://app.asana.com/0/my-apps/response-builder/rule-actions) to configure a rule action in an interactive test environment.
+For an overview of the UI builder, see [this guide](/docs/ui-builder).
 
-### Rule Action Configurations
+### Rule action Configurations
 
 | Property          | Description                                                                                  |
 |-------------------|----------------------------------------------------------------------------------------------|
@@ -332,9 +332,9 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 | Run action URL    | A URL that Asana will make a request to when the rule is triggered.                          |
 | Form metadata URL | A URL that Asana will make a request to to display the configuration form.                   |
 
-### Related References: 
+### Related references: 
 
-* [Get Rule Action typeahead results](/docs/get-rule-action-typeahead-results)
+* [Get rule action typeahead results](/docs/get-rule-action-typeahead-results)
 * [Run action](/docs/run-action)
 * [Get action metadata](/docs/get-action-metadata)
 * [On action change callback](/docs/on-action-change-callback)
