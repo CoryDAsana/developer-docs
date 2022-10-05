@@ -427,11 +427,11 @@ Once your app has been created, you'll automatically be brought to the new app's
 
 _Note: To see these settings again, navigate to your app in the [developer console](https://app.asana.com/0/my-apps)._
 
-### Configure basic info
+### Configure app listing details
 
-On the **Basic information** tab, provide some information about your app.
+On the **App listing details** tab, provide some information about your app.
 
-<img src="../images/basic-info.png" alt="Basic information"/>
+<img src="../images/app-listing-details.png" alt="App listing details"/>
 
 These details will be accessible to the end user, and are meant to help them identify and learn more about your application.
 
@@ -439,8 +439,9 @@ These details will be accessible to the end user, and are meant to help them ide
 |----------------------|------------------------------------------------------------------------------------|
 | App icon             | Your app's icon, shown to users to identify your application.                      |
 | App name             | Your app's name, shown to users to identify your application.                      |
-| Short description    | A short description of the app shown in the app gallery.                           |
-| Long description     | An extended description of the functionality of the app shown in the app settings. |
+| Short description    | A short description of the app.                           |
+| Long description     | An extended description of the functionality of the app. Shown in the app details page. |
+| App images           | Images of your application. Shown in the app details page.                         |
 | Company name         | Your company name.                                                                 |
 | Company URL          | URL of the page where users can learn more about your company.                     |
 | App landing page URL | URL of the page where users can learn more about this app and install it.          |
@@ -458,10 +459,10 @@ Follow the links in the table below to view the configurations required to build
 | Capability                        | Description                                                                                                                                             |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Widget](/docs/widget)            | Display a dynamic, custom widget card in tasks that shows data from an attached resource.                                                               |
-| [Modal Form](/docs/modal-form)    | Build a custom form to allow users to create new resources. This form gets shown in a modal when a user clicks the entry point on a task.               |
+| [Modal form](/docs/modal-form)    | Build a custom form to allow users to create new resources. This form gets shown in a modal when a user clicks the entry point on a task.               |
 | [Lookup](/docs/lookup)            | Show a text input to allow users to find and attach resources to tasks. Users can paste a URL, ID, or pick from an optional typeahead.                  |
-| [Rule Actions](/docs/rule-action) | Build one or more custom action for Asana’s Rules engine to help users automate their work. Users can create rules that run your action when triggered. |
-| [Entry Point](/docs/entry-point)  | Configure the button in tasks that initiates the Lookup and Modal Form. To configure this, one or both of these capabilities must be configured first.  |
+| [Rule actions](/docs/rule-action) | Build one or more custom action for Asana’s [Rules](https://asana.com/guide/help/premium/rules) engine to help users automate their work. Users can create rules that run your action when triggered. |
+| [Entry point](/docs/entry-point)  | Configure the button in tasks that initiates the lookup and dodal Form. To configure this, one or both of these capabilities must be configured first.  |
 
 ### Configure the installation flow
 
