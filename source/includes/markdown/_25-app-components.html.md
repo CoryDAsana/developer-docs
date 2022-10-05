@@ -342,22 +342,22 @@ For an overview of the UI builder, see [this guide](/docs/ui-builder).
 
 <hr>
 
-## Entry Point
+## Entry point
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <img src="../images/entry-point.png" alt="Entry point"/>
 
-The Entry Point allows users to initiate the [Lookup](/docs/lookup) and [Modal Form](/docs/modal-form) components from tasks.
+The entry point allows users to initiate the [lookup](/docs/lookup) and [modal form](/docs/modal-form) components from tasks.
 
-To configure the Entry Point, one or both of the above capabilities must be configured first. If only one of these capabilities is configured, the Entry Point takes the form of a button. If both of these capabilities above are configured, the Entry Point is rendered as a dropdown menu. 
+To configure the entry point, one or both of the above capabilities must be configured first. If _only one_ of these capabilities is configured, the entry point takes the form of a button. If _both_ of these capabilities above are configured, the entry point is rendered as a dropdown menu. 
 
-### Entry Point Configurations
+### Entry point configurations
 
 | Property               | Description                                                       |
 |------------------------|-------------------------------------------------------------------|
-| Lookup action text     | Clickable action text that allows users to initiate a Lookup.     |
-| Modal Form action text | Clickable action text that allows users to initiate a Modal Form. |
+| Lookup action text     | Clickable action text that allows users to initiate a lookup.     |
+| Modal form action text | Clickable action text that allows users to initiate a modal form. |
 
 <hr class="full-line">
 
