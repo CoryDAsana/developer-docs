@@ -702,17 +702,17 @@ After you have finished building both your app and app server, you are now ready
 
 <hr class="full-line">
 
-# Publishing an App
+# Publishing an app
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-After [creating and configuring your app](/docs/getting-started) to function alongside your [App Server](/docs/building-the-app-server), you may begin the app review process.
+After [creating and configuring your app](/docs/getting-started) to function alongside your [app server](/docs/building-the-app-server), you may begin the app review process.
 
-Apps built on App Components are manually reviewed before they are accessible within Asana. To ensure a smooth review process and user experience, here are some guidelines you can follow before [submitting the app for review](/docs/submit-your-app).
+Apps built on app components are manually reviewed before they are accessible within Asana. To ensure a smooth review process and user experience, here are some guidelines you can follow before [submitting the app for review](/docs/submit-your-app).
 
 <hr>
 
-## Publishing Checklist
+## Publishing checklist
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -731,20 +731,20 @@ When testing your application, you should:
 * Test and proof-read any custom error messages
 * Test the auth flow from both the web browser and [desktop app](https://asana.com/download)
   * You can enter the installation flow manually by navigating to `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`
-* Test [Rule Actions](/docs/rule-actions) with a variety of trigger combinations
+* Test [rule actionsctions](/docs/rule-actions) with a variety of trigger combinations
 
 For additional details, an interactive checklist can be found on the **Submit for review** page when managing your app
 through the [developer console](https://app.asana.com/0/my-apps).
 
 <hr>
 
-## Installation Flow
+## Installation flow
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 When the end user connects an app with App Components to Asana for the first time, they will go through an installation flow. This involves authorizing the app, and adding it to projects in Asana.
 
-The installation flow can be configured in the [developer console](https://app.asana.com/0/my-apps). Note that a list of all possible configurations can also be found in [Configure the App](/docs/configure-the-app) in the [Getting Started](/docs/getting-started) guide.
+The installation flow can be configured in the [developer console](https://app.asana.com/0/my-apps). Note that a list of all possible configurations can also be found in the [configure the app](/docs/configure-the-app) section of the [getting started](/docs/getting-started) guide.
 
 For the end user, the installation flow can be triggered through either one of two ways:
 
@@ -759,7 +759,23 @@ For the end user, the installation flow can be triggered through either one of t
 <br>
 <img src="../images/app-directory.png" alt="app directory"/>
 
-Note that subsequent interactions with the same application by the same user will _not_ trigger the following installation flow. To force the installation flow in its entirety again (e.g., for QA purposes), you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's Client ID (accessible via the [developer console](https://app.asana.com/0/my-apps)).
+Note that subsequent interactions with the same application by the same user will _not_ trigger the following installation flow. To force the installation flow in its entirety again (e.g., for QA purposes), you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's client ID (accessible via the [developer console](https://app.asana.com/0/my-apps)).
+
+<hr>
+
+### App details
+
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
+
+If the user installs the app via the in-product app gallery (i.e., the first scenario above), the user can see more details about the app:
+
+<img src="../images/app-details-page.png" alt="app details page"/>
+
+The information on this page can be customized in the **App listing details** tab of the [developer console](https://app.asana.com/0/my-apps):
+
+<img src="../images/app-listing-details-sample.png" alt="app listing details page"/>
+
+For more information, see the [configure the app](/docs/configure-the-app) section of the [getting started](/docs/getting-started) guide.
 
 <hr>
 
