@@ -217,7 +217,7 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 ### Related references: 
 
 * [Get form metadata](/docs/get-form-metadata)
-* [Get Modal Form typeahead results](/docs/get-modal-form-typeahead-results)
+* [Get modal form typeahead results](/docs/get-modal-form-typeahead-results)
 * [On change callback](/docs/on-change-callback)
 * [On submit callback](/docs/on-submit-callback)
 
@@ -248,24 +248,24 @@ Users can send a search term to the app server. The term is often a URL or
 the title of an external resource. The app server then responds with a 
 resource or an error.
 
-### UI Builder: Lookup
+### UI builder: lookup
 
-Visit the [UI Builder](https://app.asana.com/0/my-apps/response-builder/lookup) to configure a Lookup in an interactive test environment.
-For an overview of the UI Builder, see [this guide](/docs/ui-builder).
+Visit the [UI builder](https://app.asana.com/0/my-apps/response-builder/lookup) to configure a lookup in an interactive test environment.
+For an overview of the UI builder, see [this guide](/docs/ui-builder).
 
-### Lookup Configurations
+### Lookup configurations
 
 | Property               | Description                                                                                                                 |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Resource attach URL    | A URL that Asana will make a request to when a user submits a value to attach (i.e., when clicking "Add").                  |
-| Placeholder text       | _Optional_. Placeholder action text that appears in the Lookup input field after the user clicks on the Lookup action text. |
-| Resource typeahead URL | A URL that Asana will make a request to when a user types into a Lookup field.                                              |
+| Resource attach URL    | A URL that Asana will make a request to when a user submits a value to attach (i.e., when clicking **Add**).                  |
+| Placeholder text       | _Optional_. Placeholder action text that appears in the lookup input field after the user clicks on the lookup action text. |
+| Resource typeahead URL | A URL that Asana will make a request to when a user types into a lookup field.                                              |
 
-### Related References: 
+### Related references: 
 
 * [Widget](/docs/widget)
-* [Attach Resource](/docs/attach-resource)
-* [Get Lookup typeahead results](/docs/get-lookup-typeahead-results)
+* [Attach resource](/docs/attach-resource)
+* [Get lookup typeahead results](/docs/get-lookup-typeahead-results)
 
 <hr>
 
