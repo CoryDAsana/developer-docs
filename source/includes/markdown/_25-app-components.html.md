@@ -409,7 +409,7 @@ Feel free to review the [app-components-example-app](https://github.com/Asana/ap
 
 <hr>
 
-## Create the App
+## Create the app
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -419,7 +419,7 @@ The first step is to create the app in your [developer console](https://app.asan
 
 <hr>
 
-## Configure the App
+## Configure the app
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -427,7 +427,7 @@ Once your app has been created, you'll automatically be brought to the new app's
 
 _Note: To see these settings again, navigate to your app in the [developer console](https://app.asana.com/0/my-apps)._
 
-### Configure Basic Info
+### Configure basic info
 
 On the **Basic information** tab, provide some information about your app.
 
@@ -447,7 +447,7 @@ These details will be accessible to the end user, and are meant to help them ide
 | Support URL          | URL of the page where users can read documentation or get support.                 |
 | Privacy policy URL   | URL of the page where users can read your app's privacy policy.                    |
 
-### Configure Capabilities
+### Configure capabilities
 
 The next set of configurations you make will differ depending on what functionality and user experience you're looking to build. Each of the capabilities below are configured separately in the **App Components** tab in the [developer console](https://app.asana.com/0/my-apps):
 
@@ -463,9 +463,9 @@ Follow the links in the table below to view the configurations required to build
 | [Rule Actions](/docs/rule-action) | Build one or more custom action for Asana’s Rules engine to help users automate their work. Users can create rules that run your action when triggered. |
 | [Entry Point](/docs/entry-point)  | Configure the button in tasks that initiates the Lookup and Modal Form. To configure this, one or both of these capabilities must be configured first.  |
 
-### Configure the Installation Flow
+### Configure the installation flow
 
-When a user connects an app with App Components to Asana for the first time, they will go through an [installation flow](/docs/installation-flow). There are a number of configurations that can be made here, including:
+When a user connects an app with app components to Asana for the first time, they will go through an [installation flow](/docs/installation-flow). There are a number of configurations that can be made here, including:
 
 | Property           | Description                                                                                                                                                                                                         |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -480,7 +480,7 @@ To make these configurations, navigate to the **Install your app** tab and provi
 
 <img src="../images/install-your-app.png" alt="Install your app configs"/>
 
-For an in-depth overview of the installation flow (including its customizations), see the [Installing Flow](/docs/installation-flow).
+For an in-depth overview of the installation flow (including its customizations), see the [installation flow](/docs/installation-flow).
 
 <hr>
 
