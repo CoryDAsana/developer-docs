@@ -472,7 +472,7 @@ When a user connects an app with app components to Asana for the first time, the
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Headline           | Text that appears as a title on the overview of features (i.e., "value props").                                                                                                                                     |
 | Subhead            | Text that appears as a subtitle on the overview of features.                                                                                                                                                        |
-| Feature image      | The image representing a feature. For the best user experience, we recommend providing three `Feature image`s.                                                                                                      |
+| Feature image      | The image representing a feature. For the best user experience, we recommend providing three feature images.                                                                                                        |
 | Caption text       | Text below the image of a feature.                                                                                                                                                                                  |
 | Image alt text     | Alt text for image of feature.                                                                                                                                                                                      |
 | Authentication URL | A URL which informs Asana where to make requests for authenticating and authorizing users. This is called during installation or when the app returns a response indicating the user must authenticate to continue. |
@@ -501,16 +501,16 @@ When both your app and your app server are complete, you can move forward with g
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-By building with App Components, applications can display customized widgets, forms, and rules within Asana's user interface. The [UI Builder](https://app.asana.com/0/my-apps/response-builder) is a place for developers to build the user interface of these capabilities in a dynamic, interactive test environment.
+By building with app components, applications can display customized widgets, forms, and rules within Asana's user interface. The [UI builder](https://app.asana.com/0/my-apps/response-builder) is a place for developers to build the user interface of these capabilities in a dynamic, interactive test environment.
 
-Use the UI Builder to see how your:
+Use the UI builder to see how your:
 
-* [Modal Form](/docs/modal-forms) renders as a result of [getting form metadata](/docs/get-form-metadata)
+* [Modal form](/docs/modal-forms) renders as a result of [getting form metadata](/docs/get-form-metadata)
 * [Lookup](/docs/lookup) renders with different items and configurations
 * [Widget](/docs/widget) renders as a result of [getting widget metadata](/docs/get-widget-metadata)
-* [Rule Action](/docs/rule-action) renders as a result of [getting action metadata](/docs/get-action-metadata)
+* [Rule action](/docs/rule-action) renders as a result of [getting action metadata](/docs/get-action-metadata)
 
-_Note: The UI Builder is a front end tool that allows you to test building your App Component application's user interface. The UI Builder itself is not capable of making HTTP requests, and as such, certain features cannot be displayed dynamically (e.g., watched fields, Typeahead, etc.)._
+_Note: The UI builder is a front end tool that allows you to test building your app component application's user interface. The UI builder itself is not capable of making HTTP requests, and as such, certain features cannot be displayed dynamically (e.g., watched fields, Typeahead, etc.)._
 
 <img src="../images/ui-builder.png" alt="UI Builder"/>
 
@@ -518,45 +518,45 @@ _Note: The UI Builder is a front end tool that allows you to test building your 
 
 ## Preset Configurations
 
-The [UI Builder](https://app.asana.com/0/my-apps/response-builder) allows you to view preset UI configurations for the capabilities of App Components:
+The [UI builder](https://app.asana.com/0/my-apps/response-builder) allows you to view preset UI configurations for the capabilities of app components:
 
-<img src="../images/ui-builder-capability-selection.gif" alt="UI Builder capability selection"/>
+<img src="../images/ui-builder-capability-selection.gif" alt="UI builder capability selection"/>
 
 Likewise, _within_ each selected capability, you are able to select and view **Minimalist**,  **Normal**, and **Everything** levels of preset configuration (i.e., with **Everything** being the highest level of configuration):
 
-<img src="../images/ui-builder-preset-configurations.gif" alt="UI Builder preset configurations"/>
+<img src="../images/ui-builder-preset-configurations.gif" alt="UI builder preset configurations"/>
 
 <hr>
 
 ## Custom Configurations
 
-Beyond the preset "template" configurations, you are also able to interact with the [UI Builder](https://app.asana.com/0/my-apps/response-builder)'s code editor directly. The result of the properties and values that you input in the editor will be dynamically rendered in the left panel:
+Beyond the preset "template" configurations, you are also able to interact with the [UI builder](https://app.asana.com/0/my-apps/response-builder)'s code editor directly. The result of the properties and values that you input in the editor will be dynamically rendered in the left panel:
 
-<img src="../images/ui-builder-custom-configurations.gif" alt="UI Builder custom configurations"/>
+<img src="../images/ui-builder-custom-configurations.gif" alt="UI builder custom configurations"/>
 
 <hr>
 
-## Copying Configurations
+## Copying configurations
 
-As you use the [UI Builder](https://app.asana.com/0/my-apps/response-builder) to test and build your server responses (e.g., [getting form metadata](/docs/get-form-metadata)), use the **Copy to clipboard** button to quickly copy the resulting metadata. You may choose to paste this metadata directly into your App Server code.
+As you use the [UI builder](https://app.asana.com/0/my-apps/response-builder) to test and build your server responses (e.g., [getting form metadata](/docs/get-form-metadata)), use the **Copy to clipboard** button to quickly copy the resulting metadata. You may choose to paste this metadata directly into your app server code.
 
-<img src="../images/ui-builder-copy-button.gif" alt="UI Builder copy button"/>
+<img src="../images/ui-builder-copy-button.gif" alt="UI builder copy button"/>
 
-To get started with the UI Builder, visit **App Components** in the sidebar of your app in the [developer console](https://app.asana.com/0/my-apps), then select **View UI builder**. Alternatively, you may access the [UI Builder](https://app.asana.com/0/my-apps/response-builder) directly.
+To get started with the UI builder, visit **App Components** in the sidebar of your app in the [developer console](https://app.asana.com/0/my-apps), then select **View UI builder**. Alternatively, you may [access the UI builder directly](https://app.asana.com/0/my-apps/response-builder).
 
 <hr class="full-line">
 
-# Building the App Server
+# Building the app server
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-Because apps built with App Components allow end users to interact with resources external to Asana, an [App Server](/docs/app-server) is required in order for your app to function. Asana will make requests directly to endpoints exposed on the App Server, which controls, for example, what the user sees in a [Widget](/docs/widget) or [what happens](/docs/rule-action) when the user takes certain actions.
+Because apps built with app components allow end users to interact with resources external to Asana, an [app server](/docs/app-server) is required in order for your app to function. Asana will make requests directly to endpoints exposed on the app server, which controls, for example, what the user sees in a [Widget](/docs/widget) or [what happens](/docs/rule-action) when the user takes certain actions.
 
-To see an example server written in Express.js, check out the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub. This server is also used in the [Example App](/docs/example-apps).
+To see an example server written in Express.js, check out the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub. This server is also used in the [example app](/docs/example-apps).
 
-As a final note, we recommend [creating and configuring your app](/docs/getting-started) before moving forward with building the App Server. You may also leverage the [UI Builder](/docs/ui-builder) to test and render the user interface of your application.
+As a final note, we recommend [creating and configuring your app](/docs/getting-started) before moving forward with building the app server. You may also leverage the [UI Builder](/docs/ui-builder) to test and render the user interface of your application.
 
-After you have completed building both the app and App Server, you will be ready to begin the [publishing process](/docs/publishing-an-app).
+After you have completed building both the app and app server, you will be ready to begin the [publishing process](/docs/publishing-an-app).
 
 <hr>
 
@@ -940,9 +940,9 @@ _Note: You must first create an app in order to be able to configure it. To begi
 
 The example app offers a quick way for developers to explore the capabilities and features of App Components. By following the steps below, you'll gain an understanding of how to install App Component apps to your developer sandbox, as well as how an example app communicates with endpoints exposed on a pre-built local server. 
 
-Note that for the App Components apps [that you create](/docs/configurations), you'll be able to configure your own images, descriptions, URLs, and other content. Many of the values for these fields are marked by **{curly braces}** in the example app.
+Note that for the app components apps [that you create](/docs/configurations), you'll be able to configure your own images, descriptions, URLs, and other content. Many of the values for these fields are marked by **{curly braces}** in the example app.
 
-Before you begin, be sure you already have a [developer sandbox]((/docs/developer-sandbox)), as this will give you access the "External Example App" in the app gallery. To start using the example app:
+Before you begin, be sure you already have a [developer sandbox](/docs/developer-sandbox), as this will give you access the "External Example App" in the app gallery. To start using the example app:
 
 1. Clone [this repository](https://github.com/Asana/app-components-example-app) containing an example Express server.
 2. Follow the instructions in the [README](https://github.com/Asana/app-components-example-app/blob/main/README.md) to run the server. This server needs to remain on as you use the example app.
