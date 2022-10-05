@@ -565,7 +565,7 @@ After you have completed building both the app and app server, you will be ready
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```html
-<!-- Example: An app might return this HTML in response to the 
+<!-- Example: an app might return this HTML in response to the 
 Authentication URL request after the Oauth flow is completed:
  -->
 
@@ -587,9 +587,9 @@ Authentication URL request after the Oauth flow is completed:
 
 ### Overview
 
-The Asana platform needs confirmation from the App Components app that authentication has completed successfully.
-When an app is added to a project, the user adding that app is sent to its `Authentication URL`
-(see the [Installation Flow](/docs/installation-flow)). The app may perform OAuth with Asana, OAuth with a
+The Asana platform needs confirmation from the app components app that authentication has completed successfully.
+When an app is added to a project, the user adding that app is sent to its **Authentication URL**
+(see the [installation flow](/docs/installation-flow)). The app may perform OAuth with Asana, OAuth with a
 different app, perform both, or perform none. For apps intended for multi-user usage, OAuth with Asana is
 _required_ to securely determine the identity of the user performing the authorization. Otherwise, as long as
 the app confirms the flow was complete, Asana will successfully add the app to the project. This will allow
@@ -597,24 +597,24 @@ requests to be sent to the app's predefined endpoints.
 
 ### How it works
 
-Under the hood, we carry this out by listening for a message from the authentication popup window containing the string "success".
-When we make a request to the app's `Authentication URL`, the browser opens a popup or "child" window and waits for it to respond
+Under the hood, we carry this out by listening for a message from the authentication popup window containing the string `"success"`.
+When we make a request to the app's **Authentication URL**, the browser opens a popup or "child" window and waits for it to respond
 with "success"  using [window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). The target window
 for this `postMessage` call should be the opener, accessible via
 [window.opener](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener).
 
 Note that for security purposes, the _origin_ of the event (which is added to the event by the browser) needs to match the root of the 
-`Authentication URL` registered to the app. That is, the authentication success message must be initiated from the same origin that receives the 
+**Authentication URL** registered to the app. That is, the authentication success message must be initiated from the same origin that receives the 
 authentication request. This is different from the `targetOrigin` of the `window.opener.postMessage` call, which must be exactly 
 `"https://app.asana.com"`.
 
 ### Additional notes
 
-If the app wants additional data from Asana or wants to make changes within Asana, they should have the user complete 
+If the app wants additional data from Asana or wants to make changes within Asana, the app should have the user complete 
 an [OAuth flow](/docs/oauth) against Asana. 
 
-Keep in mind that this authorization provides the App Server with a single user's auth token. Multiple users of Asana will view
-external resources attached by a user who has authenticated and send requests to the App Server, but the server will likely only
+Keep in mind that this authorization provides the app server with a single user's auth token. Multiple users of Asana will view
+external resources attached by a user who has authenticated and send requests to the app server, but the server will likely only
 have the token for one user. You may want to suggest users to authenticate with a bot account.
 
 <hr>
@@ -623,10 +623,10 @@ have the token for one user. You may want to suggest users to authenticate with 
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-When handling requests from Asana, an App Components app should:
+When handling requests from Asana, an app components app should:
  
  - Add [cross-origin resource sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) headers to responses. In order to update the Asana user interface (e.g., populating a Widget with external data), requests are made from the client to your app server. As such, enabling and configuring CORS is required. Feel free to use your browser's developer tools to debug during development.
- - Reject requests with missing or incorrect signatures. See [Message Integrity](/docs/message-integrity) for more details.
+ - Reject requests with missing or incorrect signatures. See [message integrity](/docs/message-integrity) for more details.
  - Reject requests with an `expires_at` time in the past.
     - **Note**: Make sure to use the correct units for this. `expires_at` is in milliseconds. If you compare the expiration time to a timestamp in seconds, it will always look like the request expires thousands of years in the future.
 
@@ -634,7 +634,7 @@ If an app uses [OAuth for authentication](/docs/oauth), the app should:
  
  - **Prevent OAuth CSRF attacks**. A one-time CSRF token in the `state` parameter is _required_ in order to implement a secure OAuth flow. Omitting the `state` parameter is a security risk. If the `state` parameter is _not_ used, or _not_ tied to the user's session, then attackers can initiate an OAuth flow themselves before tricking a user's browser into completing it. For more information about the `state` parameter, see [OAuth](/docs/oauth).
 
-If an app doesn't use OAuth for authentication, the Asana Security Team should manually review the authentication scheme the app uses. In particular, we will try to verify that:
+If an app doesn't use OAuth for authentication, the Asana security team should manually review the authentication scheme the app uses. In particular, we will try to verify that:
 
  - An attacker can't authenticate themselves as someone else
  - An attacker can't force a victim to authenticate as another user (e.g., with a CSRF attack)
@@ -645,12 +645,12 @@ If an app doesn't use OAuth for authentication, the Asana Security Team should m
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-The burden of verifying the request is on the app. Without this check, attackers can send requests to the App Server pretending to be Asana.
+The burden of verifying the request is on the app. Without this check, attackers can send requests to the app server pretending to be Asana.
 
 Message integrity is provided by a SHA-256 HMAC signature on the contents of the request. For `GET` requests, the "message" used
-to generate the signature is the query string of the request with escaped characters, omitting the leading "?" of the query string.
+to generate the signature is the query string of the request with escaped characters, omitting the leading `?` of the query string.
 For `POST` requests, the "message" is the JSON blob in the `data` field of the request body. For both types of requests, the secret
-used to compute the signature is your app's Client Secret which can be found in the **OAuth** tab for the app in the
+used to compute the signature is your app's client seret which can be found in the **OAuth** tab for the app in the
 [developer console](https://app.asana.com/0/my-apps). 
 
 Note that the signature is transmitted via a header in the request body, particularly the value of `x-asana-request-signature`. The
@@ -669,7 +669,7 @@ To see an example of how the signature is computed, you can view an open source 
 
 Timeliness is provided by the addition of an expiration parameter: `expires_at`. If this parameter were not added, then a recorded request (e.g., a log), could be reused to continue requesting information from the app at a later time.
 
-The burden of verifying the request has not expired is on the app. Without this check, the App Server is vulnerable to 
+The burden of verifying the request has not expired is on the app. Without this check, the app server is vulnerable to 
 replay attacks.
 
 <hr>
@@ -678,7 +678,7 @@ replay attacks.
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-Apps built with App Components allow end users to interact with resources external to Asana. As such an [App Server](/docs/app-server) is required in order for your app to function.
+Apps built with app components allow end users to interact with resources external to Asana. As such an [app server](/docs/app-server) is required in order for your app to function.
 
 The following list includes providers and services commonly used for hosting an app server:
 
@@ -688,17 +688,17 @@ The following list includes providers and services commonly used for hosting an 
 * [Microsoft Azure](https://azure.microsoft.com/)
 * [IBM Cloud](https://www.ibm.com/cloud/)
 
-During development, you may choose to use [ngrok](https://ngrok.com/), which creates a public URL that "tunnels" into localhost. We do not advise the use of ngrok beyond testing and debugging purposes.
+During development, you may choose to use [ngrok](https://ngrok.com/), which creates a public URL that "tunnels" into localhost. _We do not advise the use of ngrok beyond testing and debugging purposes._
 
 <hr>
 
-## Final Steps
+## Final steps
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-As you finish building the App Server, you may find it necessary to [update certain configurations](/docs/configure-the-app) such as URLs, image links, etc. These configurations can be updated at any time in the [developer console](https://app.asana.com/0/my-apps).
+As you finish building the app server, you may find it necessary to [update certain configurations](/docs/configure-the-app) such as URLs, image links, etc. These configurations can be updated at any time in the [developer console](https://app.asana.com/0/my-apps).
 
-After you have finished building both your app and App Server, you are now ready to begin the [publishing process](/docs/publishing-an-app)! 
+After you have finished building both your app and app server, you are now ready to begin the [publishing process](/docs/publishing-an-app)! 
 
 <hr class="full-line">
 
