@@ -1994,6 +1994,7 @@ components:
               type: string
               readOnly: true
               example: blue
+              nullable: true
     CustomFieldRequest:
       allOf:
         - $ref: '#/components/schemas/CustomFieldBase'
