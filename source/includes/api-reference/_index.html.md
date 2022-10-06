@@ -14938,7 +14938,7 @@ $result = $client->projecttemplates->instantiateProject($project_template_gid, a
 <span class="description">
 Creates and returns a job that will asynchronously handle the project instantiation.
 
-To form this request, it is recommended to first make a request to [get a project template](docs/get-a-project-template). Then, from the response, copy the `gid` from the object in the `requested_dates` array. This `gid` should be used in `requested_dates` to instantiate a project.
+To form this request, it is recommended to first make a request to [get a project template](/docs/get-a-project-template). Then, from the response, copy the `gid` from the object in the `requested_dates` array. This `gid` should be used in `requested_dates` to instantiate a project.
 
 _Note: The body of this request will differ if your workspace is an organization. To determine if your workspace is an organization, use the [is_organization](/docs/workspace) parameter._
 </span>
