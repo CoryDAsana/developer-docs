@@ -8637,7 +8637,7 @@ paths:
 
 
         To form this request, it is recommended to first make a request to
-        [get a project template](docs/get-a-project-template). Then, from the response,
+        [get a project template](/docs/get-a-project-template). Then, from the response,
         copy the
         `gid` from the object in the `requested_dates` array. This `gid` should be
         used in
