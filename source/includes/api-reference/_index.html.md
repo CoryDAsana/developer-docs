@@ -14938,7 +14938,7 @@ $result = $client->projecttemplates->instantiateProject($project_template_gid, a
 <span class="description">
 Creates and returns a job that will asynchronously handle the project instantiation.
 
-To form this request, it is recommended to first make a request to [get a project template](docs/get-a-project-template). Then, from the response, copy the `gid` from the object in the `requested_dates` array. This `gid` should be used in `requested_dates` to instantiate a project.
+To form this request, it is recommended to first make a request to [get a project template](/docs/get-a-project-template). Then, from the response, copy the `gid` from the object in the `requested_dates` array. This `gid` should be used in `requested_dates` to instantiate a project.
 
 _Note: The body of this request will differ if your workspace is an organization. To determine if your workspace is an organization, use the [is_organization](/docs/workspace) parameter._
 </span>
@@ -28394,7 +28394,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_CustomFi
 |date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
-|display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -28532,7 +28532,7 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 |» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
-|display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -28730,7 +28730,7 @@ Custom Fields Settings objects represent the many-to-many join of the Custom Fie
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
-|» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|» display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -29925,7 +29925,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
-|»» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|»» display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |»» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |»» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -29973,7 +29973,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 |» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
-|» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|» display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -30543,7 +30543,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |»»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |»» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
-|»» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|»» display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |»» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |»» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |»»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -30619,7 +30619,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 |» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
-|» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|» display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -31536,7 +31536,7 @@ A story represents an activity associated with an object in the Asana system.
 |» date_value<span class="param-type"> object</span>|*Conditional*. Only relevant for custom fields of type `date`. This object reflects the chosen date (and optionally, time) value of a `date` custom field. If no date is selected, the value of `date_value` will be `null`.|
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
-|» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|» display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -32217,7 +32217,7 @@ The *task* is the basic object around which many operations in Asana are centere
 |»» date<span class="param-type"> string</span>|A string representing the date in YYYY-MM-DD format.|
 |»» date_time<span class="param-type"> string</span>|A string representing the date in ISO 8601 format. If no time value is selected, the value of `date-time` will be `null`.|
 |» description<span class="param-type"> string</span>|[Opt In](/docs/input-output-options). The description of the custom field.|
-|» display_value<span class="param-type"> string</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
+|» display_value<span class="param-type"> string¦null</span>|A string representation for the value of the custom field. Integrations that don't require the underlying type should use this field to read values. Using this field will future-proof an app against new custom field types.|
 |» enabled<span class="param-type"> boolean</span>|*Conditional*. Determines if the custom field is enabled or not.|
 |» enum_options<span class="param-type"> [object]</span>|*Conditional*. Only relevant for custom fields of type `enum`. This array specifies the possible values which an `enum` custom field can adopt. To modify the enum options, refer to [working with enum options](/docs/create-an-enum-option).|
 |»» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
