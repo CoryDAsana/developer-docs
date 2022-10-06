@@ -861,13 +861,13 @@ Additionally, some app server responses may contain an `on_change_callback` and 
 
 In the event that you would like to test your app's installation flow again, you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`. You can find your `app_client_id` in the URL of your app in the [developer console](https://app.asana.com/0/my-apps).
 
-### App component - rule action: app server is not receiving a response back from Asana
+### Rule actions: app server is not receiving a response back from Asana
 
 The app server for rule action must be hosted in order for rule actions to function. For a brief list of popular hosting options, see [hosting](/docs/hosting).
 
 ### App does not appear in the app gallery of my organization
 
-Ensure that your app is added to your organization. This can be done in your app's setting in the [developer console](https://app.asana.com/0/my-apps) under **Install your app** > **Add an organization**.
+Ensure that your app is added to your organization. This can be done in your app's setting in the [developer console](https://app.asana.com/0/my-apps) under **Install your app** > **+ Add organization**.
 
 <br>
 <br>
@@ -881,80 +881,80 @@ For any questions on app components, as well as an opportunity to engage with ot
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-The following tables represent a master list of all the configurations you can make to define your App Components app. Further context for these configurations can be found in the [Configure the App](/docs/configure-the-app) section of the [Getting Started](/docs/getting-started) guide. Feel free to also review the [Toolkit](/docs/toolkit) for a visual documentation of these configurations. To make these configurations, visit the [developer console](https://app.asana.com/0/my-apps).
+The following tables represent a master list of all the configurations you can make to define your app components app. Further context for these configurations can be found in the [configure the app](/docs/configure-the-app) section of the [getting started guide](/docs/getting-started). Feel free to also review the [toolkit](/docs/toolkit) for a visual documentation of these configurations. To make these configurations, visit the [developer console](https://app.asana.com/0/my-apps).
 
-_Note: You must first create an app in order to be able to configure it. To begin, see the [Getting Started](/docs/getting-started) guide._
+_Note: You must first create an app in order to be able to configure it. To begin, see the [getting started guide](/docs/getting-started)._
 
-### Configurations for Basic Information
+### Configurations for app listing details
 
 | Property             | Description                                                                        |
 |----------------------|------------------------------------------------------------------------------------|
 | App icon             | Your app's icon, shown to users to identify your application.                      |
 | App name             | Your app's name, shown to users to identify your application.                      |
-| Short description    | A short description of the app shown in the app gallery.                           |
-| Long description     | An extended description of the functionality of the app shown in the app settings. |
+| Short description    | A short description of the app.                        |
+| Long description     | An extended description of the functionality of the app. Shown in the app details page. |
 | Company name         | Your company name.                                                                 |
 | Company URL          | URL of the page where users can learn more about your company.                     |
 | App landing page URL | URL of the page where users can learn more about this app and install it.          |
 | Support URL          | URL of the page where users can read documentation or get support.                 |
 | Privacy policy URL   | URL of the page where users can read your app's privacy policy.                    |
 
-### Configurations for [Widget](/docs/widget)
+### Configurations for [widget](/docs/widget)
 
 | Property            | Description                                                                                                                                 |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | Widget metadata URL | A URL that Asana uses to make requests for the data needed to load a Widget, which displays information about a third party resource.       |
-| Match URL pattern   | A regex which allows Asana to compute whether a URL attachment is supported by an activated app on the project in order to render a Widget. |
+| Match URL pattern   | A regex which allows Asana to compute whether a URL attachment is supported by an activated app on the project in order to render a widget. |
 
-### Configurations for [Modal Form](/docs/modal-form)
+### Configurations for [modal form](/docs/modal-form)
 
 | Property              | Description                                                                                          |
 |-----------------------|------------------------------------------------------------------------------------------------------|
-| Form metadata URL     | A URL that Asana uses to request data from the app about fields it should display in the Modal Form. |
+| Form metadata URL     | A URL that Asana uses to request data from the app about fields it should display in the modal form. |
 
-### Configurations for [Lookup](/docs/lookup)
+### Configurations for [lookup](/docs/lookup)
 
 | Property               | Description                                                                                                                 |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Resource attach URL    | A URL that Asana will make a request to when a user submits a value to attach (i.e., when clicking "Add").                  |
-| Placeholder text       | _Optional_. Placeholder action text that appears in the Lookup input field after the user clicks on the Lookup action text. |
-| Resource typeahead URL | A URL that Asana will make a request to when a user types into a Lookup field.                                              |
+| Placeholder text       | _Optional_. Placeholder action text that appears in the lookup input field after the user clicks on the lookup action text. |
+| Resource typeahead URL | A URL that Asana will make a request to when a user types into a lookup field.                                              |
 
-### Configurations for [Rule Action](/docs/rule-action)
+### Configurations for [rule action](/docs/rule-action)
 
 | Property          | Description                                                                                  |
 |-------------------|----------------------------------------------------------------------------------------------|
-| Display name      | The Rule Action name visible to end users in the rule builder (e.g., "Create a Jira issue"). |
+| Display name      | The rule action name visible to end users in the rule builder (e.g., "Create a Jira issue"). |
 | Run action URL    | A URL that Asana will make a request to when the rule is triggered.                          |
 | Form metadata URL | A URL that Asana will make a request to to display the configuration form.                   |
 
-### Configurations for [Entry Point](/docs/entry-point)
+### Configurations for [entry point](/docs/entry-point)
 
 | Property               | Description                                                       |
 |------------------------|-------------------------------------------------------------------|
-| Lookup action text     | Clickable action text that allows users to initiate a Lookup.     |
-| Modal Form action text | Clickable action text that allows users to initiate a Modal Form. |
+| Lookup action text     | Clickable action text that allows users to initiate a lookup.     |
+| Modal Form action text | Clickable action text that allows users to initiate a modal form. |
 
-### Configurations for the [Installation Flow](/docs/installation-flow)
+### Configurations for the [installation flow](/docs/installation-flow)
 
 | Property           | Description                                                                                                                                                                                                         |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Headline           | Text that appears as a title on the overview of features (i.e., "value props").                                                                                                                                     |
 | Subhead            | Text that appears as a subtitle on the overview of features.                                                                                                                                                        |
-| Feature image      | The image representing a feature. For the best user experience, we recommend providing three `Feature image`s.                                                                                                      |
+| Feature image      | The image representing a feature. For the best user experience, we recommend providing three **Feature image**s.                                                                                                      |
 | Caption text       | Text below the image of a feature.                                                                                                                                                                                  |
 | Image alt text     | Alt text for image of feature.                                                                                                                                                                                      |
 | Authentication URL | A URL which informs Asana where to make requests for authenticating and authorizing users. This is called during installation or when the app returns a response indicating the user must authenticate to continue. |
 
 <hr>
 
-## Example Apps
+## Example apps
 
-### Modal Form & Widget
+### Example modal form & widget
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-The example app offers a quick way for developers to explore the capabilities and features of App Components. By following the steps below, you'll gain an understanding of how to install App Component apps to your developer sandbox, as well as how an example app communicates with endpoints exposed on a pre-built local server. 
+The example app offers a quick way for developers to explore the capabilities and features of app components. By following the steps below, you'll gain an understanding of how to install app component apps to your developer sandbox, as well as how an example app communicates with endpoints exposed on a pre-built local server. 
 
 Note that for the app components apps [that you create](/docs/configurations), you'll be able to configure your own images, descriptions, URLs, and other content. Many of the values for these fields are marked by **{curly braces}** in the example app.
 
@@ -963,9 +963,9 @@ Before you begin, be sure you already have a [developer sandbox](/docs/developer
 1. Clone [this repository](https://github.com/Asana/app-components-example-app) containing an example Express server.
 2. Follow the instructions in the [README](https://github.com/Asana/app-components-example-app/blob/main/README.md) to run the server. This server needs to remain on as you use the example app.
 3. Open the developer sandbox in your browser.
-4. In an existing project, go to **Customize** > **Add App** > **External Example App** to install the App Components example app. 
+4. In an existing project, go to **Customize** > **+ Add App** > **External Example App** to install the app components example app. 
     - **Important**: The installation flow this takes you through is only shown once per user. To see it a second time, navigate to 
-      `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's Client ID (accessible via the [developer console](https://app.asana.com/0/my-apps)).
+      `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's client ID (accessible via the [developer console](https://app.asana.com/0/my-apps)).
 <br>
 <br>
 <img src="../images/example-app-gallery-tile.png" />
@@ -977,21 +977,21 @@ Before you begin, be sure you already have a [developer sandbox](/docs/developer
 <img src="../images/example-modal-form.gif" />
 <br>
 <br>
-6. View the newly-generated Widget on your task. You can begin editing [index.js](https://github.com/Asana/app-components-example-app/blob/main/index.js) to modify the contents of the widget. Note that you'll need to restart the local server and reload the page to see your changes.
+6. View the newly-generated widget on your task. You can begin editing [index.js](https://github.com/Asana/app-components-example-app/blob/main/index.js) to modify the contents of the widget. Note that you'll need to restart the local server and reload the page to see your changes.
 <br>
 <br>
 <img src="../images/example-widget.png" />
 <br>
 <br>
-That's it! At this point, feel free to keep exploring how changes in the server affects data in the task's Widget. Once you're ready to define an app, [click here to create your own app](/docs/configurations) with App Components.
+That's it! At this point, feel free to keep exploring how changes in the server affects data in the task's widget. Once you're ready to define an app, [click here to create your own app](/docs/configurations) with app components.
 
 <hr>
 
-### Example Rule Actions
+### Example rule actions
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
-To explore the capabilities of Rule Actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub. Follow the instructions outlined in the repository's `README.md` to get started.
+To explore the capabilities of rule actions, see our [app-components-rule-action-example-app](https://github.com/Asana/app-components-rule-action-example-app) on GitHub. Follow the instructions outlined in the repository's **README.md** to get started.
 
 <hr>
 
@@ -999,10 +999,12 @@ To explore the capabilities of Rule Actions, see our [app-components-rule-action
 
 <span class="beta-indicator">BETA</span>
 
-Our [App Components Toolkit](https://www.figma.com/file/my7DKSUnuVjEiNSnJuMFcI/branch/HiCYzuMtAkhdXQy1srf2Ug/App-Components-Toolkit?node-id=94%3A15940) provides
-a visual documentation of App Components. You'll see at-a-glance how the different features and capabilities surface within
+_Note: for a more dynamic, interactive experience, we recommend using the [UI builder](/docs/ui-builder) to create and test your app's user interface._
+
+Our [app components toolkit](https://www.figma.com/file/my7DKSUnuVjEiNSnJuMFcI/branch/HiCYzuMtAkhdXQy1srf2Ug/App-Components-Toolkit?node-id=94%3A15940) in Figma provides
+a visual documentation of app components. You'll see at-a-glance how the different features and capabilities surface within
 Asana, including how they fit together and what you can do with them. Feel free to use the toolkit to supplement the process
-of designing and building your apps with App Components.
+of designing and building your apps with app components.
 
 <img src="../images/ac-toolkit-screenshot.png" />
 
@@ -1012,7 +1014,7 @@ of designing and building your apps with App Components.
 
 <span class="beta-indicator">BETA</span>
 
-For the latest news on App Components, as well as opportunity to engage with other developers in the community,
-feel free to visit our [App Components forum](https://forum.asana.com/c/api/app-components-beta/150).
+For the latest news on app components, as well as opportunity to engage with other developers in the community,
+feel free to visit our [app components forum](https://forum.asana.com/c/api/app-components-beta/150).
 
 </section>
