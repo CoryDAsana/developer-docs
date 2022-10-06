@@ -787,7 +787,7 @@ After entering the installation flow, the first screen that users see are the ap
 
 <img src="../images/features.png" alt="features"/>
 
-As part of the customizations, a `Headline` and `Subhead` can be shown at the top of the screen. Additionally, up to three `Feature image`s can be displayed on the screen, each containing the image itself, accompanying `Caption text` to display under each image, as well as `Image alt text` text. We recommend configuring all three `Feature images` for the best user experience.
+As part of the customizations, a **Headline** and **Subhead** can be shown at the top of the screen. Additionally, up to three **Feature image**s can be displayed on the screen, each containing the image itself, accompanying **Caption text** to display under each image, as well as **Image alt text** text. We recommend configuring all three **Feature images** for the best user experience.
 
 <hr>
 
@@ -799,7 +799,7 @@ On the next screen, the user will be directed to the auth screen, which will ask
 
 <img src="../images/authentication.png" alt="authentication"/>
 
-When the user clicks the button to continue, Asana will make a request to the application's specified `Authentication URL` in a pop-up window. From here, it is developer's discretion as to how the user proceeds with authentication. In most cases, this authentication step usually involves completing the [Asana OAuth](/docs/oauth) flow, as well as the third-party (i.e., external) OAuth flow.
+When the user clicks the button to continue, Asana will make a request to the application's specified **Authentication URL** in a pop-up window. From here, it is developer's discretion as to how the user proceeds with authentication. In most cases, this authentication step usually involves completing the [Asana OAuth](/docs/oauth) flow, as well as the third-party (i.e., external) OAuth flow.
 
 <img src="../images/authenticate-asana.png" alt="authentication with Asana"/>
 
@@ -807,11 +807,11 @@ When the user clicks the button to continue, Asana will make a request to the ap
 
 Additionally, you may choose to present custom screens, forms, or otherwise logic to prompt the user for additional information needed to set up the application.
 
-The authentication flow is concluded when the app confirms that authentication is complete with a "success" message using [window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). For more information, feel free to review [Authorization](/docs/authorization) requirements when publishing an app.
+The authentication flow is concluded when the app confirms that authentication is complete with a `"success"` message using [window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). For more information, feel free to review [authorization requirements](/docs/authorization) when publishing an app.
 
 <hr>
 
-### Adding to a Project
+### Adding to a project
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -834,7 +834,7 @@ From here, the user may choose to add the app to one or more projects, or even s
 
 <hr>
 
-## App Submission
+## App submission
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -844,16 +844,16 @@ After you have completed development of your app (and you have addressed the gui
 
 # Troubleshooting
 
-## Common Issues
-### App Component shows "Something went wrong. Try again later."
+## Common issues
+### App component shows "Something went wrong. Try again later."
 
-This typically happens when we receive a response from the app server that we do not understand. To ensure that Asana is able to read the response from the app server, check that the app server is returning the required properties listed in the corresponding schema of the endpoint being called (see [App Component Schemas](/docs/app-component-schemas)). Additionally, for certain properties like `color` and `width`, check that the value the app server is returning is a valid option under the *Enumerated Values* dropdown of an App Component schema.
+This typically happens when we receive a response from the app server that we do not understand. To ensure that Asana is able to read the response from the app server, check that the app server is returning the required properties listed in the corresponding schema of the endpoint being called (see the [app component schemas](/docs/app-component-schemas)). Additionally, for certain properties like `color` and `width`, check that the value the app server is returning is a valid option under the *Enumerated Values* dropdown of an App Component schema.
 
-Another reason that you may be seeing this message is when your app server is not using CORS. In order to update the Asana user interface (e.g., populating a Widget with external data), requests are made from the client to your app server. As such, enabling and configuring CORS is required. See [Security](https://developers.asana.com/docs/authorization) for more information.
+Another reason that you may be seeing this message is when your app server is not using [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). In order to update the Asana user interface (e.g., populating a widget with external data), requests are made from the client to your app server. As such, enabling and configuring CORS is required. See [security](https://developers.asana.com/docs/authorization) for more information.
 
 ### App server endpoints are not being triggered
 
-Check that the endpoint paths saved for your app in the [developer console](https://app.asana.com/0/my-apps) match the endpoint paths that you created for your app server. For example, your app server's endpoint to [GET Form Metadata](/docs/get-form-metadata) might be `https://app.example.com/form/metadata`, while in your app's settings it is saved as `https://app.example.com/metadata`. Since these paths are non-matching, when Asana makes a request to [GET Form Metadata](/docs/get-form-metadata), it will be making requests to `https://app.example.com/metadata` instead of `https://app.example.com/form/metadata`.
+Check that the endpoint paths saved for your app in the [developer console](https://app.asana.com/0/my-apps) match the endpoint paths that you created for your app server. For example, your app server's endpoint to [GET form metadata](/docs/get-form-metadata) might be `https://app.example.com/form/metadata`, while in your app's settings it is saved as `https://app.example.com/metadata`. Since these paths are non-matching, when Asana makes a request to [GET form metadata](/docs/get-form-metadata), it will be making requests to `https://app.example.com/metadata` instead of `https://app.example.com/form/metadata`.
 
 Additionally, some app server responses may contain an `on_change_callback` and an `on_submit_callback` property. Check that the endpoints provided for these values are what you expected.
 
@@ -861,9 +861,9 @@ Additionally, some app server responses may contain an `on_change_callback` and 
 
 In the event that you would like to test your app's installation flow again, you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`. You can find your `app_client_id` in the URL of your app in the [developer console](https://app.asana.com/0/my-apps).
 
-### App Component - Rule Action: App server is not receiving a response back from Asana
+### App component - rule action: app server is not receiving a response back from Asana
 
-The app server for Rule Action must be hosted in order for Rule Actions to function. For a brief list of popular hosting options, see [Hosting](/docs/hosting).
+The app server for rule action must be hosted in order for rule actions to function. For a brief list of popular hosting options, see [hosting](/docs/hosting).
 
 ### App does not appear in the app gallery of my organization
 
@@ -871,11 +871,11 @@ Ensure that your app is added to your organization. This can be done in your app
 
 <br>
 <br>
-For any questions on App Components, as well as an opportunity to engage with other developers in the community, feel free to visit our [App Components forum](https://forum.asana.com/c/api/app-components-beta/150)
+For any questions on app components, as well as an opportunity to engage with other developers in the community, feel free to visit our [app components forum](https://forum.asana.com/c/api/app-components-beta/150)
 
 <hr class="full-line">
 
-# Additional Resources
+# Additional resources
 
 ## Configurations
 
