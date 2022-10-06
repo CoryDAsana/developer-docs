@@ -403,7 +403,7 @@ To see visual documentation for how you can design your app, check out the [app 
 
 ### Start building the app server
 
-Because app components allow your end users to interact with resources outside of Asana's user interface, an [app server](/docs/app-server) is required for building with app components. While it isn't necessary to have a complete app server before moving forward, it's a good idea to at least know the URLs to any server endpoints you want to configure ahead of time (e.g., your URL to [get the metadata](/docs/get-widget-metadata) for a [sidget](/docs/widget)), though these can be configured or changed at any time.
+Because app components allow your end users to interact with resources outside of Asana's user interface, an [app server](/docs/app-server) is required for building with app components. While it isn't necessary to have a complete app server before moving forward, it's a good idea to at least know the URLs to any server endpoints you want to configure ahead of time (e.g., your URL to [get the metadata](/docs/get-widget-metadata) for a [widget](/docs/widget)), though these can be configured or changed at any time.
 
 Feel free to review the [app-components-example-app](https://github.com/Asana/app-components-example-app) on GitHub to see an example server written in Express.js. This server is also used in the [example app](/docs/example-apps).
 
@@ -462,7 +462,7 @@ Follow the links in the table below to view the configurations required to build
 | [Modal form](/docs/modal-form)    | Build a custom form to allow users to create new resources. This form gets shown in a modal when a user clicks the entry point on a task.               |
 | [Lookup](/docs/lookup)            | Show a text input to allow users to find and attach resources to tasks. Users can paste a URL, ID, or pick from an optional typeahead.                  |
 | [Rule actions](/docs/rule-action) | Build one or more custom action for Asana’s [Rules](https://asana.com/guide/help/premium/rules) engine to help users automate their work. Users can create rules that run your action when triggered. |
-| [Entry point](/docs/entry-point)  | Configure the button in tasks that initiates the lookup and dodal Form. To configure this, one or both of these capabilities must be configured first.  |
+| [Entry point](/docs/entry-point)  | Configure the button in tasks that initiates the lookup and modal form. To configure this, one or both of these capabilities must be configured first.  |
 
 ### Configure the installation flow
 
