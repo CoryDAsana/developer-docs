@@ -173,13 +173,8 @@ The following are example webhook servers that demonstrates the features of Asan
 
 To try out this demo out for yourself, be sure to generate a new [personal access token](/docs/personal-access-token), then follow the instructions in README.
 
-### Node.js
-
-[Webhooks-nodejs](https://github.com/Asana/devrel-examples/tree/master/javascript/webhooks-nodejs)
-
-### Python
-
-[Webhook Inspector](https://github.com/Asana/devrel-examples/tree/master/python/webhooks)
+* [**Node.js**](https://github.com/Asana/devrel-examples/tree/master/javascript/webhooks-nodejs) example server
+* [**Python**](https://github.com/Asana/devrel-examples/tree/master/python/webhooks) example server
 
 </section>
 
@@ -230,7 +225,7 @@ deliver a message for 24 hours, the webhook will be deleted.
 ## Webhook heartbeat events
 
 Webhooks keep track of the last time that delivery succeeded, and this time
-is updated with each success (i.e `last_success_at`). A delivery succeeds when your
+is updated with each success (i.e, `last_success_at`). A delivery succeeds when your
 webhook server responds to a webhook event with a `200 OK` or `204 No Content` response code.
 To help facilitate this delivery succeeded tracking, webhooks have a “heartbeat” that will deliver an
 empty payload to your webhook server at the initial handshake, and then at every eight
@@ -242,13 +237,13 @@ This means that specific webhook route will not receive future events from Asana
 if you make a request for that specific webhook ([GET /webhooks/{webhook_gid}](/docs/get-a-webhook)),
 that webhook will no longer be available.
 
-##### Scenario 1: Successful heartbeat (after intial handshake)
+##### Scenario 1: _successful_ heartbeat (after intial handshake)
 
 <a href="../images/webhook-heartbeat-success.png">
   <img src="../images/webhook-heartbeat-success.png" alt="Successful webhook heartbeat (After initial handshake)"/>
 </a>
 
-##### Scenario 2: Failed heartbeat (after intial handshake)
+##### Scenario 2: _failed_ heartbeat (after intial handshake)
 
 <a href="../images/webhook-heartbeat-failed.png">
   <img src="../images/webhook-heartbeat-failed.png" alt="Failed webhook heartbeat (After initial handshake)"/>
@@ -256,30 +251,30 @@ that webhook will no longer be available.
 
 <hr>
 
-# Webhook Security
+# Webhook security
 
 In order to receive webhook events, your webhook endpoint needs to be accessible over the internet. As such, because your webhook endpoint is publicly accessible over the internet, it is vulnerable to receiving events that are not from Asana. To ensure that your webhook endpoint receives events from Asana, it is important to verify each request.
 
 Request verification can be done by comparing an HMAC signature generated from the `X-Hook-Secret` and request body to the `X-Hook-Signature`. When you first [establish a webhook](/docs/establish-a-webhook) with Asana, we send your webhook endpoint an `X-Hook-Secret`. Once received, this `X-Hook-Secret` should be stored by your webhook server.
 
-When a webhook event is triggered, Asana sends along a `X-Hook-Signature` in the request header. At this point, your webhook server should extract the body from the request and use it along with the stored `X-Hook-Secret` to generate an HMAC signature. HMAC signatures can be generated using a HMAC library in your language of development and passing in the `X-Hook-Secret` as the secret and the request body as the message. The generated HMAC signature should match the `X-Hook-Signature` sent in the request header. If these signatures differ, it can indicate that the event received was not from Asana.
+When a webhook event is triggered, Asana sends along a `X-Hook-Signature` in the request header. At this point, your webhook server should extract the body from the request and use it along with the stored `X-Hook-Secret` to generate an HMAC signature. HMAC signatures can be generated using a HMAC library in your language of development and passing in the `X-Hook-Secret` as the secret and in the request body as the message. The generated HMAC signature should match the `X-Hook-Signature` sent in the request header. If these signatures differ, it can indicate that the event received was not from Asana.
 
-To read more about our `X-Hook-Signature` see [Receiving Events](/docs/receiving-events)
+To read more about our `X-Hook-Signature` see [receiving events](/docs/receiving-events). For examples of servers configured to verify HMAC signatures, see our [example webhook servers](/docs/example-webhook-servers).
 
 <hr>
 
-# Webhook Limits
+# Webhook limits
 
-Webhooks have two different limits
+Webhooks have two different limits:
 
 - 1k limit per resource in Asana. (If 10 apps each have 100 webhooks
   watching the same resource, no more webhooks can be placed on the
   webhook. `/events` streams count towards this limit)
 - 10k per user-app (An app can have 10k webhooks for EACH user)
 
-# Webhook Troubleshooting
-
 <hr>
+
+# Webhook Troubleshooting
 
 #### Webhook stopped receiving events
 
