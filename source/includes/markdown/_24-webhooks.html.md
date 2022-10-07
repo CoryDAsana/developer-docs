@@ -1,17 +1,17 @@
 <hr>
 <section>
 
-# Overview of Webhooks
+# Overview of webhooks
 
 Webhooks allow an application to be notified of changes in Asana.
 
-This is similar to our [Events](/docs/asana-events) resource, but webhooks
+This is similar to our [events](/docs/asana-events) resource, but webhooks
 "push" events via HTTP `POST` rather than expecting integrations to
 repeatedly "poll" for them. For services that are already accessible on
-the Internet this is often more convenient and efficient.
+the internet, this is often more convenient and efficient.
 
 However, webhooks _require_ a server to be accessible over the internet at
-all times to receive the event. For most simple integrations, Events
+all times to receive the event. For most simple integrations, [events](/docs/asana-events)
 provide much of the same benefits while using a significantly simpler
 implementation which does not require maintaining an internet-accessible
 server.
@@ -26,25 +26,25 @@ building a fallback polling system that fetches the resource periodically as wel
 if your server does not respond to a webhook with a successful HTTP status code within 10 seconds,
 Asana will try to resend the webhook for up to 24 hours before giving up.
 
-# Setting Up a Webhook
+# Setting up a webhook
 
-In order to start receiving webhook events about an Asana resource you will need to establish a webhook connnection and complete the initial handshake. This requires that you create and host an internet accessible webhook server.
+In order to start receiving webhook events about an Asana resource, you will need to establish a webhook connnection and complete the initial handshake. This requires that you create and host an internet-accessible webhook server.
 
 The following video tutorial walks you through the process of:
 
 1. Setting up an example webhook server [1:58]
-2. Setting up business logic for the [Webhook handshake](/docs/the-webhook-handshake) [3:45]
+2. Setting up business logic for the [webhook handshake](/docs/the-webhook-handshake) [3:45]
 3. [Establishing a webhook](/docs/establish-a-webhook) on an Asana resource [6:45]
-4. Verifying and [Receiving webhook events](/docs/receiving-events)[9:02]
+4. Verifying and [receiving webhook events](/docs/receiving-events)[9:02]
 
 <div style="padding:35% 0 0 0;position:relative;width:52%">
   <iframe src="https://player.vimeo.com/video/721606792?h=5d8cdb532f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Setting Up a Webhook">
   </iframe>
 </div>
 
-[Tutorial source code](https://github.com/Asana/devrel-examples/tree/master/javascript/webhooks-nodejs)
+[**You can find the tutorial source code here.**](https://github.com/Asana/devrel-examples/tree/master/javascript/webhooks-nodejs)
 
-## The Webhook Handshake
+## The webhook handshake
 
 In order to ensure that the receiving server is available to receive
 incoming events from a webhook Asana will `POST` to the requested target
@@ -53,7 +53,7 @@ outgoing webhook creation request will wait to return until another full
 `POST` request from Asana's servers to the target has been completed, _then_ the
 webhook creation request can return with a successful response.
 
-_Note: this means that your server must be able to handle being blocked on
+_Note: This means that your server must be able to handle being blocked on
 the outgoing create request while still being able to receive and handle an
 incoming request. A common reason that webhook handshakes fail is that
 servers are not able to asynchronously handle the handshake request._
