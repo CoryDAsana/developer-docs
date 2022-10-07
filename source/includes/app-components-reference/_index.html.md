@@ -4,7 +4,7 @@
 <section class="full-section">
 <h1 id="app-components">App Component Reference</h1>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
@@ -27,7 +27,7 @@ Additional resources:
 <a id="asana-modal-forms"></a>
 <h1 id="modal-forms">Modal Forms</h1>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/get-form-metadata"><span class="get-verb">GET</span> <span class=""nn>/{form_metadata_url}</span></a><br><a href="/docs/get-modal-form-typeahead-results"><span class="get-verb">GET</span> <span class=""nn>/{modal_form_typeahead_url}</span></a><br><a href="/docs/on-change-callback"><span class="post-verb">POST</span> <span class=""nn>/{on_change_callback}</span></a><br><a href="/docs/on-submit-callback"><span class="post-verb">POST</span> <span class=""nn>/{on_submit_callback}</span></a></code>
@@ -42,7 +42,7 @@ The Modal Form is displayed when the user starts the flow to create a resource. 
 <section>
 ## Get form metadata
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdgetFormMetadata"></a>
 
@@ -97,7 +97,7 @@ Get the metadata from the App Server to render a form. <br> <br> <a href="../ima
 <section>
 ## Get Modal Form typeahead results
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdgetModalFormTypeaheadResults"></a>
 
@@ -169,7 +169,7 @@ When the user types into a Modal Form form field, Asana will send a request cont
 <section>
 ## On change callback
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdonFormChange"></a>
 
@@ -238,7 +238,7 @@ The callback request made to an App Server when a watched field's value changes 
 <section>
 ## On submit callback
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdonFormSubmit"></a>
 
@@ -320,7 +320,7 @@ Valid object schemas: [FormField-Checkbox](/docs/form-field-checkbox), [FormFiel
 <a id="asana-rule-actions"></a>
 <h1 id="rule-actions">Rule Actions</h1>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/get-rule-action-typeahead-results"><span class="get-verb">GET</span> <span class=""nn>/{rule_action_typeahead_url}</span></a><br><a href="/docs/run-action"><span class="post-verb">POST</span> <span class=""nn>/{run_action_url}</span></a><br><a href="/docs/get-action-metadata"><span class="get-verb">GET</span> <span class=""nn>/{action.metadata_url}</span></a><br><a href="/docs/on-action-change-callback"><span class="post-verb">POST</span> <span class=""nn>/{action.on_change_callback}</span></a><br><a href="/docs/on-action-submit-callback"><span class="post-verb">POST</span> <span class=""nn>/{action.on_submit_callback}</span></a></code>
@@ -335,7 +335,7 @@ When a rule containing a Rule Action is triggered, the Rules Engine will make a 
 <section>
 ## Get Rule Action typeahead results
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdgetRuleActionTypeaheadResults"></a>
 
@@ -407,7 +407,7 @@ When the user types into a Rule Action form field, Asana will send a request con
 <section>
 ## Run action
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdrunAction"></a>
 
@@ -482,7 +482,7 @@ The request made when an action is triggered. <br> <br> <a href="../images/ac-ru
 <section>
 ## Get action metadata
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdgetActionMetadata"></a>
 
@@ -539,7 +539,7 @@ When a user has navigated to the [Custom Rule builder](https://asana.com/guide/h
 <section>
 ## On action change callback
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdonActionFormChange"></a>
 
@@ -612,7 +612,7 @@ The callback request made to an App Server when a watched field's value changes 
 <section>
 ## On action submit callback
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdonActionFormSubmit"></a>
 
@@ -707,7 +707,7 @@ Valid object schemas: [FormField-Checkbox](/docs/form-field-checkbox), [FormFiel
 <a id="asana-lookups"></a>
 <h1 id="lookups">Lookups</h1>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/attach-resource"><span class="post-verb">POST</span> <span class=""nn>/{resource_attach_url}</span></a><br><a href="/docs/get-lookup-typeahead-results"><span class="get-verb">GET</span> <span class=""nn>/{resource_typeahead_url}</span></a></code>
@@ -722,7 +722,7 @@ If the app defined a resource attach URL, tasks without a Widget offer the Looku
 <section>
 ## Attach resource
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdattachResource"></a>
 
@@ -786,7 +786,7 @@ When the user attaches a resource URL to a task, Asana will make a signed reques
 <section>
 ## Get Lookup typeahead results
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdgetTypeaheadResults"></a>
 
@@ -857,7 +857,7 @@ When the user types into the lookup input field, Asana will send a request conta
 <a id="asana-widgets"></a>
 <h1 id="widgets">Widgets</h1>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <pre class="highlight http tab-http">
 <code><a href="/docs/get-widget-metadata"><span class="get-verb">GET</span> <span class=""nn>/{widget_metadata_url}</span></a></code>
@@ -872,7 +872,7 @@ The Widget is displayed when the user views a task with an attachment with a res
 <section>
 ## Get widget metadata
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <a id="opIdgetWidgetMetadata"></a>
 
@@ -932,7 +932,7 @@ Get the metadata from the App Server to render a widget. <br> <br> <a href="../i
 <section class="full-section">
 # App Component Schemas
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <span class="description">
 The schema definitions for each object requested or returned from Asana's API. Some fields are not returned by
@@ -948,7 +948,7 @@ default and you'll need to use [Input/Output Options](/docs/input-output-options
 <a id="tocS_AttachedResource"></a>
 <h2 id="attached-resource">AttachedResource</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -981,7 +981,7 @@ The response to a successful lookup request.
 <a id="tocS_BadRequest"></a>
 <h2 id="bad-request">BadRequest</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1013,7 +1013,7 @@ An error response object indicating a bad request (i.e., a status code of `400`)
 <a id="tocS_Forbidden"></a>
 <h2 id="forbidden">Forbidden</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1045,7 +1045,7 @@ An error response object indicating a forbidden request (i.e., a status code of 
 <a id="tocS_FormField-Checkbox"></a>
 <h2 id="form-field-checkbox">FormField-Checkbox</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1103,7 +1103,7 @@ A Modal Form field that accepts checkbox input. Limit 10 options.
 <a id="tocS_FormField-Date"></a>
 <h2 id="form-field-date">FormField-Date</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1152,7 +1152,7 @@ A Modal Form field that accepts date input.
 <a id="tocS_FormField-Datetime"></a>
 <h2 id="form-field-datetime">FormField-Datetime</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1201,7 +1201,7 @@ A Modal Form field that accepts datetime input.
 <a id="tocS_FormField-Dropdown"></a>
 <h2 id="form-field-dropdown">FormField-Dropdown</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1263,7 +1263,7 @@ A Modal Form field that accepts input via a dropdown list. Limit 50 options.
 <a id="tocS_FormField-MultiLineText"></a>
 <h2 id="form-field-multi-line-text">FormField-MultiLineText</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1312,7 +1312,7 @@ A Modal Form field that accepts multi-line text input.
 <a id="tocS_FormField-RadioButton"></a>
 <h2 id="form-field-radio-button">FormField-RadioButton</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1370,7 +1370,7 @@ A Modal Form field that accepts radio button input. Limit 5 options.
 <a id="tocS_FormField-RichText"></a>
 <h2 id="form-field-rich-text">FormField-RichText</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1419,7 +1419,7 @@ A Modal Form field that accepts rich text input.
 <a id="tocS_FormField-SingleLineText"></a>
 <h2 id="form-field-single-line-text">FormField-SingleLineText</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1472,7 +1472,7 @@ A Modal Form field that accepts single-line text input.
 <a id="tocS_FormField-StaticText"></a>
 <h2 id="form-field-static-text">FormField-StaticText</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1511,7 +1511,7 @@ A Modal Form "field" that displays static text. Fields of this type do not colle
 <a id="tocS_FormField-Typeahead"></a>
 <h2 id="form-field-typeahead">FormField-Typeahead</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1573,7 +1573,7 @@ A Modal Form field that accepts typeahead input.
 <a id="tocS_FormMetadata"></a>
 <h2 id="form-metadata">FormMetadata</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1621,7 +1621,7 @@ Contains the metadata that describes how to display and manage a form.
 <a id="tocS_InternalServerError"></a>
 <h2 id="internal-server-error">InternalServerError</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1653,7 +1653,7 @@ An error response object indicating a request that could not be found (i.e., a s
 <a id="tocS_NotFound"></a>
 <h2 id="not-found">NotFound</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1685,7 +1685,7 @@ An error response object indicating a request that could not be found (i.e., a s
 <a id="tocS_RanAction"></a>
 <h2 id="ran-action">RanAction</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1734,7 +1734,7 @@ The response to an action request.
 <a id="tocS_TypeaheadItem"></a>
 <h2 id="typeahead-item">TypeaheadItem</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1769,7 +1769,7 @@ An object describing a typeahead result.
 <a id="tocS_TypeaheadList"></a>
 <h2 id="typeahead-list">TypeaheadList</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1811,7 +1811,7 @@ The response to a successful typeahead request.
 <a id="tocS_Unauthorized"></a>
 <h2 id="unauthorized">Unauthorized</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1843,7 +1843,7 @@ An error response object indicating a unauthorized request (i.e., a status code 
 <a id="tocS_WidgetField-DatetimeWithIcon"></a>
 <h2 id="widget-field-datetime-with-icon">WidgetField-DatetimeWithIcon</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1884,7 +1884,7 @@ A Widget field that displays a timestamp and an optional icon.
 <a id="tocS_WidgetField-Pill"></a>
 <h2 id="widget-field-pill">WidgetField-Pill</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1941,7 +1941,7 @@ A Widget field that displays custom text in a colored "pill" format.
 <a id="tocS_WidgetField-TextWithIcon"></a>
 <h2 id="widget-field-text-with-icon">WidgetField-TextWithIcon</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -1982,7 +1982,7 @@ A Widget field that displays custom text with an optional icon.
 <a id="tocS_WidgetFooter-Created"></a>
 <h2 id="widget-footer-created">WidgetFooter-Created</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -2019,7 +2019,7 @@ A Widget footer that displays the timestamp of the resource's creation time.
 <a id="tocS_WidgetFooter-CustomText"></a>
 <h2 id="widget-footer-custom-text">WidgetFooter-CustomText</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -2058,7 +2058,7 @@ A Widget footer that displays custom text and an optional icon.
 <a id="tocS_WidgetFooter-Updated"></a>
 <h2 id="widget-footer-updated">WidgetFooter-Updated</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
@@ -2095,7 +2095,7 @@ A Widget footer that displays the timestamp of the resource's last updated time.
 <a id="tocS_WidgetMetadata"></a>
 <h2 id="widget-metadata">WidgetMetadata</h2>
 
-<span class="beta-indicator">BETA</span> - For access, please see [Overview of App Components](/docs/overview-of-app-components)
+<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 ```json
 {
