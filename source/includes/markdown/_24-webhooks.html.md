@@ -59,12 +59,12 @@ incoming request. A common reason that webhook handshakes fail is that
 servers are not able to asynchronously handle the handshake request._
 
 Included in the webhook handshake is a HTTP header called
-`X-Hook-Secret`. To successfully complete the handshake the receiving
+`X-Hook-Secret`. To successfully complete the handshake, the receiving
 server should echo back the same header with the same value and a `200 OK` or `204 No Content` response code.
 
 The purpose of this header is to provide a shared secret that both Asana
-and the receiving server both store--this is the only time it will be
-transmitted. In future webhook events Asana will use this key to compute
+and the receiving server both store. _This is the only time it will be
+transmitted_. In future webhook events, Asana will use this key to compute
 a signature over the webhook callback request's body which can be used to
 verify that the incoming request was genuine (details below). We strongly
 recommend that you take advantage of this security feature and reject
@@ -81,9 +81,9 @@ and [Python](https://github.com/Asana/devrel-examples/blob/master/python/webhook
 ## Filtering
 
 Webhook events will "propagate up" from contained objects through to
-parent objects--for instance, changes to comments will be sent to
-webhooks on the parent task and to ones on the task's projects. In this
-way a webhook on a project will be notified of all changes that occur in
+parent objects. For example, changes to comments will be sent to
+webhooks on the parent task and to ones on the task's projects. This way,
+a webhook on a project will be notified of all changes that occur in
 all of its tasks, subtasks of those tasks, and comments on those tasks
 and subtasks.
 
@@ -91,14 +91,14 @@ This can be a lot of data, some of which might not be relevant to a
 particular integration, so Asana's webhooks have a filtering feature
 which allows integrations to specify only the types of changes that they
 care about. By specifying the list of
-[WebhookFilter](/docs/tocS_WebhookFilter)s on webhook creation an integration
+[WebhookFilter](/docs/webhook-filter)s on webhook creation an integration
 can select just the subset of events it wants to receive. When filters
-are specified on the webhook events will only be delivered if they pass
-any of the filters specified when creating the webhook.
+are specified on the webhook, events will only be delivered if they pass
+_any_ of the filters specified when [creating the webhook](/docs/establish-a-webhook).
 
-To reduce the volume of data to transfer, webhooks created on teams,
-portfolios, and workspaces _must_ specify filters. In addition, the set of
-event filters that can be placed on a team-level or workspace-level
+To reduce the volume of data to transfer, webhooks created on [teams](/docs/teams),
+[portfolios](/docs/portfolios), and [workspaces](/docs/workspaces) _must_ specify filters.
+In addition, the set of event filters that can be placed on a team-level or workspace-level
 webhook is more limited than filters for webhooks that are created on
 lower-level resources:
 
