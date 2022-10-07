@@ -274,18 +274,18 @@ Webhooks have two different limits:
 
 <hr>
 
-# Webhook Troubleshooting
+# Webhook troubleshooting
 
 #### Webhook stopped receiving events
 
-This can happen when your registered webhook endpoint ignores incoming heartbeat events. We send periodic heartbeat events to your webhook endpoint every 8 hours to keep track of the last time that delivery succeeded. If we receive no response to heartbeat events after 24 hours we will delete the registered webhook connection. To fix this, you will need to modify your webhook endpoint code to respond to heartbeat events and [re-establish a webhook connection](/docs/establish-a-webhook).
+This can happen when your registered webhook endpoint ignores incoming [heartbeat events](/docs/webhook-heartbeat-events). We send periodic heartbeat events to your webhook endpoint every 8 hours to keep track of the last time that delivery succeeded. If we receive no response to heartbeat events after 24 hours, we will delete the registered webhook connection.
 
-To learn more see about this see [Webhook Heartbeat Events](/docs/webhook-heartbeat-events).
+To fix this, you will need to modify your webhook endpoint code to respond to heartbeat events and [re-establish a webhook connection](/docs/establish-a-webhook).
 
-#### Computed webhook signature differs from X-Hook-Signature
+#### Computed webhook signature differs from `X-Hook-Signature`
 
-When computing your SHA256 HMAC signature, make sure to utilize the `X-Hook-Secret` and the full body of the request. The `X-Hook-Secret` can be found in the header of the initial request sent to your webhook endpoint during the [initial handshake](/docs/the-webhook-handshake) process. The full body of the request should also be used and not a portion of the data inside the request body.
+When computing your SHA256 HMAC signature, make sure to utilize the `X-Hook-Secret` and the full body of the request. The `X-Hook-Secret` can be found in the header of the initial request sent to your webhook endpoint during the [initial handshake](/docs/the-webhook-handshake) process. The _full body_ of the request should also be used, not just a portion of the data inside the request body.
 
-Additionally, check the documentation of the library you are using to compute the SHA256 HMAC signature as it may require you to convert the request body from an object into a string.
+Additionally, check the documentation of the library you are using to compute the SHA256 HMAC signature, as it may require you to convert the request body from an object into a string.
 
 </section>
