@@ -120,45 +120,46 @@ associated `action` in the [event](/docs/event) response that indicates the acti
 the event. Additionally, actions are used in [webhook filters](/docs/webhook-filter).
 You can specify an `action` and a `resource_type` in the `filters` parameter when
 [establishing a webhook](/docs/establish-a-webhook) so that you will only receive events matching the action
-specified for the resource in your filter. The following are a list of actions
-that we support.
+specified for the resource in your filter. 
 
-- Added - a new resource was created
-- Changed - there was a modification made on the resource
-- Deleted - the resource itself was deleted
-- Removed - the resource was removed from a parent
-- Undeleted - the deletion of the resource was undone
+The following is a list of actions that we support:
 
-## Resources and Actions
+- `added` - a new resource was created
+- `changed` - the resource was modified
+- `deleted` - the resource itself was deleted
+- `removed` - the resource was removed from a parent
+- `undeleted` - the deletion of the resource was undone
+
+## Resources and actions
 
 Below is a list of resources and actions that can trigger an event for those resources.
 This is not an exhaustive list, but should cover the most common use cases.
 
-- Attachment - deleted, undeleted
-- Portfolio - added, deleted, removed
-- Project - added, changed, deleted, removed, undeleted
-- Project Membership - added, removed
-- Project Template Configuration - added, deleted, removed
-- Project Template Configuration Membership - added, removed
-- Section - added, changed, deleted, undeleted
-- Story - added, removed, undeleted
-- Tag - added, changed, deleted, undeleted
-- Task - added, changed, deleted, removed, undeleted
-- Team - added, changed, deleted
-- Team Membership - added, removed
-- Workspace - added, removed, changed
-- Workspace Memberships - added, removed
+- Attachment - `deleted`, `undeleted`
+- Portfolio - `added`, `deleted`, `removed`
+- Project - `added`, `changed`, `deleted`, `removed`, `undeleted`
+- Project Membership - `added`, `removed`
+- Project Template Configuration - `added`, `deleted`, `removed`
+- Project Template Configuration Membership - `added`, `removed`
+- Section - `added`, `changed`, `deleted`, `undeleted`
+- Story - `added`, `removed`, `undeleted`
+- Tag - `added`, `changed`, `deleted`, `undeleted`
+- Task - `added`, `changed`, `deleted`, `removed`, `undeleted`
+- Team - `added`, `changed`, `deleted`
+- Team Membership - `added`, `removed`
+- Workspace - `added`, `removed`, `changed`
+- Workspace Memberships - `added`, `removed`
 
-For example, let's say you [establish a webhook](/docs/establish-a-webhook) for an attachement by
+For example, let's say you [establish a webhook](/docs/establish-a-webhook) for an attachment by
 providing the GID of an attacment in your `resource` parameter. This means that based on the
-resource and action definition for attachment above, a deleted or a undeleted action will trigger
+resource and action definition for attachment above, a `deleted` or an `undeleted` action will trigger
 your attachement webhook.
 
-## Example Webhook Servers
+## Example webhook servers
 
-The following are example webhook servers that demonstrates the features of Asana webhooks, this includes how to handle the webhook handshake as well as how to receive and verify webhook events.
+The following are example webhook servers that demonstrates the features of Asana webhooks. This includes how to handle the webhook handshake as well as how to receive and verify webhook events.
 
-To try out this demo out for yourself, be sure to generate a new [personal access token](https://developers.asana.com/docs/personal-access-token), then follow the instructions in README.
+To try out this demo out for yourself, be sure to generate a new [personal access token](/docs/personal-access-token), then follow the instructions in README.
 
 ### Node.js
 
