@@ -2,7 +2,7 @@
 
 <hr class="full-line">
 <section class="full-section">
-<h1 id="app-components">App Component Reference</h1>
+<h1 id="app-components">App component reference</h1>
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -16,7 +16,7 @@ Base URLs:
 
 * {siteUrl}
 
-Note that <i>{siteUrl}</i> refers to the base URL for your [App Server](/docs/app-server) endpoints.
+Note that <i>{siteUrl}</i> refers to the base URL for your [app server](/docs/app-server) endpoints.
 
 Additional resources:
 
@@ -930,13 +930,13 @@ Get the metadata from the app server to render a widget. <br> <br> <a href="../i
 
 </section><hr class="full-line">
 <section class="full-section">
-# App Component Schemas
+# App component schemas
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
 <span class="description">
 The schema definitions for each object requested or returned from Asana's API. Some fields are not returned by
-default and you'll need to use [Input/Output Options](/docs/input-output-options) to include them.
+default and you'll need to use [input/output Options](/docs/input-output-options) to include them.
 </span>
 </section>
 <hr>

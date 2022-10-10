@@ -28031,7 +28031,7 @@ Returns the compact workspace membership records for the workspace.
 
 <span class="description">
 The schema definitions for each object requested or returned from Asana's API. Some fields are not returned by
-default and you'll need to use [Input/Output Options](/docs/input-output-options) to include them.
+default and you'll need to use [input/output Options](/docs/input-output-options) to include them.
 </span>
 </section>
 <hr>
