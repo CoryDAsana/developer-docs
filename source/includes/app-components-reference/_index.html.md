@@ -61,7 +61,7 @@ The modal form is displayed when the user starts the flow to create a resource. 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /{form_metadata_url}</code>
@@ -129,7 +129,7 @@ Get the metadata from the app server to render a form. <br> <br> <a href="../ima
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /{modal_form_typeahead_url}</code>
@@ -200,7 +200,7 @@ When the user types into a modal form form field, Asana will send a request cont
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /{on_change_callback}</code>
@@ -273,7 +273,7 @@ The callback request made to an app server when a watched field's value changes 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /{on_submit_callback}</code>
@@ -367,7 +367,7 @@ When a rule containing a rule action is triggered, the [rules](https://asana.com
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /{rule_action_typeahead_url}</code>
@@ -441,7 +441,7 @@ When the user types into a rule action form field, Asana will send a request con
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /{run_action_url}</code>
@@ -501,7 +501,7 @@ The request made when an action is triggered. <br> <br> <a href="../images/ac-ru
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /{action.metadata_url}</code>
@@ -572,7 +572,7 @@ When a user has navigated to the [custom rule builder](https://asana.com/guide/h
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /{action.on_change_callback}</code>
@@ -656,7 +656,7 @@ The callback request made to an app server when a watched field's value changes 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /{action.on_submit_callback}</code>
@@ -749,7 +749,7 @@ If the app defined a resource attach URL, tasks without a widget offer the looku
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /{resource_attach_url}</code>
@@ -818,7 +818,7 @@ When the user attaches a resource URL to a task, Asana will make a signed reques
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /{resource_typeahead_url}</code>
@@ -893,7 +893,7 @@ The widget is displayed when the user views a task with an attachment with a res
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /{widget_metadata_url}</code>
@@ -936,7 +936,7 @@ Get the metadata from the app server to render a widget. <br> <br> <a href="../i
 
 <span class="description">
 The schema definitions for each object requested or returned from Asana's API. Some fields are not returned by
-default and you'll need to use [input/output Options](/docs/input-output-options) to include them.
+default and you'll need to use [input/output options](/docs/input-output-options) to include them.
 </span>
 </section>
 <hr>

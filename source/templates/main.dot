@@ -79,7 +79,7 @@ Additional resources:
 
 <span class="description">
 The schema definitions for each object requested or returned from Asana's API. Some fields are not returned by
-default and you'll need to use [input/output Options](/docs/input-output-options) to include them.
+default and you'll need to use [input/output options](/docs/input-output-options) to include them.
 </span>
 </section>
 {{ for (var s in data.components.schemas) { }}{{ if (!data.api.info['x-docs-schema-whitelist'].includes(s)) { continue; } }}{{ var origSchema = data.components.schemas[s]; }}{{ var schema = data.api.components.schemas[s]; }}<hr>
@@ -122,7 +122,7 @@ default and you'll need to use [input/output Options](/docs/input-output-options
 {{?s.toLowerCase().endsWith("compact")}}
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_{{=s.replaceAll("Compact","")}}), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 {{??}}
 <span class="description">

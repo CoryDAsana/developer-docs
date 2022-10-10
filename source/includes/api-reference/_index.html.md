@@ -120,7 +120,7 @@ $result = $client->attachments->getAttachment($attachment_gid, array('param' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /attachments/{attachment_gid}</code>
@@ -225,7 +225,7 @@ $result = $client->attachments->deleteAttachment($attachment_gid, array('opt_pre
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /attachments/{attachment_gid}</code>
@@ -342,7 +342,7 @@ $result = $client->attachments->getAttachmentsForObject(array('param' => 'value'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /attachments</code>
@@ -478,7 +478,7 @@ url: string
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /attachments</code>
@@ -674,7 +674,7 @@ $result = $client->auditlogapi->getAuditLogEvents($workspace_gid, array('param' 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/audit_log_events</code>
@@ -904,7 +904,7 @@ $result = $client->batchapi->createBatchRequest(array('field' => 'value', 'field
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /batch</code>
@@ -1244,7 +1244,7 @@ $result = $client->customfields->createCustomField(array('field' => 'value', 'fi
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /custom_fields</code>
@@ -1468,7 +1468,7 @@ $result = $client->customfields->getCustomField($custom_field_gid, array('param'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /custom_fields/{custom_field_gid}</code>
@@ -1686,7 +1686,7 @@ $result = $client->customfields->updateCustomField($custom_field_gid, array('fie
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /custom_fields/{custom_field_gid}</code>
@@ -1846,7 +1846,7 @@ $result = $client->customfields->deleteCustomField($custom_field_gid, array('opt
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /custom_fields/{custom_field_gid}</code>
@@ -2017,7 +2017,7 @@ $result = $client->customfields->getCustomFieldsForWorkspace($workspace_gid, arr
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/custom_fields</code>
@@ -2143,7 +2143,7 @@ $result = $client->customfields->createEnumOptionForCustomField($custom_field_gi
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /custom_fields/{custom_field_gid}/enum_options</code>
@@ -2276,7 +2276,7 @@ $result = $client->customfields->insertEnumOptionForCustomField($custom_field_gi
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /custom_fields/{custom_field_gid}/enum_options/insert</code>
@@ -2406,7 +2406,7 @@ $result = $client->customfields->updateEnumOption($enum_option_gid, array('field
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /enum_options/{enum_option_gid}</code>
@@ -2605,7 +2605,7 @@ $result = $client->customfieldsettings->getCustomFieldSettingsForProject($projec
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects/{project_gid}/custom_field_settings</code>
@@ -2783,7 +2783,7 @@ $result = $client->customfieldsettings->getCustomFieldSettingsForPortfolio($port
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /portfolios/{portfolio_gid}/custom_field_settings</code>
@@ -2950,7 +2950,7 @@ $result = $client->events->getEvents(array('param' => 'value', 'param' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /events</code>
@@ -3154,7 +3154,7 @@ $result = $client->goals->getGoal($goal_gid, array('param' => 'value', 'param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /goals/{goal_gid}</code>
@@ -3354,7 +3354,7 @@ $result = $client->goals->updateGoal($goal_gid, array('field' => 'value', 'field
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /goals/{goal_gid}</code>
@@ -3478,7 +3478,7 @@ $result = $client->goals->deleteGoal($goal_gid, array('opt_pretty' => 'true'))
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /goals/{goal_gid}</code>
@@ -3600,7 +3600,7 @@ $result = $client->goals->getGoals(array('param' => 'value', 'param' => 'value')
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /goals</code>
@@ -3807,7 +3807,7 @@ $result = $client->goals->createGoal(array('field' => 'value', 'field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /goals</code>
@@ -4022,7 +4022,7 @@ $result = $client->goals->createGoalMetric($goal_gid, array('field' => 'value', 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /goals/{goal_gid}/setMetric</code>
@@ -4234,7 +4234,7 @@ $result = $client->goals->updateGoalMetric($goal_gid, array('field' => 'value', 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /goals/{goal_gid}/setMetricCurrentValue</code>
@@ -4429,7 +4429,7 @@ $result = $client->goals->addFollowers($goal_gid, array('field' => 'value', 'fie
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /goals/{goal_gid}/addFollowers</code>
@@ -4623,7 +4623,7 @@ $result = $client->goals->removeFollowers($goal_gid, array('field' => 'value', '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /goals/{goal_gid}/removeFollowers</code>
@@ -4740,7 +4740,7 @@ $result = $client->goals->getParentGoalsForGoal($goal_gid, array('param' => 'val
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /goals/{goal_gid}/parentGoals</code>
@@ -4875,7 +4875,7 @@ $result = $client->goalrelationships->getGoalRelationship($goal_relationship_gid
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /goal_relationships/{goal_relationship_gid}</code>
@@ -5009,7 +5009,7 @@ $result = $client->goalrelationships->updateGoalRelationship($goal_relationship_
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /goal_relationships/{goal_relationship_gid}</code>
@@ -5128,7 +5128,7 @@ $result = $client->goalrelationships->getGoalRelationships(array('param' => 'val
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /goal_relationships</code>
@@ -5266,7 +5266,7 @@ $result = $client->goalrelationships->addSupportingRelationship($goal_gid, array
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /goals/{goal_gid}/addSupportingRelationship</code>
@@ -5388,7 +5388,7 @@ $result = $client->goalrelationships->removeSupportingRelationship($goal_gid, ar
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /goals/{goal_gid}/removeSupportingRelationship</code>
@@ -5538,7 +5538,7 @@ $result = $client->jobs->getJob($job_gid, array('param' => 'value', 'param' => '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /jobs/{job_gid}</code>
@@ -5689,7 +5689,7 @@ $result = $client->organizationexports->createOrganizationExport(array('field' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /organization_exports</code>
@@ -5804,7 +5804,7 @@ $result = $client->organizationexports->getOrganizationExport($organization_expo
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /organization_exports/{organization_export_gid}</code>
@@ -5925,7 +5925,7 @@ $result = $client->portfolios->getPortfolios(array('param' => 'value', 'param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /portfolios</code>
@@ -6202,7 +6202,7 @@ $result = $client->portfolios->createPortfolio(array('field' => 'value', 'field'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /portfolios</code>
@@ -6493,7 +6493,7 @@ $result = $client->portfolios->getPortfolio($portfolio_gid, array('param' => 'va
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /portfolios/{portfolio_gid}</code>
@@ -6767,7 +6767,7 @@ $result = $client->portfolios->updatePortfolio($portfolio_gid, array('field' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /portfolios/{portfolio_gid}</code>
@@ -6900,7 +6900,7 @@ $result = $client->portfolios->deletePortfolio($portfolio_gid, array('opt_pretty
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /portfolios/{portfolio_gid}</code>
@@ -7017,7 +7017,7 @@ $result = $client->portfolios->getItemsForPortfolio($portfolio_gid, array('param
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /portfolios/{portfolio_gid}/items</code>
@@ -7135,7 +7135,7 @@ $result = $client->portfolios->addItemForPortfolio($portfolio_gid, array('field'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /portfolios/{portfolio_gid}/addItem</code>
@@ -7263,7 +7263,7 @@ $result = $client->portfolios->removeItemForPortfolio($portfolio_gid, array('fie
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /portfolios/{portfolio_gid}/removeItem</code>
@@ -7466,7 +7466,7 @@ $result = $client->portfolios->addCustomFieldSettingForPortfolio($portfolio_gid,
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /portfolios/{portfolio_gid}/addCustomFieldSetting</code>
@@ -7585,7 +7585,7 @@ $result = $client->portfolios->removeCustomFieldSettingForPortfolio($portfolio_g
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /portfolios/{portfolio_gid}/removeCustomFieldSetting</code>
@@ -7866,7 +7866,7 @@ $result = $client->portfolios->addMembersForPortfolio($portfolio_gid, array('fie
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /portfolios/{portfolio_gid}/addMembers</code>
@@ -8141,7 +8141,7 @@ $result = $client->portfolios->removeMembersForPortfolio($portfolio_gid, array('
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /portfolios/{portfolio_gid}/removeMembers</code>
@@ -8274,7 +8274,7 @@ $result = $client->portfoliomemberships->getPortfolioMemberships(array('param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /portfolio_memberships</code>
@@ -8391,7 +8391,7 @@ $result = $client->portfoliomemberships->getPortfolioMembership($portfolio_membe
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /portfolio_memberships/{portfolio_membership_gid}</code>
@@ -8506,7 +8506,7 @@ $result = $client->portfoliomemberships->getPortfolioMembershipsForPortfolio($po
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /portfolios/{portfolio_gid}/portfolio_memberships</code>
@@ -8635,7 +8635,7 @@ $result = $client->projects->getProjects(array('param' => 'value', 'param' => 'v
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects</code>
@@ -8994,7 +8994,7 @@ $result = $client->projects->createProject(array('field' => 'value', 'field' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects</code>
@@ -9375,7 +9375,7 @@ $result = $client->projects->getProject($project_gid, array('param' => 'value', 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects/{project_gid}</code>
@@ -9729,7 +9729,7 @@ $result = $client->projects->updateProject($project_gid, array('field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /projects/{project_gid}</code>
@@ -9901,7 +9901,7 @@ $result = $client->projects->deleteProject($project_gid, array('opt_pretty' => '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /projects/{project_gid}</code>
@@ -10057,7 +10057,7 @@ $result = $client->projects->duplicateProject($project_gid, array('field' => 'va
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/duplicate</code>
@@ -10189,7 +10189,7 @@ $result = $client->projects->getProjectsForTask($task_gid, array('param' => 'val
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks/{task_gid}/projects</code>
@@ -10297,7 +10297,7 @@ $result = $client->projects->getProjectsForTeam($team_gid, array('param' => 'val
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /teams/{team_gid}/projects</code>
@@ -10654,7 +10654,7 @@ $result = $client->projects->createProjectForTeam($team_gid, array('field' => 'v
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /teams/{team_gid}/projects</code>
@@ -10826,7 +10826,7 @@ $result = $client->projects->getProjectsForWorkspace($workspace_gid, array('para
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/projects</code>
@@ -11184,7 +11184,7 @@ $result = $client->projects->createProjectForWorkspace($workspace_gid, array('fi
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /workspaces/{workspace_gid}/projects</code>
@@ -11444,7 +11444,7 @@ $result = $client->projects->addCustomFieldSettingForProject($project_gid, array
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/addCustomFieldSetting</code>
@@ -11563,7 +11563,7 @@ $result = $client->projects->removeCustomFieldSettingForProject($project_gid, ar
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/removeCustomFieldSetting</code>
@@ -11680,7 +11680,7 @@ $result = $client->projects->getTaskCountsForProject($project_gid, array('param'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects/{project_gid}/task_counts</code>
@@ -12008,7 +12008,7 @@ $result = $client->projects->addMembersForProject($project_gid, array('field' =>
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/addMembers</code>
@@ -12334,7 +12334,7 @@ $result = $client->projects->removeMembersForProject($project_gid, array('field'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/removeMembers</code>
@@ -12660,7 +12660,7 @@ $result = $client->projects->addFollowersForProject($project_gid, array('field' 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/addFollowers</code>
@@ -12986,7 +12986,7 @@ $result = $client->projects->removeFollowersForProject($project_gid, array('fiel
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/removeFollowers</code>
@@ -13128,7 +13128,7 @@ $result = $client->projects->projectSaveAsTemplate($project_gid, array('field' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/saveAsTemplate</code>
@@ -13266,7 +13266,7 @@ $result = $client->projectbriefs->getProjectBrief($project_brief_gid, array('par
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /project_briefs/{project_brief_gid}</code>
@@ -13401,7 +13401,7 @@ $result = $client->projectbriefs->updateProjectBrief($project_brief_gid, array('
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /project_briefs/{project_brief_gid}</code>
@@ -13512,7 +13512,7 @@ $result = $client->projectbriefs->deleteProjectBrief($project_brief_gid, array('
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /project_briefs/{project_brief_gid}</code>
@@ -13652,7 +13652,7 @@ $result = $client->projectbriefs->createProjectBrief($project_gid, array('field'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/project_briefs</code>
@@ -13788,7 +13788,7 @@ $result = $client->projectmemberships->getProjectMembership($project_membership_
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /project_memberships/{project_membership_gid}</code>
@@ -13898,7 +13898,7 @@ $result = $client->projectmemberships->getProjectMembershipsForProject($project_
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects/{project_gid}/project_memberships</code>
@@ -14043,7 +14043,7 @@ $result = $client->projectstatuses->getProjectStatus($project_status_gid, array(
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /project_statuses/{project_status_gid}</code>
@@ -14145,7 +14145,7 @@ $result = $client->projectstatuses->deleteProjectStatus($project_status_gid, arr
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /project_statuses/{project_status_gid}</code>
@@ -14263,7 +14263,7 @@ $result = $client->projectstatuses->getProjectStatusesForProject($project_gid, a
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects/{project_gid}/project_statuses</code>
@@ -14403,7 +14403,7 @@ $result = $client->projectstatuses->createProjectStatusForProject($project_gid, 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/project_statuses</code>
@@ -14567,7 +14567,7 @@ $result = $client->projecttemplates->getProjectTemplate($project_template_gid, a
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /project_templates/{project_template_gid}</code>
@@ -14673,7 +14673,7 @@ $result = $client->projecttemplates->getProjectTemplates(array('param' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /project_templates</code>
@@ -14782,7 +14782,7 @@ $result = $client->projecttemplates->getProjectTemplatesForTeam($team_gid, array
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /teams/{team_gid}/project_templates</code>
@@ -14929,7 +14929,7 @@ $result = $client->projecttemplates->instantiateProject($project_template_gid, a
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /project_templates/{project_template_gid}/instantiateProject</code>
@@ -15078,7 +15078,7 @@ $result = $client->sections->getSection($section_gid, array('param' => 'value', 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /sections/{section_gid}</code>
@@ -15211,7 +15211,7 @@ $result = $client->sections->updateSection($section_gid, array('field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /sections/{section_gid}</code>
@@ -15325,7 +15325,7 @@ $result = $client->sections->deleteSection($section_gid, array('opt_pretty' => '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /sections/{section_gid}</code>
@@ -15446,7 +15446,7 @@ $result = $client->sections->getSectionsForProject($project_gid, array('param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects/{project_gid}/sections</code>
@@ -15581,7 +15581,7 @@ $result = $client->sections->createSectionForProject($project_gid, array('field'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/sections</code>
@@ -15703,7 +15703,7 @@ $result = $client->sections->addTaskForSection($section_gid, array('field' => 'v
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /sections/{section_gid}/addTask</code>
@@ -15837,7 +15837,7 @@ $result = $client->sections->insertSectionForProject($project_gid, array('field'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /projects/{project_gid}/sections/insert</code>
@@ -16026,7 +16026,7 @@ $result = $client->statusupdates->getStatus($status_gid, array('param' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /status_updates/{status_gid}</code>
@@ -16126,7 +16126,7 @@ $result = $client->statusupdates->deleteStatus($status_gid, array('opt_pretty' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /status_updates/{status_gid}</code>
@@ -16243,7 +16243,7 @@ $result = $client->statusupdates->getStatusesForObject(array('param' => 'value',
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /status_updates</code>
@@ -16413,7 +16413,7 @@ $result = $client->statusupdates->createStatusForObject(array('field' => 'value'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /status_updates</code>
@@ -16770,7 +16770,7 @@ $result = $client->stories->getStory($story_gid, array('param' => 'value', 'para
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /stories/{story_gid}</code>
@@ -17107,7 +17107,7 @@ $result = $client->stories->updateStory($story_gid, array('field' => 'value', 'f
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /stories/{story_gid}</code>
@@ -17230,7 +17230,7 @@ $result = $client->stories->deleteStory($story_gid, array('opt_pretty' => 'true'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /stories/{story_gid}</code>
@@ -17353,7 +17353,7 @@ $result = $client->stories->getStoriesForTask($task_gid, array('param' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks/{task_gid}/stories</code>
@@ -17690,7 +17690,7 @@ $result = $client->stories->createStoryForTask($task_gid, array('field' => 'valu
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/stories</code>
@@ -17839,7 +17839,7 @@ $result = $client->tags->getTags(array('param' => 'value', 'param' => 'value'), 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tags</code>
@@ -17982,7 +17982,7 @@ $result = $client->tags->createTag(array('field' => 'value', 'field' => 'value')
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tags</code>
@@ -18138,7 +18138,7 @@ $result = $client->tags->getTag($tag_gid, array('param' => 'value', 'param' => '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tags/{tag_gid}</code>
@@ -18263,7 +18263,7 @@ $result = $client->tags->updateTag($tag_gid, array('field' => 'value', 'field' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /tags/{tag_gid}</code>
@@ -18372,7 +18372,7 @@ $result = $client->tags->deleteTag($tag_gid, array('opt_pretty' => 'true'))
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /tags/{tag_gid}</code>
@@ -18491,7 +18491,7 @@ $result = $client->tags->getTagsForTask($task_gid, array('param' => 'value', 'pa
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks/{task_gid}/tags</code>
@@ -18599,7 +18599,7 @@ $result = $client->tags->getTagsForWorkspace($workspace_gid, array('param' => 'v
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/tags</code>
@@ -18740,7 +18740,7 @@ $result = $client->tags->createTagForWorkspace($workspace_gid, array('field' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /workspaces/{workspace_gid}/tags</code>
@@ -18902,7 +18902,7 @@ $result = $client->tasks->getTasks(array('param' => 'value', 'param' => 'value')
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks</code>
@@ -19262,7 +19262,7 @@ $result = $client->tasks->createTask(array('field' => 'value', 'field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks</code>
@@ -19611,7 +19611,7 @@ $result = $client->tasks->getTask($task_gid, array('param' => 'value', 'param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks/{task_gid}</code>
@@ -19942,7 +19942,7 @@ $result = $client->tasks->updateTask($task_gid, array('field' => 'value', 'field
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /tasks/{task_gid}</code>
@@ -20112,7 +20112,7 @@ $result = $client->tasks->deleteTask($task_gid, array('opt_pretty' => 'true'))
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /tasks/{task_gid}</code>
@@ -20264,7 +20264,7 @@ $result = $client->tasks->duplicateTask($task_gid, array('field' => 'value', 'fi
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/duplicate</code>
@@ -20390,7 +20390,7 @@ $result = $client->tasks->getTasksForProject($project_gid, array('param' => 'val
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /projects/{project_gid}/tasks</code>
@@ -20504,7 +20504,7 @@ $result = $client->tasks->getTasksForSection($section_gid, array('param' => 'val
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /sections/{section_gid}/tasks</code>
@@ -20613,7 +20613,7 @@ $result = $client->tasks->getTasksForTag($tag_gid, array('param' => 'value', 'pa
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tags/{tag_gid}/tasks</code>
@@ -20722,7 +20722,7 @@ $result = $client->tasks->getTasksForUserTaskList($user_task_list_gid, array('pa
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /user_task_lists/{user_task_list_gid}/tasks</code>
@@ -20838,7 +20838,7 @@ $result = $client->tasks->getSubtasksForTask($task_gid, array('param' => 'value'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks/{task_gid}/subtasks</code>
@@ -21171,7 +21171,7 @@ $result = $client->tasks->createSubtaskForTask($task_gid, array('field' => 'valu
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/subtasks</code>
@@ -21531,7 +21531,7 @@ $result = $client->tasks->setParentForTask($task_gid, array('field' => 'value', 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/setParent</code>
@@ -21643,7 +21643,7 @@ $result = $client->tasks->getDependenciesForTask($task_gid, array('param' => 'va
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks/{task_gid}/dependencies</code>
@@ -21763,7 +21763,7 @@ $result = $client->tasks->addDependenciesForTask($task_gid, array('field' => 'va
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/addDependencies</code>
@@ -21892,7 +21892,7 @@ $result = $client->tasks->removeDependenciesForTask($task_gid, array('field' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/removeDependencies</code>
@@ -22011,7 +22011,7 @@ $result = $client->tasks->getDependentsForTask($task_gid, array('param' => 'valu
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /tasks/{task_gid}/dependents</code>
@@ -22131,7 +22131,7 @@ $result = $client->tasks->addDependentsForTask($task_gid, array('field' => 'valu
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/addDependents</code>
@@ -22260,7 +22260,7 @@ $result = $client->tasks->removeDependentsForTask($task_gid, array('field' => 'v
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/removeDependents</code>
@@ -22389,7 +22389,7 @@ $result = $client->tasks->addProjectForTask($task_gid, array('field' => 'value',
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/addProject</code>
@@ -22530,7 +22530,7 @@ $result = $client->tasks->removeProjectForTask($task_gid, array('field' => 'valu
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/removeProject</code>
@@ -22658,7 +22658,7 @@ $result = $client->tasks->addTagForTask($task_gid, array('field' => 'value', 'fi
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/addTag</code>
@@ -22783,7 +22783,7 @@ $result = $client->tasks->removeTagForTask($task_gid, array('field' => 'value', 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/removeTag</code>
@@ -23093,7 +23093,7 @@ $result = $client->tasks->addFollowersForTask($task_gid, array('field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/addFollowers</code>
@@ -23397,7 +23397,7 @@ $result = $client->tasks->removeFollowerForTask($task_gid, array('field' => 'val
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /tasks/{task_gid}/removeFollowers</code>
@@ -23507,7 +23507,7 @@ $result = $client->tasks->searchTasksForWorkspace($workspace_gid, array('param' 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/tasks/search</code>
@@ -23746,7 +23746,7 @@ $result = $client->teams->createTeam(array('field' => 'value', 'field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /teams</code>
@@ -23893,7 +23893,7 @@ $result = $client->teams->updateTeam(array('field' => 'value', 'field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /teams</code>
@@ -24022,7 +24022,7 @@ $result = $client->teams->getTeam($team_gid, array('param' => 'value', 'param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /teams/{team_gid}</code>
@@ -24130,7 +24130,7 @@ $result = $client->teams->getTeamsForWorkspace($workspace_gid, array('param' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/teams</code>
@@ -24238,7 +24238,7 @@ $result = $client->teams->getTeamsForUser($user_gid, array('param' => 'value', '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /users/{user_gid}/teams</code>
@@ -24369,7 +24369,7 @@ $result = $client->teams->addUserForTeam($team_gid, array('field' => 'value', 'f
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /teams/{team_gid}/addUser</code>
@@ -24488,7 +24488,7 @@ $result = $client->teams->removeUserForTeam($team_gid, array('field' => 'value',
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /teams/{team_gid}/removeUser</code>
@@ -24627,7 +24627,7 @@ $result = $client->teammemberships->getTeamMembership($team_membership_gid, arra
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /team_memberships/{team_membership_gid}</code>
@@ -24743,7 +24743,7 @@ $result = $client->teammemberships->getTeamMemberships(array('param' => 'value',
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /team_memberships</code>
@@ -24863,7 +24863,7 @@ $result = $client->teammemberships->getTeamMembershipsForTeam($team_gid, array('
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /teams/{team_gid}/team_memberships</code>
@@ -24981,7 +24981,7 @@ $result = $client->teammemberships->getTeamMembershipsForUser($user_gid, array('
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /users/{user_gid}/team_memberships</code>
@@ -25113,7 +25113,7 @@ $result = $client->timeperiods->getTimePeriod($time_period_gid, array('param' =>
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /time_periods/{time_period_gid}</code>
@@ -25222,7 +25222,7 @@ $result = $client->timeperiods->getTimePeriods(array('param' => 'value', 'param'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /time_periods</code>
@@ -25346,7 +25346,7 @@ $result = $client->typeahead->typeaheadForWorkspace($workspace_gid, array('param
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/typeahead</code>
@@ -25525,7 +25525,7 @@ $result = $client->users->getUsers(array('param' => 'value', 'param' => 'value')
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /users</code>
@@ -25649,7 +25649,7 @@ $result = $client->users->getUser($user_gid, array('param' => 'value', 'param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /users/{user_gid}</code>
@@ -25755,7 +25755,7 @@ $result = $client->users->getFavoritesForUser($user_gid, array('param' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /users/{user_gid}/favorites</code>
@@ -25875,7 +25875,7 @@ $result = $client->users->getUsersForTeam($team_gid, array('param' => 'value', '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /teams/{team_gid}/users</code>
@@ -25983,7 +25983,7 @@ $result = $client->users->getUsersForWorkspace($workspace_gid, array('param' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/users</code>
@@ -26113,7 +26113,7 @@ $result = $client->usertasklists->getUserTaskList($user_task_list_gid, array('pa
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /user_task_lists/{user_task_list_gid}</code>
@@ -26227,7 +26227,7 @@ $result = $client->usertasklists->getUserTaskListForUser($user_gid, array('param
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /users/{user_gid}/user_task_list</code>
@@ -26372,7 +26372,7 @@ $result = $client->webhooks->getWebhooks(array('param' => 'value', 'param' => 'v
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /webhooks</code>
@@ -26528,7 +26528,7 @@ $result = $client->webhooks->createWebhook(array('field' => 'value', 'field' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /webhooks</code>
@@ -26718,7 +26718,7 @@ $result = $client->webhooks->getWebhook($webhook_gid, array('param' => 'value', 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /webhooks/{webhook_gid}</code>
@@ -26869,7 +26869,7 @@ $result = $client->webhooks->updateWebhook($webhook_gid, array('field' => 'value
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /webhooks/{webhook_gid}</code>
@@ -26976,7 +26976,7 @@ $result = $client->webhooks->deleteWebhook($webhook_gid, array('opt_pretty' => '
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="delete-verb">DELETE</span> /webhooks/{webhook_gid}</code>
@@ -27108,7 +27108,7 @@ $result = $client->workspaces->getWorkspaces(array('param' => 'value', 'param' =
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces</code>
@@ -27217,7 +27217,7 @@ $result = $client->workspaces->getWorkspace($workspace_gid, array('param' => 'va
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}</code>
@@ -27339,7 +27339,7 @@ $result = $client->workspaces->updateWorkspace($workspace_gid, array('field' => 
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="put-verb">PUT</span> /workspaces/{workspace_gid}</code>
@@ -27471,7 +27471,7 @@ $result = $client->workspaces->addUserForWorkspace($workspace_gid, array('field'
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /workspaces/{workspace_gid}/addUser</code>
@@ -27608,7 +27608,7 @@ $result = $client->workspaces->removeUserForWorkspace($workspace_gid, array('fie
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="post-verb">POST</span> /workspaces/{workspace_gid}/removeUser</code>
@@ -27766,7 +27766,7 @@ $result = $client->workspacememberships->getWorkspaceMembership($workspace_membe
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspace_memberships/{workspace_membership_gid}</code>
@@ -27881,7 +27881,7 @@ $result = $client->workspacememberships->getWorkspaceMembershipsForUser($user_gi
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /users/{user_gid}/workspace_memberships</code>
@@ -27998,7 +27998,7 @@ $result = $client->workspacememberships->getWorkspaceMembershipsForWorkspace($wo
 }
 ```
 
-> See [Input/Output Options](/docs/input-output-options) to include more fields in your response.
+> See [input/output options](/docs/input-output-options) to include more fields in your response.
 
 <p>
 <code> <span class="get-verb">GET</span> /workspaces/{workspace_gid}/workspace_memberships</code>
@@ -28031,7 +28031,7 @@ Returns the compact workspace membership records for the workspace.
 
 <span class="description">
 The schema definitions for each object requested or returned from Asana's API. Some fields are not returned by
-default and you'll need to use [input/output Options](/docs/input-output-options) to include them.
+default and you'll need to use [input/output options](/docs/input-output-options) to include them.
 </span>
 </section>
 <hr>
@@ -28115,7 +28115,7 @@ A generic Asana Resource, containing a globally unique identifier.
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Attachment), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -28382,7 +28382,7 @@ A response object returned from a batch request.
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_CustomField), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -28607,7 +28607,7 @@ Users in Asana can [lock custom fields](https://asana.com/guide/help/premium/cus
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_CustomFieldSetting), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -29026,7 +29026,7 @@ an object with the user's `id` and `type`.
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Goal), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -29067,7 +29067,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_Goal), b
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_GoalRelationship), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -29369,7 +29369,7 @@ A generic Asana Resource, containing a globally unique identifier.
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Job), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -29509,7 +29509,7 @@ A *job* is an object representing a process that handles asynchronous work.
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_OrganizationExport), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -29608,7 +29608,7 @@ An *organization_export* object represents a request to export the complete data
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Portfolio), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -29648,7 +29648,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_Portfoli
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_PortfolioMembership), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -30087,7 +30087,7 @@ Portfolios have some restrictions on size. Each portfolio has a max of 500 items
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_ProjectBrief), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -30163,7 +30163,7 @@ A *Project Brief* allows you to explain the what and why of the project to your 
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Project), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -30198,7 +30198,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_Project)
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_ProjectMembership), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -30775,7 +30775,7 @@ A *project* represents a prioritized list of tasks in Asana or a board with colu
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_ProjectStatus), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -30875,7 +30875,7 @@ A *project status* is an update on the progress of a particular project, and is 
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_ProjectTemplate), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -30997,7 +30997,7 @@ A *project template* is an object that allows new projects to be created with a 
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Section), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -31082,7 +31082,7 @@ A *section* is a subdivision of a project that groups tasks together. It can eit
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_StatusUpdate), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -31256,7 +31256,7 @@ A *status update* is an update on the progress of a particular project, portfoli
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Story), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -31762,7 +31762,7 @@ A story represents an activity associated with an object in the Asana system.
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Tag), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -31876,7 +31876,7 @@ A *tag* is a label that can be attached to any task in Asana. It exists in a sin
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Task), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -32332,7 +32332,7 @@ The *task* is the basic object around which many operations in Asana are centere
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Team), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -32373,7 +32373,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_Team), b
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_TeamMembership), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -32520,7 +32520,7 @@ A *team* is used to group related projects and people together within an organiz
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_TimePeriod), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -32637,7 +32637,7 @@ A generic Asana Resource, containing a globally unique identifier.
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_User), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -32737,7 +32737,7 @@ A *user* object represents an account in Asana that can be given access to vario
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_UserTaskList), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -32831,7 +32831,7 @@ A user task list represents the tasks assigned to a particular user. It provides
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Webhook), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -32971,7 +32971,7 @@ Webhook objects represent the state of an active subscription for a server to be
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_Workspace), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
@@ -33011,7 +33011,7 @@ A `Compact` object is the same as the [full response object](/docs/tocS_Workspac
 
 <span class="description">
 A `Compact` object is the same as the [full response object](/docs/tocS_WorkspaceMembership), but with less fields included by default. See
-[Input/Output Options](/docs/input-output-options) to include more fields.
+[input/output options](/docs/input-output-options) to include more fields.
 </span>
 
 ### Properties
