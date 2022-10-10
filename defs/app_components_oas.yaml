@@ -3,7 +3,7 @@ openapi: 3.0.0
 info:
   description: >-
     This is the interface for handling requests for
-    [App Components](https://developers.asana.com/docs/app-components-overview). This reference
+    [app components](https://developers.asana.com/docs/overview-of-app-components). This reference
     is generated from an [OpenAPI spec]
     (https://raw.githubusercontent.com/Asana/developer-docs/master/defs/app_components_oas.yaml).
   title: App Components
@@ -48,25 +48,25 @@ servers:
   - url: "{siteUrl}"
     description: Main endpoint.
 tags:
-  - name: Modal Forms
+  - name: Modal forms
     description: >-
-      The Modal Form is displayed when the user starts the flow to create a resource. Asana will make a signed
+      The modal form is displayed when the user starts the flow to create a resource. Asana will make a signed
       request to the specified `form_metadata_url` in the configuration, and expect a response with the metadata needed to
-      create the form. This process is also used for forms within Rule Actions.
-  - name: Rule Actions
+      create the form. This process is also used for forms within rule actions.
+  - name: Rule actions
     description: >-
-      When a rule containing a Rule Action is triggered, the Rules Engine will make a request to the app to
-      inform the app to run the configured Rule Action. The resulting status code will indicate to the Rules Engine
+      When a rule containing a rule action is triggered, the [rules](https://asana.com/guide/help/premium/rules) engine will make a request to the app to
+      inform the app to run the configured rule action. The resulting status code will indicate to the rules engine
       whether the action was successfully completed and, if not, specify a cause for the error.
   - name: Lookups
     description: >-
-      If the app defined a resource attach URL, tasks without a Widget offer the Lookup functionality. This appears as a text
+      If the app defined a resource attach URL, tasks without a widget offer the lookup functionality. This appears as a text
       input to the user. When the user submits the text, the app responds with either a resource attachment or with an error.
   - name: Widgets
     description: >-
-      The Widget is displayed when the user views a task with an attachment with a resource URL matching your
+      The widget is displayed when the user views a task with an attachment with a resource URL matching your
       capability’s `match_resource_url_pattern`. When this happens, Asana will make a signed request to your `widget_metadata_url`,
-      and expect a response with information to render in the Widget.
+      and expect a response with information to render in the widget.
 components:
   parameters:
     action:
@@ -75,7 +75,7 @@ components:
       schema:
         type: string
       description: >-
-        The ID of an existing Rule Action that is being edited. Should be omitted when configuring a new Rule Action.
+        The ID of an existing rule action that is being edited. Should be omitted when configuring a new rule action.
     action_type:
       name: action_type
       required: true
@@ -83,7 +83,7 @@ components:
       schema:
         type: string
       description: >-
-        The ID of the configuration used to create the Rule Action.
+        The ID of the configuration used to create the rule action.
     attachment:
       name: attachment
       required: true
@@ -99,7 +99,7 @@ components:
       schema:
         type: string
       description: >-
-        The time (in ISO-8601 date format) when the request should expire
+        The time (in ISO 8601 date format) when the request should expire.
     fragment:
       name: fragment
       required: true
@@ -107,7 +107,7 @@ components:
       schema:
         type: string
       description: >-
-        The text entered into the typeahead input
+        The text entered into the typeahead input.
     project:
       name: project
       required: true
@@ -115,7 +115,7 @@ components:
       schema:
         type: string
       description: >-
-        The project gid this hook is coming from.
+        The project GID this hook is coming from.
     user:
       name: user
       required: true
@@ -123,7 +123,7 @@ components:
       schema:
         type: string
       description: >-
-        The user `gid` this hook is coming from.
+        The user GID` this hook is coming from.
     resource_url:
       name: resource_url
       required: true
@@ -131,7 +131,7 @@ components:
       schema:
         type: string
       description: >-
-        The URL of the URL attachment on the task (i.e. Jira issue, GitHub pull request)
+        The URL of the URL attachment on the task (i.e., Jira issue, GitHub pull request)
     task:
       name: task
       required: true
@@ -139,7 +139,7 @@ components:
       schema:
         type: string
       description: >-
-        The task gid this hook is coming from.
+        The task GID this hook is coming from.
     workspace:
       name: workspace
       required: true
@@ -147,7 +147,7 @@ components:
       schema:
         type: string
       description: >-
-        The workspace `gid` this hook is coming from.
+        The workspace GID this hook is coming from.
   responses:
     BadRequest:
       description: >-
@@ -196,21 +196,21 @@ components:
   schemas:
     RootUIComponentRequest:
       description: >-
-        The building block of all App Component requests.
+        The building block of all app component requests.
       type: object
       properties:
         expires_at:
           type: string
           description: >-
-            The time (in ISO-8601 date format) when the request should expire
+            The time (in ISO 8601 date format) when the request should expire.
         user:
           type: string
           description: >-
-            The user gid this hook is coming from.
+            The user GID this hook is coming from.
         workspace:
           type: string
           description: >-
-            The workspace gid this hook is coming from.
+            The workspace GID this hook is coming from.
     AttachResourceRequest:
       allOf:
         - $ref: '#/components/schemas/RootUIComponentRequest'
@@ -221,16 +221,16 @@ components:
             task:
               type: string
               description: >-
-                The task gid this hook is coming from.
+                The task GID this hook is coming from.
             attachment:
               type: string
               description: >-
-                The attachment id of the URL attachment
+                The attachment ID of the URL attachment
             query:
               type: string
               description: >-
-                The user’s input in the Lookup text input (this is often a resource URL or resource key, such as
-                CP-1 or https://abcde.atlassian.net/browse/CP-1)
+                The user’s input in the lookup text input. This is often a resource URL or resource key, such as
+                `"CP-1"` or `"https://abcde.atlassian.net/browse/CP-1"`
     AttachedResourceResponse:
       description: >-
         The response to a successful lookup request.
@@ -342,7 +342,7 @@ components:
               example: "Internal server error."
     FormField-StaticText:
       description: >-
-        A Modal Form "field" that displays static text. Fields of this type do not collect user input.
+        A modal form "field" that displays static text. Fields of this type do not collect user input.
       type: object
       required:
         - id
@@ -351,7 +351,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - static_text
@@ -368,7 +368,7 @@ components:
           example: 'Please enter the following details:'
     FormField-SingleLineText:
       description: >-
-        A Modal Form field that accepts single-line text input.
+        A modal form field that accepts single-line text input.
       type: object
       required:
         - id
@@ -376,7 +376,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - single_line_text
@@ -427,7 +427,7 @@ components:
           example: "Annual Kick-Off Meeting"
     FormField-MultiLineText:
       description: >-
-        A Modal Form field that accepts multi-line text input.
+        A modal form field that accepts multi-line text input.
       type: object
       required:
         - id
@@ -435,7 +435,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - multi_line_text
@@ -478,7 +478,7 @@ components:
           example: "Annual Kick-Off Meeting"
     FormField-RichText:
       description: >-
-        A Modal Form field that accepts rich text input.
+        A modal form field that accepts rich text input.
       type: object
       required:
         - id
@@ -486,7 +486,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - rich_text
@@ -529,7 +529,7 @@ components:
           example: "Annual Kick-Off Meeting"
     FormField-Dropdown:
       description: >-
-        A Modal Form field that accepts input via a dropdown list. Limit 50 options.
+        A modal form field that accepts input via a dropdown list. Limit 50 options.
       type: object
       required:
         - id
@@ -538,7 +538,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - dropdown
@@ -590,7 +590,7 @@ components:
             $ref: '#/components/schemas/DropdownOption'
     FormField-RadioButton:
       description: >-
-        A Modal Form field that accepts radio button input. Limit 5 options.
+        A modal form field that accepts radio button input. Limit 5 options.
       type: object
       required:
         - id
@@ -599,7 +599,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - radio_button
@@ -643,7 +643,7 @@ components:
             $ref: '#/components/schemas/RadioOption'
     FormField-Checkbox:
       description: >-
-        A Modal Form field that accepts checkbox input. Limit 10 options.
+        A modal form field that accepts checkbox input. Limit 10 options.
       type: object
       required:
         - id
@@ -652,7 +652,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - checkbox
@@ -699,7 +699,7 @@ components:
             $ref: '#/components/schemas/CheckboxOption'
     FormField-Date:
       description: >-
-        A Modal Form field that accepts date input.
+        A modal form field that accepts date input.
       type: object
       required:
         - id
@@ -707,7 +707,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - date
@@ -752,7 +752,7 @@ components:
           nullable: true
     FormField-Datetime:
       description: >-
-        A Modal Form field that accepts datetime input.
+        A modal form field that accepts datetime input.
       type: object
       required:
         - id
@@ -760,7 +760,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - datetime
@@ -798,14 +798,14 @@ components:
           example: '2022-02-01T14:48:00.000Z'
         value:
           description: >-
-            The value of the field. This takes an ISO 8601 date string in UTC
+            The value of the field. This value takes the form of an ISO 8601 date string in UTC.
           type: string
           format: date-time
           example: '2022-02-01T14:48:00.000Z'
           nullable: true
     FormField-Typeahead:
       description: >-
-        A Modal Form field that accepts typeahead input.
+        A modal form field that accepts typeahead input.
       type: object
       required:
         - id
@@ -814,7 +814,7 @@ components:
       properties:
         type:
           description: >-
-            The type of Modal Form field.
+            The type of modal form field.
           type: string
           enum:
             - typeahead
@@ -911,14 +911,14 @@ components:
               example: 'Create New Issue'
             on_submit_callback:
               description: >-
-                The URL to POST the form to when the user clicks the submit button.
+                The URL to `POST` the form to when the user clicks the submit button.
                 If this is field is omitted then the submission button will be disabled. This is useful if the user must
                 enter information in a watched field first, such as to show additional fields.
               type: string
               example: 'https://www.example.com/on_submit'
             on_change_callback:
               description: >-
-                The URL to POST the form to whenever watched field values are changed.
+                The URL to `POST` the form to whenever watched field values are changed.
               type: string
               example: 'https://www.example.com/on_change'
     FormSubmissionRequest:
@@ -931,11 +931,11 @@ components:
             task:
               type: string
               description: >-
-                The task gid this hook is coming from.
+                The task GID this hook is coming from.
             values:
               type: object
               description: >-
-                A FormValues object mapping each FormField’s name to its value
+                A FormValues object mapping each FormField’s name to its value.
               additionalProperties:
                 type: object
                 properties:
@@ -966,18 +966,18 @@ components:
             action:
               type: string
               description: >-
-                The ID of an existing Rule Action that is being edited
+                The ID of an existing rule action that is being edited
             action_type:
               type: string
               description: >-
-                The ID of the configuration used to create the Rule Action.
+                The ID of the configuration used to create the rule action.
             project:
               type: string
               description: >-
-                The project `gid` this hook is coming from.
+                The project GID this hook is coming from.
     WidgetFooter-Created:
       description: >-
-        A Widget footer that displays the timestamp of the resource's creation time.
+        A widget footer that displays the timestamp of the resource's creation time.
       type: object
       required:
         - created_at
@@ -985,14 +985,14 @@ components:
       properties:
         footer_type:
           description:  >-
-            The type of Widget footer.
+            The type of widget footer.
           type: string
           enum:
             - created
           example: 'created'
         created_at:
           description: >-
-            The time (in ISO-8601 date format) to show in the footer.
+            The time (in ISO 8601 date format) to show in the footer.
           type: string
           example: '2012-02-22T02:06:58.147Z'
     WidgetFooter-CustomText:
@@ -1001,7 +1001,7 @@ components:
         - footer_type
         - text
       description: >-
-        A Widget footer that displays custom text and an optional icon.
+        A widget footer that displays custom text and an optional icon.
       properties:
         footer_type:
           description: >-
@@ -1031,7 +1031,7 @@ components:
             changed_field:
               type: string
               description: >-
-                The name of the changed FormField
+                The name of the changed FormField.
     FormOnChangeRequest:
       allOf:
         - $ref: '#/components/schemas/FormOnChangeBaseRequest'
@@ -1042,7 +1042,7 @@ components:
             task:
               type: string
               description: >-
-                The task gid this hook is coming from.
+                The task GID this hook is coming from.
     ActionFormOnChangeRequest:
       allOf:
         - $ref: '#/components/schemas/FormOnChangeBaseRequest'
@@ -1053,15 +1053,15 @@ components:
             action:
               type: string
               description: >-
-                The ID of an existing Rule Action that is being edited.
+                The ID of an existing rule action that is being edited.
             action_type:
               type: string
               description: >-
-                The ID of the configuration used to create the Rule Action.
+                The ID of the configuration used to create the rule action.
             project:
               type: string
               description: >-
-                The project `gid` this hook is coming from.
+                The project GID this hook is coming from.
     NotFoundResponse:
       description: >-
         An error response object indicating a request that could not be found (i.e., a status code of `404`).
@@ -1087,7 +1087,7 @@ components:
             target_object:
               type: string
               description: >-
-                The ID of the target object that the Rule Action is acting on. Currently, this is always a Task `gid`.
+                The ID of the target object that the rule action is acting on. Currently, this value is always a task GID.
             action:
               type: string
               description: >-
@@ -1095,12 +1095,12 @@ components:
             action_type:
               type: string
               description: >-
-                The ID from the configuration used to create the Rule Action.
+                The ID from the configuration used to create the rule action.
             idempotency_key:
               required: true
               type: string
               description: >-
-                A unique key associated with the "Run action" request. App Servers should use
+                A unique key associated with the "run action" request. App servers should use
                 this key to implement idempotency.
     RanActionResponse:
       type: object
@@ -1111,7 +1111,7 @@ components:
       properties:
         error:
           description: >-
-            The error that should be displayed to the user
+            The error that should be displayed to the user.
           type: string
           example: 'That resource no longer exists'
         action_result:
@@ -1126,8 +1126,8 @@ components:
         resources_created:
           type: array
           description: >-
-            A field with the data corresponding to the action_result value. Each action_result has its own data field
-            shape that Asana expects. `resources_created` expects the name and url of the resources that the action
+            A field with the data corresponding to the action_result value. Each `action_result` has its own data field
+            shape that Asana expects. `resources_created` expects the name and URL of the resources that the action
             created.
           items:
             $ref: '#/components/schemas/AttachedResourceResponse'
@@ -1164,22 +1164,22 @@ components:
       properties:
         title:
           description: >-
-            The title of the typeahead item
+            The title of the typeahead item.
           type: string
           example: 'OTP Team PF'
         subtitle:
           description: >-
-            The subtitle of the typeahead item
+            The subtitle of the typeahead item.
           type: string
           example: 'OTP'
         value:
           description: >-
-            The value of the typeahead item
+            The value of the typeahead item.
           type: string
           example: 'OTP'
         icon_url:
           description: >-
-            The URL of the icon to display next to the title
+            The URL of the icon to display next to the title.
           type: string
           example: 'https://example-icon.png'
     TypeaheadListRequest:
@@ -1192,7 +1192,7 @@ components:
             workspace:
               type: string
               description: >-
-                The workspace `gid` this hook is coming from.
+                The workspace GID this hook is coming from.
               example: '12345'
             query:
               type: string
@@ -1202,17 +1202,17 @@ components:
             task:
               type: string
               description: >-
-                *Conditional*. The task `gid` this hook is coming from. `task` is only present in the [Modal Form](/docs/modal-form) (as there is a "context task"), but not in the [Rule Action](/docs/rule-action) (as rules are associated with a _project_).
+                *Conditional*. The task GID this hook is coming from. `task` is only present in the [modal form](/docs/modal-form) (as there is a "context task"), but not in the [rule action](/docs/rule-action) (as rules are associated with a _project_).
               example: '67890'
             user:
               type: string
               description: >-
-                The user `gid` this hook is coming from.
+                The user GID this hook is coming from.
               example: '54321'
             expires_at:
               type: string
               description: >-
-                The time (in ISO-8601 format) when the request should expire
+                The time (in ISO 8601 format) when the request should expire.
               example: '2019-04-15T01:01:46.055Z'
     TypeaheadListResponse:
       description: >-
@@ -1249,7 +1249,7 @@ components:
               example: "Authorization required."
     WidgetFooter-Updated:
       description: >-
-        A Widget footer that displays the timestamp of the resource's last updated time.
+        A widget footer that displays the timestamp of the resource's last updated time.
       type: object
       required:
         - footer_type
@@ -1257,19 +1257,19 @@ components:
       properties:
         footer_type:
           description:  >-
-            The type of Widget footer.
+            The type of widget footer.
           type: string
           enum:
             - updated
           example: 'updated'
         last_updated_at:
           description: >-
-            The time (in ISO-8601 date format) to show in the footer.
+            The time (in ISO 8601 date format) to show in the footer.
           type: string
           example: '2012-02-22T02:06:58.147Z'
     WidgetField-DatetimeWithIcon:
       description: >-
-        A Widget field that displays a timestamp and an optional icon.
+        A widget field that displays a timestamp and an optional icon.
       type: object
       required:
         - name
@@ -1277,7 +1277,7 @@ components:
       properties:
         type:
           description:  >-
-            The type of Widget field.
+            The type of widget field.
           type: string
           enum:
             - datetime_with_icon
@@ -1289,7 +1289,7 @@ components:
           example: 'Status'
         datetime:
           description: >-
-            The time (in ISO-8601 date format) to display next to the icon.
+            The time (in ISO 8601 date format) to display next to the icon.
           type: string
           example: '2012-02-22T02:06:58.147Z'
         icon_url:
@@ -1299,7 +1299,7 @@ components:
           example: 'https://example-icon.png'
     WidgetField-Pill:
       description: >-
-        A Widget field that displays custom text in a colored "pill" format.
+        A widget field that displays custom text in a colored "pill" format.
       type: object
       required:
         - color
@@ -1309,7 +1309,7 @@ components:
       properties:
         type:
           description:  >-
-            The type of Widget field.
+            The type of widget field.
           type: string
           enum:
             - pill
@@ -1348,7 +1348,7 @@ components:
           example: 'cool-gray'
     WidgetField-TextWithIcon:
       description: >-
-        A Widget field that displays custom text with an optional icon.
+        A widget field that displays custom text with an optional icon.
       type: object
       required:
         - name
@@ -1357,7 +1357,7 @@ components:
       properties:
         type:
           description:  >-
-            The type of Widget field.
+            The type of widget field.
           type: string
           enum:
             - text_with_icon
@@ -1403,18 +1403,18 @@ components:
           properties:
             error:
               description: >-
-                The error that should be displayed to the user
+                The error that should be displayed to the user.
               type: string
               example: 'The resource cannot be accessed'
             title:
               description: >-
-                The text to show in the title of the widget. Max length of 200 chars.
+                The text to show in the title of the widget. Max length of 200 characters.
               type: string
               required: true
               example: 'Status'
             fields:
               description: >-
-                A list of fields showing data from external resources (i.e., an array of WidgetField objects). A Widget must contain at least 1 field and no more than 5 fields.
+                A list of fields showing data from external resources (i.e., an array of WidgetField objects). A widget must contain at least 1 field and no more than 5 fields.
 
 
                 Valid object schemas: [WidgetField-DatetimeWithIcon](/docs/widget-field-datetime-with-icon), [WidgetField-Pill](/docs/widget-field-pill), [WidgetField-TextWithIcon](/docs/widget-field-text-with-icon).
@@ -1423,18 +1423,18 @@ components:
             subtitle:
               description: >-
                 The text to show under the title of the widget, next to "Open in {App Name}". If not provided, the
-                resource_name from the app definition will be used as default
+                `resource_name` from the app definition will be used as default.
               type: string
               example: 'Custom App Story · Open in Custom App'
             subicon_url:
               description: >-
-                The URL of the subicon next to the subtitle . If not provided, no icon will be shown
+                The URL of the subicon next to the subtitle . If not provided, no icon will be shown.
               type: string
               example: 'https://example-icon.png'
             footer:
               type: object
               description: >-
-                Contains the information to display a footer on the Widget.
+                Contains the information to display a footer on the widget.
 
 
                 Valid schemas: [WidgetFooter-Created](/docs/widget-footer-created), [WidgetFooter-CustomText](/docs/widget-footer-custom-text), [WidgetFooter-Updated](/docs/widget-footer-updated).
@@ -1456,7 +1456,7 @@ paths:
     get:
       summary: Get widget metadata
       description: >-
-        Get the metadata from the App Server to render a widget.
+        Get the metadata from the app server to render a widget.
         <br>
         <br>
         <a href="../images/ac-widget-metadata.png">
@@ -1521,7 +1521,7 @@ paths:
           $ref: '#/components/responses/InternalServerError'
   /{resource_typeahead_url}:
     get:
-      summary: Get Lookup typeahead results
+      summary: Get lookup typeahead results
       description: >-
         Gets typeahead results to render as a dropdown list in the resource lookup input field.
 
@@ -1564,14 +1564,14 @@ paths:
     get:
       summary: Get form metadata
       description: >-
-        Get the metadata from the App Server to render a form.
+        Get the metadata from the app server to render a form.
         <br>
         <br>
         <a href="../images/ac-form-metadata.png">
           <img src="../images/ac-form-metadata.png" alt="App components form metadata request flow"/>
         </a>
       tags:
-        - Modal Forms
+        - Modal forms
       operationId: getFormMetadata
       responses:
         200:
@@ -1592,23 +1592,23 @@ paths:
           $ref: '#/components/responses/InternalServerError'
   /{modal_form_typeahead_url}:
     get:
-      summary: Get Modal Form typeahead results
+      summary: Get modal form typeahead results
       description: >-
-        If a Modal Form form field is of type `typehead`, this operation gets typeahead results to render as a dropdown list.
+        If a modal form field is of type `typehead`, this operation gets typeahead results to render as a dropdown list.
 
 
-        When the user types into a Modal Form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
+        When the user types into a modal form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
         <br>
         <br>
         <a href="../images/ac-form-typeahead.png">
           <img src="../images/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
         </a>
       tags:
-        - Modal Forms
+        - Modal forms
       operationId: getModalFormTypeaheadResults
       requestBody:
         description: >-
-          Request to retrieve typeahead results in a Modal Form typeahead form field.
+          Request to retrieve typeahead results in a modal form typeahead form field.
         required: true
         content:
           application/json:
@@ -1633,23 +1633,23 @@ paths:
           $ref: '#/components/responses/InternalServerError'
   /{rule_action_typeahead_url}:
     get:
-      summary: Get Rule Action typeahead results
+      summary: Get rule action typeahead results
       description: >-
-        In a Rule Action typeahead form field, this operation gets typeahead results to render as a dropdown list.
+        In a rule action typeahead form field, this operation gets typeahead results to render as a dropdown list. Typeahead results are limited to 50 items.
 
 
-        When the user types into a Rule Action form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
+        When the user types into a rule action form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
         <br>
         <br>
         <a href="../images/ac-rule-typeahead.png">
           <img src="../images/ac-rule-typeahead.png" alt="App components rule typeahead request flow"/>
         </a>
       tags:
-        - Rule Actions
+        - Rule actions
       operationId: getRuleActionTypeaheadResults
       requestBody:
         description: >-
-          Request to retrieve typeahead results in a Rule Action typeahead form field.
+          Request to retrieve typeahead results in a rule action typeahead form field.
         required: true
         content:
           application/json:
@@ -1677,14 +1677,14 @@ paths:
     post:
       summary: On change callback
       description: >-
-        The callback request made to an App Server when a watched field's value changes within a form.
+        The callback request made to an app server when a watched field's value changes within a form.
         <br>
         <br>
         <a href="../images/ac-form-on-change.png">
           <img src="../images/ac-form-on-change.png" alt="App components form on change request flow"/>
         </a>
       tags:
-        - Modal Forms
+        - Modal forms
       operationId: onFormChange
       requestBody:
         description: >-
@@ -1719,14 +1719,14 @@ paths:
     post:
       summary: On submit callback
       description: >-
-        The callback request made to an App Server when a form is submitted.
+        The callback request made to an app server when a form is submitted.
         <br>
         <br>
         <a href="../images/ac-form-on-submit.png">
           <img src="../images/ac-form-on-submit.png" alt="App components form on submit request flow"/>
         </a>
       tags:
-        - Modal Forms
+        - Modal forms
       operationId: onFormSubmit
       requestBody:
         description: >-
@@ -1768,7 +1768,7 @@ paths:
           <img src="../images/ac-rule-run-action.png" alt="App components rule run action request flow"/>
         </a>
       tags:
-        - Rule Actions
+        - Rule actions
       operationId: runAction
       requestBody:
         description: >-
@@ -1808,18 +1808,18 @@ paths:
     get:
       summary: Get action metadata
       description: >-
-        When a user has navigated to the [Custom Rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule)
-        UI and selected a Rule Action (either through the sidebar or via a Rule Preset), Asana will make a request to the
-        app to get the configuration form definition for the chosen Rule Action. This will initiate the flow to configure
-        a new Rule Action or edit the configuration of an existing Rule Action. This is the endpoint and schema for
-        updating Rule Actions; app triggers (V2) will be analogous.
+        When a user has navigated to the [custom rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule)
+        UI and selected a rule action (either through the sidebar or via a rule preset), Asana will make a request to the
+        app to get the configuration form definition for the chosen rule action. This will initiate the flow to configure
+        a new rule action or edit the configuration of an existing rule action. This is the endpoint and schema for
+        updating rule actions; app triggers (V2) will be analogous.
         <br>
         <br>
         <a href="../images/ac-rule-metadata.png">
           <img src="../images/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
         </a>
       tags:
-        - Rule Actions
+        - Rule actions
       operationId: getActionMetadata
       responses:
         200:
@@ -1842,14 +1842,14 @@ paths:
     post:
       summary: On action change callback
       description: >-
-        The callback request made to an App Server when a watched field's value changes within an action form.
+        The callback request made to an app server when a watched field's value changes within an action form.
         <br>
         <br>
         <a href="../images/ac-rule-on-change.png">
           <img src="../images/ac-rule-on-change.png" alt="App components rule on change request flow"/>
         </a>
       tags:
-        - Rule Actions
+        - Rule actions
       operationId: onActionFormChange
       requestBody:
         description: >-
@@ -1884,10 +1884,10 @@ paths:
     post:
       summary: On action submit callback
       description: >-
-        The form is submitted when the user chooses to create their Rule. Asana will create the Rule Action data model
-        object and make a signed request to the on_submit_callback specified in the form metadata returned from the
-        fetch/update Rule Action form endpoints. Information about the created Rule Action should be included in the
-        response if it was successfully created. This is the endpoint and schema for updating Rule Actions; app triggers
+        The form is submitted when the user chooses to create their rule. Asana will create the rule action data model
+        object and make a signed request to the `on_submit_callback` specified in the form metadata returned from the
+        fetch/update rule action form endpoints. Information about the created rule action should be included in the
+        response if it was successfully created. This is the endpoint and schema for updating rule actions; app triggers
         (V2) will be analogous.
         <br>
         <br>
@@ -1895,7 +1895,7 @@ paths:
           <img src="../images/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
         </a>
       tags:
-        - Rule Actions
+        - Rule actions
       operationId: onActionFormSubmit
       requestBody:
         description: >-
