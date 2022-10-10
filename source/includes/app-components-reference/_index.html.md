@@ -9,7 +9,7 @@
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
 <span class="description">
-This is the interface for handling requests for [App Components](https://developers.asana.com/docs/app-components-overview). This reference is generated from an [OpenAPI spec] (https://raw.githubusercontent.com/Asana/developer-docs/master/defs/app_components_oas.yaml).
+This is the interface for handling requests for [app components](https://developers.asana.com/docs/overview-of-app-components). This reference is generated from an [OpenAPI spec] (https://raw.githubusercontent.com/Asana/developer-docs/master/defs/app_components_oas.yaml).
 </span>
 
 Base URLs:
@@ -25,7 +25,7 @@ Additional resources:
 </section><hr class="full-line">
 <section class="full-section">
 <a id="asana-modal-forms"></a>
-<h1 id="modal-forms">Modal Forms</h1>
+<h1 id="modal-forms">Modal forms</h1>
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -34,7 +34,7 @@ Additional resources:
 </pre>
 
 <span class="description">
-The Modal Form is displayed when the user starts the flow to create a resource. Asana will make a signed request to the specified `form_metadata_url` in the configuration, and expect a response with the metadata needed to create the form. This process is also used for forms within Rule Actions.
+The modal form is displayed when the user starts the flow to create a resource. Asana will make a signed request to the specified `form_metadata_url` in the configuration, and expect a response with the metadata needed to create the form. This process is also used for forms within rule actions.
 </span>
 
 </section>
@@ -68,7 +68,7 @@ The Modal Form is displayed when the user starts the flow to create a resource. 
 </p>
 
 <span class="description">
-Get the metadata from the App Server to render a form. <br> <br> <a href="../images/ac-form-metadata.png">
+Get the metadata from the app server to render a form. <br> <br> <a href="../images/ac-form-metadata.png">
   <img src="../images/ac-form-metadata.png" alt="App components form metadata request flow"/>
 </a>
 </span>
@@ -77,10 +77,10 @@ Get the metadata from the App Server to render a form. <br> <br> <a href="../ima
 
 |Name|Description|
 |---|---|
-|?workspace<span class="param-type"> string</span><div class="param-required">required</div>|The workspace `gid` this hook is coming from.|
-|?task<span class="param-type"> string</span><div class="param-required">required</div>|The task gid this hook is coming from.|
-|?user<span class="param-type"> string</span><div class="param-required">required</div>|The user `gid` this hook is coming from.|
-|?expires_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO-8601 date format) when the request should expire|
+|?workspace<span class="param-type"> string</span><div class="param-required">required</div>|The workspace GID this hook is coming from.|
+|?task<span class="param-type"> string</span><div class="param-required">required</div>|The task GID this hook is coming from.|
+|?user<span class="param-type"> string</span><div class="param-required">required</div>|The user GID` this hook is coming from.|
+|?expires_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO 8601 date format) when the request should expire.|
 
 <h3 id="get-form-metadata-responses">Responses</h3>
 
@@ -95,7 +95,7 @@ Get the metadata from the App Server to render a form. <br> <br> <a href="../ima
 
 </section><hr class="half-line">
 <section>
-## Get Modal Form typeahead results
+## Get modal form typeahead results
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -136,9 +136,9 @@ Get the metadata from the App Server to render a form. <br> <br> <a href="../ima
 </p>
 
 <span class="description">
-If a Modal Form form field is of type `typehead`, this operation gets typeahead results to render as a dropdown list.
+If a modal form field is of type `typehead`, this operation gets typeahead results to render as a dropdown list.
 
-When the user types into a Modal Form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="../images/ac-form-typeahead.png">
+When the user types into a modal form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="../images/ac-form-typeahead.png">
   <img src="../images/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
 </a>
 </span>
@@ -147,12 +147,12 @@ When the user types into a Modal Form form field, Asana will send a request cont
 
 |Name|Description|
 |---|---|
-|body<span class="param-type"> object</span><div class="param-required">required</div>|Request to retrieve typeahead results in a Modal Form typeahead form field.|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 format) when the request should expire|
+|body<span class="param-type"> object</span><div class="param-required">required</div>|Request to retrieve typeahead results in a modal form typeahead form field.|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 format) when the request should expire.|
 |» query<span class="param-type"> string</span>|The user's input in the typeahead text input.|
-|» task<span class="param-type"> string</span>|*Conditional*. The task `gid` this hook is coming from. `task` is only present in the [Modal Form](/docs/modal-form) (as there is a "context task"), but not in the [Rule Action](/docs/rule-action) (as rules are associated with a _project_).|
-|» user<span class="param-type"> string</span>|The user `gid` this hook is coming from.|
-|» workspace<span class="param-type"> string</span>|The workspace `gid` this hook is coming from.|
+|» task<span class="param-type"> string</span>|*Conditional*. The task GID this hook is coming from. `task` is only present in the [modal form](/docs/modal-form) (as there is a "context task"), but not in the [rule action](/docs/rule-action) (as rules are associated with a _project_).|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 <h3 id="get-modal-form-typeahead-results-responses">Responses</h3>
 
@@ -207,7 +207,7 @@ When the user types into a Modal Form form field, Asana will send a request cont
 </p>
 
 <span class="description">
-The callback request made to an App Server when a watched field's value changes within a form. <br> <br> <a href="../images/ac-form-on-change.png">
+The callback request made to an app server when a watched field's value changes within a form. <br> <br> <a href="../images/ac-form-on-change.png">
   <img src="../images/ac-form-on-change.png" alt="App components form on change request flow"/>
 </a>
 </span>
@@ -217,11 +217,11 @@ The callback request made to an App Server when a watched field's value changes 
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to notify of an on change event.|
-|» changed_field<span class="param-type"> string</span>|The name of the changed FormField|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
-|» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
-|» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
-|» workspace<span class="param-type"> string</span>|The workspace gid this hook is coming from.|
+|» changed_field<span class="param-type"> string</span>|The name of the changed FormField.|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 date format) when the request should expire.|
+|» task<span class="param-type"> string</span>|The task GID this hook is coming from.|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 <h3 id="on-change-callback-responses">Responses</h3>
 
@@ -280,7 +280,7 @@ The callback request made to an App Server when a watched field's value changes 
 </p>
 
 <span class="description">
-The callback request made to an App Server when a form is submitted. <br> <br> <a href="../images/ac-form-on-submit.png">
+The callback request made to an app server when a form is submitted. <br> <br> <a href="../images/ac-form-on-submit.png">
   <img src="../images/ac-form-on-submit.png" alt="App components form on submit request flow"/>
 </a>
 </span>
@@ -290,13 +290,13 @@ The callback request made to an App Server when a form is submitted. <br> <br> <
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to notify of a form submission.|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
-|» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
-|» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
-|» values<span class="param-type"> object</span>|A FormValues object mapping each FormField’s name to its value|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 date format) when the request should expire.|
+|» task<span class="param-type"> string</span>|The task GID this hook is coming from.|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» values<span class="param-type"> object</span>|A FormValues object mapping each FormField’s name to its value.|
 |»» field_name<span class="param-type"> string</span>|none|
 |»» field_object<span class="param-type"> object</span>|A form field object.|
-|» workspace<span class="param-type"> string</span>|The workspace gid this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 #### Detailed descriptions
 
@@ -318,7 +318,7 @@ Valid object schemas: [FormField-Checkbox](/docs/form-field-checkbox), [FormFiel
 </section><hr class="full-line">
 <section class="full-section">
 <a id="asana-rule-actions"></a>
-<h1 id="rule-actions">Rule Actions</h1>
+<h1 id="rule-actions">Rule actions</h1>
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -327,13 +327,13 @@ Valid object schemas: [FormField-Checkbox](/docs/form-field-checkbox), [FormFiel
 </pre>
 
 <span class="description">
-When a rule containing a Rule Action is triggered, the Rules Engine will make a request to the app to inform the app to run the configured Rule Action. The resulting status code will indicate to the Rules Engine whether the action was successfully completed and, if not, specify a cause for the error.
+When a rule containing a rule action is triggered, the [rules](https://asana.com/guide/help/premium/rules) engine will make a request to the app to inform the app to run the configured rule action. The resulting status code will indicate to the rules engine whether the action was successfully completed and, if not, specify a cause for the error.
 </span>
 
 </section>
 <hr class="half-line">
 <section>
-## Get Rule Action typeahead results
+## Get rule action typeahead results
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -374,9 +374,9 @@ When a rule containing a Rule Action is triggered, the Rules Engine will make a 
 </p>
 
 <span class="description">
-In a Rule Action typeahead form field, this operation gets typeahead results to render as a dropdown list.
+In a rule action typeahead form field, this operation gets typeahead results to render as a dropdown list. Typeahead results are limited to 50 items.
 
-When the user types into a Rule Action form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="../images/ac-rule-typeahead.png">
+When the user types into a rule action form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="../images/ac-rule-typeahead.png">
   <img src="../images/ac-rule-typeahead.png" alt="App components rule typeahead request flow"/>
 </a>
 </span>
@@ -385,12 +385,12 @@ When the user types into a Rule Action form field, Asana will send a request con
 
 |Name|Description|
 |---|---|
-|body<span class="param-type"> object</span><div class="param-required">required</div>|Request to retrieve typeahead results in a Rule Action typeahead form field.|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 format) when the request should expire|
+|body<span class="param-type"> object</span><div class="param-required">required</div>|Request to retrieve typeahead results in a rule action typeahead form field.|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 format) when the request should expire.|
 |» query<span class="param-type"> string</span>|The user's input in the typeahead text input.|
-|» task<span class="param-type"> string</span>|*Conditional*. The task `gid` this hook is coming from. `task` is only present in the [Modal Form](/docs/modal-form) (as there is a "context task"), but not in the [Rule Action](/docs/rule-action) (as rules are associated with a _project_).|
-|» user<span class="param-type"> string</span>|The user `gid` this hook is coming from.|
-|» workspace<span class="param-type"> string</span>|The workspace `gid` this hook is coming from.|
+|» task<span class="param-type"> string</span>|*Conditional*. The task GID this hook is coming from. `task` is only present in the [modal form](/docs/modal-form) (as there is a "context task"), but not in the [rule action](/docs/rule-action) (as rules are associated with a _project_).|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 <h3 id="get-rule-action-typeahead-results-responses">Responses</h3>
 
@@ -459,12 +459,12 @@ The request made when an action is triggered. <br> <br> <a href="../images/ac-ru
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to notify of an action running.|
 |» action<span class="param-type"> string</span>|The action ID generated from rule creation.|
-|» action_type<span class="param-type"> string</span>|The ID from the configuration used to create the Rule Action.|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
-|» idempotency_key<span class="param-type"> string</span>|A unique key associated with the "Run action" request. App Servers should use this key to implement idempotency.|
-|» target_object<span class="param-type"> string</span>|The ID of the target object that the Rule Action is acting on. Currently, this is always a Task `gid`.|
-|» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
-|» workspace<span class="param-type"> string</span>|The workspace gid this hook is coming from.|
+|» action_type<span class="param-type"> string</span>|The ID from the configuration used to create the rule action.|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 date format) when the request should expire.|
+|» idempotency_key<span class="param-type"> string</span>|A unique key associated with the "run action" request. App servers should use this key to implement idempotency.|
+|» target_object<span class="param-type"> string</span>|The ID of the target object that the rule action is acting on. Currently, this value is always a task GID.|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 <h3 id="run-action-responses">Responses</h3>
 
@@ -508,7 +508,7 @@ The request made when an action is triggered. <br> <br> <a href="../images/ac-ru
 </p>
 
 <span class="description">
-When a user has navigated to the [Custom Rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule) UI and selected a Rule Action (either through the sidebar or via a Rule Preset), Asana will make a request to the app to get the configuration form definition for the chosen Rule Action. This will initiate the flow to configure a new Rule Action or edit the configuration of an existing Rule Action. This is the endpoint and schema for updating Rule Actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-metadata.png">
+When a user has navigated to the [custom rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule) UI and selected a rule action (either through the sidebar or via a rule preset), Asana will make a request to the app to get the configuration form definition for the chosen rule action. This will initiate the flow to configure a new rule action or edit the configuration of an existing rule action. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-metadata.png">
   <img src="../images/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
 </a>
 </span>
@@ -517,12 +517,12 @@ When a user has navigated to the [Custom Rule builder](https://asana.com/guide/h
 
 |Name|Description|
 |---|---|
-|?action<span class="param-type"> string</span>|The ID of an existing Rule Action that is being edited. Should be omitted when configuring a new Rule Action.|
-|?action_type<span class="param-type"> string</span><div class="param-required">required</div>|The ID of the configuration used to create the Rule Action.|
-|?project<span class="param-type"> string</span><div class="param-required">required</div>|The project gid this hook is coming from.|
-|?workspace<span class="param-type"> string</span><div class="param-required">required</div>|The workspace `gid` this hook is coming from.|
-|?user<span class="param-type"> string</span><div class="param-required">required</div>|The user `gid` this hook is coming from.|
-|?expires_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO-8601 date format) when the request should expire|
+|?action<span class="param-type"> string</span>|The ID of an existing rule action that is being edited. Should be omitted when configuring a new rule action.|
+|?action_type<span class="param-type"> string</span><div class="param-required">required</div>|The ID of the configuration used to create the rule action.|
+|?project<span class="param-type"> string</span><div class="param-required">required</div>|The project GID this hook is coming from.|
+|?workspace<span class="param-type"> string</span><div class="param-required">required</div>|The workspace GID this hook is coming from.|
+|?user<span class="param-type"> string</span><div class="param-required">required</div>|The user GID` this hook is coming from.|
+|?expires_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO 8601 date format) when the request should expire.|
 
 <h3 id="get-action-metadata-responses">Responses</h3>
 
@@ -579,7 +579,7 @@ When a user has navigated to the [Custom Rule builder](https://asana.com/guide/h
 </p>
 
 <span class="description">
-The callback request made to an App Server when a watched field's value changes within an action form. <br> <br> <a href="../images/ac-rule-on-change.png">
+The callback request made to an app server when a watched field's value changes within an action form. <br> <br> <a href="../images/ac-rule-on-change.png">
   <img src="../images/ac-rule-on-change.png" alt="App components rule on change request flow"/>
 </a>
 </span>
@@ -589,13 +589,13 @@ The callback request made to an App Server when a watched field's value changes 
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to notify of an on change event.|
-|» action<span class="param-type"> string</span>|The ID of an existing Rule Action that is being edited.|
-|» action_type<span class="param-type"> string</span>|The ID of the configuration used to create the Rule Action.|
-|» changed_field<span class="param-type"> string</span>|The name of the changed FormField|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
-|» project<span class="param-type"> string</span>|The project `gid` this hook is coming from.|
-|» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
-|» workspace<span class="param-type"> string</span>|The workspace gid this hook is coming from.|
+|» action<span class="param-type"> string</span>|The ID of an existing rule action that is being edited.|
+|» action_type<span class="param-type"> string</span>|The ID of the configuration used to create the rule action.|
+|» changed_field<span class="param-type"> string</span>|The name of the changed FormField.|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 date format) when the request should expire.|
+|» project<span class="param-type"> string</span>|The project GID this hook is coming from.|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 <h3 id="on-action-change-callback-responses">Responses</h3>
 
@@ -663,7 +663,7 @@ The callback request made to an App Server when a watched field's value changes 
 </p>
 
 <span class="description">
-The form is submitted when the user chooses to create their Rule. Asana will create the Rule Action data model object and make a signed request to the on_submit_callback specified in the form metadata returned from the fetch/update Rule Action form endpoints. Information about the created Rule Action should be included in the response if it was successfully created. This is the endpoint and schema for updating Rule Actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-on-submit.png">
+The form is submitted when the user chooses to create their rule. Asana will create the rule action data model object and make a signed request to the `on_submit_callback` specified in the form metadata returned from the fetch/update rule action form endpoints. Information about the created rule action should be included in the response if it was successfully created. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-on-submit.png">
   <img src="../images/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
 </a>
 </span>
@@ -673,17 +673,17 @@ The form is submitted when the user chooses to create their Rule. Asana will cre
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to submit an action form.|
-|» action<span class="param-type"> string</span>|The ID of an existing Rule Action that is being edited|
-|» action_type<span class="param-type"> string</span>|The ID of the configuration used to create the Rule Action.|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
-|» project<span class="param-type"> string</span>|The project `gid` this hook is coming from.|
+|» action<span class="param-type"> string</span>|The ID of an existing rule action that is being edited|
+|» action_type<span class="param-type"> string</span>|The ID of the configuration used to create the rule action.|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 date format) when the request should expire.|
+|» project<span class="param-type"> string</span>|The project GID this hook is coming from.|
 |» rule_name<span class="param-type"> string</span>|The name of the rule being created|
-|» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
-|» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
-|» values<span class="param-type"> object</span>|A FormValues object mapping each FormField’s name to its value|
+|» task<span class="param-type"> string</span>|The task GID this hook is coming from.|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» values<span class="param-type"> object</span>|A FormValues object mapping each FormField’s name to its value.|
 |»» field_name<span class="param-type"> string</span>|none|
 |»» field_object<span class="param-type"> object</span>|A form field object.|
-|» workspace<span class="param-type"> string</span>|The workspace gid this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 #### Detailed descriptions
 
@@ -714,7 +714,7 @@ Valid object schemas: [FormField-Checkbox](/docs/form-field-checkbox), [FormFiel
 </pre>
 
 <span class="description">
-If the app defined a resource attach URL, tasks without a Widget offer the Lookup functionality. This appears as a text input to the user. When the user submits the text, the app responds with either a resource attachment or with an error.
+If the app defined a resource attach URL, tasks without a widget offer the lookup functionality. This appears as a text input to the user. When the user submits the text, the app responds with either a resource attachment or with an error.
 </span>
 
 </section>
@@ -764,12 +764,12 @@ When the user attaches a resource URL to a task, Asana will make a signed reques
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to attach a resource.|
-|» attachment<span class="param-type"> string</span>|The attachment id of the URL attachment|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 date format) when the request should expire|
-|» query<span class="param-type"> string</span>|The user’s input in the Lookup text input (this is often a resource URL or resource key, such as CP-1 or https://abcde.atlassian.net/browse/CP-1)|
-|» task<span class="param-type"> string</span>|The task gid this hook is coming from.|
-|» user<span class="param-type"> string</span>|The user gid this hook is coming from.|
-|» workspace<span class="param-type"> string</span>|The workspace gid this hook is coming from.|
+|» attachment<span class="param-type"> string</span>|The attachment ID of the URL attachment|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 date format) when the request should expire.|
+|» query<span class="param-type"> string</span>|The user’s input in the lookup text input. This is often a resource URL or resource key, such as `"CP-1"` or `"https://abcde.atlassian.net/browse/CP-1"`|
+|» task<span class="param-type"> string</span>|The task GID this hook is coming from.|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 <h3 id="attach-resource-responses">Responses</h3>
 
@@ -784,7 +784,7 @@ When the user attaches a resource URL to a task, Asana will make a signed reques
 
 </section><hr class="half-line">
 <section>
-## Get Lookup typeahead results
+## Get lookup typeahead results
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
@@ -835,11 +835,11 @@ When the user types into the lookup input field, Asana will send a request conta
 |Name|Description|
 |---|---|
 |body<span class="param-type"> object</span><div class="param-required">required</div>|Request to retrieve typeahead results for a resource lookup query.|
-|» expires_at<span class="param-type"> string</span>|The time (in ISO-8601 format) when the request should expire|
+|» expires_at<span class="param-type"> string</span>|The time (in ISO 8601 format) when the request should expire.|
 |» query<span class="param-type"> string</span>|The user's input in the typeahead text input.|
-|» task<span class="param-type"> string</span>|*Conditional*. The task `gid` this hook is coming from. `task` is only present in the [Modal Form](/docs/modal-form) (as there is a "context task"), but not in the [Rule Action](/docs/rule-action) (as rules are associated with a _project_).|
-|» user<span class="param-type"> string</span>|The user `gid` this hook is coming from.|
-|» workspace<span class="param-type"> string</span>|The workspace `gid` this hook is coming from.|
+|» task<span class="param-type"> string</span>|*Conditional*. The task GID this hook is coming from. `task` is only present in the [modal form](/docs/modal-form) (as there is a "context task"), but not in the [rule action](/docs/rule-action) (as rules are associated with a _project_).|
+|» user<span class="param-type"> string</span>|The user GID this hook is coming from.|
+|» workspace<span class="param-type"> string</span>|The workspace GID this hook is coming from.|
 
 <h3 id="get-lookup-typeahead-results-responses">Responses</h3>
 
@@ -864,7 +864,7 @@ When the user types into the lookup input field, Asana will send a request conta
 </pre>
 
 <span class="description">
-The Widget is displayed when the user views a task with an attachment with a resource URL matching your capability’s `match_resource_url_pattern`. When this happens, Asana will make a signed request to your `widget_metadata_url`, and expect a response with information to render in the Widget.
+The widget is displayed when the user views a task with an attachment with a resource URL matching your capability’s `match_resource_url_pattern`. When this happens, Asana will make a signed request to your `widget_metadata_url`, and expect a response with information to render in the widget.
 </span>
 
 </section>
@@ -900,7 +900,7 @@ The Widget is displayed when the user views a task with an attachment with a res
 </p>
 
 <span class="description">
-Get the metadata from the App Server to render a widget. <br> <br> <a href="../images/ac-widget-metadata.png">
+Get the metadata from the app server to render a widget. <br> <br> <a href="../images/ac-widget-metadata.png">
   <img src="../images/ac-widget-metadata.png" alt="App components widget metadata request flow"/>
 </a>
 </span>
@@ -909,12 +909,12 @@ Get the metadata from the App Server to render a widget. <br> <br> <a href="../i
 
 |Name|Description|
 |---|---|
-|?resource_url<span class="param-type"> string</span><div class="param-required">required</div>|The URL of the URL attachment on the task (i.e. Jira issue, GitHub pull request)|
-|?workspace<span class="param-type"> string</span><div class="param-required">required</div>|The workspace `gid` this hook is coming from.|
-|?task<span class="param-type"> string</span><div class="param-required">required</div>|The task gid this hook is coming from.|
-|?user<span class="param-type"> string</span><div class="param-required">required</div>|The user `gid` this hook is coming from.|
+|?resource_url<span class="param-type"> string</span><div class="param-required">required</div>|The URL of the URL attachment on the task (i.e., Jira issue, GitHub pull request)|
+|?workspace<span class="param-type"> string</span><div class="param-required">required</div>|The workspace GID this hook is coming from.|
+|?task<span class="param-type"> string</span><div class="param-required">required</div>|The task GID this hook is coming from.|
+|?user<span class="param-type"> string</span><div class="param-required">required</div>|The user GID` this hook is coming from.|
 |?attachment<span class="param-type"> string</span><div class="param-required">required</div>|The attachment ID of the URL attachment.|
-|?expires_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO-8601 date format) when the request should expire|
+|?expires_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO 8601 date format) when the request should expire.|
 
 <h3 id="get-widget-metadata-responses">Responses</h3>
 
@@ -1069,7 +1069,7 @@ An error response object indicating a forbidden request (i.e., a status code of 
 ```
 
 <span class="description">
-A Modal Form field that accepts checkbox input. Limit 10 options.
+A modal form field that accepts checkbox input. Limit 10 options.
 
 </span>
 
@@ -1085,7 +1085,7 @@ A Modal Form field that accepts checkbox input. Limit 10 options.
 |options<span class="param-type"> [object]</span><div class="param-required">required</div>|An array (minimum length: 1) of CheckboxOption objects.|
 |» id<span class="param-type"> string</span><div class="param-required">required</div>|The ID of the option.|
 |» label<span class="param-type"> string</span><div class="param-required">required</div>|The label of the option. Limit 80 characters.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |value<span class="param-type"> [string]</span>|*Optional*. The values for the form field, which are the IDs of the chosen CheckboxOption objects.|
 
 #### Enumerated Values
@@ -1120,7 +1120,7 @@ A Modal Form field that accepts checkbox input. Limit 10 options.
 ```
 
 <span class="description">
-A Modal Form field that accepts date input.
+A modal form field that accepts date input.
 
 </span>
 
@@ -1134,7 +1134,7 @@ A Modal Form field that accepts date input.
 |is_watched<span class="param-type"> boolean</span>|*Optional*. Indicates whether the field should be watched. Fields that are watched send requests to the `on_change` URL specified in the form metadata to get updated form information. If this property is not specified, the value is assumed `false`.|
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |placeholder<span class="param-type"> string</span>|The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |value<span class="param-type"> string(date)¦null</span>|The value of the field. This takes a date with format YYYY-MM-DD.|
 
 #### Enumerated Values
@@ -1169,7 +1169,7 @@ A Modal Form field that accepts date input.
 ```
 
 <span class="description">
-A Modal Form field that accepts datetime input.
+A modal form field that accepts datetime input.
 
 </span>
 
@@ -1183,8 +1183,8 @@ A Modal Form field that accepts datetime input.
 |is_watched<span class="param-type"> boolean</span>|*Optional*. Indicates whether the field should be watched. Fields that are watched send requests to the `on_change` URL specified in the form metadata to get updated form information. If this property is not specified, the value is assumed `false`.|
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |placeholder<span class="param-type"> string</span>|The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
-|value<span class="param-type"> string(date-time)¦null</span>|The value of the field. This takes an ISO 8601 date string in UTC|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
+|value<span class="param-type"> string(date-time)¦null</span>|The value of the field. This value takes the form of an ISO 8601 date string in UTC.|
 
 #### Enumerated Values
 
@@ -1225,7 +1225,7 @@ A Modal Form field that accepts datetime input.
 ```
 
 <span class="description">
-A Modal Form field that accepts input via a dropdown list. Limit 50 options.
+A modal form field that accepts input via a dropdown list. Limit 50 options.
 
 </span>
 
@@ -1242,7 +1242,7 @@ A Modal Form field that accepts input via a dropdown list. Limit 50 options.
 |» icon_url<span class="param-type"> string</span>|*Optional*. The URL for the icon beside the label. If not present, no icon will be displayed.|
 |» id<span class="param-type"> string</span><div class="param-required">required</div>|The ID of the option.|
 |» label<span class="param-type"> string</span><div class="param-required">required</div>|The label of the option. Limit 80 characters.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |value<span class="param-type"> string</span>|*Optional*. The value for the form field, which is the ID of the chosen DropdownOption object.|
 |width<span class="param-type"> string</span>|*Optional*. The width of the form field. If not provided, the default value will be `"full"`.|
 
@@ -1280,7 +1280,7 @@ A Modal Form field that accepts input via a dropdown list. Limit 50 options.
 ```
 
 <span class="description">
-A Modal Form field that accepts multi-line text input.
+A modal form field that accepts multi-line text input.
 
 </span>
 
@@ -1294,7 +1294,7 @@ A Modal Form field that accepts multi-line text input.
 |is_watched<span class="param-type"> boolean</span>|*Optional*. Indicates whether the field should be watched. Fields that are watched send requests to the `on_change` URL specified in the form metadata to get updated form information. If this property is not specified, the value is assumed `false`.|
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |placeholder<span class="param-type"> string</span>|The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |value<span class="param-type"> string</span>|The value of the field. If not provided, the field will be empty and the form cannot be submitted if it is required. Limit 3000 characters.|
 
 #### Enumerated Values
@@ -1335,7 +1335,7 @@ A Modal Form field that accepts multi-line text input.
 ```
 
 <span class="description">
-A Modal Form field that accepts radio button input. Limit 5 options.
+A modal form field that accepts radio button input. Limit 5 options.
 
 </span>
 
@@ -1352,7 +1352,7 @@ A Modal Form field that accepts radio button input. Limit 5 options.
 |» id<span class="param-type"> string</span><div class="param-required">required</div>|The ID of the option.|
 |» label<span class="param-type"> string</span><div class="param-required">required</div>|The label of the option. Limit 80 characters.|
 |» sub_label<span class="param-type"> string</span>|*Optional*. The label to display as subtext for the `label`.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |value<span class="param-type"> string</span>|*Optional*. The value for the form field, which is the ID of the chosen RadioOption object.|
 
 #### Enumerated Values
@@ -1387,7 +1387,7 @@ A Modal Form field that accepts radio button input. Limit 5 options.
 ```
 
 <span class="description">
-A Modal Form field that accepts rich text input.
+A modal form field that accepts rich text input.
 
 </span>
 
@@ -1401,7 +1401,7 @@ A Modal Form field that accepts rich text input.
 |is_watched<span class="param-type"> boolean</span>|*Optional*. Indicates whether the field should be watched. Fields that are watched send requests to the `on_change` URL specified in the form metadata to get updated form information. If this property is not specified, the value is assumed `false`.|
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |placeholder<span class="param-type"> string</span>|The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |value<span class="param-type"> string</span>|The value of the field. If not provided, the field will be empty and the form cannot be submitted if it is required. Limit 3000 characters.|
 
 #### Enumerated Values
@@ -1437,7 +1437,7 @@ A Modal Form field that accepts rich text input.
 ```
 
 <span class="description">
-A Modal Form field that accepts single-line text input.
+A modal form field that accepts single-line text input.
 
 </span>
 
@@ -1451,7 +1451,7 @@ A Modal Form field that accepts single-line text input.
 |is_watched<span class="param-type"> boolean</span>|*Optional*. Indicates whether the field should be watched. Fields that are watched send requests to the `on_change` URL specified in the form metadata to get updated form information. If this property is not specified, the value is assumed `false`.|
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
 |placeholder<span class="param-type"> string</span>|The placeholder for the input, which is shown if the field has no value. If not provided, there will be no placeholder.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |value<span class="param-type"> string</span>|The value of the field. If not provided, the field will be empty and the form cannot be submitted if it is required. Limit 200 characters.|
 |width<span class="param-type"> string</span>|*Optional*. The width of the form field. If not provided, the default value will be `"full"`.|
 
@@ -1484,7 +1484,7 @@ A Modal Form field that accepts single-line text input.
 ```
 
 <span class="description">
-A Modal Form "field" that displays static text. Fields of this type do not collect user input.
+A modal form "field" that displays static text. Fields of this type do not collect user input.
 
 </span>
 
@@ -1494,7 +1494,7 @@ A Modal Form "field" that displays static text. Fields of this type do not colle
 |---|---|
 |id<span class="param-type"> string</span><div class="param-required">required</div>|The ID of the field, which is used to reference the field. These should be unique across the entire form.|
 |name<span class="param-type"> string</span><div class="param-required">required</div>|The text (i.e., label) for the field. Limit 50 characters.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 
 #### Enumerated Values
 
@@ -1534,7 +1534,7 @@ A Modal Form "field" that displays static text. Fields of this type do not colle
 ```
 
 <span class="description">
-A Modal Form field that accepts typeahead input.
+A modal form field that accepts typeahead input.
 
 </span>
 
@@ -1547,13 +1547,13 @@ A Modal Form field that accepts typeahead input.
 |is_required<span class="param-type"> boolean</span>|*Optional*. Indicates whether the field is required to submit the form. If this property is not specified, the value is assumed `false`.|
 |is_watched<span class="param-type"> boolean</span>|*Optional*. Indicates whether the field should be watched. Fields that are watched send requests to the `on_change` URL specified in the form metadata to get updated form information. If this property is not specified, the value is assumed `false`.|
 |name<span class="param-type"> string</span>|The text (i.e., label) to show in the title of the field. Limit 50 characters.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Modal Form field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of modal form field.|
 |typeahead_url<span class="param-type"> string</span><div class="param-required">required</div>|The URL that Asana uses to request typehead results from the application server.|
 |value<span class="param-type"> object</span>|*Optional*. The value for the form field, which is the chosen [TypeaheadItem](/docs/typeahead-item) object.|
-|» icon_url<span class="param-type"> string</span>|The URL of the icon to display next to the title|
-|» subtitle<span class="param-type"> string</span>|The subtitle of the typeahead item|
-|» title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the typeahead item|
-|» value<span class="param-type"> string</span><div class="param-required">required</div>|The value of the typeahead item|
+|» icon_url<span class="param-type"> string</span>|The URL of the icon to display next to the title.|
+|» subtitle<span class="param-type"> string</span>|The subtitle of the typeahead item.|
+|» title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the typeahead item.|
+|» value<span class="param-type"> string</span><div class="param-required">required</div>|The value of the typeahead item.|
 |width<span class="param-type"> string</span>|*Optional*. The width of the form field. If not provided, the default value will be `"full"`.|
 
 #### Enumerated Values
@@ -1600,8 +1600,8 @@ Contains the metadata that describes how to display and manage a form.
 |---|---|
 |metadata<span class="param-type"> object</span><div class="param-required">required</div>|The metadata (i.e., underlying definition) of a form. `metadata` must exist alongside a `template`, and its schema must be specific to the value of that `template`.|
 |» fields<span class="param-type"> array</span><div class="param-required">required</div>|An array of form field objects that are rendered in the order they are in the array. Limit of 30 fields.<br><br>Valid object schemas: [FormField-Checkbox](/docs/form-field-checkbox), [FormField-Date](/docs/form-field-date), [FormField-Datetime](/docs/form-field-datetime), [FormField-Dropdown](/docs/form-field-dropdown), [FormField-MultiLineText](/docs/form-field-multi-line-text), [FormField-RadioButton](/docs/form-field-radio-button), [FormField-RichText](/docs/form-field-rich-text), [FormField-SingleLineText](/docs/form-field-single-line-text), [FormField-StaticText](/docs/form-field-static-text), [FormField-Typeahead](/docs/form-field-typeahead)|
-|» on_change_callback<span class="param-type"> string</span>|The URL to POST the form to whenever watched field values are changed.|
-|» on_submit_callback<span class="param-type"> string</span>|The URL to POST the form to when the user clicks the submit button. If this is field is omitted then the submission button will be disabled. This is useful if the user must enter information in a watched field first, such as to show additional fields.|
+|» on_change_callback<span class="param-type"> string</span>|The URL to `POST` the form to whenever watched field values are changed.|
+|» on_submit_callback<span class="param-type"> string</span>|The URL to `POST` the form to when the user clicks the submit button. If this is field is omitted then the submission button will be disabled. This is useful if the user must enter information in a watched field first, such as to show additional fields.|
 |» submit_button_text<span class="param-type"> string</span>|The text to display on the form’s submit button. If not provided, the default text “Submit” will be displayed on the button.|
 |» title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the form, which is displayed at the top of the creation form|
 |template<span class="param-type"> string</span><div class="param-required">required</div>|The interface name and version of a distinct form UI layout. A `template` is directly associated with a particular `metadata` schema.|
@@ -1712,8 +1712,8 @@ The response to an action request.
 |Name|Description|
 |---|---|
 |action_result<span class="param-type"> string</span><div class="param-required">required</div>|Specifies any additional information that the app wants to send to Asana on completion of the action. Can only be `resources_created` or `ok`.|
-|error<span class="param-type"> string</span>|The error that should be displayed to the user|
-|resources_created<span class="param-type"> [object]</span>|A field with the data corresponding to the action_result value. Each action_result has its own data field shape that Asana expects. `resources_created` expects the name and url of the resources that the action created.|
+|error<span class="param-type"> string</span>|The error that should be displayed to the user.|
+|resources_created<span class="param-type"> [object]</span>|A field with the data corresponding to the action_result value. Each `action_result` has its own data field shape that Asana expects. `resources_created` expects the name and URL of the resources that the action created.|
 |» error<span class="param-type"> string</span>|The error that should be displayed to the user|
 |» resource_name<span class="param-type"> string</span><div class="param-required">required</div>|The name of the attached resource|
 |» resource_url<span class="param-type"> string</span><div class="param-required">required</div>|The URL of the attached resource|
@@ -1755,10 +1755,10 @@ An object describing a typeahead result.
 
 |Name|Description|
 |---|---|
-|icon_url<span class="param-type"> string</span>|The URL of the icon to display next to the title|
-|subtitle<span class="param-type"> string</span>|The subtitle of the typeahead item|
-|title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the typeahead item|
-|value<span class="param-type"> string</span><div class="param-required">required</div>|The value of the typeahead item|
+|icon_url<span class="param-type"> string</span>|The URL of the icon to display next to the title.|
+|subtitle<span class="param-type"> string</span>|The subtitle of the typeahead item.|
+|title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the typeahead item.|
+|value<span class="param-type"> string</span><div class="param-required">required</div>|The value of the typeahead item.|
 
 </section><hr>
 <section>
@@ -1797,10 +1797,10 @@ The response to a successful typeahead request.
 |---|---|
 |header<span class="param-type"> string</span>|*Optional*. Header text to display above the list of typeahead results. If no `header` is passed in or the value is an empty string, only the typeahead results with be rendered.|
 |items<span class="param-type"> [object]</span><div class="param-required">required</div>|Array of [TypeaheadItem](/docs/typeahead-item) objects that indicate typeahead results.|
-|» icon_url<span class="param-type"> string</span>|The URL of the icon to display next to the title|
-|» subtitle<span class="param-type"> string</span>|The subtitle of the typeahead item|
-|» title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the typeahead item|
-|» value<span class="param-type"> string</span><div class="param-required">required</div>|The value of the typeahead item|
+|» icon_url<span class="param-type"> string</span>|The URL of the icon to display next to the title.|
+|» subtitle<span class="param-type"> string</span>|The subtitle of the typeahead item.|
+|» title<span class="param-type"> string</span><div class="param-required">required</div>|The title of the typeahead item.|
+|» value<span class="param-type"> string</span><div class="param-required">required</div>|The value of the typeahead item.|
 
 </section><hr>
 <section>
@@ -1856,7 +1856,7 @@ An error response object indicating a unauthorized request (i.e., a status code 
 ```
 
 <span class="description">
-A Widget field that displays a timestamp and an optional icon.
+A widget field that displays a timestamp and an optional icon.
 
 </span>
 
@@ -1864,10 +1864,10 @@ A Widget field that displays a timestamp and an optional icon.
 
 |Name|Description|
 |---|---|
-|datetime<span class="param-type"> string</span>|The time (in ISO-8601 date format) to display next to the icon.|
+|datetime<span class="param-type"> string</span>|The time (in ISO 8601 date format) to display next to the icon.|
 |icon_url<span class="param-type"> string</span>|*Optional*. The URL of the icon to display next to the time.|
 |name<span class="param-type"> string</span><div class="param-required">required</div>|The text (i.e., label) to show in the title of the field. Limit 40 characters.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Widget field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of widget field.|
 
 #### Enumerated Values
 
@@ -1897,7 +1897,7 @@ A Widget field that displays a timestamp and an optional icon.
 ```
 
 <span class="description">
-A Widget field that displays custom text in a colored "pill" format.
+A widget field that displays custom text in a colored "pill" format.
 
 </span>
 
@@ -1908,7 +1908,7 @@ A Widget field that displays custom text in a colored "pill" format.
 |color<span class="param-type"> string</span><div class="param-required">required</div>|The color of the pill.|
 |name<span class="param-type"> string</span><div class="param-required">required</div>|The text (i.e., label) to show in the title of the field. Limit 40 characters.|
 |text<span class="param-type"> string</span><div class="param-required">required</div>|The text to show in the field. Limit 40 characters.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Widget field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of widget field.|
 
 #### Enumerated Values
 
@@ -1954,7 +1954,7 @@ A Widget field that displays custom text in a colored "pill" format.
 ```
 
 <span class="description">
-A Widget field that displays custom text with an optional icon.
+A widget field that displays custom text with an optional icon.
 
 </span>
 
@@ -1965,7 +1965,7 @@ A Widget field that displays custom text with an optional icon.
 |icon_url<span class="param-type"> string</span>|*Optional*. The URL of the icon to display next to the text.|
 |name<span class="param-type"> string</span><div class="param-required">required</div>|The text (i.e., label) to show in the title of the field. Limit 40 characters.|
 |text<span class="param-type"> string</span><div class="param-required">required</div>|The text to show in the field. Limit 40 characters.|
-|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Widget field.|
+|type<span class="param-type"> string</span><div class="param-required">required</div>|The type of widget field.|
 
 #### Enumerated Values
 
@@ -1993,7 +1993,7 @@ A Widget field that displays custom text with an optional icon.
 ```
 
 <span class="description">
-A Widget footer that displays the timestamp of the resource's creation time.
+A widget footer that displays the timestamp of the resource's creation time.
 
 </span>
 
@@ -2001,8 +2001,8 @@ A Widget footer that displays the timestamp of the resource's creation time.
 
 |Name|Description|
 |---|---|
-|created_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO-8601 date format) to show in the footer.|
-|footer_type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Widget footer.|
+|created_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO 8601 date format) to show in the footer.|
+|footer_type<span class="param-type"> string</span><div class="param-required">required</div>|The type of widget footer.|
 
 #### Enumerated Values
 
@@ -2031,7 +2031,7 @@ A Widget footer that displays the timestamp of the resource's creation time.
 ```
 
 <span class="description">
-A Widget footer that displays custom text and an optional icon.
+A widget footer that displays custom text and an optional icon.
 
 </span>
 
@@ -2069,7 +2069,7 @@ A Widget footer that displays custom text and an optional icon.
 ```
 
 <span class="description">
-A Widget footer that displays the timestamp of the resource's last updated time.
+A widget footer that displays the timestamp of the resource's last updated time.
 
 </span>
 
@@ -2077,8 +2077,8 @@ A Widget footer that displays the timestamp of the resource's last updated time.
 
 |Name|Description|
 |---|---|
-|footer_type<span class="param-type"> string</span><div class="param-required">required</div>|The type of Widget footer.|
-|last_updated_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO-8601 date format) to show in the footer.|
+|footer_type<span class="param-type"> string</span><div class="param-required">required</div>|The type of widget footer.|
+|last_updated_at<span class="param-type"> string</span><div class="param-required">required</div>|The time (in ISO 8601 date format) to show in the footer.|
 
 #### Enumerated Values
 
@@ -2123,13 +2123,13 @@ An object containing information about the widget.
 |Name|Description|
 |---|---|
 |metadata<span class="param-type"> object</span><div class="param-required">required</div>|The metadata (i.e., underlying definition) of a widget. `metadata` must exist alongside a `template`, and its schema must be specific to the value of that `template`.|
-|» error<span class="param-type"> string</span>|The error that should be displayed to the user|
-|» fields<span class="param-type"> array</span><div class="param-required">required</div>|A list of fields showing data from external resources (i.e., an array of WidgetField objects). A Widget must contain at least 1 field and no more than 5 fields.<br><br>Valid object schemas: [WidgetField-DatetimeWithIcon](/docs/widget-field-datetime-with-icon), [WidgetField-Pill](/docs/widget-field-pill), [WidgetField-TextWithIcon](/docs/widget-field-text-with-icon).|
-|» footer<span class="param-type"> object</span><div class="param-required">required</div>|Contains the information to display a footer on the Widget.<br><br>Valid schemas: [WidgetFooter-Created](/docs/widget-footer-created), [WidgetFooter-CustomText](/docs/widget-footer-custom-text), [WidgetFooter-Updated](/docs/widget-footer-updated).|
+|» error<span class="param-type"> string</span>|The error that should be displayed to the user.|
+|» fields<span class="param-type"> array</span><div class="param-required">required</div>|A list of fields showing data from external resources (i.e., an array of WidgetField objects). A widget must contain at least 1 field and no more than 5 fields.<br><br>Valid object schemas: [WidgetField-DatetimeWithIcon](/docs/widget-field-datetime-with-icon), [WidgetField-Pill](/docs/widget-field-pill), [WidgetField-TextWithIcon](/docs/widget-field-text-with-icon).|
+|» footer<span class="param-type"> object</span><div class="param-required">required</div>|Contains the information to display a footer on the widget.<br><br>Valid schemas: [WidgetFooter-Created](/docs/widget-footer-created), [WidgetFooter-CustomText](/docs/widget-footer-custom-text), [WidgetFooter-Updated](/docs/widget-footer-updated).|
 |» num_comments<span class="param-type"> integer</span>|The number of comments to display on the lower right corner of the widget. If not provided, no comment count will be shown|
-|» subicon_url<span class="param-type"> string</span>|The URL of the subicon next to the subtitle . If not provided, no icon will be shown|
-|» subtitle<span class="param-type"> string</span>|The text to show under the title of the widget, next to "Open in {App Name}". If not provided, the resource_name from the app definition will be used as default|
-|» title<span class="param-type"> string</span><div class="param-required">required</div>|The text to show in the title of the widget. Max length of 200 chars.|
+|» subicon_url<span class="param-type"> string</span>|The URL of the subicon next to the subtitle . If not provided, no icon will be shown.|
+|» subtitle<span class="param-type"> string</span>|The text to show under the title of the widget, next to "Open in {App Name}". If not provided, the `resource_name` from the app definition will be used as default.|
+|» title<span class="param-type"> string</span><div class="param-required">required</div>|The text to show in the title of the widget. Max length of 200 characters.|
 |template<span class="param-type"> string</span><div class="param-required">required</div>|The interface name and version of a distinct widget UI layout. A `template` is directly associated with a particular `metadata` schema.|
 
 #### Enumerated Values
