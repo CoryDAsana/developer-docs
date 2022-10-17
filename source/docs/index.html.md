@@ -21,12 +21,12 @@ includes:
   - markdown/11_1-news-and-changelog.html.md
   - markdown/11_2-news-and-changelog.html.md
   - markdown/08-input-output-options.html.md
+  - markdown/07-pagination.html.md
   - markdown/05-rate-limits.html.md
   - markdown/04-errors.html.md
-  - markdown/07-pagination.html.md
   - markdown/06-rich-text.html.md
-  - markdown/12-audit-log.html.md
   - markdown/13-scim.html.md
+  - markdown/12-audit-log.html.md
   - markdown/14-deprecations.html.md
   - markdown/20-building-a-custom-app.html.md
   - markdown/21-managing-your-app.html.md

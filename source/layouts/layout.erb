@@ -93,12 +93,18 @@ under the License.
         <% platform_ui_alpha = false %>
         <% toc_data(page_content).each do |h1| %>
           <% if h1[:title].start_with?("Overview of webhooks"); webhooks = true; end %>
+          <% if h1[:title] == "Overview"; getting_started = true; end %>
+          <% if h1[:title].start_with?("Input/output options"); io_options = true; end %>
+          <% if h1[:title].start_with?("Building a custom app"); build_apps = true; end %>
           <% if h1[:title].start_with?("Overview of app components"); platform_ui_alpha = true; webhooks = false; end %>
           <% if h1[:title].start_with?("API Reference"); platform_ui_alpha = false; end %>
           <li <% if platform_ui_alpha %>class="platform-ui-alpha"<% end %>>
-            <% if h1[:title].start_with?("API Reference") || h1[:title].start_with?("Schemas") || h1[:title].start_with?("Input/output options") || h1[:title].start_with?("Building a custom app") || h1[:title].start_with?("Overview of app components") || h1[:title].start_with?("Overview of webhooks") %>
+            <% if h1[:title].start_with?("API Reference") || h1[:title].start_with?("Schemas") || h1[:title] == ("Overview") || h1[:title].start_with?("Input/output options") || h1[:title].start_with?("Building a custom app") || h1[:title].start_with?("Overview of app components") || h1[:title].start_with?("Overview of webhooks") %>
               <hr>
               <% if webhooks %><a class="toc-h1 toc-link"><span class="beta-indicator">Webhooks</span></a><% end %>
+              <% if getting_started %><a class="toc-h1 toc-link"><span class="beta-indicator">Getting started</span></a><% end %>
+              <% if build_apps %><a class="toc-h1 toc-link"><span class="beta-indicator">Building apps</span></a><% end %>
+              <% if io_options %><a class="toc-h1 toc-link"><span class="beta-indicator">API features</span></a><% end %>
               <% if platform_ui_alpha %><a class="toc-h1 toc-link"><span class="beta-indicator">App Components</span></a></li><li class="platform-ui-alpha"><% end %>
             <% end %>
             <a href="/docs/<%= h1[:id] %>" class="toc-h1 toc-link<% if h1[:title].start_with?("Overview") %> active<% end %>" data-title="<%= h1[:title] %>"><%= h1[:content] %><% if platform_ui_alpha && h1[:title].start_with?("App Server") %><span class="beta-indicator"> - ALPHA</span><% end %></a>
