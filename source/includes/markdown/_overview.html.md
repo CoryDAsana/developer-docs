@@ -44,10 +44,10 @@ JSON content in all of its responses, including errors. Only
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/UTF-8" target="_blank" rel="noopener noreferrer">UTF-8</a> character encoding is
 supported for both requests and responses.
 
-For quick access to core API objects and schemas, see:
+**For quick access to core API objects and schemas, see:**
 
-* [API reference](/docs/asana)
-* [Schemas](/docs/schemas)
+* [**API reference**](/docs/asana)
+* [**Schemas**](/docs/schemas)
 
 <div>
   <div class="docs-developer-satisfaction-content">

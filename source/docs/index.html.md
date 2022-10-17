@@ -9,17 +9,17 @@ language_tabs:
   - ruby: ' ruby'
 toc_footers: []
 includes:
-  - markdown/01-overview.html.md
-  - markdown/02-object-hierarchy.html.md
-  - markdown/15-developer-sandbox.html.md
-  - markdown/16-how-to-use.html.md
-  - markdown/17-api-explorer.html.md
-  - markdown/18-client-libs.html.md
-  - markdown/19-common-use-cases.html.md
-  - markdown/23-examples.html.md
-  - markdown/11_0-news-and-changelog.html.md
-  - markdown/11_1-news-and-changelog.html.md
-  - markdown/11_2-news-and-changelog.html.md
+  - markdown/overview.html.md
+  - markdown/object-hierarchy.html.md
+  - markdown/developer-sandbox.html.md
+  - markdown/how-to-use.html.md
+  - markdown/api-explorer.html.md
+  - markdown/client-libs.html.md
+  - markdown/common-use-cases.html.md
+  - markdown/examples.html.md
+  - markdown/news-and-changelog-0.html.md
+  - markdown/news-and-changelog-1.html.md
+  - markdown/news-and-changelog-2.html.md
   - markdown/08-input-output-options.html.md
   - markdown/07-pagination.html.md
   - markdown/05-rate-limits.html.md
