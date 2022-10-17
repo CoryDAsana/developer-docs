@@ -173,7 +173,7 @@ At this point, you are ready to begin development against the API! Asana has [cl
 <blockquote>
 <div class="postman-run-button"
 data-postman-action="collection/import"
-data-postman-var-1="c7a5949aed49ec7851c5"></div>
+data-postman-var-1="b11da17e782fc4162052"></div>
 <script type="text/javascript">
   (function (p,o,s,t,m,a,n) {
     !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
