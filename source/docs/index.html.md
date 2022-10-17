@@ -20,14 +20,14 @@ includes:
   - markdown/news-and-changelog-0.html.md
   - markdown/news-and-changelog-1.html.md
   - markdown/news-and-changelog-2.html.md
-  - markdown/08-input-output-options.html.md
-  - markdown/07-pagination.html.md
-  - markdown/05-rate-limits.html.md
-  - markdown/04-errors.html.md
-  - markdown/06-rich-text.html.md
-  - markdown/13-scim.html.md
-  - markdown/12-audit-log.html.md
-  - markdown/14-deprecations.html.md
+  - markdown/input-output-options.html.md
+  - markdown/pagination.html.md
+  - markdown/errors.html.md
+  - markdown/rate-limits.html.md
+  - markdown/rich-text.html.md
+  - markdown/scim.html.md
+  - markdown/audit-log.html.md
+  - markdown/deprecations.html.md
   - markdown/20-building-a-custom-app.html.md
   - markdown/21-managing-your-app.html.md
   - markdown/22-submit-your-app.html.md
