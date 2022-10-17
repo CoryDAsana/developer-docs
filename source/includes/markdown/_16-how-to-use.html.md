@@ -51,13 +51,17 @@ The base URL for all requests to the Asana API is `https://app.asana.com/api/1.0
 
 Since every API request you make will start with the same base URL (`https://app.asana.com/api/1.0`), in this documentation we'll generally refer to the URL by its resoruce or relative path. For instance, when we say `/users/me`, we are using this as a shorthand for the entire URL: `https://app.asana.com/api/1.0/users/me`.
 
+Note that for requests that query for multiple objects, [pagination](/docs/pagination) is highly recommended. Requests with large result sets may timeout or be truncated; therefore, pagination is strongly encouraged to ensure both you and your users have the best experience when using the Asana API.
+
 #### Receiving a response
 
 After requesting information from the API, you will receive a response in [JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) format, which can be read and understood by both humans and computers. The response is structured in a particular way so programs can rely on a consistent format for the data.
 
 Our API is documented for what resources are available and what sort of return data to expect. For example, here is the [documentation for the `/users` endpoint](/docs/get-a-user), which we just called (i.e., requested) earlier. This is where you can discover what is possible with our API.
 
-Now, let’s make the same call to `/users/me` more like software would. Before we do so, we’ll need to get access outside of your web browser to the API.
+#### Next steps
+
+In the next section, we'll make the same request to `/users/me` more like software would. Before we do so, we’ll need to get access outside of your web browser to the API.
 
 <div>
   <div class="docs-developer-satisfaction-content">

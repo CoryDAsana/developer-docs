@@ -44,13 +44,10 @@ JSON content in all of its responses, including errors. Only
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/UTF-8" target="_blank" rel="noopener noreferrer">UTF-8</a> character encoding is
 supported for both requests and responses.
 
-**Notes on pagination**
+For quick access to core API objects and schemas, see:
 
-<a href="/docs/pagination">Pagination</a> is an important concept when working
-with queries for multiple objects. Requests with large result sets may timeout or be truncated; therefore,
-pagination is strongly encouraged to ensure both you and your users have the best experience when using the Asana API.
-
-Happy coding!
+* [API reference](/docs/asana)
+* [Schemas](/docs/schemas)
 
 <div>
   <div class="docs-developer-satisfaction-content">
