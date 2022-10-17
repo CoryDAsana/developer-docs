@@ -34,8 +34,8 @@ includes:
   - markdown/app-server.html.md
   - markdown/auth.html.md
   - markdown/custom-external-data.html.md
-  - markdown/24-webhooks.html.md
-  - markdown/25-app-components.html.md
+  - markdown/webhooks.html.md
+  - markdown/app-components.html.md
   - helpers/app-components-wrapper.html.md
   - app-components-reference/index.html.md
   - helpers/app-components-wrapper-close.html.md

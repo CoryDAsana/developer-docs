@@ -46,8 +46,8 @@ supported for both requests and responses.
 
 **For quick access to core API objects and schemas, see:**
 
-* [**API reference**](/docs/asana)
-* [**Schemas**](/docs/schemas)
+* [API reference](/docs/asana)
+* [Schemas](/docs/schemas)
 
 <div>
   <div class="docs-developer-satisfaction-content">
