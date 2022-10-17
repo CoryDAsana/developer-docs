@@ -70,7 +70,7 @@ under the License.
         <img src="https://assets.asana.biz/m/33a0924d61aabd7b/original/Asana-developers-lockup-horizontal.svg" class="logo" alt="Logo" />
       </a>
       <div class="feedback-holder">
-        <a class="feedback-link" href="https://form.asana.com?hash=c439d6062b165442b3d40383ab2f95cac08176b5b8ced11cf47817743a704728&id=1137609721785458" target="_blank">Send Feedback</a>
+        <a class="feedback-link" href="https://form.asana.com?hash=c439d6062b165442b3d40383ab2f95cac08176b5b8ced11cf47817743a704728&id=1137609721785458" target="_blank">Send feedback</a>
       </div>
       <% if language_tabs.any? %>
         <div class="lang-selector">
@@ -93,13 +93,19 @@ under the License.
         <% platform_ui_alpha = false %>
         <% toc_data(page_content).each do |h1| %>
           <% if h1[:title].start_with?("Overview of webhooks"); webhooks = true; end %>
+          <% if h1[:title] == "Overview"; getting_started = true; end %>
+          <% if h1[:title].start_with?("Input/output options"); io_options = true; end %>
+          <% if h1[:title].start_with?("Building a custom app"); build_apps = true; end %>
           <% if h1[:title].start_with?("Overview of app components"); platform_ui_alpha = true; webhooks = false; end %>
           <% if h1[:title].start_with?("API Reference"); platform_ui_alpha = false; end %>
           <li <% if platform_ui_alpha %>class="platform-ui-alpha"<% end %>>
-            <% if h1[:title].start_with?("API Reference") || h1[:title].start_with?("Schemas") || h1[:title].start_with?("Developer sandbox") || h1[:title].start_with?("Overview of app components") || h1[:title].start_with?("Overview of webhooks") %>
+            <% if h1[:title].start_with?("API Reference") || h1[:title].start_with?("Schemas") || h1[:title] == ("Overview") || h1[:title].start_with?("Input/output options") || h1[:title].start_with?("Building a custom app") || h1[:title].start_with?("Overview of app components") || h1[:title].start_with?("Overview of webhooks") %>
               <hr>
-              <% if webhooks %><a class="toc-h1 toc-link"><span class="beta-indicator">Webhooks</span></a><% end %>
-              <% if platform_ui_alpha %><a class="toc-h1 toc-link"><span class="beta-indicator">App Components</span></a></li><li class="platform-ui-alpha"><% end %>
+              <% if webhooks %><a class="toc-h1 toc-link"><span class="sidebar-section">Webhooks</span></a><% end %>
+              <% if getting_started %><a class="toc-h1 toc-link"><span class="sidebar-section">Getting started</span></a><% end %>
+              <% if build_apps %><a class="toc-h1 toc-link"><span class="sidebar-section">Building apps</span></a><% end %>
+              <% if io_options %><a class="toc-h1 toc-link"><span class="sidebar-section">API features</span></a><% end %>
+              <% if platform_ui_alpha %><a class="toc-h1 toc-link"><span class="sidebar-section">App Components</span></a></li><li class="platform-ui-alpha"><% end %>
             <% end %>
             <a href="/docs/<%= h1[:id] %>" class="toc-h1 toc-link<% if h1[:title].start_with?("Overview") %> active<% end %>" data-title="<%= h1[:title] %>"><%= h1[:content] %><% if platform_ui_alpha && h1[:title].start_with?("App Server") %><span class="beta-indicator"> - ALPHA</span><% end %></a>
             <% if h1[:children].length > 0 %>

@@ -19,15 +19,13 @@ options: {
 }
 ```
 
-<span class="description">
-In addition to providing fields and their values in a request, you may also specify `options` to control how your request
+In addition to providing fields and their values in a [request](/docs/how-to-use-the-api), you may also specify `options` to control how your request
 is interpreted and how the response is generated.
 
 For `GET` requests, options are specified as URL parameters prefixed with `opt_`. For `POST` or `PUT` requests, options are specified in the body.
 
 If the body uses the `application/x-www-form-urlencoded` content type, then options are prefixed with `opt_` just like for `GET` requests. If the
 body uses the `application/json` content type, then options are specified inside the top-level `options` object (a sibling of the `data` object).
-</span>
 
 > `?opt_fields=name,notes&opt_pretty` response
 
