@@ -28,12 +28,12 @@ includes:
   - markdown/scim.html.md
   - markdown/audit-log.html.md
   - markdown/deprecations.html.md
-  - markdown/20-building-a-custom-app.html.md
-  - markdown/21-managing-your-app.html.md
-  - markdown/22-submit-your-app.html.md
-  - markdown/10-app-server.html.md
-  - markdown/03-auth.html.md
-  - markdown/09-custom-external-data.html.md
+  - markdown/building-a-custom-app.html.md
+  - markdown/managing-your-app.html.md
+  - markdown/submit-your-app.html.md
+  - markdown/app-server.html.md
+  - markdown/auth.html.md
+  - markdown/custom-external-data.html.md
   - markdown/24-webhooks.html.md
   - markdown/25-app-components.html.md
   - helpers/app-components-wrapper.html.md
