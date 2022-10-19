@@ -14,7 +14,7 @@ for apps with [app components](/docs/overview-of-app-components)).
 When managing your app in the [developer console](https://app.asana.com/0/my-apps), select **Submit for review**
 in the sidebar to access the app submission form:
 
-<img src="../images/submit-my-test-app.png" alt="submit My Test App" />
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/8dcc330812f36bf603adf1e752023fd48b7fc994/submit-my-test-app.png" alt="submit My Test App" />
 
 From there, you'll review an interactive "pre-flight" checklist of app features before submitting an app. This includes:
 
@@ -41,7 +41,7 @@ You can track the status of your app submission on the same **Submit for review*
 you'll receive an email notification that your app is ready to publish. At this point, you can select the **Publish app** button in 
 the developer console to share your app:
 
-<img src="../images/approved-app.png" alt="approved application screen" />
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5c64dc00ba1bc5954695c3c93c25e484122b6871/approved-app.png" alt="approved application screen" />
 
 If your app submission does not meet requirements, you will receive an email regarding the next steps (i.e., any changes required)
 to get your app ready for re-review.
