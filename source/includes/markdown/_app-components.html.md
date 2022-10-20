@@ -431,7 +431,7 @@ _Note: To see these settings again, navigate to your app in the [developer conso
 
 On the **App listing details** tab, provide some information about your app.
 
-<img src="../images/app-listing-details.png" alt="App listing details"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/73b31e7abc7ec26573b0451f85ccbbb7a8ded556/app-listing-details.png" alt="App listing details"/>
 
 These details will be accessible to the end user, and are meant to help them identify and learn more about your application.
 
@@ -452,7 +452,7 @@ These details will be accessible to the end user, and are meant to help them ide
 
 The next set of configurations you make will differ depending on what functionality and user experience you're looking to build. Each of the capabilities below are configured separately in the **App Components** tab in the [developer console](https://app.asana.com/0/my-apps):
 
-<img src="../images/app-components-configs.png" alt="App Components configuration"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/15e410adc62e831eeb5011f4c2db9c9860e4279e/app-components-configs.png" alt="App Components configuration"/>
 
 Follow the links in the table below to view the configurations required to build each capability (e.g., [Widget](/docs/widget)).
 
@@ -479,7 +479,7 @@ When a user connects an app with app components to Asana for the first time, the
 
 To make these configurations, navigate to the **Install your app** tab and provide your configurations:
 
-<img src="../images/install-your-app.png" alt="Install your app configs"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/42e234adbdb904fd04fff826a0fc8a401a84c50d/install-your-app.png" alt="Install your app configs"/>
 
 For an in-depth overview of the installation flow (including its customizations), see the [installation flow](/docs/installation-flow).
 
@@ -512,7 +512,7 @@ Use the UI builder to see how your:
 
 _Note: The UI builder is a front end tool that allows you to test building your app component application's user interface. The UI builder itself is not capable of making HTTP requests, and as such, certain features cannot be displayed dynamically (e.g., watched fields, Typeahead, etc.)._
 
-<img src="../images/ui-builder.png" alt="UI Builder"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/3423a88e754568c1932a9b14b49dad980627286f/ui-builder.png" alt="UI Builder"/>
 
 <hr>
 
@@ -520,11 +520,11 @@ _Note: The UI builder is a front end tool that allows you to test building your 
 
 The [UI builder](https://app.asana.com/0/my-apps/response-builder) allows you to view preset UI configurations for the capabilities of app components:
 
-<img src="../images/ui-builder-capability-selection.gif" alt="UI builder capability selection"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/7dcc1406150cb4d68f0b5fb790be912052a4c7b5/ui-builder-capability-selection.gif" alt="UI builder capability selection"/>
 
 Likewise, _within_ each selected capability, you are able to select and view **Minimalist**,  **Normal**, and **Everything** levels of preset configuration (i.e., with **Everything** being the highest level of configuration):
 
-<img src="../images/ui-builder-preset-configurations.gif" alt="UI builder preset configurations"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/d0731f173982e4c0450a0ecf95589090078d2286/ui-builder-preset-configurations.gif" alt="UI builder preset configurations"/>
 
 <hr>
 
@@ -532,7 +532,7 @@ Likewise, _within_ each selected capability, you are able to select and view **M
 
 Beyond the preset "template" configurations, you are also able to interact with the [UI builder](https://app.asana.com/0/my-apps/response-builder)'s code editor directly. The result of the properties and values that you input in the editor will be dynamically rendered in the left panel:
 
-<img src="../images/ui-builder-custom-configurations.gif" alt="UI builder custom configurations"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/c83507a21586c9e2f44d7bc32a384c8c3c0d2913/ui-builder-custom-configurations.gif" alt="UI builder custom configurations"/>
 
 <hr>
 
@@ -540,7 +540,7 @@ Beyond the preset "template" configurations, you are also able to interact with 
 
 As you use the [UI builder](https://app.asana.com/0/my-apps/response-builder) to test and build your server responses (e.g., [getting form metadata](/docs/get-form-metadata)), use the **Copy to clipboard** button to quickly copy the resulting metadata. You may choose to paste this metadata directly into your app server code.
 
-<img src="../images/ui-builder-copy-button.gif" alt="UI builder copy button"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/ecbb657ba0b9c3314883bf469a3b2bf0420b13d1/ui-builder-copy-button.gif" alt="UI builder copy button"/>
 
 To get started with the UI builder, visit **App Components** in the sidebar of your app in the [developer console](https://app.asana.com/0/my-apps), then select **View UI builder**. Alternatively, you may [access the UI builder directly](https://app.asana.com/0/my-apps/response-builder).
 
@@ -751,13 +751,13 @@ For the end user, the installation flow can be triggered through either one of t
 1. The in-product app gallery. Users can access the app gallery by going into a project (in which they want to install an app), then navigating to **Customize** > **+ Add App**.
 <br>
 <br>
-<img src="../images/app-gallery.png" alt="app gallery"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a624d4bf8d65bb1225242d0ad60ebd8665576012/app-gallery.png" alt="app gallery"/>
 <br>
 <br>
 2. The [Asana app directory](https://asana.com/apps):
 <br>
 <br>
-<img src="../images/app-directory.png" alt="app directory"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/81e9ac5f3d43f459c62dae26be72401a6b74bbaa/app-directory.png" alt="app directory"/>
 
 Note that subsequent interactions with the same application by the same user will _not_ trigger the following installation flow. To force the installation flow in its entirety again (e.g., for QA purposes), you can visit `https://app.asana.com/-/install_platform_ui_app?app_id=<app_client_id>`, replacing the value of the `app_id` query parameter with the application's client ID (accessible via the [developer console](https://app.asana.com/0/my-apps)).
 
@@ -773,7 +773,7 @@ If the user installs the app via the in-product app gallery (i.e., the first sce
 
 The information on this page can be customized in the **App listing details** tab of the [developer console](https://app.asana.com/0/my-apps):
 
-<img src="../images/app-listing-details-sample.png" alt="app listing details page"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/ed0f30c26ee482a43d34b8c0537007036c12973d/app-listing-details-sample.png" alt="app listing details page"/>
 
 For more information, see the [configure the app](/docs/configure-the-app) section of the [getting started](/docs/getting-started) guide.
 
@@ -801,9 +801,9 @@ On the next screen, the user will be directed to the auth screen, which will ask
 
 When the user clicks the button to continue, Asana will make a request to the application's specified **Authentication URL** in a pop-up window. From here, it is developer's discretion as to how the user proceeds with authentication. In most cases, this authentication step usually involves completing the [Asana OAuth](/docs/oauth) flow, as well as the third-party (i.e., external) OAuth flow.
 
-<img src="../images/authenticate-asana.png" alt="authentication with Asana"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/c68974cdd004614b787bda1a4316a82727878c5d/authenticate-asana.png" alt="authentication with Asana"/>
 
-<img src="../images/authenticate-external.png" alt="authentication with external app"/>
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/9658287eb26c4f50b442b549bf6d1fb01f9071f9/authenticate-external.png" alt="authentication with external app"/>
 
 Additionally, you may choose to present custom screens, forms, or otherwise logic to prompt the user for additional information needed to set up the application.
 
@@ -974,7 +974,7 @@ Before you begin, be sure you already have a [developer sandbox](/docs/developer
 5. Once the example app is installed, create a task in your project. In the task's **{Example}** custom field, go to **{Add Example Resource}** > **{Open form}** to see examples of customizable inputs. Click **Submit**.
 <br>
 <br>
-<img src="../images/example-modal-form.gif" />
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/bf75d2df1f9b9e051ffe9e2f06591dd895a416d2/example-modal-form.gif" />
 <br>
 <br>
 6. View the newly-generated widget on your task. You can begin editing [index.js](https://github.com/Asana/app-components-example-app/blob/main/index.js) to modify the contents of the widget. Note that you'll need to restart the local server and reload the page to see your changes.
@@ -1006,7 +1006,7 @@ a visual documentation of app components. You'll see at-a-glance how the differe
 Asana, including how they fit together and what you can do with them. Feel free to use the toolkit to supplement the process
 of designing and building your apps with app components.
 
-<img src="../images/ac-toolkit-screenshot.png" />
+<img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/3f14aedd384f48a5658f0c5b938fc3f2f8600b28/ac-toolkit-screenshot.png" />
 
 <hr>
 

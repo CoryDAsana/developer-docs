@@ -74,8 +74,8 @@ verify that the incoming request was genuine (details below). We strongly
 recommend that you take advantage of this security feature and reject
 webhooks that have an invalid signature.
 
-<a href="../images/webhook-handshake.png">
-  <img src="../images/webhook-handshake.png" alt="Webhook handshake"/>
+<a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17df113c0e3fa2669b86fa21f9493773dacfd56/webhook-handshake.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17df113c0e3fa2669b86fa21f9493773dacfd56/webhook-handshake.png" alt="Webhook handshake"/>
 </a>
 
 For an example of how this might be implemented in code, see our sample implementation in
@@ -206,8 +206,8 @@ Note that events are "compact" and contain only some basic details of the
 change, not the whole resource. We expect integrations to make additional
 requests to the API to retrieve the latest state from Asana.
 
-<a href="../images/webhook-receiving-events.png">
-  <img src="../images/webhook-receiving-events.png" alt="Webhook receiving events"/>
+<a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/08bfab8ac0ea12f76443532a936bb4c45beafea8/webhook-receiving-events.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/08bfab8ac0ea12f76443532a936bb4c45beafea8/webhook-receiving-events.png" alt="Webhook receiving events"/>
 </a>
 
 <hr>
@@ -246,8 +246,8 @@ that webhook will no longer be available.
 
 ##### Scenario 2: _failed_ heartbeat (after intial handshake)
 
-<a href="../images/webhook-heartbeat-failed.png">
-  <img src="../images/webhook-heartbeat-failed.png" alt="Failed webhook heartbeat (After initial handshake)"/>
+<a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/769fc86836d3d05827eb5b67012486a3ac30a186/webhook-heartbeat-failed.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/769fc86836d3d05827eb5b67012486a3ac30a186/webhook-heartbeat-failed.png" alt="Failed webhook heartbeat (After initial handshake)"/>
 </a>
 
 <hr>
