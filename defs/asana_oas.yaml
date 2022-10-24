@@ -96,13 +96,13 @@ tags:
       An *attachment* object represents any file attached to a task in Asana,
       whether it’s an uploaded file or one associated via a third-party service
       such as Dropbox or Google Drive.
-  - name: Audit Log API
+  - name: Audit log API
     description: >-
-      Asana's Audit Log is an immutable log of [important events](/docs/supported-auditlogevents)
+      Asana's audit log is an immutable log of [important events](/docs/supported-auditlogevents)
       in your organization's Asana instance.
 
 
-      The Audit Log API allows you to monitor and act upon important security
+      The audit log API allows you to monitor and act upon important security
       and compliance-related changes. Organizations might use this API endpoint to:
 
 
@@ -120,13 +120,13 @@ tags:
 
 
       Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts)
-      in [Enterprise Domains](https://asana.com/enterprise) can access Audit Log API
+      in [Enterprise Domains](https://asana.com/enterprise) can access audit log API
       endpoints. Authentication with a Service Account's
-      [Personal Access Token](/docs/personal-access-token) is required.
+      [personal access token](/docs/personal-access-token) is required.
 
 
       For a full list of
-      supported events, see [Supported AuditLogEvents](/docs/supported-auditlogevents).
+      supported events, see [supported AuditLogEvents](/docs/supported-auditlogevents).
   - name: Batch API
     description: >-
       There are many cases where you want to accomplish a variety of work in
@@ -149,7 +149,7 @@ tags:
       only a single HTTP request.
 
 
-      #### Making a Batch Request
+      #### Making a batch request
 
 
       To make a batch request, send a `POST` request to `/batch`. Like other
@@ -175,9 +175,9 @@ tags:
 
       The response to the batch request will contain (within the `data`
       envelope) a list of result objects, one for each action. The results are
-      guaranteed to be in the same order as the actions in the request, e.g.,
+      guaranteed to be in the same order as the actions in the request (e.g.,
       the first result in the response corresponds to the first action in the
-      request.
+      request)
 
 
       The batch API will always attempt to return a `200 Success` response with
@@ -189,7 +189,7 @@ tags:
       will contain the errors encountered with each action.
 
 
-      #### Rate Limiting
+      #### Rate limiting
 
 
       The batch API fully respects all of our rate limiting. This means that a
@@ -222,55 +222,55 @@ tags:
       * Any SCIM operations
 
       * Nested calls to the batch API
-  - name: Custom Fields
+  - name: Custom fields
     description: >-
-      In the Asana application, Tasks, Projects, and Portfolios can hold
-      user-specified Custom Fields which provide extra information; for example,
-      a priority value or a number representing the time required to complete a
-      Task. This lets a user define the type of information that each Item
-      within a Project or Portfolio can contain in addition to the built-in
-      fields that Asana provides.
+      In the Asana application, tasks, projects, and portfolios can hold
+      user-specified custom fields which provide extra information (e.g.,
+      a "priority" property with an associated value, or a number representing  the
+      time required to complete a task). This lets a user define the type of
+      information that each item within a project or portfolio can contain in addition
+      to the built-in fields that Asana provides.
 
 
-      **Note:** Custom Fields are a premium feature. Integrations which work
-      with Custom Fields need to handle an assortment of use cases for free and
+      **Note:** Custom fields are a premium feature. Integrations which work
+      with custom fields need to handle an assortment of use cases for free and
       premium users in context of free and premium organizations. For a detailed
-      examination of to what data users will have access in different
-      circumstances, read the section below on access control.
+      examination of which data users will have access in different
+      circumstances, review the section below on access control.
 
 
       `display_value` is a read-only field that will always be a string. For apps
       that use custom fields, this is a great way to safely display/export the
       value of a custom field, regardless of its type. We suggest apps use
-      this field in order to future-proof for changes to Custom Fields.
+      this field in order to future-proof for changes to custom fields.
 
 
-      #### Characteristics of Custom Fields
+      #### Characteristics of custom fields
 
 
-      * There is metadata that defines the Custom Field. This metadata can be
+      * There is metadata that defines the custom field. This metadata can be
       shared across an entire workspace, or be specific to a Project or Portfolio.
 
-      * Creating a Custom Field Setting on a Project or Portfolio means each direct
+      * Creating a custom field setting on a project or portfolio means each direct
       child will have the custom field. This is conceptually akin to adding
       columns in a database or a spreadsheet:
-      every Task (row) in the Project (table) can contain information for that
-      field, including "blank" values, i.e. `null` data. For Portfolio custom
-      fields, every Project (row) in the Portfolio (table) will contain
+      every task (row) in the project (table) can contain information for that
+      field, including "blank" values (i.e., `null` data). For portfolio custom
+      fields, every project (row) in the portfolio (table) will contain
       information for the custom field.
 
-      * Custom Field Settings only go one child deep. Meaning a custom field
+      * Custom field Settings only go one child deep. Meaning a custom field
       setting on a portfolio will give each project the custom field, but not
       each task within those projects.
 
-      * Tasks have Custom Field _values_ assigned to them.
+      * Tasks have custom field _values_ assigned to them.
 
 
-      #### Types of Custom Fields
+      #### Types of custom fields
 
 
-      Integrations using Custom Fields need to be aware of the six basic types that
-      a Custom Field can adopt. These types are:
+      Integrations using custom fields need to be aware of the six basic types that
+      a custom field can adopt. These types are:
 
 
       * `text` - an arbitrary, relatively short string of text
@@ -289,46 +289,45 @@ tags:
       the work is defined in the custom field title)
 
 
-      #### Example use-case
+      #### Example use case
 
 
-      Consider an organization that has defined a Custom
-      Field for "Priority". This field is of `enum` type and can have
-      user-defined values of `Low`, `Medium`, or `High`. This is the field
-      metadata, and it is visible within, and shared across, the entire
-      organization.
+      Consider an organization that has defined a custom field for "Priority".
+      This field is of `enum` type and can have user-defined values of
+      `Low`, `Medium`, or `High`. This is the field metadata, and it is
+      visible within, and shared across, the entire organization.
 
 
-      A Project is then created in the organization, called "Bugs", and the
-      "Priority" Custom Field is associated with that Project. This will allow
-      all Tasks within the "Bugs" Project to have an associated "Priority".
+      A project is then created in the organization, called "Bugs", and the
+      "Priority" custom field is associated with that project. This will allow
+      all tasks within the "Bugs" project to have an associated "Priority".
 
 
-      A new Task is created within "Bugs". This Task, then, has a field named
+      A new task is created within "Bugs". This task, then, has a field named
       "Priority" which can take on the Custom Field value of one of `[null]`,
       `Low`, `Medium`, and `High`.
 
 
-      #### Custom Fields in the API
+      #### Custom fields in the API
 
 
-      These Custom Fields are accessible via the API through a number of
+      These Custom fields are accessible via the API through a number of
       endpoints at the top level (e.g. `/custom_fields` and
-      `/custom_field_settings`) and through calls on Workspaces, Portfolios,
-      Projects, and Tasks resources. The API also provides a way to fetch both the
+      `/custom_field_settings`) and through requests on workspaces, portfolios,
+      projects, and tasks resources. The API also provides a way to fetch both the
       metadata and data which define each particular Custom Field, so that a client
       application may render proper UI to display or edit the values.
 
 
-      Text fields are currently limited to 1024 characters. On Tasks, their
-      Custom Field value will have a `text_value` property to represent this
+      Text fields are currently limited to 1024 characters. On tasks, their
+      custom field value will have a `text_value` property to represent this
       field.
 
 
       Number fields can have an arbitrary `precision` associated with them; for
       example, a precision of `2` would round its value to the second
-      (hundredths) place, i.e. 1.2345 would round to 1.23. On Tasks, the Custom
-      Field value will have a `number_value` property to represent this field.
+      (hundredths) place (e.g., 1.2345 would round to 1.23). On tasks, the custom
+      field value will have a `number_value` property to represent this field.
 
 
       #### Enum fields
@@ -339,136 +338,136 @@ tags:
       properties:
 
 
-      * `gid` - the gid of this enum option. Note that this is the gid of the individual
-      _option_ - the Custom Field itself has a separate `gid`.
+      * `gid` - the gid of this enum option. Note that this is the GID of the individual
+      _option_. The custom field itself has a separate `gid`.
 
       * `name` - the name of the option (e.g., "Choice #1")
 
       * `enabled` - whether this field is enabled. Disabled fields are not
       available to choose from when disabled, and are visually hidden in the
-      Asana application, but they remain in the metadata for Custom Field values
+      Asana application, but they remain in the metadata for custom field values
       which were set to the option before the option was disabled.
 
       * `color` - a color associated with this choice.
 
 
-      On the Task's Custom Field value, the enum will have an `enum_value`
+      On the task's custom field value, the enum will have an `enum_value`
       property which will be the same as one of the choices from the list
-      defined in the Custom Field metadata.
+      defined in the custom field metadata.
 
 
-      #### Querying an organization for its Custom Fields
+      #### Querying an organization for its custom fields
 
 
-      For Custom Fields shared across the workspace or organization, the
+      For custom fields shared across the workspace or organization, the
       Workspace [can be queried](/docs/get-a-workspace-39-s-custom-fields)
-      for its list of defined Custom Fields. Like other collection queries, the
+      for its list of defined custom fields. Like other collection queries, the
       fields will be returned as a compact record; slightly different from most
-      other compact records is the fact that the compact record for Custom Fields
+      other compact records is the fact that the compact record for custom fields
       includes `type` as well as `gid` and `name`.
 
 
-      #### Accessing Custom Field definitions
+      #### Accessing custom field definitions
 
 
-      The [Custom Fields](/docs/get-a-custom-field) reference
-      describes how the metadata which defines a Custom Field is accessed. A
+      The [custom fields](/docs/get-a-custom-field) reference
+      describes how the metadata which defines a custom field is accessed. A
       GET request with a `gid` can be issued on the `/custom_fields` endpoint
-      to fetch the full definition of a single Custom Field given its `gid`
-      from (for instance) listing all Custom Fields on a Workspace, or getting
-      the `gid` from a Custom Field Settings object or a Task.
+      to fetch the full definition of a single custom field given its `gid`
+      from (for instance) listing all custom fields on a workspace, or getting
+      the `gid` from a custom field Settings object or a task.
 
 
-      #### Associating Custom Fields with a Project or Portfolio
+      #### Associating custom fields with a project or portfolio
 
 
-      A mapping between a Custom Field and a Project or Portfolio is handled with
+      A mapping between a custom field and a project or portfolio is handled with
       a
-      [Custom Field Settings](/docs/asana-custom-field-settings) object. This object
+      [custom field settings](/docs/asana-custom-field-settings) object. This object
       contains a reference for each
-      of the Custom Field and the Project or Porfolio, as well as additional information
-      about the status of that particular Custom Field. For
-      instance, `is_important`, which defines whether or not the custom field
-      will appear in the list/grid on the Asana application.
+      of the custom fields and the project or portfolio, as well as additional information
+      about the status of that particular custom field (e.g., `is_important`, which
+      defines
+      whether or not the custom field will appear in the list/grid on the Asana application).
 
 
-      #### Accessing Custom Field values on Tasks or Projects
+      #### Accessing custom field values on tasks or projects
 
 
-      The [Tasks](/docs/get-a-task) reference has information on how Custom Fields
-      look on Tasks. Custom Fields will return as an array on the
+      The [tasks](/docs/get-a-task) reference has information on how custom fields
+      look on tasks. custom fields will return as an array on the
       property `custom_fields`, and each entry will contain, side-by-side, the
-      compact representation of the Custom Field metadata and a
+      compact representation of the custom field metadata and a
       `{typename}_value` property that stores the value set for the
-      Custom Field.
+      custom field.
 
 
       Of particular note is that the top-level `gid` of each entry in the
-      `custom_fields` array is the `gid` of the Custom Field metadata, as it is
+      `custom_fields` array is the `gid` of the custom field metadata, as it is
       the compact representation of this metadata. This can be used to refer to
       the full metadata by making a request to the
       `/custom_fields/{custom_fields_id}` endpoint as described above.
 
 
-      Custom Fields can be set just as in the Asana-defined fields on a task via
-      POST or PUT requests. You can see an example on the
+      Custom fields can be set just as in the Asana-defined fields on a task via
+      `POST` or `PUT` requests. You can see an example on the
       [update a task](/docs/update-a-task) endpoint.
 
 
-      Custom Fields on projects follow this same pattern.
+      Custom fields on projects follow this same pattern.
 
 
-      #### Warning: Program defensively with regards to Custom Field definitions
+      #### Warning: Program defensively with regards to custom field definitions
 
 
       Asana application users have the ability to change the definitions of
-      Custom Field metadata. This means that as you write scripts or
-      applications to work with them, it's possible for the definitions to
+      custom field metadata. This means that as you write scripts or
+      applications to work with them, it is possible for the definitions to
       change at any time, which may cause an application using them to break or
       malfunction if it makes assumptions about the metadata for a particular
-      Custom Field. When using Custom Fields, it is a good idea to program
+      custom field. When using custom fields, it is a good idea to program
       *defensively*, meaning you your application should double-check that
-      the Custom Field metadata is what it expects.
+      the custom field metadata is what it expects.
 
 
-      Storing the state of the Custom Field metadata for too long if you
+      Storing the state of the custom field metadata for too long if you
       dynamically create a model for it can cause your model to become
       unsynchronized with the model stored in Asana. If you encounter
       (for example) an `enum` value on a Task that does not match any option
       in your metadata model, your metadata model has become out of date with
-      the Custom Field metadata.
+      the custom field metadata.
 
 
       **Note:** We are currently studying proposals for future implementations
-      to more elegantly handle the modification of Custom Field metadata for
+      to more elegantly handle the modification of custom field metadata for
       application integrations.
 
 
-      #### Enabled and Disabled Values
+      #### Enabled and disabled values
 
 
-      When information that is contained in a Custom Field value loses a
+      When information that is contained in a custom field value loses a
       logical association with its metadata definition, the value becomes
       disabled. This can happen in a couple of simple ways, for example, if
-      you remove the Custom Field metadata from a Project, or move a Task with
-      a Custom Field to a different Project which does not have the Custom
-      Field metadata associated with it. The value remains on the Task, and
-      the Custom Field metadata can still be found and examined, but as the
-      context in which the Custom Field makes sense is gone, the Custom Field
+      you remove the custom field metadata from a project, or move a task with
+      a custom field to a different project which does not have the custom
+      field metadata associated with it. The value remains on the task, and
+      the custom field metadata can still be found and examined, but as the
+      context in which the custom field makes sense is gone, the custom field
       cannot change its value; it can only be cleared.
 
 
       Note: Tasks that are associated with multiple Projects do not become
       disabled, so long as at least one of the Projects is still associated
-      with the Custom Field metadata. In other words, Tasks with multiple
-      Projects will retain logically associated to the set of Custom Field
-      metadata represented by all of their Projects.
+      with the custom field metadata. In other words, tasks with multiple
+      Projects will retain logically associated to the set of custom field
+      metadata represented by all of their projects.
 
 
-      Moving the Task back under a Project with that Custom Field applied to it
-      or applying the Custom Field metadata to the current Project will return
-      the Custom Field value to an enabled state. In this scenario, the Custom
-      Field will be re-enabled and editable again.
+      Moving the task back under a project with that custom field applied to it
+      or applying the custom field metadata to the current project will return
+      the custom field value to an enabled state. In this scenario, the custom
+      field will be re-enabled and editable again.
 
 
       In the Asana application, disabled fields are grayed out and not allowed
@@ -477,35 +476,35 @@ tags:
       been disabled.
 
 
-      Note that the API enforces the same operations on disabled Custom Field
+      Note that the API enforces the same operations on disabled custom field
       values as hold in the Asana application: they may not have their values
       changed, since the lack of context for the values of a custom field in
       general doesn't provide enough information to know what new values should
-      be. Setting the Custom Field value to `null` will clear and remove the
-      Custom Field value from the Task.
+      be. Setting the custom field value to `null` will clear and remove the
+      custom field value from the task.
 
 
-      #### Custom Field access control
+      #### Custom field access control
 
 
-      Custom Fields are a complex feature of the Asana platform, and their
+      Custom fields are a complex feature of the Asana platform, and their
       access in the Asana application and in the API vary based on the status
-      of the user and project. When building your application, it's best to be
+      of the user and project. When building your application, it is best to be
       defensive and not assume the given user will have read or write access
       to a custom field, and fail gracefully when this occurs.
-  - name: Custom Field Settings
+  - name: Custom field settings
     description: >-
-      Custom fields are attached to a particular project with the Custom
-      Field Settings resource. This resource both represents the
-      many-to-many join of the Custom Field and Project as well as stores
-      information that is relevant to that particular pairing; for instance,
+      Custom fields are attached to a particular project with the custom
+      field settings resource. This resource both represents the
+      many-to-many join of the custom field and project as well as stores
+      information that is relevant to that particular pairing. For instance,
       the `is_important` property determines some possible
       application-specific handling of that custom field.
   - name: Events
     description: >-
-      An *event* is an object representing a change to a resource that was
+      An event is an object representing a change to a resource that was
       observed by an event subscription. Event streams rely on the same infrastructure
-      as webhooks, which ensures events are delivered within a minute on average.
+      as webhooks, which ensures events are delivered within a minute (on average).
       This
       system is designed for at most once delivery, meaning in exceptional circumstances
       a small number of events may be missing from the stream. For this reason, if
@@ -523,20 +522,20 @@ tags:
 
       In general, requesting events on a resource is faster and subject to
       higher rate limits than requesting the resource itself. Additionally,
-      change events bubble up - listening to events on a project would include
-      when stories are added to tasks in the project, even on subtasks.
+      change events "bubble up" (e.g., listening to events on a project would include
+      when stories are added to tasks in the project, and even to subtasks).
 
 
       Establish an initial sync token by making a request with no sync token.
-      The response will be a `412` error - the same as if the sync token had
-      expired.
+      The response will be a `412 Precondition Failed` error - the same as if
+      the sync token had expired.
 
 
       Subsequent requests should always provide the sync token from the
       immediately preceding call.
 
 
-      Sync tokens may not be valid if you attempt to go ‘backward’ in the
+      Sync tokens may not be valid if you attempt to go "backward" in the
       history by requesting previous tokens, though re-requesting the current
       sync token is generally safe, and will always return the same results.
 
@@ -550,15 +549,15 @@ tags:
       depending on load on the service.
   - name: Goals
     description: >-
-      A `goal` is an object in the goal-tracking system that helps your organization
+      A goal is an object in the goal-tracking system that helps your organization
       drive measurable results.
-  - name: Goal Relationships
+  - name: Goal relationships
     description: >-
-      A *goal relationship* is an object representing the relationship between a goal
+      A goal relationship is an object representing the relationship between a goal
       and another goal, a project, or a portfolio.
   - name: Jobs
     description: >-
-      Jobs represent processes that handle asynchronous work. A Job created when an
+      Jobs represent processes that handle asynchronous work. A job created when an
       endpoint requests an action
       that will be handled asynchronously, such as project or task duplication.
 
@@ -575,50 +574,50 @@ tags:
       is, object properties may
       return different values each time when polled until the job `status` has returned
       a `succeeded` value.
-  - name: Organization Exports
+  - name: Organization exports
     description: >-
-      An *organization_export* object represents a request to export the
-      complete data of an Organization in JSON format.
+      An `organization_export` object represents a request to export the
+      complete data of an organization in JSON format.
 
 
-      To export an Organization using this API:
+      To export an organization using this API:
 
 
       * Create an `organization_export`
         [request](/docs/create-an-organization-export-request)
-        and store the id that is returned.
+        and store the ID that is returned.
       * Request the `organization_export` every few minutes, until the
         `state` field contains ‘finished’.
       * Download the file located at the URL in the `download_url` field.
       * Exports can take a long time, from several minutes to a few hours
-        for large Organizations.
+        for large organizations.
 
 
       *Note: These endpoints are only available to [Service
       Accounts](https://asana.com/guide/help/premium/service-accounts) of an
-      [Enterprise](https://asana.com/enterprise) Organization.*
+      [Enterprise](https://asana.com/enterprise) organization.*
   - name: Portfolios
     description: >-
-      A `portfolio` gives a high-level overview of the status of multiple
+      A portfolio gives a high-level overview of the status of multiple
       initiatives in Asana. Portfolios provide a dashboard overview of the
       state of multiple projects, including a progress report and the most
       recent [status update](/docs/asana-statuses).
 
       Portfolios have some restrictions on size. Each portfolio has a max of 500
-      items and, like projects, a max of 20 custom fields.
-  - name: Portfolio Memberships
+      items and, like projects, a maximum of 20 custom fields.
+  - name: Portfolio memberships
     description: >-
       This object determines if a user is a member of a portfolio.
   - name: Projects
     description: >-
-      A `project` represents a prioritized list of tasks in Asana or a board
-      with columns of tasks represented as cards. It exists in a single
+      A project represents a prioritized list of tasks in Asana or a board
+      with columns of tasks represented as cards. A project exists in a single
       workspace or organization and is accessible to a subset of users in that
       workspace or organization, depending on its permissions.
 
 
-      Projects in organizations are shared with a single team. You cannot
-      currently change the team of a project via the API. Non-organization
+      Projects in organizations are shared with a single team. Currently, the team
+      of a project cannot be changed via the API. Non-organization
       workspaces do not have teams and so you should not specify the team of
       project in a regular workspace.
 
@@ -631,19 +630,19 @@ tags:
       already, removing followers from a project will not affect membership.
 
 
-      **Note:** You can use certain Project endpoints to operate on
-      [User Task Lists](/docs/user-task-lists) ([My Tasks](https://asana.com/guide/help/fundamentals/my-tasks))
+      **Note:** You can use certain project endpoints to operate on
+      [user task lists](/docs/user-task-lists) ([My Tasks](https://asana.com/guide/help/fundamentals/my-tasks))
       by substituting the `{project_gid}` with the `{user_task_list_gid}`. For example,
       you can perform
-      operations on the custom fields of a [User Task List](/docs/user-task-lists)
+      operations on the custom fields of a [user task list](/docs/user-task-lists)
       by using the following
       Projects endpoints: [Add a custom field to a project](/docs/add-a-custom-field-to-a-project),
       [Remove a custom field from a project](/docs/remove-a-custom-field-from-a-project)
       and
       [Get a project's custom fields](/docs/get-a-projects-custom-fields)
-  - name: Project Briefs
+  - name: Project briefs
     description: >-
-      A *project brief* object represents a rich text document that describes
+      A project brief object represents a rich text document that describes
       a project.
 
 
@@ -652,18 +651,18 @@ tags:
       view into the upcoming rich text format experience in the task description.
       For more information, see [this post](https://forum.asana.com/t/project-brief-api-now-available-as-a-preview/150885)
       in the developer forum.
-  - name: Project Memberships
+  - name: Project memberships
     description: >-
       With the introduction of “comment-only” projects in Asana, a user’s
       membership in a project comes with associated permissions. These
-      permissions (whether a user has full access to the project or
+      permissions (i.e., whether a user has full access to the project or
       comment-only access) are accessible through the project memberships
       endpoints described here.
-  - name: Project Statuses
+  - name: Project statuses
     description: |-
-      *Deprecated: new integrations should prefer using [Status Updates](/docs/asana-statuses)*
+      *Deprecated: new integrations should prefer using [status updates](/docs/asana-statuses)*
 
-      A *project status* is an update on the progress of a particular project,
+      A project status is an update on the progress of a particular project,
       and is sent out to all project followers when created. These updates
       include both text describing the update and a color code intended to
       represent the overall state of the project: "green" for projects that
@@ -671,19 +670,19 @@ tags:
       are behind, and "blue" for projects on hold.
 
       Project statuses can be created and deleted, but not modified.
-  - name: Project Templates
+  - name: Project templates
     description: |-
-      A *project template* is an object that allows new projects to be created
-      with a predefined setup, which may include tasks, sections, Rules, etc.
+      A project template is an object that allows new projects to be created
+      with a predefined setup, which may include tasks, sections, rules, etc.
       It simplifies the process of running a workflow that involves a similar
       set of work every time.
 
 
-      Project templates in organizations are shared with a single team. You cannot
-      currently change the team of a project template via the API.
+      Project templates in organizations are shared with a single team. Currently, the
+      team of a project template cannot be changed via the API.
   - name: Sections
     description: >-
-      A *section* is a subdivision of a project that groups tasks together.
+      A section is a subdivision of a project that groups tasks together.
       It can either be a header above a list of tasks in a list view or a
       column in a board view of a project.
 
@@ -696,9 +695,9 @@ tags:
       [getting a task](/docs/get-a-task)
       will return the information for the section or the column under
       ‘section’ in the response.
-  - name: Status Updates
+  - name: Status updates
     description: |-
-      A *status update* is an update on the progress of a particular object,
+      A status update is an update on the progress of a particular object,
       and is sent out to all followers when created. These updates
       include both text describing the update and a `status_type` intended to
       represent the overall state of the project. These include: `on_track` for projects that
@@ -712,10 +711,10 @@ tags:
       for more info on when conditional fields are returned.*
 
 
-      A *story* represents an activity associated with an object in the
+      A story represents an activity associated with an object in the
       Asana system. Stories are generated by the system whenever users take
       actions such as creating or assigning tasks, or moving tasks between
-      projects. *Comments* are also a form of user-generated story.
+      projects. "Comments" are also a form of user-generated story.
   - name: Tags
     description: >-
       A tag is a label that can be attached to any task in Asana. It exists in
@@ -735,28 +734,28 @@ tags:
       details pane.
 
 
-      Sections are unique in that they will be included in the *memberships*
+      Sections are unique in that they will be included in the `memberships`
       field of task objects returned in the API when the task is within a
       section. They can also be used to manipulate the ordering of a task
       within a project.
 
 
-      [Queries](/docs/get-a-set-of-tasks)
-      return a compact representation of each object which is typically the
-      id and name fields. Interested in a specific set of fields or all of
-      the fields? Use [field selectors](/docs/input-output-options)
-      to manipulate what data is included in a response.
+      [Queries](/docs/get-multiple-tasks)
+      return a [compact representation of each task object](/docs/task-compact). To
+      retrieve *all* fields or *specific set* of the fields, use
+      [field selectors](/docs/input-output-options) to manipulate what data is included
+      in a response.
   - name: Teams
     description: >-
-      A *team* is used to group related projects and people together within an
+      A team is used to group related projects and people together within an
       organization. Each project in an organization is associated with a team.
-  - name: Team Memberships
+  - name: Team memberships
     description: >-
       This object determines if a user is a member of a team.
-  - name: Time Periods
+  - name: Time periods
     description: >-
-      A `time_period` is an object that represents a domain-scoped date range that
-      can be set on `Goals`.
+      A time period is an object that represents a domain-scoped date range that can
+      be set on [goals](/docs/goals).
   - name: Typeahead
     description: >-
       The typeahead search API provides search for objects from a single
@@ -769,8 +768,9 @@ tags:
 
       Like other objects in the system, users are referred to by numerical
       IDs. However, the special string identifier `me` can be used anywhere
-      a user ID is accepted, to refer to the current authenticated user.
-  - name: User Task Lists
+      a user ID is accepted, to refer to the current authenticated user
+      (e.g, `GET /users/me`).
+  - name: User task lists
     description: >-
       A user task list represents the tasks assigned to a particular user.
       This list is the user's [My Tasks](https://asana.com/guide/help/fundamentals/my-tasks)
@@ -778,10 +778,10 @@ tags:
   - name: Webhooks
     description: >-
       Webhooks allow you to subscribe to notifications about events that occur on
-      Asana resources (e.g., tasks, projects, stories, etc.)
+      Asana resources (e.g., tasks, projects, stories, etc.).
 
 
-      For a more detailed explanation of webhooks see [Overview of Webhooks](/docs/overview-of-webhooks)
+      For a more detailed explanation of webhooks see the [overview of webhooks](/docs/overview-of-webhooks).
   - name: Workspaces
     description: >-
       A *workspace* is the highest-level organizational unit in Asana. All
@@ -801,7 +801,7 @@ tags:
       until after some reasonable grace period following any further
       announcements, you can still reference organizations in any
       `workspace` parameter.
-  - name: Workspace Memberships
+  - name: Workspace memberships
     description: >-
       This object determines if a user is a member of a workspace.
 components:
@@ -6180,7 +6180,7 @@ paths:
         recommend using a
         SIEM tool to ingest and store these logs.
       tags:
-        - Audit Log API
+        - Audit log API
       operationId: getAuditLogEvents
       responses:
         200:
@@ -6267,7 +6267,7 @@ paths:
         options](https://developers.asana.com/docs/#input-output-options)
         for more information.
       tags:
-        - Custom Field Settings
+        - Custom field settings
       operationId: getCustomFieldSettingsForProject
       responses:
         200:
@@ -6305,7 +6305,7 @@ paths:
         Returns a list of all of the custom fields settings on a portfolio, in
         compact form.
       tags:
-        - Custom Field Settings
+        - Custom field settings
       operationId: getCustomFieldSettingsForPortfolio
       responses:
         200:
@@ -6350,7 +6350,7 @@ paths:
 
         Returns the full record of the newly created custom field.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: createCustomField
       requestBody:
         description: The custom field object to create.
@@ -6398,7 +6398,7 @@ paths:
         the enum could represent. The examples below show some of these
         type-specific custom field definitions.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: getCustomField
       responses:
         200:
@@ -6444,7 +6444,7 @@ paths:
 
         Returns the complete updated custom field record.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: updateCustomField
       requestBody:
         description: The custom field object with all updated properties.
@@ -6485,7 +6485,7 @@ paths:
 
         Returns an empty data record.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: deleteCustomField
       responses:
         200:
@@ -6520,7 +6520,7 @@ paths:
         Returns a list of the compact representation of all of the custom fields
         in a workspace.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: getCustomFieldsForWorkspace
       responses:
         200:
@@ -6565,7 +6565,7 @@ paths:
 
         Returns the full record of the newly created enum option.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: createEnumOptionForCustomField
       requestBody:
         description: The enum option object to create.
@@ -6609,7 +6609,7 @@ paths:
 
         Locked custom fields can only be reordered by the user who locked the field.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: insertEnumOptionForCustomField
       requestBody:
         description: The enum option object to create.
@@ -6662,7 +6662,7 @@ paths:
 
         Returns the full record of the updated enum option.
       tags:
-        - Custom Fields
+        - Custom fields
       operationId: updateEnumOption
       requestBody:
         description: The enum option object to update
@@ -6786,7 +6786,7 @@ paths:
       description: |-
         Returns the complete updated goal relationship record for a single goal relationship.
       tags:
-        - Goal Relationships
+        - Goal relationships
       operationId: getGoalRelationship
       responses:
         200:
@@ -6817,7 +6817,7 @@ paths:
 
         Returns the complete updated goal relationship record.
       tags:
-        - Goal Relationships
+        - Goal relationships
       operationId: updateGoalRelationship
       requestBody:
         description: The updated fields for the goal relationship.
@@ -6855,7 +6855,7 @@ paths:
       description: |-
         Returns compact goal relationship records.
       tags:
-        - Goal Relationships
+        - Goal relationships
       operationId: getGoalRelationships
       parameters:
         - $ref: '#/components/parameters/pretty'
@@ -6908,7 +6908,7 @@ paths:
 
         Returns the newly created goal relationship record.
       tags:
-        - Goal Relationships
+        - Goal relationships
       operationId: addSupportingRelationship
       requestBody:
         description: The supporting resource to be added to the goal
@@ -6950,7 +6950,7 @@ paths:
       description: |-
         Removes a goal relationship for a given parent goal.
       tags:
-        - Goal Relationships
+        - Goal relationships
       operationId: removeSupportingRelationship
       requestBody:
         description: The supporting resource to be removed from the goal
@@ -7473,7 +7473,7 @@ paths:
         This method creates a request to export an Organization. Asana will
         complete the export at some point after you create the request.
       tags:
-        - Organization Exports
+        - Organization exports
       operationId: createOrganizationExport
       requestBody:
         description: The organization to export.
@@ -7515,7 +7515,7 @@ paths:
       description: >-
         Returns details of a previously-requested Organization export.
       tags:
-        - Organization Exports
+        - Organization exports
       operationId: getOrganizationExport
       responses:
         200:
@@ -7552,7 +7552,7 @@ paths:
         Returns a list of portfolio memberships in compact representation. You must
         specify `portfolio`, `portfolio` and `user`, or `workspace` and `user`.
       tags:
-        - Portfolio Memberships
+        - Portfolio memberships
       operationId: getPortfolioMemberships
       responses:
         200:
@@ -7586,7 +7586,7 @@ paths:
       description: >-
         Returns the complete portfolio record for a single portfolio membership.
       tags:
-        - Portfolio Memberships
+        - Portfolio memberships
       operationId: getPortfolioMembership
       responses:
         200:
@@ -7622,7 +7622,7 @@ paths:
       description: >-
         Returns the compact portfolio membership records for the portfolio.
       tags:
-        - Portfolio Memberships
+        - Portfolio memberships
       operationId: getPortfolioMembershipsForPortfolio
       responses:
         200:
@@ -8149,7 +8149,7 @@ paths:
       summary: Get a project brief
       description: Get the full record for a project brief.
       tags:
-        - Project Briefs
+        - Project briefs
       operationId: getProjectBrief
       responses:
         200:
@@ -8190,7 +8190,7 @@ paths:
 
         Returns the complete updated project brief record.
       tags:
-        - Project Briefs
+        - Project briefs
       operationId: updateProjectBrief
       requestBody:
         description: The updated fields for the project brief.
@@ -8229,7 +8229,7 @@ paths:
 
         Returns an empty data record.
       tags:
-        - Project Briefs
+        - Project briefs
       operationId: deleteProjectBrief
       responses:
         200:
@@ -8263,7 +8263,7 @@ paths:
 
         Returns the full record of the newly created project brief.
       tags:
-        - Project Briefs
+        - Project briefs
       operationId: createProjectBrief
       requestBody:
         description: The project brief to create.
@@ -8307,7 +8307,7 @@ paths:
       description: >-
         Returns the complete project record for a single project membership.
       tags:
-        - Project Memberships
+        - Project memberships
       operationId: getProjectMembership
       responses:
         200:
@@ -8343,7 +8343,7 @@ paths:
       description: >-
         Returns the compact project membership records for the project.
       tags:
-        - Project Memberships
+        - Project memberships
       operationId: getProjectMembershipsForProject
       responses:
         200:
@@ -8380,7 +8380,7 @@ paths:
 
         Returns the complete record for a single status update.
       tags:
-        - Project Statuses
+        - Project statuses
       operationId: getProjectStatus
       responses:
         200:
@@ -8411,7 +8411,7 @@ paths:
 
         Returns an empty data record.
       tags:
-        - Project Statuses
+        - Project statuses
       operationId: deleteProjectStatus
       responses:
         200:
@@ -8445,7 +8445,7 @@ paths:
 
         Returns the compact project status update records for all updates on the project.
       tags:
-        - Project Statuses
+        - Project statuses
       operationId: getProjectStatusesForProject
       parameters:
         - $ref: '#/components/parameters/project_path_gid'
@@ -8484,7 +8484,7 @@ paths:
 
         Returns the full record of the newly created project status update.
       tags:
-        - Project Statuses
+        - Project statuses
       operationId: createProjectStatusForProject
       requestBody:
         description: The project status to create.
@@ -8526,7 +8526,7 @@ paths:
       description: Returns the complete project template record for a single project
         template.
       tags:
-        - Project Templates
+        - Project templates
       operationId: getProjectTemplate
       responses:
         200:
@@ -8558,7 +8558,7 @@ paths:
         Returns the compact project template records for all project templates in
         the given team or workspace.
       tags:
-        - Project Templates
+        - Project templates
       operationId: getProjectTemplates
       parameters:
         - $ref: '#/components/parameters/workspace_query_param'
@@ -8599,7 +8599,7 @@ paths:
         Returns the compact project template records for all project templates in
         the team.
       tags:
-        - Project Templates
+        - Project templates
       operationId: getProjectTemplatesForTeam
       parameters:
         - $ref: '#/components/parameters/limit'
@@ -8649,7 +8649,7 @@ paths:
         To determine if your workspace is an organization, use the
         [is_organization](/docs/workspace) parameter._
       tags:
-        - Project Templates
+        - Project templates
       operationId: instantiateProject
       requestBody:
         description: >-
@@ -9784,7 +9784,7 @@ paths:
       description: >-
         Returns the complete record for a single status update.
       tags:
-        - Status Updates
+        - Status updates
       operationId: getStatus
       responses:
         200:
@@ -9813,7 +9813,7 @@ paths:
 
         Returns an empty data record.
       tags:
-        - Status Updates
+        - Status updates
       operationId: deleteStatus
       responses:
         200:
@@ -9846,7 +9846,7 @@ paths:
       description: >-
         Returns the compact status update records for all updates on the object.
       tags:
-        - Status Updates
+        - Status updates
       operationId: getStatusesForObject
       parameters:
         - name: parent
@@ -9896,7 +9896,7 @@ paths:
 
         Returns the full record of the newly created status update.
       tags:
-        - Status Updates
+        - Status updates
       operationId: createStatusForObject
       requestBody:
         description: The status update to create.
@@ -12071,7 +12071,7 @@ paths:
       description: >-
         Returns the complete team membership record for a single team membership.
       tags:
-        - Team Memberships
+        - Team memberships
       operationId: getTeamMembership
       responses:
         200:
@@ -12105,7 +12105,7 @@ paths:
       description: >-
         Returns compact team membership records.
       tags:
-        - Team Memberships
+        - Team memberships
       operationId: getTeamMemberships
       parameters:
         - name: team
@@ -12166,7 +12166,7 @@ paths:
       description: >-
         Returns the compact team memberships for the team.
       tags:
-        - Team Memberships
+        - Team memberships
       operationId: getTeamMembershipsForTeam
       responses:
         200:
@@ -12203,7 +12203,7 @@ paths:
       description: >-
         Returns the compact team membership records for the user.
       tags:
-        - Team Memberships
+        - Team memberships
       operationId: getTeamMembershipsForUser
       parameters:
         - name: workspace
@@ -12536,7 +12536,7 @@ paths:
       description: Returns the full record for a single time period.
       operationId: getTimePeriod
       tags:
-        - Time Periods
+        - Time periods
       responses:
         200:
           description: Successfully retrieved the record for a single time period.
@@ -12568,7 +12568,7 @@ paths:
       description: >-
         Returns compact time period records.
       tags:
-        - Time Periods
+        - Time periods
       operationId: getTimePeriods
       parameters:
         - name: start_on
@@ -12753,7 +12753,7 @@ paths:
       description: >-
         Returns the full record for a user task list.
       tags:
-        - User Task Lists
+        - User task lists
       operationId: getUserTaskList
       responses:
         200:
@@ -12794,7 +12794,7 @@ paths:
       description: >-
         Returns the full record for a user's task list.
       tags:
-        - User Task Lists
+        - User task lists
       operationId: getUserTaskListForUser
       responses:
         200:
@@ -13300,7 +13300,7 @@ paths:
       description: >-
         Returns the complete workspace record for a single workspace membership.
       tags:
-        - Workspace Memberships
+        - Workspace memberships
       operationId: getWorkspaceMembership
       responses:
         200:
@@ -13335,7 +13335,7 @@ paths:
       description: >-
         Returns the compact workspace membership records for the user.
       tags:
-        - Workspace Memberships
+        - Workspace memberships
       operationId: getWorkspaceMembershipsForUser
       responses:
         200:
@@ -13373,7 +13373,7 @@ paths:
       description: >-
         Returns the compact workspace membership records for the workspace.
       tags:
-        - Workspace Memberships
+        - Workspace memberships
       operationId: getWorkspaceMembershipsForWorkspace
       responses:
         200:
