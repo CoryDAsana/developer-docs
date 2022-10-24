@@ -5,14 +5,14 @@
 
 <span class="description">
 To keep up to date on changes to the API, subscribe to 
-[Platform News](https://forum.asana.com/c/forum-en/api/news) in our developer forum.
+[Platform News](https://forum.asana.com/c/api/news/97) in our developer forum.
 </span>
 
 To subscribe to updates:
 
-  1. Go to [Platform News](https://forum.asana.com/c/forum-en/api/news)
-  2. Select `login` in the top right and login with your Asana account.
-  3. Go back to [Platform News](https://forum.asana.com/c/forum-en/api/news) and change the bell icon in the top
+  1. Go to [Platform News](https://forum.asana.com/c/api/news/97).
+  2. Select **Log In** in the top right and log in with your Asana account.
+  3. Go back to [Platform News](https://forum.asana.com/c/api/news/97) and change the bell icon in the top
 right to "Watching First Post" or "Tracking".
 
 Here are the most recent updates:
