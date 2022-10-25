@@ -460,7 +460,7 @@ When the user types into a rule action form field, Asana will send a request con
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The request made when an action is triggered. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/89ac88743dd7446b7ae94ba88937349cdc50f70f/ac-rule-run-action.png">
+The request made when an action is triggered. Rule actions in rules containing a "Task added to this project" trigger have a 2 minute delay for newly created tasks in that project. This is to provide time for the creating user to fill out task details (name, description, etc.) before the rule action is triggered. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/89ac88743dd7446b7ae94ba88937349cdc50f70f/ac-rule-run-action.png">
   <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/89ac88743dd7446b7ae94ba88937349cdc50f70f/ac-rule-run-action.png" alt="App components rule run action request flow"/>
 </a>
 </span>
