@@ -186,7 +186,7 @@ data-postman-var-1="b11da17e782fc4162052"></div>
 </blockquote>
 
 <span class="description">
-You can quickly get started on Asana's API with the [API explorer](/docs/api-explorer). However, if you want a more comprehensive experience making API requests, we recommend using [Postman](https://learning.postman.com/docs/getting-started/introduction/). You can get started with the 'Run in Postman' button!
+You can quickly get started on Asana's API with the [API explorer](/docs/api-explorer). However, if you want a more comprehensive experience making API requests, we recommend using [Postman](https://learning.postman.com/docs/getting-started/introduction/). You can get started with the **Run in Postman** button!
 </span>
 
 Once you have the collection, you should [create an environment](https://learning.postman.com/docs/sending-requests/managing-environments/).
@@ -194,10 +194,10 @@ Once you have the collection, you should [create an environment](https://learnin
 You should then set:
 
 1. An `authentication_token` to a personal access token (PAT). If you don't have one yet, visit [personal access token](/docs/personal-access-token) for details.
-2. A `workspace` to your workspace's gid. You can find this value via a logged-in browser by going to [https://app.asana.com/api/1.0/users/me/workspaces](https://app.asana.com/api/1.0/users/me/workspaces), or you can make a request to that endpoint using your PAT.
-3. Any other GIDs you want to easily access. For example, you can set `task` to the GID of a task that you regularly test with, `project` to the gid of a private sandbox project, and `user` to the string 'me'.
+2. A `workspace` to your workspace's GID. You can find this value via a logged-in browser by going to [https://app.asana.com/api/1.0/users/me/workspaces](https://app.asana.com/api/1.0/users/me/workspaces), or you can [make a request to that endpoint](/docs/get-a-user) using your PAT.
+3. Any other GIDs you want to easily access. For example, you can set `task` to the GID of a task that you regularly test with, `project` to the GID of a private sandbox project, and `user` to the string 'me'.
 
-There is no need to edit your environment for requests on different objects. You may simply navigate to the endpoint you want to use, then change the `{{object}}` to any gid you want.
+There is no need to edit your environment for requests on different objects. You may simply navigate to the endpoint you want to use, then change the `{{object}}` to any GID you want.
 
 _Note: Importing this collection gives you a snapshot of the API at this time. To stay up to date with API changes, you'll have to re-import the collection by selecting the 'Run in Postman' button, and choosing to override your existing collection. As such, if you want to save custom requests, you should do so in a different collection._
 
