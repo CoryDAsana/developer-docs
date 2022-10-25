@@ -70,8 +70,8 @@ The modal form is displayed when the user starts the flow to create a resource. 
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-Get the metadata from the app server to render a form. <br> <br> <a href="../images/ac-form-metadata.png">
-  <img src="../images/ac-form-metadata.png" alt="App components form metadata request flow"/>
+Get the metadata from the app server to render a form. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/65a45303b5fb79a69a322593627e3b9521c68ba1/ac-form-metadata.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/65a45303b5fb79a69a322593627e3b9521c68ba1/ac-form-metadata.png" alt="App components form metadata request flow"/>
 </a>
 </span>
 
@@ -142,8 +142,8 @@ _Note: The path is a placeholder. The actual path is determined by the configura
 
 If a modal form field is of type `typehead`, this operation gets typeahead results to render as a dropdown list.
 
-When the user types into a modal form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="../images/ac-form-typeahead.png">
-  <img src="../images/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
+When the user types into a modal form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/9ddc32f45cb458d111912b8fe8353bf8f682d6b9/ac-form-typeahead.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/9ddc32f45cb458d111912b8fe8353bf8f682d6b9/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
 </a>
 </span>
 
@@ -213,8 +213,8 @@ When the user types into a modal form form field, Asana will send a request cont
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The callback request made to an app server when a watched field's value changes within a form. <br> <br> <a href="../images/ac-form-on-change.png">
-  <img src="../images/ac-form-on-change.png" alt="App components form on change request flow"/>
+The callback request made to an app server when a watched field's value changes within a form. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png" alt="App components form on change request flow"/>
 </a>
 </span>
 
@@ -288,8 +288,8 @@ The callback request made to an app server when a watched field's value changes 
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The callback request made to an app server when a form is submitted. <br> <br> <a href="../images/ac-form-on-submit.png">
-  <img src="../images/ac-form-on-submit.png" alt="App components form on submit request flow"/>
+The callback request made to an app server when a form is submitted. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png" alt="App components form on submit request flow"/>
 </a>
 </span>
 
@@ -460,8 +460,8 @@ When the user types into a rule action form field, Asana will send a request con
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The request made when an action is triggered. <br> <br> <a href="../images/ac-rule-run-action.png">
-  <img src="../images/ac-rule-run-action.png" alt="App components rule run action request flow"/>
+The request made when an action is triggered. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/89ac88743dd7446b7ae94ba88937349cdc50f70f/ac-rule-run-action.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/89ac88743dd7446b7ae94ba88937349cdc50f70f/ac-rule-run-action.png" alt="App components rule run action request flow"/>
 </a>
 </span>
 
@@ -522,8 +522,8 @@ The request made when an action is triggered. <br> <br> <a href="../images/ac-ru
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-When a user has navigated to the [custom rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule) UI and selected a rule action (either through the sidebar or via a rule preset), Asana will make a request to the app to get the configuration form definition for the chosen rule action. This will initiate the flow to configure a new rule action or edit the configuration of an existing rule action. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-metadata.png">
-  <img src="../images/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
+When a user has navigated to the [custom rule builder](https://asana.com/guide/help/premium/rules#gl-create-rule) UI and selected a rule action (either through the sidebar or via a rule preset), Asana will make a request to the app to get the configuration form definition for the chosen rule action. This will initiate the flow to configure a new rule action or edit the configuration of an existing rule action. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/54149144bfbdb0897a8720f8411586d4ab86b545/ac-rule-metadata.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/54149144bfbdb0897a8720f8411586d4ab86b545/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
 </a>
 </span>
 
@@ -595,8 +595,8 @@ When a user has navigated to the [custom rule builder](https://asana.com/guide/h
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The callback request made to an app server when a watched field's value changes within an action form. <br> <br> <a href="../images/ac-rule-on-change.png">
-  <img src="../images/ac-rule-on-change.png" alt="App components rule on change request flow"/>
+The callback request made to an app server when a watched field's value changes within an action form. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png" alt="App components rule on change request flow"/>
 </a>
 </span>
 
@@ -681,8 +681,8 @@ The callback request made to an app server when a watched field's value changes 
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The form is submitted when the user chooses to create their rule. Asana will create the rule action data model object and make a signed request to the `on_submit_callback` specified in the form metadata returned from the fetch/update rule action form endpoints. Information about the created rule action should be included in the response if it was successfully created. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous. <br> <br> <a href="../images/ac-rule-on-submit.png">
-  <img src="../images/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
+The form is submitted when the user chooses to create their rule. Asana will create the rule action data model object and make a signed request to the `on_submit_callback` specified in the form metadata returned from the fetch/update rule action form endpoints. Information about the created rule action should be included in the response if it was successfully created. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
 </a>
 </span>
 
@@ -924,8 +924,8 @@ The widget is displayed when the user views a task with an attachment with a res
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-Get the metadata from the app server to render a widget. <br> <br> <a href="../images/ac-widget-metadata.png">
-  <img src="../images/ac-widget-metadata.png" alt="App components widget metadata request flow"/>
+Get the metadata from the app server to render a widget. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/92841480867031372af8983f2906d26fbff6a2cc/ac-widget-metadata.png">
+  <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/92841480867031372af8983f2906d26fbff6a2cc/ac-widget-metadata.png" alt="App components widget metadata request flow"/>
 </a>
 </span>
 

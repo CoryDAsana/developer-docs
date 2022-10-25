@@ -224,20 +224,20 @@ tags:
       * Nested calls to the batch API
   - name: Custom fields
     description: >-
-      In the Asana application, tasks, projects, and portfolios can hold
-      user-specified custom fields which provide extra information (e.g.,
-      a "priority" property with an associated value, or a number representing  the
-      time required to complete a task). This lets a user define the type of
-      information that each item within a project or portfolio can contain in addition
-      to the built-in fields that Asana provides.
-
-
-      **Note:** Custom fields are a premium feature. Integrations which work
+      _Note: Custom fields are a premium feature. Integrations which work
       with custom fields need to handle an assortment of use cases for free and
       premium users in context of free and premium organizations. For a detailed
       examination of which data users will have access in different
-      circumstances, review the section below on access control.
+      circumstances, review the section below on access control._
 
+
+      In the Asana application, tasks, projects, and portfolios can hold
+      user-specified [custom fields](https://asana.com/guide/help/premium/custom-fields)
+      which provide extra information (e.g., a "priority" property with an associated
+      value, or a number representing the time required to complete a task). This
+      lets
+      a user define the type of information that each item within a project or portfolio
+      can contain in addition to the built-in fields that Asana provides.
 
       `display_value` is a read-only field that will always be a string. For apps
       that use custom fields, this is a great way to safely display/export the
@@ -249,7 +249,7 @@ tags:
 
 
       * There is metadata that defines the custom field. This metadata can be
-      shared across an entire workspace, or be specific to a Project or Portfolio.
+      shared across an entire workspace, or be specific to a project or portfolio.
 
       * Creating a custom field setting on a project or portfolio means each direct
       child will have the custom field. This is conceptually akin to adding
@@ -259,7 +259,7 @@ tags:
       fields, every project (row) in the portfolio (table) will contain
       information for the custom field.
 
-      * Custom field Settings only go one child deep. Meaning a custom field
+      * Custom field settings only go one child deep. This means that a custom field
       setting on a portfolio will give each project the custom field, but not
       each task within those projects.
 
@@ -304,18 +304,18 @@ tags:
 
 
       A new task is created within "Bugs". This task, then, has a field named
-      "Priority" which can take on the Custom Field value of one of `[null]`,
+      "Priority" which can take on the custom field value of one of `[null]`,
       `Low`, `Medium`, and `High`.
 
 
       #### Custom fields in the API
 
 
-      These Custom fields are accessible via the API through a number of
+      These custom fields are accessible via the API through a number of
       endpoints at the top level (e.g. `/custom_fields` and
       `/custom_field_settings`) and through requests on workspaces, portfolios,
       projects, and tasks resources. The API also provides a way to fetch both the
-      metadata and data which define each particular Custom Field, so that a client
+      metadata and data which define each particular custom field, so that a client
       application may render proper UI to display or edit the values.
 
 
@@ -326,7 +326,7 @@ tags:
 
       Number fields can have an arbitrary `precision` associated with them; for
       example, a precision of `2` would round its value to the second
-      (hundredths) place (e.g., 1.2345 would round to 1.23). On tasks, the custom
+      (hundredths) place (e.g., `1.2345` would round to `1.23`). On tasks, the custom
       field value will have a `number_value` property to represent this field.
 
 
@@ -338,7 +338,7 @@ tags:
       properties:
 
 
-      * `gid` - the gid of this enum option. Note that this is the GID of the individual
+      * `gid` - the GID of this enum option. Note that this is the GID of the individual
       _option_. The custom field itself has a separate `gid`.
 
       * `name` - the name of the option (e.g., "Choice #1")
@@ -360,7 +360,7 @@ tags:
 
 
       For custom fields shared across the workspace or organization, the
-      Workspace [can be queried](/docs/get-a-workspace-39-s-custom-fields)
+      workspace [can be queried](/docs/get-a-workspaces-custom-fields)
       for its list of defined custom fields. Like other collection queries, the
       fields will be returned as a compact record; slightly different from most
       other compact records is the fact that the compact record for custom fields
@@ -375,7 +375,7 @@ tags:
       GET request with a `gid` can be issued on the `/custom_fields` endpoint
       to fetch the full definition of a single custom field given its `gid`
       from (for instance) listing all custom fields on a workspace, or getting
-      the `gid` from a custom field Settings object or a task.
+      the `gid` from a custom field settings object or a task.
 
 
       #### Associating custom fields with a project or portfolio
@@ -410,7 +410,7 @@ tags:
 
 
       Custom fields can be set just as in the Asana-defined fields on a task via
-      `POST` or `PUT` requests. You can see an example on the
+      `POST` or `PUT` requests. You can see an example in the
       [update a task](/docs/update-a-task) endpoint.
 
 
@@ -427,20 +427,15 @@ tags:
       malfunction if it makes assumptions about the metadata for a particular
       custom field. When using custom fields, it is a good idea to program
       *defensively*, meaning you your application should double-check that
-      the custom field metadata is what it expects.
+      the custom field metadata are what it expects.
 
 
       Storing the state of the custom field metadata for too long if you
       dynamically create a model for it can cause your model to become
-      unsynchronized with the model stored in Asana. If you encounter
-      (for example) an `enum` value on a Task that does not match any option
+      out of sync with the model stored in Asana. For example, if you encounter
+      an `enum` value on a task that does not match any option
       in your metadata model, your metadata model has become out of date with
       the custom field metadata.
-
-
-      **Note:** We are currently studying proposals for future implementations
-      to more elegantly handle the modification of custom field metadata for
-      application integrations.
 
 
       #### Enabled and disabled values
@@ -457,11 +452,11 @@ tags:
       cannot change its value; it can only be cleared.
 
 
-      Note: Tasks that are associated with multiple Projects do not become
-      disabled, so long as at least one of the Projects is still associated
+      _Note: Tasks that are associated with multiple projects do not become
+      disabled, so long as at least one of the projects is still associated
       with the custom field metadata. In other words, tasks with multiple
-      Projects will retain logically associated to the set of custom field
-      metadata represented by all of their projects.
+      projects will retain logically associated to the set of custom field
+      metadata represented by all of their projects._
 
 
       Moving the task back under a project with that custom field applied to it
@@ -636,7 +631,7 @@ tags:
       you can perform
       operations on the custom fields of a [user task list](/docs/user-task-lists)
       by using the following
-      Projects endpoints: [Add a custom field to a project](/docs/add-a-custom-field-to-a-project),
+      projects endpoints: [Add a custom field to a project](/docs/add-a-custom-field-to-a-project),
       [Remove a custom field from a project](/docs/remove-a-custom-field-from-a-project)
       and
       [Get a project's custom fields](/docs/get-a-projects-custom-fields)

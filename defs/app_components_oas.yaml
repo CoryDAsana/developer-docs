@@ -1463,8 +1463,8 @@ paths:
         Get the metadata from the app server to render a widget.
         <br>
         <br>
-        <a href="../images/ac-widget-metadata.png">
-          <img src="../images/ac-widget-metadata.png" alt="App components widget metadata request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/92841480867031372af8983f2906d26fbff6a2cc/ac-widget-metadata.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/92841480867031372af8983f2906d26fbff6a2cc/ac-widget-metadata.png" alt="App components widget metadata request flow"/>
         </a>
       tags:
         - Widgets
@@ -1583,8 +1583,8 @@ paths:
         Get the metadata from the app server to render a form.
         <br>
         <br>
-        <a href="../images/ac-form-metadata.png">
-          <img src="../images/ac-form-metadata.png" alt="App components form metadata request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/65a45303b5fb79a69a322593627e3b9521c68ba1/ac-form-metadata.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/65a45303b5fb79a69a322593627e3b9521c68ba1/ac-form-metadata.png" alt="App components form metadata request flow"/>
         </a>
       tags:
         - Modal forms
@@ -1620,8 +1620,8 @@ paths:
         When the user types into a modal form form field, Asana will send a request containing the entered string to the application's `typeahead_url`. The list of [TypeaheadItem](/docs/typeahead-item)s in the response will then be rendered in a dropdown list.
         <br>
         <br>
-        <a href="../images/ac-form-typeahead.png">
-          <img src="../images/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/9ddc32f45cb458d111912b8fe8353bf8f682d6b9/ac-form-typeahead.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/9ddc32f45cb458d111912b8fe8353bf8f682d6b9/ac-form-typeahead.png" alt="App components form typeahead request flow"/>
         </a>
       tags:
         - Modal forms
@@ -1708,8 +1708,8 @@ paths:
         The callback request made to an app server when a watched field's value changes within a form.
         <br>
         <br>
-        <a href="../images/ac-form-on-change.png">
-          <img src="../images/ac-form-on-change.png" alt="App components form on change request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png" alt="App components form on change request flow"/>
         </a>
       tags:
         - Modal forms
@@ -1754,8 +1754,8 @@ paths:
         The callback request made to an app server when a form is submitted.
         <br>
         <br>
-        <a href="../images/ac-form-on-submit.png">
-          <img src="../images/ac-form-on-submit.png" alt="App components form on submit request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png" alt="App components form on submit request flow"/>
         </a>
       tags:
         - Modal forms
@@ -1800,8 +1800,8 @@ paths:
         The request made when an action is triggered.
         <br>
         <br>
-        <a href="../images/ac-rule-run-action.png">
-          <img src="../images/ac-rule-run-action.png" alt="App components rule run action request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/89ac88743dd7446b7ae94ba88937349cdc50f70f/ac-rule-run-action.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/89ac88743dd7446b7ae94ba88937349cdc50f70f/ac-rule-run-action.png" alt="App components rule run action request flow"/>
         </a>
       tags:
         - Rule actions
@@ -1855,8 +1855,8 @@ paths:
         updating rule actions; app triggers (V2) will be analogous.
         <br>
         <br>
-        <a href="../images/ac-rule-metadata.png">
-          <img src="../images/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/54149144bfbdb0897a8720f8411586d4ab86b545/ac-rule-metadata.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/54149144bfbdb0897a8720f8411586d4ab86b545/ac-rule-metadata.png" alt="App components rule metadata request flow"/>
         </a>
       tags:
         - Rule actions
@@ -1889,8 +1889,8 @@ paths:
         The callback request made to an app server when a watched field's value changes within an action form.
         <br>
         <br>
-        <a href="../images/ac-rule-on-change.png">
-          <img src="../images/ac-rule-on-change.png" alt="App components rule on change request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png" alt="App components rule on change request flow"/>
         </a>
       tags:
         - Rule actions
@@ -1939,8 +1939,8 @@ paths:
         (V2) will be analogous.
         <br>
         <br>
-        <a href="../images/ac-rule-on-submit.png">
-          <img src="../images/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
+        <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png">
+          <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
         </a>
       tags:
         - Rule actions
