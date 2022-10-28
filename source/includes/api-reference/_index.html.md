@@ -3121,7 +3121,8 @@ $result = $client->goals->getGoal($goal_gid, array('param' => 'value', 'param' =
       "progress_source": "manual",
       "resource_subtype": "number",
       "target_number_value": 10.2,
-      "unit": "none"
+      "unit": "none",
+      "can_manage": true
     },
     "num_likes": 5,
     "owner": {
@@ -3321,7 +3322,8 @@ $result = $client->goals->updateGoal($goal_gid, array('field' => 'value', 'field
       "progress_source": "manual",
       "resource_subtype": "number",
       "target_number_value": 10.2,
-      "unit": "none"
+      "unit": "none",
+      "can_manage": true
     },
     "num_likes": 5,
     "owner": {
@@ -3774,7 +3776,8 @@ $result = $client->goals->createGoal(array('field' => 'value', 'field' => 'value
       "progress_source": "manual",
       "resource_subtype": "number",
       "target_number_value": 10.2,
-      "unit": "none"
+      "unit": "none",
+      "can_manage": true
     },
     "num_likes": 5,
     "owner": {
@@ -3989,7 +3992,8 @@ $result = $client->goals->createGoalMetric($goal_gid, array('field' => 'value', 
       "progress_source": "manual",
       "resource_subtype": "number",
       "target_number_value": 10.2,
-      "unit": "none"
+      "unit": "none",
+      "can_manage": true
     },
     "num_likes": 5,
     "owner": {
@@ -4039,7 +4043,7 @@ Creates and adds a goal metric to a specified goal. Note that this replaces an e
 |»» current_number_value<span class="param-type"> number</span>|This number is the current value of a goal metric of type number.|
 |»» initial_number_value<span class="param-type"> number</span>|This number is the start value of a goal metric of type number.|
 |»» precision<span class="param-type"> integer</span>|*Conditional*. Only relevant for goal metrics of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.|
-|»» progress_source<span class="param-type"> string</span>|This field defines how the progress value of a goal metric is being calculated. A goal's progress can be provided manually by the user, or calculated automatically from contributing subgoals or projects.|
+|»» progress_source<span class="param-type"> string</span>|This field defines how the progress value of a goal metric is being calculated. A goal's progress can be provided manually by the user, calculated automatically from contributing subgoals or projects, or managed by an integration with an external data source, such as Salesforce.|
 |»» target_number_value<span class="param-type"> number</span>|This number is the end value of a goal metric of type number. This number cannot equal `initial_number_value`.|
 |»» unit<span class="param-type"> string</span>|A supported unit of measure for the goal metric, or none.|
 |/goal_gid<span class="param-type"> string</span><div class="param-required">required</div>|Globally unique identifier for the goal.|
@@ -4059,6 +4063,7 @@ For percentage format, this may be unintuitive, as a value of 0.25 has a precisi
 | progress_source|subgoal_progress|
 | progress_source|project_task_completion|
 | progress_source|project_milestone_completion|
+| progress_source|external|
 | unit|none|
 | unit|currency|
 | unit|percentage|
@@ -4201,7 +4206,8 @@ $result = $client->goals->updateGoalMetric($goal_gid, array('field' => 'value', 
       "progress_source": "manual",
       "resource_subtype": "number",
       "target_number_value": 10.2,
-      "unit": "none"
+      "unit": "none",
+      "can_manage": true
     },
     "num_likes": 5,
     "owner": {
@@ -4396,7 +4402,8 @@ $result = $client->goals->addFollowers($goal_gid, array('field' => 'value', 'fie
       "progress_source": "manual",
       "resource_subtype": "number",
       "target_number_value": 10.2,
-      "unit": "none"
+      "unit": "none",
+      "can_manage": true
     },
     "num_likes": 5,
     "owner": {
@@ -4590,7 +4597,8 @@ $result = $client->goals->removeFollowers($goal_gid, array('field' => 'value', '
       "progress_source": "manual",
       "resource_subtype": "number",
       "target_number_value": 10.2,
-      "unit": "none"
+      "unit": "none",
+      "can_manage": true
     },
     "num_likes": 5,
     "owner": {
@@ -29209,7 +29217,8 @@ A *goal relationship* is an object representing the relationship between a goal 
     "progress_source": "manual",
     "resource_subtype": "number",
     "target_number_value": 10.2,
-    "unit": "none"
+    "unit": "none",
+    "can_manage": true
   },
   "num_likes": 5,
   "owner": {
@@ -29281,10 +29290,11 @@ A generic Asana Resource, containing a globally unique identifier.
 |» current_number_value<span class="param-type"> number</span>|This number is the current value of a goal metric of type number.|
 |» initial_number_value<span class="param-type"> number</span>|This number is the start value of a goal metric of type number.|
 |» precision<span class="param-type"> integer</span>|*Conditional*. Only relevant for goal metrics of type ‘Number’. This field dictates the number of places after the decimal to round to, i.e. 0 is integer values, 1 rounds to the nearest tenth, and so on. Must be between 0 and 6, inclusive.<br>For percentage format, this may be unintuitive, as a value of 0.25 has a precision of 0, while a value of 0.251 has a precision of 1. This is due to 0.25 being displayed as 25%.|
-|» progress_source<span class="param-type"> string</span>|This field defines how the progress value of a goal metric is being calculated. A goal's progress can be provided manually by the user, or calculated automatically from contributing subgoals or projects.|
+|» progress_source<span class="param-type"> string</span>|This field defines how the progress value of a goal metric is being calculated. A goal's progress can be provided manually by the user, calculated automatically from contributing subgoals or projects, or managed by an integration with an external data source, such as Salesforce.|
 |» resource_subtype<span class="param-type"> string</span>|The subtype of this resource. Different subtypes retain many of the same fields and behavior, but may render differently in Asana or represent resources with different semantic meaning.|
 |» target_number_value<span class="param-type"> number</span>|This number is the end value of a goal metric of type number. This number cannot equal `initial_number_value`.|
 |» unit<span class="param-type"> string</span>|A supported unit of measure for the goal metric, or none.|
+|» can_manage<span class="param-type"> boolean</span>|*Conditional*. Only relevant for `progress_source` of type `external`. This boolean indicates whether the requester has the ability to update the current value of this metric. This returns `true` if the external metric was created by the requester, `false` otherwise.|
 |num_likes<span class="param-type"> integer</span>|The number of users who have liked this goal.|
 |owner<span class="param-type"> object¦null</span>|A *user* object represents an account in Asana that can be given access to various workspaces, projects, and tasks.|
 |» gid<span class="param-type"> string</span>|Globally unique identifier of the resource, as a string.|
@@ -29317,6 +29327,7 @@ A generic Asana Resource, containing a globally unique identifier.
 |progress_source|subgoal_progress|
 |progress_source|project_task_completion|
 |progress_source|project_milestone_completion|
+|progress_source|external|
 |resource_subtype|number|
 |unit|none|
 |unit|currency|
