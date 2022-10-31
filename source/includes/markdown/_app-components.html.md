@@ -52,37 +52,43 @@ https://app-server.com/widget?workspace=12345&task=23456&user=34567&locale=en&at
 
 ```json
 {
-    "template": "summary_with_details_v0",
-    "data": {
-        "title": "MSB-3 As a user, I see a flexible widget",
-        "subtitle": "Jira Cloud Story · Open in Jira Cloud",
-        "subicon_url": "https://jira.com/icons/subicon.png",
-        "footer": {
-          "footer_type": "updated",
-          "last_updated_at": "2012-02-22T02:06:58.147Z"
-        },
-        "comment_count": 12,
-        "fields": [
-            {
-                "name": "Status",
-                "type": "pill",
-                "text": "In Progress",
-                "color": "blue"
-            },
-            {
-                "name": "Priority",
-                "type": "value_with_icon",
-                "icon_url": "https://jira.com/icons/priority_highest.png",
-                "text": "Highest"
-            },
-            {
-                "name": "Assignee",
-                "type": "value_with_icon",
-                "icon_url": "https://jira.com/avatars/rhian.png",
-                "text": "Rhian Sheehan"
-            }
-        ]
-    }
+  "template": "summary_with_details_v0",
+  "metadata": {
+    "title": "My Widget",
+    "subtitle": "Subtitle text",
+    "subicon_url": "https://www.fillmurray.com/16/16",
+    "fields": [
+      {
+        "name": "Pill",
+        "type": "pill",
+        "text": "Some text",
+        "color": "green"
+      },
+      {
+        "name": "Date & time",
+        "type": "datetime_with_icon",
+        "datetime": "2016-01-15T22:20:54.722Z",
+        "icon_url": "https://www.fillmurray.com/16/16"
+      },
+      {
+        "name": "Text",
+        "type": "text_with_icon",
+        "text": "Some text",
+        "icon_url": "https://www.fillmurray.com/16/16"
+      },
+      {
+        "name": "Text",
+        "type": "text_with_icon",
+        "text": "Some text"
+      }
+    ],
+    "footer": {
+      "footer_type": "custom_text",
+      "text": "Last updated today",
+      "icon_url": "https://www.fillmurray.com/16/16"
+    },
+    "num_comments": 2
+  }
 }
 ```
 
@@ -140,48 +146,115 @@ https://app-server.com/form?workspace=12345&task=23456&user=34567&locale=en&expi
 
 ```json
 {
-  "title": "Create New Issue",
-  "on_submit_callback": "https://app-server.com/actions/create",
-  "submit_button_text": "Create Issue",
-  "fields": [
-    {
-      "type": "single_line_text",
-      "name": "summary",
-      "title": "Summary",
-      "value": "",
-      "placeholder": "Enter some text",
-      "width": "full",
-      "is_required": true
-    },
-    {
-      "type": "rich_text",
-      "name": "description",
-      "title": "Description",
-      "value": "",
-      "placeholder": "",
-      "is_required": true
-    },
-    {
-      "type": "typeahead",
-      "name": "jira-project",
-      "title": "Jira project",
-      "value": "",
-      "placeholder": "Search Jira for a project...",
-      "is_required": true,
-      "typeahead_url": "https://app-server.com/jira/project/typeahead",
-    },
-    {
-      "type": "checkboxes",
-      "name": "attachments",
-      "is_required": false,
-      "options": [
-        {
-          "id": "shouldIncludeAttachments",
-          "label": "Attach files from this Asana task"
-        }
-      ]
-    }
-  ]
+  "template": "form_metadata_v0",
+  "metadata": {
+    "title": "Create new resource",
+    "submit_button_text": "Submit",
+    "on_submit_callback": "https://www.example.com/create/action/onsubmit",
+    "on_change_callback": "https://www.example.com/create/action/onchange",
+    "fields": [
+      {
+        "type": "single_line_text",
+        "id": "single_line_text_full_width",
+        "name": "Single-line text field",
+        "value": "",
+        "is_required": true,
+        "placeholder": "Type something...",
+        "width": "full"
+      },
+      {
+        "type": "multi_line_text",
+        "id": "multi_line_text",
+        "name": "Multi-line text field",
+        "value": "",
+        "is_required": false,
+        "placeholder": "Type something...",
+        "width": "full"
+      },
+      {
+        "type": "rich_text",
+        "id": "rich_text",
+        "name": "Rich text field",
+        "is_required": false,
+        "value": ""
+      },
+      {
+        "type": "dropdown",
+        "id": "dropdown_half_width",
+        "name": "Dropdown field",
+        "is_required": false,
+        "options": [
+          {
+            "id": "1",
+            "label": "Option 1",
+            "icon_url": "https://www.fillmurray.com/16/16"
+          },
+          {
+            "id": "2",
+            "label": "Option 2",
+            "icon_url": "https://www.fillmurray.com/16/16"
+          }
+        ],
+        "width": "half"
+      },
+      {
+        "type": "typeahead",
+        "id": "typeahead_half_width",
+        "name": "Typeahead field",
+        "is_required": false,
+        "typeahead_url": "https://www.example.com/typeahead",
+        "placeholder": "Search for something...",
+        "width": "half"
+      },
+      {
+        "type": "date",
+        "id": "date",
+        "name": "Date field",
+        "placeholder": "MM/DD/YYYY",
+        "is_required": false
+      },
+      {
+        "type": "datetime",
+        "id": "datetime",
+        "name": "Date & time field",
+        "placeholder": "MM/DD/YYYY HH:MM am/pm",
+        "is_required": false
+      },
+      {
+        "type": "checkbox",
+        "id": "checkbox",
+        "name": "Checkbox field",
+        "is_required": true,
+        "options": [
+          {
+            "id": "1",
+            "label": "Choice 1"
+          },
+          {
+            "id": "2",
+            "label": "Choice 2"
+          }
+        ]
+      },
+      {
+        "type": "radio_button",
+        "id": "radio_button",
+        "name": "Radio button field",
+        "value": "1",
+        "is_required": true,
+        "options": [
+          {
+            "id": "1",
+            "label": "Choice 1"
+          },
+          {
+            "id": "2",
+            "label": "Choice 2"
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -230,15 +303,40 @@ For an overview of the UI Builder, see [this guide](/docs/ui-builder).
 > Request to the app server
 
 ```http
-https://app-server.com/lookup?value=Cool&workspace=12345&task=23456&user=34567&locale=en&expires_at=2011-10-05T14%3A48%3A00.000Z
+https://app-server.com/lookup?value=Item&workspace=12345&task=23456&user=34567&locale=en&expires_at=2011-10-05T14%3A48%3A00.000Z
 ```
 
 > Response from the app server
 
 ```json
 {
-    "resource_name": "Cool Attachment",
-    "resource_url": "https://localhost:5000/attachments/123456789"
+  "header": "Optional header",
+  "items": [
+    {
+      "title": "Item title",
+      "subtitle": "Item subtitle",
+      "value": "searchResult1",
+      "icon_url": "https://www.fillmurray.com/16/16"
+    },
+    {
+      "title": "Item title",
+      "subtitle": "Item subtitle",
+      "value": "searchResult2",
+      "icon_url": "https://www.fillmurray.com/16/16"
+    },
+    {
+      "title": "Item title",
+      "subtitle": "Item subtitle",
+      "value": "searchResult3",
+      "icon_url": "https://www.fillmurray.com/16/16"
+    },
+    {
+      "title": "Item title",
+      "subtitle": "Item subtitle",
+      "value": "searchResult4",
+      "icon_url": "https://www.fillmurray.com/16/16"
+    }
+  ]
 }
 ```
 
@@ -283,26 +381,106 @@ https://app-server.com/rule?workspace=12345&project=23456&action_type=45678&acti
 
 ```json
 {
-  "on_submit_callback": "https://app-server.com/slack/action/onsubmit",
-  "on_change": {
-    "on_change_callback": "https://app-server.com/slack/action/onchange",
-  },
-  "fields": [
-    {
-      "title": "Choose a channel",
-      "type": "typeahead",
-      "id": "typeahead_full_width",
-      "is_watched": true,
-      "is_required": true,
-      "typeahead_url": "https://app-server.com/slack/typeahead"
-    },
-    {
-      "title": "Write a message",
-      "type": "rich_text",
-      "name": "description",
-      "is_required": true
-    }
-  ]
+  "template": "form_metadata_v0",
+  "metadata": {
+    "on_submit_callback": "https://www.example.com/create/action/onsubmit",
+    "on_change_callback": "https://www.example.com/create/action/onchange",
+    "fields": [
+      {
+        "type": "typeahead",
+        "id": "typeahead",
+        "name": "Typeahead field",
+        "is_required": false,
+        "typeahead_url": "https://www.example.com/typeahead",
+        "placeholder": "Search for something...",
+        "width": "full"
+      },
+      {
+        "type": "multi_line_text",
+        "id": "multi_line_text",
+        "name": "Multi-line text field",
+        "value": "",
+        "is_required": false,
+        "placeholder": "Type something...",
+        "width": "full"
+      },
+      {
+        "type": "single_line_text",
+        "id": "single_line_text_full_width",
+        "name": "Single-line text field",
+        "value": "",
+        "is_required": true,
+        "placeholder": "Type something...",
+        "width": "full"
+      },
+      {
+        "type": "dropdown",
+        "id": "dropdown",
+        "name": "Dropdown field",
+        "is_required": false,
+        "options": [
+          {
+            "id": "1",
+            "label": "Option 1",
+            "icon_url": "https://www.fillmurray.com/16/16"
+          },
+          {
+            "id": "2",
+            "label": "Option 2",
+            "icon_url": "https://www.fillmurray.com/16/16"
+          }
+        ],
+        "width": "full"
+      },
+      {
+        "type": "date",
+        "id": "date",
+        "name": "Date field",
+        "placeholder": "MM/DD/YYYY",
+        "is_required": false
+      },
+      {
+        "type": "datetime",
+        "id": "datetime",
+        "name": "Date & time field",
+        "placeholder": "MM/DD/YYYY HH:MM am/pm",
+        "is_required": false
+      },
+      {
+        "type": "checkbox",
+        "id": "checkbox",
+        "is_required": true,
+        "options": [
+          {
+            "id": "1",
+            "label": "Checkbox field"
+          }
+        ]
+      },
+      {
+        "type": "radio_button",
+        "id": "radio_button",
+        "name": "Radio button field",
+        "value": "1",
+        "is_required": true,
+        "options": [
+          {
+            "id": "1",
+            "label": "Choice 1"
+          },
+          {
+            "id": "2",
+            "label": "Choice 2"
+          }
+        ]
+      },
+      {
+        "name": "This is a static block of text.",
+        "type": "static_text",
+        "id": "static_text"
+      }
+    ]
+  }
 }
 ```
 
