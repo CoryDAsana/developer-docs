@@ -2564,14 +2564,18 @@ components:
             progress_source:
               description: >-
                 This field defines how the progress value of a goal metric is being
-                calculated. A goal's progress can be provided manually by the user,
-                or calculated automatically from contributing subgoals or projects.
+                calculated.
+                A goal's progress can be provided manually by the user,
+                calculated automatically from contributing subgoals or projects,
+                or managed by an integration with an external data source, such as
+                Salesforce.
               type: string
               enum:
                 - manual
                 - subgoal_progress
                 - project_task_completion
                 - project_milestone_completion
+                - external
               example: manual
     GoalRemoveSupportingRelationshipRequest:
       type: object
@@ -2722,6 +2726,18 @@ components:
                 - $ref: '#/components/schemas/GoalMetricBase'
                 - type: object
                   nullable: true
+                  properties:
+                    can_manage:
+                      description: >-
+                        *Conditional*. Only relevant for `progress_source` of type
+                        `external`.
+                        This boolean indicates whether the requester has the ability
+                        to update the current value of this metric.
+                        This returns `true` if the external metric was created by
+                        the requester, `false` otherwise.
+                      type: boolean
+                      readOnly: true
+                      example: true
             owner:
               allOf:
                 - $ref: '#/components/schemas/UserCompact'
