@@ -694,7 +694,7 @@ _Note: The UI builder is a front end tool that allows you to test building your 
 
 <hr>
 
-## Preset Configurations
+## Preset configurations
 
 The [UI builder](https://app.asana.com/0/my-apps/response-builder) allows you to view preset UI configurations for the capabilities of app components:
 
@@ -706,7 +706,7 @@ Likewise, _within_ each selected capability, you are able to select and view **M
 
 <hr>
 
-## Custom Configurations
+## Custom configurations
 
 Beyond the preset "template" configurations, you are also able to interact with the [UI builder](https://app.asana.com/0/my-apps/response-builder)'s code editor directly. The result of the properties and values that you input in the editor will be dynamically rendered in the left panel:
 
@@ -819,7 +819,7 @@ If an app doesn't use OAuth for authentication, the Asana security team should m
 
 <hr>
 
-## Message Integrity
+## Message integrity
 
 <span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
 
