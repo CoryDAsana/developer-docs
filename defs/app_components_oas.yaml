@@ -1706,6 +1706,7 @@ paths:
 
 
         The callback request made to an app server when a watched field's value changes within a form.
+        The request is subject to a 10-second timeout if no response is received from the app server.
         <br>
         <br>
         <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png">
@@ -1752,6 +1753,7 @@ paths:
 
 
         The callback request made to an app server when a form is submitted.
+        The request is subject to a 10-second timeout if no response is received from the app server.
         <br>
         <br>
         <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png">
@@ -1889,6 +1891,7 @@ paths:
 
 
         The callback request made to an app server when a watched field's value changes within an action form.
+        The request is subject to a 10-second timeout if no response is received from the app server.
         <br>
         <br>
         <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png">
@@ -1939,6 +1942,9 @@ paths:
         fetch/update rule action form endpoints. Information about the created rule action should be included in the
         response if it was successfully created. This is the endpoint and schema for updating rule actions; app triggers
         (V2) will be analogous.
+
+
+        The request is subject to a 10-second timeout if no response is received from the app server.
         <br>
         <br>
         <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png">

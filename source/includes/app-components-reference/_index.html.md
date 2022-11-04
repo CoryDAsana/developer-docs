@@ -213,7 +213,7 @@ When the user types into a modal form form field, Asana will send a request cont
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The callback request made to an app server when a watched field's value changes within a form. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png">
+The callback request made to an app server when a watched field's value changes within a form. The request is subject to a 10-second timeout if no response is received from the app server. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png">
   <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/5b013ab17e2c82e44ede3bc8f1cdfcf48b79fa6d/ac-form-on-change.png" alt="App components form on change request flow"/>
 </a>
 </span>
@@ -288,7 +288,7 @@ The callback request made to an app server when a watched field's value changes 
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The callback request made to an app server when a form is submitted. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png">
+The callback request made to an app server when a form is submitted. The request is subject to a 10-second timeout if no response is received from the app server. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png">
   <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/a58c2641ab72105505ea9d63cf27098d79e56c71/ac-form-on-submit.png" alt="App components form on submit request flow"/>
 </a>
 </span>
@@ -595,7 +595,7 @@ When a user has navigated to the [custom rule builder](https://asana.com/guide/h
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The callback request made to an app server when a watched field's value changes within an action form. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png">
+The callback request made to an app server when a watched field's value changes within an action form. The request is subject to a 10-second timeout if no response is received from the app server. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png">
   <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/e17aad6e1b091b6fa410679d417d4c48643339ea/ac-rule-on-change.png" alt="App components rule on change request flow"/>
 </a>
 </span>
@@ -681,7 +681,9 @@ The callback request made to an app server when a watched field's value changes 
 <span class="description">
 _Note: The path is a placeholder. The actual path is determined by the configuration of the app component._
 
-The form is submitted when the user chooses to create their rule. Asana will create the rule action data model object and make a signed request to the `on_submit_callback` specified in the form metadata returned from the fetch/update rule action form endpoints. Information about the created rule action should be included in the response if it was successfully created. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png">
+The form is submitted when the user chooses to create their rule. Asana will create the rule action data model object and make a signed request to the `on_submit_callback` specified in the form metadata returned from the fetch/update rule action form endpoints. Information about the created rule action should be included in the response if it was successfully created. This is the endpoint and schema for updating rule actions; app triggers (V2) will be analogous.
+
+The request is subject to a 10-second timeout if no response is received from the app server. <br> <br> <a href="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png">
   <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/6d4527451c4c506efec463438b506fb8a2e6d73f/ac-rule-on-submit.png" alt="App components rule on submit request flow"/>
 </a>
 </span>
