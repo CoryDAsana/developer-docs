@@ -1,9 +1,5 @@
 ## {{= data.operationUniqueName}}
 
-{{? data.options.platform_ui}}
-<span class="beta-indicator">BETA</span> - For access, please see the [overview of app components](/docs/overview-of-app-components)
-{{?}}
-
 {{ var projectBriefOperationIds = ["getProjectBrief", "updateProjectBrief", "deleteProjectBrief", "createProjectBrief"]; }}
 
 {{? projectBriefOperationIds.includes(data.operation.operationId) }}
