@@ -3,7 +3,7 @@
 {{ var projectBriefOperationIds = ["getProjectBrief", "updateProjectBrief", "deleteProjectBrief", "createProjectBrief"]; }}
 
 {{? projectBriefOperationIds.includes(data.operation.operationId) }}
-<span class="beta-indicator">PREVIEW</span> - This endpoint is in "preview". For details, please see [Projects Briefs](/docs/project-briefs)
+<span class="preview-indicator">PREVIEW</span> - This endpoint is in "preview". For details, please see [Projects Briefs](/docs/project-briefs)
 {{?}}
 
 {{? data.operation.operationId}}
