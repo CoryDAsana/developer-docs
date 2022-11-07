@@ -1,1 +1,1 @@
-<section class="platform-ui-alpha">
+<section class="app-components-ga">

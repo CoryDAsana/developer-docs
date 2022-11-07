@@ -1,5 +1,5 @@
-<hr class="platform-ui-alpha">
-<section class="platform-ui-alpha">
+<hr class="app-components-ga">
+<section class="app-components-ga">
 
 # Overview of app components
 

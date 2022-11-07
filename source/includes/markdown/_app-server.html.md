@@ -1,5 +1,5 @@
 <hr class="full-line">
-<section class="platform-ui-alpha">
+<section class="app-components-ga">
 
 # App server
 
